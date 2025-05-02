@@ -1,5 +1,24 @@
 //variaveis do sass vem aqui
 
+$theme-colors: (
+  primary: #f5f17a,
+  secondary: #f58a83,
+  tertiary: #ab7af5,
+  accent: #abf479,
+  success: #28a745,
+  info: #17a2b8,
+  warning: #ffc107,
+  danger: #dc3545,
+  light: #f8f9fa,
+  dark: #343a40 
+);
+
 @import url('../node_modules/bootstrap/scss/bootstrap.scss');
 
 //outras mudanças de css vem aqui
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 1.5rem;
+}
