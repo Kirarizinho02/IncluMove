@@ -1,14 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
 
 import { DefaultLayout, FormLayout } from './layouts';
-import { LandingPage, LoginForm } from './pages';
+import { About, LandingPage } from './pages';
 
 const Router = () => {
   return (
     <Routes>
       <Route path='/' element={<DefaultLayout />}>
         <Route path='/' element={<LandingPage />} />
-        {/* <Route path='/about' element={<About />} /> */}
+        <Route path='/about' element={<About />} />
       </Route>
        <Route path='/form' element={<FormLayout />}>
         <Route path='/form/login' element={<LoginForm />} />

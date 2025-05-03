@@ -18,6 +18,8 @@ $theme-colors: (
 @import url('https://fonts.googleapis.com/css2?family=Hind+Mysuru:wght@300;400;500;600;700&display=swap');
 
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 //outras mudanças de css vem aqui
 
 #root {
@@ -72,3 +74,24 @@ p {
     font-weight: 500;
     font-style: normal;
   }
+
+/* Kirari */
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+
+@media (min-width: 992px) {
+  .text-big {font-size: 5rem;}
+}
+
+@media (max-width: 992px) {
+  .text-big {font-size: 4rem;}
+}
+
+/* Rodrigo */
