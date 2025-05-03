@@ -1,8 +1,7 @@
 //variaveis do sass vem aqui
 
 $theme-colors: (
-  primary-light: #f5f17a,
-  primary-dark: #737239,
+  primary: #f5f17a,
   secondary: #f58a83,
   tertiary: #ab7af5,
   accent: #abf479,
@@ -21,5 +20,4 @@ $theme-colors: (
 #root {
   width: 100%;
   margin: 0;
-  padding: 1.5rem;
 }
