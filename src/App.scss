@@ -13,6 +13,8 @@ $theme-colors: (
   dark: #343a40 
 );
 
+$enable-negative-margins: true;
+
 @import '../node_modules/bootstrap/scss/bootstrap';
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
@@ -39,4 +41,16 @@ body {
 
 @media (max-width: 992px) {
   .text-big {font-size: 4rem;}
+}
+
+.grad-primary-to-body-bg {
+  background: #ffffff;
+  background: linear-gradient(0deg,rgba(255, 255, 255, 1) 0%, rgba(245, 241, 122, 1) 100%);
+  height: 40px;
+}
+
+.grad-body-bg-to-primary {
+  background: #ffffff;
+  background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(245, 241, 122, 1) 100%);
+  height: 40px;
 }
