@@ -12,11 +12,11 @@ const FormLayout = () => {
     );
 
   return (
-        <>
-          <Content >
-            <Outlet />
-          </Content>
-        </>
+    <>
+      <Content >
+        <Outlet />
+      </Content>
+    </>
   )
 }
 
