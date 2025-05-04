@@ -1,6 +1,6 @@
 import { Container } from 'react-bootstrap';
 
-import logo from '../../assets/logo.svg';
+import { logo } from '../../assets';
 
 const Footer = () => {
   const year = new Date().getFullYear()
