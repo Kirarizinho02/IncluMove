@@ -1,6 +1,6 @@
-import Form from 'react-bootstrap/Form';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import Form from 'react-bootstrap/Form';
 
 import mulherPernaBionica from '../../assets/mulher-perna-bionica.svg';
 
@@ -8,7 +8,7 @@ import { ButtonBack } from '../ButtonBack';
 
 const Formlogin = () => {   
   return (
-    <Container fluid className='bg-primary'>
+    <Container fluid className='vh-100 bg-primary overflow-hidden'>
       <Row>
         <Col xs={12} md={6} className='align-items-center bg-white vh-100 ms-md-2 d-flex flex-column justify-content-between shadow'>
 
@@ -19,7 +19,7 @@ const Formlogin = () => {
           </Row>
 
           <Row className='w-100 mb-5 pb-5'>
-            <div className='w-50 w-md-75 mx-auto'>
+            <div className='col-xl-8 col-xxl-6 w-lg-80 mx-auto'>
               <h1 className='text-start title fw-semibold'> Login </h1>
               <p> Bem-vindo de volta! Estamos muito felizes de vê-lo aqui novamente. </p>
               <FloatingLabel

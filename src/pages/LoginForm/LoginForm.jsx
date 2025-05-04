@@ -2,11 +2,11 @@ import { Formlogin } from "../../components";
 
 const LoginForm = () => {   
 
-    return (
-        <>
-            <Formlogin />
-        </>
-    )
+  return (
+    <>
+      <Formlogin />
+    </>
+  )
 }
 
 export { LoginForm };
