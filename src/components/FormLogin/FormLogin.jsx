@@ -3,7 +3,6 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 
 import mulherPernaBionica from '../../assets/mulher-perna-bionica.svg';
-import logo from '../../assets/logo.svg';
 
 import { ButtonBack } from '../ButtonBack';
 
@@ -14,16 +13,12 @@ const Formlogin = () => {
                 <Col xs={12} md={6} className='align-items-center bg-light vh-100 ms-md-2 d-flex flex-column justify-content-between shadow'>
 
                     <Row className='w-100 mt-4'>
-                        <div className='d-flex justify-content-start'>
+                        <div className='d-flex justify-content-start ms-3'>
                             <ButtonBack previousPage={"/"} />
-                        </div>
-                        <div className='d-none d-md-flex flex-row justify-content-center align-items-center'>
-                            <img src={logo} alt="Logo" className='mw-100'/>
-                            <h1 className='montserrat-medium ms-3 mt-3'> IncluMove </h1>
-                        </div>
+                        </div> 
                     </Row>
 
-                    <Row className='w-100'>
+                    <Row className='w-100 mb-5 pb-5'>
                         <div className='w-50 w-md-75 mx-auto'>
                             <h1 className='text-start montserrat-bold'> Login </h1>
                             <p className='hind-regular'> Bem-vindo de volta! Estamos muito felizes de vê-lo aqui novamente. </p>
@@ -32,7 +27,7 @@ const Formlogin = () => {
                                 label="Email"
                                 className="mb-3"
                             >
-                                <Form.Control type="email" placeholder="name@example.com" />
+                                <Form.Control type="email" placeholder="nome.sobrenome@exemplo.com" />
                             </FloatingLabel>
                             <FloatingLabel controlId="floatingPassword" label="Senha">
                                 <Form.Control type="password" placeholder="Senha" />

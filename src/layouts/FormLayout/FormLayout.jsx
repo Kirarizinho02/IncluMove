@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
+import { Content } from '../../components';
 
 const FormLayout = () => {
     useEffect(() => {
@@ -11,9 +12,11 @@ const FormLayout = () => {
     );
 
   return (
-        <div className='bg-primary w-100 h-100'>
+        <>
+          <Content >
             <Outlet />
-        </div>
+          </Content>
+        </>
   )
 }
 
