@@ -1,6 +1,7 @@
 import { Button, Col, Container, Row } from 'react-bootstrap';
 
 import mulher_cadeira from '../../assets/mulher-cadeira-decor.png';
+import marco_aurelio from '../../assets/marco-aurelio-card.png'
 import stars from '../../assets/stars-decor.svg';
 import line_1 from '../../assets/landing-line-1.svg';
 
@@ -20,7 +21,7 @@ const LandingPage = () => {
                   <span className='title'>Inscreva-se</span>
                 </Button>
               </div>
-              <p>Já possui um cadastro? <a className='text-decoration-none link-tertiary' href='/form/login'>Entre na sua conta.</a></p>
+              <p className='text-center text-md-start'>Já possui um cadastro? <a className='text-decoration-none link-tertiary' href='/form/login'>Entre na sua conta.</a></p>
             </Col>
             <Col md={12} lg={6}>
               <img className='mw-100' src={mulher_cadeira} />
@@ -34,8 +35,24 @@ const LandingPage = () => {
         </Container>
       </div>
       <div className='grad-primary-to-body-bg' />
-      <div className='bg-white vh-100'>
-
+      <div className='bg-white pt-3'>
+        <Container>
+        <p className='title text-medium fw-bold text-center m-0'>Os profissionais</p>
+        <p className='text-center'>
+          O time da IncluMove já conta com fisioterapeutas capacitados para atendê-los. Conheça um pouco dos nossos destaques:
+        </p>
+          <Row className='my-3 overflow-auto'>
+            <Col md={12} lg={4} className='d-flex justify-content-center bg-primary'>
+              <img className='mw-100 me-lg-auto' src={marco_aurelio} />
+            </Col>
+            <Col md={12} lg={4} className='d-flex justify-content-center bg-secondary'>
+              <img className='mw-100' src={marco_aurelio} />
+            </Col>
+            <Col md={12} lg={4} className='d-flex justify-content-center bg-tertiary'>
+              <img className='mw-100 ms-lg-auto' src={marco_aurelio} />
+            </Col>
+          </Row>
+        </Container>
       </div>
       <div className='grad-body-bg-to-primary' />
       <div className='bg-primary vh-100'>

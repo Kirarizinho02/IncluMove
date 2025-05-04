@@ -89,6 +89,14 @@ body {
 }
 
 @media (min-width: 992px) {
+  .text-medium {font-size: 4.2rem;}
+}
+
+@media (max-width: 992px) {
+  .text-medium {font-size: 3.3rem;}
+}
+
+@media (min-width: 992px) {
   .text-big {font-size: 5rem;}
 }
 

@@ -11,9 +11,9 @@ const FormLayout = () => {
     );
 
   return (
-        <div className='bg-primary w-100 h-100'>
-            <Outlet />
-        </div>
+    <div className='bg-primary w-100 h-100'>
+      <Outlet />
+    </div>
   )
 }
 
