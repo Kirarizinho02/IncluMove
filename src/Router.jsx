@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
 import { DefaultLayout, FormLayout } from './layouts';
-import { About, LandingPage, LoginForm } from './pages';
+import { About, LandingPage, LoginForm, SignUp } from './pages';
 
 const Router = () => {
   return (
@@ -12,7 +12,7 @@ const Router = () => {
       </Route>
       <Route path='/form' element={<FormLayout />}>
         <Route path='/form/login' element={<LoginForm />} />
-        {/* <Route path='/form/signup' element={<SignupForm />} /> */}
+        <Route path='/form/signup' element={<SignUp />} /> 
       </Route>
       {/* <Route path='/home' element={<HomeLayout />}>
         <Route path='/home' element={<Home />} />

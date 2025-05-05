@@ -8,9 +8,9 @@ import { ButtonBack } from '../ButtonBack';
 
 const Formlogin = () => {   
   return (
-    <Container fluid className='vh-100 bg-primary overflow-hidden'>
+    <Container fluid className='bg-primary overflow-x-hidden'>
       <Row>
-        <Col xs={12} md={6} className='align-items-center bg-white vh-100 ms-md-2 d-flex flex-column justify-content-between shadow'>
+        <Col xs={12} md={6} className='align-items-center bg-white ms-md-2 d-flex flex-column justify-content-between shadow'>
 
           <Row className='w-100 mt-4'>
             <div className='d-flex justify-content-start ms-3'>
@@ -29,9 +29,13 @@ const Formlogin = () => {
               >
                 <Form.Control type="email" placeholder="nome.sobrenome@exemplo.com" />
               </FloatingLabel>
-              <FloatingLabel controlId="floatingPassword" label="Senha">
+              <FloatingLabel 
+                controlId="floatingPassword" 
+                label="Senha"
+              >
                 <Form.Control type="password" placeholder="Senha" />
               </FloatingLabel>
+              
               <div className='d-flex flex-row-reverse'>
                 <Button variant="tertiary" type="submit" className='w-50 mt-4 title fw-medium shadow'>
                     Entrar
@@ -48,7 +52,7 @@ const Formlogin = () => {
         </Col>
 
         <Col className='d-none d-md-flex justify-content-center align-items-center vh-100'>
-          <img src={mulherPernaBionica} className='w-75' />
+          <img src={mulherPernaBionica} className='w-100' />
         </Col>
       </Row>
     </Container>

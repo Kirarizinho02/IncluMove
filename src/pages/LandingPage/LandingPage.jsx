@@ -42,8 +42,9 @@ const LandingPage = () => {
           O time da IncluMove já conta com fisioterapeutas capacitados para atendê-los. Conheça um pouco dos nossos destaques:
         </p>
           <Row className='my-3 overflow-auto'>
-            <Col md={12} lg={4} className='d-flex justify-content-center bg-primary'>
+            <Col md={12} lg={4} className='d-flex justify-content-center bg-primary flex-column align-items-center'>
               <img className='mw-100 me-lg-auto' src={marco_aurelio} />
+              <p> Formado em Fisioterapia e Educação Física, cuida de idosos e pessoas com mobilidade reduzida há mais de 10 anos.</p>
             </Col>
             <Col md={12} lg={4} className='d-flex justify-content-center bg-secondary'>
               <img className='mw-100' src={marco_aurelio} />
