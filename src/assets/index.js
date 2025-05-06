@@ -8,6 +8,9 @@ import line_2 from './landing-line-2.svg';
 import logo from './logo.svg';
 import arrow_back from './arrow-back.svg';
 import mulher_perna_bionica from './mulher-perna-bionica.svg';
+import amigos_disabled from './disabled-day-concept-illustration.png';
+import passaro_illustration from './passaro-inclumove.png';
+import rodri_venturus from './rodriventurus.jpeg';
 
 export {
   mulher_cadeira,
@@ -20,4 +23,7 @@ export {
   logo,
   arrow_back,
   mulher_perna_bionica,
+  amigos_disabled,
+  passaro_illustration,
+  rodri_venturus,
 };

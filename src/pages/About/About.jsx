@@ -1,7 +1,6 @@
 import { Col, Container, Row } from 'react-bootstrap'
-import passaro_illustration from '../../assets/passaroinclumove.png';
-import rodrigoVenturus from '../../assets/rodriventurus.jpeg';
-import stars from '../../assets/stars-decor.svg';
+
+import { passaro_illustration, rodri_venturus, stars } from '../../assets';
 
 const About = () => {
   return (
@@ -15,12 +14,13 @@ const About = () => {
                 Democratizar uma solução tecnológica que promova o acesso ao bem-estar físico, mental e social por meio de uma plataforma inclusiva e acolhedora.
                 Queremos que todos os corpos — com ou sem limitações — sejam acolhidos pela nossa aplicação, que encontrem nela um espaço seguro para a prática de atividades físicas.
               </p>
+              <img className='d-none d-lg-block position-absolute ms-n5' height={290} src={stars} />
             </Col>
             <Col md={12} lg={6}>
               <img className='mw-100' src={passaro_illustration} />
             </Col>
           </Row>
-          <img className='d-none d-lg-block position-absolute ms-n5 mt-xxl-n5' src={stars}  style={{width: '20%', top: '30rem', left: '-2rem', }}/>
+          {/* <img className='d-none d-lg-block position-absolute ms-n5 mt-xxl-n5' src={stars}  style={{width: '20%', top: '30rem', left: '-2rem', }}/> */}
         </Container>
       </div>
       <div className='grad-primary-to-body-bg' />
@@ -28,9 +28,9 @@ const About = () => {
         <Container>
           <Row className='mt-5'>
             <Col md={12} lg={6} className='d-flex justify-content-center align-items-center'>
-              <img className='mw-100 shadow' src={rodrigoVenturus} style={{borderRadius: "10px"}} />
+              <img className='mw-100 shadow' src={rodri_venturus} style={{borderRadius: "10px"}} />
             </Col>
-            <Col md={12} lg={6} className='d-flex flex-column px-5'>
+            <Col md={12} lg={6} className='d-flex flex-column px-3 md-px-5'>
               <h1 className='fw-bold title mt-exc-3 text-center text-md-start'> Sobre nós! </h1>
               <p>
                 O nosso time de desenvolvedores é formado por três estudantes do terceiro ano de Desenvolvimento de Sistemas da ETEC Bento Quirino: 

@@ -7,7 +7,7 @@ const HomeLayout = () => {
     <>
       <Content>
         <Container fluid className="overflow-x-hidden">
-            <Outlet />
+          <Outlet />
         </Container>
       </Content>
     </>
