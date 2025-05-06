@@ -2,7 +2,7 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 
-import mulherPernaBionica from '../../assets/mulher-perna-bionica.svg';
+import { mulher_perna_bionica } from '../../assets';
 
 import { ButtonBack } from '../ButtonBack';
 
@@ -48,7 +48,7 @@ const Formlogin = () => {
         </Col>
 
         <Col className='d-none d-md-flex justify-content-center align-items-center vh-100'>
-          <img src={mulherPernaBionica} className='w-75' />
+          <img src={mulher_perna_bionica} className='w-75' />
         </Col>
       </Row>
     </Container>

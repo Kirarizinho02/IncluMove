@@ -1,9 +1,6 @@
 import { Button, Col, Container, Row } from 'react-bootstrap';
 
-import mulher_cadeira from '../../assets/mulher-cadeira-decor.png';
-import marco_aurelio from '../../assets/marco-aurelio-card.png'
-import stars from '../../assets/stars-decor.svg';
-import line_1 from '../../assets/landing-line-1.svg';
+import { ana_lemos, line_1, line_2, marco_aurelio, mulher_cadeira, ricardo_junior, stars } from '../../assets';
 
 const LandingPage = () => {
   return (
@@ -31,7 +28,7 @@ const LandingPage = () => {
           <p className='title fs-1 text-center mt-lg-5 mt-xxl-3 mb-0'>
             Descubra o <span className='fw-bold'>IncluMove</span>
           </p>
-          <div className='d-flex justify-content-center'><img className='mb-n5' src={line_1} height={175} /></div>
+          <div className='d-flex justify-content-center'><img className='mb-n5' src={line_1} height={150} /></div>
         </Container>
       </div>
       <div className='grad-primary-to-body-bg' />
@@ -41,17 +38,36 @@ const LandingPage = () => {
         <p className='text-center'>
           O time da IncluMove já conta com fisioterapeutas capacitados para atendê-los. Conheça um pouco dos nossos destaques:
         </p>
-          <Row className='my-3 overflow-auto'>
-            <Col md={12} lg={4} className='d-flex justify-content-center bg-primary'>
-              <img className='mw-100 me-lg-auto' src={marco_aurelio} />
+          <Row className='mt-5 overflow-auto'>
+            <Col md={12} lg={4} className='d-flex justify-content-center'>
+              <div className='test text-center me-lg-auto'>
+                <img src={marco_aurelio} />
+                <h2 className='title fw-bold'>Marco Aurélio</h2>
+                <p>
+                  Formado em Fisioterapia e Educação Física, cuida de idosos e pessoas com mobilidade reduzida há mais de 10 anos.
+                </p>
+              </div>
             </Col>
-            <Col md={12} lg={4} className='d-flex justify-content-center bg-secondary'>
-              <img className='mw-100' src={marco_aurelio} />
+            <Col md={12} lg={4} className='d-flex justify-content-center'>
+              <div className='test text-center me-lg-auto'>
+                <img src={ana_lemos} />
+                <h2 className='title fw-bold'>Ana Lemos</h2>
+                <p>
+                  Formada em Fisioterapia pela USP em 2017, atua na área cuidando de pacientes em quadros de tetraplegia desde 2019.
+                </p>
+              </div>
             </Col>
-            <Col md={12} lg={4} className='d-flex justify-content-center bg-tertiary'>
-              <img className='mw-100 ms-lg-auto' src={marco_aurelio} />
+            <Col md={12} lg={4} className='d-flex justify-content-center'>
+              <div className='test text-center me-lg-auto'>
+                <img src={ricardo_junior} />
+                <h2 className='title fw-bold'>Ricardo Júnior</h2>
+                <p>
+                  Formado em Fisioterapia e Educação Física, cuida de idosos e pessoas com mobilidade reduzida há mais de 10 anos.
+                </p>
+              </div>
             </Col>
           </Row>
+          <div className='d-flex justify-content-center'><img className='mb-n5' src={line_2} height={212} /></div>
         </Container>
       </div>
       <div className='grad-body-bg-to-primary' />
