@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Content } from '../../components';
+import { Container } from 'react-bootstrap';
 
 const FormLayout = () => {
     useEffect(() => {
@@ -13,8 +14,10 @@ const FormLayout = () => {
 
   return (
     <>
-      <Content >
-        <Outlet />
+      <Content>
+        <Container fluid className='overflow-x-hidden'>
+          <Outlet />
+        </Container> 
       </Content>
     </>
   )
