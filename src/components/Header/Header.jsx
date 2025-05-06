@@ -1,6 +1,6 @@
 import { Container, Nav } from 'react-bootstrap';
 
-import logo from '../../assets/logo.svg';
+import { logo } from '../../assets';
 
 const Header = () => {
   return (
