@@ -1,4 +1,4 @@
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Button, Col, Row } from 'react-bootstrap';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 
@@ -8,8 +8,7 @@ import { ButtonBack } from '../ButtonBack';
 
 const Formlogin = () => {   
   return (
-    <Container fluid className='bg-primary overflow-x-hidden'>
-      <Row>
+      <Row className='vh-100'>
         <Col xs={12} md={6} className='align-items-center bg-white ms-md-2 d-flex flex-column justify-content-between shadow'>
 
           <Row className='w-100 mt-4'>
@@ -18,7 +17,7 @@ const Formlogin = () => {
             </div> 
           </Row>
 
-          <Row className='w-100 mb-5 pb-5'>
+          <Row className='w-100 mb-5 pb-5 mt-5'>
             <div className='col-xl-8 col-xxl-6 w-lg-80 mx-auto'>
               <h1 className='text-start title fw-semibold'> Login </h1>
               <p> Bem-vindo de volta! Estamos muito felizes de vê-lo aqui novamente. </p>
@@ -46,7 +45,7 @@ const Formlogin = () => {
 
           <Row className='w-100 mb-4'>
               <p className='text-center w-100'>
-                  Não possui cadastro? <a href="#" className='text-tertiary'>Crie uma conta.</a>
+                  Não possui cadastro? <a href="/form/signup" className='text-tertiary'>Crie uma conta.</a>
               </p>
           </Row>
         </Col>
@@ -55,7 +54,6 @@ const Formlogin = () => {
           <img src={mulherPernaBionica} className='w-100' />
         </Col>
       </Row>
-    </Container>
   )
 }
 
