@@ -11,19 +11,25 @@ import mulher_perna_bionica from './mulher-perna-bionica.svg';
 import amigos_disabled from './disabled-day-concept-illustration.png';
 import passaro_illustration from './passaro-inclumove.png';
 import rodri_venturus from './rodriventurus.jpeg';
+import grafico_falso from './grafico_falso.png';
+import open_door from './open_door.png';
+import woman_confused from './woman_curious.png';
 
 export {
   mulher_cadeira,
   marco_aurelio,
   ana_lemos,
+  grafico_falso,
   ricardo_junior,
   stars,
   line_1,
   line_2,
   logo,
+  open_door,
   arrow_back,
   mulher_perna_bionica,
   amigos_disabled,
   passaro_illustration,
   rodri_venturus,
+  woman_confused,
 };

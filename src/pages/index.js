@@ -1,4 +1,5 @@
 export * from './About'
+export * from './Error'
 export * from './Experts'
 export * from './Home'
 export * from './LandingPage'

@@ -43,7 +43,7 @@ const LandingPage = () => {
               <div className='test text-center me-lg-auto'>
                 <img src={marco_aurelio} />
                 <h2 className='title fw-bold'>Marco Aurélio</h2>
-                <p>
+                <p className='w-75 mx-auto'>
                   Formado em Fisioterapia e Educação Física, cuida de idosos e pessoas com mobilidade reduzida há mais de 10 anos.
                 </p>
               </div>
@@ -52,7 +52,7 @@ const LandingPage = () => {
               <div className='test text-center me-lg-auto'>
                 <img src={ana_lemos} />
                 <h2 className='title fw-bold'>Ana Lemos</h2>
-                <p>
+                <p className='w-75 mx-auto'>
                   Formada em Fisioterapia pela USP em 2017, atua na área cuidando de pacientes em quadros de tetraplegia desde 2019.
                 </p>
               </div>
@@ -61,7 +61,7 @@ const LandingPage = () => {
               <div className='test text-center me-lg-auto'>
                 <img src={ricardo_junior} />
                 <h2 className='title fw-bold'>Ricardo Júnior</h2>
-                <p>
+                <p className='w-75 mx-auto'>
                   Formado em Fisioterapia e Educação Física, cuida de idosos e pessoas com mobilidade reduzida há mais de 10 anos.
                 </p>
               </div>
