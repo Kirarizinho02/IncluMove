@@ -4,10 +4,14 @@ import { Router } from './Router';
 
 import './App.scss';
 
+import { AuthProvider } from './contexts/AuthContext';
+
 const App = () => {
   return (
     <BrowserRouter>
-      <Router />
+      <AuthProvider>
+        <Router />
+      </AuthProvider>
     </BrowserRouter>
   );
 }
