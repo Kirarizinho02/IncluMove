@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 
 import { api } from "../services";
-import { Navigate } from "react-router-dom";
+import { Await, data, Navigate } from "react-router-dom";
 
 export const appContext = createContext({});
 
@@ -47,6 +47,84 @@ export const AppContextProvider = ( props ) => {
     }
   };
 
+  const listaTreinosRapidos = async (movimentos_pernas) => {
+    try {
+      const response = await api.get(`/exercicios`, {
+        params: { movimentos_pernas }
+      });
+  
+      if (response.data.length >= 3) {
+        const listaRapida = response.data.map(exercicio => ({
+          nome: exercicio.nome,
+          equipamento_apoio: exercicio.equipamento_apoio,
+          equipamento_treino: exercicio.equipamento_treino,
+          descricao: exercicio.descricao,
+          series: exercicio.series,
+          foto: exercicio.foto,
+          repeticoes: exercicio.repeticoes
+        }));
+        return listaRapida;
+      } else {
+        throw new Error("Não há exercícios recomendados");
+      }
+  
+    } catch (error) {
+      console.error("Erro ao listar os treinos", error);
+    }
+  };  
+
+  const listaTreinosMedios = async (movimentos_pernas) => {
+    try {
+      const response = await api.get(`/exercicios`, {
+        params: { movimentos_pernas }
+      });
+  
+      if (response.data.length >= 4) {
+        const listaMedia = response.data.map(exercicio => ({
+          nome: exercicio.nome,
+          equipamento_apoio: exercicio.equipamento_apoio,
+          equipamento_treino: exercicio.equipamento_treino,
+          descricao: exercicio.descricao,
+          series: exercicio.series,
+          foto: exercicio.foto,
+          repeticoes: exercicio.repeticoes
+        }));
+        return listaMedia;
+      } else {
+        throw new Error("Não há exercícios recomendados");
+      }
+  
+    } catch (error) {
+      console.error("Erro ao listar os treinos", error);
+    }
+  };
+  
+  const listaTreinosPesados = async (movimentos_pernas) => {
+    try {
+      const response = await api.get(`/exercicios`, {
+        params: { movimentos_pernas }
+      });
+  
+      if (response.data.length >= 5) {
+        const listaPesada = response.data.map(exercicio => ({
+          nome: exercicio.nome,
+          equipamento_apoio: exercicio.equipamento_apoio,
+          equipamento_treino: exercicio.equipamento_treino,
+          descricao: exercicio.descricao,
+          series: exercicio.series,
+          foto: exercicio.foto,
+          repeticoes: exercicio.repeticoes
+        }));
+        return listaPesada;
+      } else {
+        throw new Error("Não há exercícios recomendados");
+      }
+  
+    } catch (error) {
+      console.error("Erro ao listar os treinos", error);
+    }
+  };  
+
   return (
     <appContext.Provider value={{ 
       usuarios,
@@ -56,6 +134,9 @@ export const AppContextProvider = ( props ) => {
       setUsuarioLog,
       loginUsuario,
       rotaPrivada,
+      listaTreinosRapidos,
+      listaTreinosMedios,
+      listaTreinosPesados
     }}>
       {children}
     </appContext.Provider>
