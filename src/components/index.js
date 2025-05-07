@@ -4,6 +4,6 @@ export * from './Footer';
 export * from './LoginForm';
 export * from './Header';
 export * from './ProfilePicture';
-export * from './SignupForm';
+export * from './SignUpForm';
 
 

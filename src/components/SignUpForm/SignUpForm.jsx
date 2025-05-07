@@ -7,7 +7,7 @@ import { amigos_disabled } from '../../assets';
 import { ButtonBack } from '../ButtonBack';
 
 
-const SignupForm = () => {   
+const SignUpForm = () => {   
   return (
     <Row className='vh-100'>
       <Col xs={12} md={6} className='align-items-center bg-white ms-md-2 d-flex flex-column justify-content-between shadow'>
@@ -86,5 +86,5 @@ const SignupForm = () => {
   )
 }
 
-export { SignupForm };
+export { SignUpForm };
 
