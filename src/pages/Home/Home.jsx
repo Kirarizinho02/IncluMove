@@ -1,5 +1,5 @@
-import { Col, Container, Dropdown, Nav, Row } from "react-bootstrap";
-import { ButtonBack, ButtonLogOut, GraphsComponent, NavUsersHome, ProfilePicture } from "../../components";
+import { Button, Col, Container, Dropdown, Nav, Row } from "react-bootstrap";
+import { ButtonBack, ButtonLogOut, GraphsComponent, NavUsersHome, ProfessionalsComponent, ProfilePicture } from "../../components";
 import { useEffect } from "react";
 import { UseAppContext } from "../../hooks";
 import { grafico_falso } from "../../assets";
@@ -15,8 +15,8 @@ const Home = () => {
   }, [setUsuarioLog]);
 
   return(
-    <Row>
-      <Col xl={6} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary shadow">
+    <Row className="h-100">
+      <Col xl={6} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary shadow p-5">
         <div className="w-100 my-4 d-flex flex-row justify-content-between">
           <div className="d-flex ms-md-3">
           <ButtonBack previousPage={"/"} />
@@ -38,10 +38,10 @@ const Home = () => {
           )}
           <NavUsersHome />
         <GraphsComponent imagem={grafico_falso} />
-
+        <ProfessionalsComponent />
       </Col>
       <Col xl={6} md={12} className="bg-white">
-        a
+        Seu último treino:
       </Col>
     </Row>
   )

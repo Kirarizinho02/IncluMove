@@ -18,7 +18,7 @@ const NavUsersHome = () => {
           </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item href="#">Treino Rápido</Dropdown.Item>
-            <Dropdown.Item href="#">Treino Moderado</Dropdown.Item>
+            <Dropdown.Item href="#">Treino Médio</Dropdown.Item>
             <Dropdown.Item href="#">Treino Pesado</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
