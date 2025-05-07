@@ -1,8 +1,20 @@
 import { Container, Nav } from 'react-bootstrap';
 
 import { logo } from '../../assets';
+import { UseAppContext } from '../../hooks';
+import { useEffect } from 'react';
 
 const Header = () => {
+  const { usuarioLog, setUsuarioLog } = UseAppContext();
+
+  useEffect(() => {
+    const usuarioSalvo = localStorage.getItem('usuarioLogado');
+    if (usuarioSalvo) {
+      setUsuarioLog(JSON.parse(usuarioSalvo));
+    }
+  }, [setUsuarioLog]);
+
+
   return (
     <Container>
       <header className='d-flex flex-wrap justify-content-center align-items-center py-3'>
@@ -20,7 +32,13 @@ const Header = () => {
           </Nav.Item>
           <div className='vr'></div>
           <Nav.Item as='li'>
-            <Nav.Link className='fs-3 link-body-emphasis' href='/form/login' eventKey='link-2'>Login</Nav.Link>
+          <Nav.Link
+              className='fs-3 link-body-emphasis'
+              href={usuarioLog ? '/home' : '/form/login'}
+              eventKey='link-2'
+            >
+              {usuarioLog ? 'Conta' : 'Login'}
+            </Nav.Link>
           </Nav.Item>
         </Nav>
       </header>
