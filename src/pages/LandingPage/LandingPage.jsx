@@ -135,20 +135,30 @@ const LandingPage = () => {
         </Container>
       </div>
       <div className='grad-primary-to-body-bg mt-n5' />
-      <div className='vh-100 bg-white pt-4' >
+      <div className='bg-white pt-4' >
         <Container>
           <Row>
           <p className='title text-medium fw-bold text-center m-0 mt-5'> O projeto </p>
-            <Col md={12} className='w-100'>
+            <Col md={12}>
               <div className='w-100 d-flex align-items-center flex-column'>
-              <p className='text-center w-50'>
-              Criado por estudantes da ETEC Bento Quirino como parte da resolução da proposta do <span className='fw-bold'>Hackteen</span> — uma competição idealizada e realizada pelo instituto Venturus Inovação e Tecnologia em parceria com a Fundação Iochpe  — 
-              o IncluMove é uma solução digital para o bem-estar físico inclusivo.  
+              <p className='text-center w-75'>
+                Criado por estudantes da ETEC Bento Quirino como parte da resolução da proposta do <span className='fw-bold'>Hackteen</span> — uma competição idealizada e realizada pelo instituto Venturus Inovação e Tecnologia em parceria com a Fundação Iochpe  — 
+                o IncluMove é uma solução digital para o bem-estar físico inclusivo. <br />
+              <br /> 
+                Aqui está o vídeo pitch feito para a entrega inicial do projeto:
               </p>
               </div>
             </Col>
-            <Col md={12} >
-              <img className='mw-100' src={mulher_cadeira} />
+            <Col md={12} className='d-flex justify-content-center'>
+              <iframe
+                className='mw-100 shadow rounded-4'
+                height={360}
+                width={640}
+                src='https://youtube.com/embed/Muj0ygfKkpo'
+                allow='autoplay; encrypted-media'
+                allowfullscreen
+                title='video'
+              />
             </Col>
           </Row>
         </Container>
