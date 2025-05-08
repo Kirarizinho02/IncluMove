@@ -24,10 +24,10 @@ export const AppContextProvider = ( props ) => {
   const [exerciciosSelecionados, setExerciciosSelecionados] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
   const [usuarioLog, setUsuarioLog] = useState(() => {
-  const usuarioLog = localStorage.getItem('usuarioLogado');
-  if (usuarioLog && usuarioLog !== "undefined") {
+  const usuarioSalvo = localStorage.getItem('usuarioLogado');
+  if (usuarioSalvo && usuarioSalvo !== "undefined") {
     try {
-      return JSON.parse(usuarioLog);
+      return JSON.parse(usuarioSalvo);
     } catch {
       localStorage.removeItem('usuarioLogado');
       return null;
@@ -35,7 +35,6 @@ export const AppContextProvider = ( props ) => {
   }
   return null;
 });
-
   const [ultimoTreino, setUltimoTreino] = useState(null);
 
   const loginUsuario = async ({ email, senha }) => {
@@ -107,6 +106,10 @@ const atualizarUserLogin = useCallback(async () => {
     }
   }
 }, []);
+
+  useEffect(() => {
+    atualizarUserLogin();
+  }, [atualizarUserLogin]);
 
   const handleWorkoutTypeSelect = async (tipo) => {
     if (!usuarioLog) return;
