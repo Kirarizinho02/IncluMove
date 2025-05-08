@@ -47,7 +47,6 @@ Todas as tecnologias e bibliotecas do curso do TIC em trilhas de react foram uti
 - snake_case para assets importados.
 - camelCase para variáveis e funções scripts de js (ex.: contexts).
 - PascalCase para componentes.
-- Tentamos manter consistência no uso de '' e "", mas esquecemos várias vezes
 
 ## Integrantes
 
