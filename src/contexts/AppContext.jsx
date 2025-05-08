@@ -68,21 +68,30 @@ export const AppContextProvider = ( props ) => {
   };
 
 
-  const atualizarUserLogin = async () => {
-    const userLoginAtual = localStorage.getItem('usuarioLogado');
-    if (userLoginAtual) {
-      const usuarioLocal = JSON.parse(userLoginAtual);
-      try {
-        const response = await api.get(`/usuarios`, { params: { id: usuarioLocal.id } });
-        const userLoginNovo = response.data[0]; 
-        setUsuarioLog(userLoginNovo);
-        localStorage.setItem('usuarioLogado', JSON.stringify(userLoginNovo));
-        console.log(userLoginNovo)
-      } catch (error) {
-        console.error("erro:", error);
-      }
+const atualizarUserLogin = async () => {
+  const userLoginAtual = localStorage.getItem('usuarioLogado');
+  let usuarioLocal = null;
+  if (userLoginAtual && userLoginAtual !== "undefined") {
+    try {
+      usuarioLocal = JSON.parse(userLoginAtual);
+    } catch (err) {
+      usuarioLocal = null;
+      localStorage.removeItem('usuarioLogado');
+      console.error("erro:", err);
     }
-  };
+  }
+  if (usuarioLocal && usuarioLocal.id) {
+    try {
+      const response = await api.get(`/usuarios`, { params: { id: usuarioLocal.id } });
+      const userLoginNovo = response.data[0];
+      setUsuarioLog(userLoginNovo);
+      localStorage.setItem('usuarioLogado', JSON.stringify(userLoginNovo));
+      console.log(userLoginNovo);
+    } catch (error) {
+      console.error("erro:", error);
+    }
+  }
+};
 
   useEffect(() => {
     atualizarUserLogin();
