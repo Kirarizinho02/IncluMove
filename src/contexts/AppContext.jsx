@@ -70,12 +70,12 @@ export const AppContextProvider = ( props ) => {
 
 
 const atualizarUserLogin = useCallback(async () => {
-  const userLoginAtual = localStorage.getItem('usuarioLogado');
+  const usuarioLog = localStorage.getItem('usuarioLogado');
   let usuarioLocal = null;
 
-  if (userLoginAtual && userLoginAtual !== "undefined") {
+  if (usuarioLog && usuarioLog !== "undefined") {
     try {
-      usuarioLocal = JSON.parse(userLoginAtual);
+      usuarioLocal = JSON.parse(usuarioLog);
     } catch (err) {
       usuarioLocal = null;
       localStorage.removeItem('usuarioLogado');
@@ -131,11 +131,11 @@ const atualizarUserLogin = useCallback(async () => {
   };
 
   const ultimoTreinoFunc = async () => {
-  const userLoginAtual = localStorage.getItem('usuarioLogado');
+  const usuarioLog = localStorage.getItem('usuarioLogado');
     usuarioLocal = null;
-    if (userLoginAtual && userLoginAtual !== "undefined") {
+    if (usuarioLog && usuarioLog !== "undefined") {
       try {
-        usuarioLocal = JSON.parse(userLoginAtual);
+        usuarioLocal = JSON.parse(usuarioLog);
       } catch (e) {
         setUsuarioLocal(null);
         localStorage.removeItem('usuarioLogado');
@@ -143,7 +143,7 @@ const atualizarUserLogin = useCallback(async () => {
       }
     }
   
-    usuarioLocal = JSON.parse(userLoginAtual);
+    usuarioLocal = JSON.parse(usuarioLog);
     try {
       const res = await api.get('/usuarios', { params: { id: usuarioLocal.id } });
       const usuarioAtualizado = res.data[0];
