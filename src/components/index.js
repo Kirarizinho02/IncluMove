@@ -4,6 +4,7 @@ export * from './Content';
 export * from './Footer';
 export * from './GraphsComponent';
 export * from './Header';
+export * from './LastWorkout';
 export * from './LoginForm';
 export * from './NavUsersHome';
 export * from './ProfessionalsComponent';

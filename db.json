@@ -12,9 +12,7 @@
       "movimento_pernas": "Reduzido",
       "equipamento_apoio": "Nenhum",
       "equipamento_treino": "Halter",
-      "treinos": [
-        {}
-      ]
+      "treinos": []
     },
     {
       "id": 2,
@@ -33,7 +31,7 @@
           "id": 1,
           "nome": "Treino de força",
           "descricao": "Treino para aumentar a força muscular",
-          "data": "2025-10-01",
+          "data": "2025-12-21",
           "duracao": "Rapido",
           "exercicios": [
             {
@@ -98,7 +96,7 @@
           "id": 3,
           "nome": "Treino de Tais",
           "descricao": "Treino para aumentar a força muscular",
-          "data": "2025-10-01",
+          "data": "2025-11-11",
           "duracao": "Pesado",
           "exercicios": 
           [

@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 
 import { api } from "../services";
-import { Await, data, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 export const appContext = createContext({});
 
@@ -20,6 +20,7 @@ export const AppContextProvider = ( props ) => {
 
   const [usuarios, setUsuarios] = useState([]);
   const [usuarioLog, setUsuarioLog] = useState(null);
+  const [ultimoTreino, setUltimoTreino] = useState(null);
 
   const loginUsuario = async ({ email, senha }) => {
     try {
@@ -65,6 +66,25 @@ export const AppContextProvider = ( props ) => {
   useEffect(() => {
     atualizarUserLogin();
   }, []);
+
+  const ultimoTreinoFunc = async () => {
+    const usuarioSalvo = localStorage.getItem('usuarioLogado');
+    if (!usuarioSalvo) return;
+  
+    const usuarioLocal = JSON.parse(usuarioSalvo);
+    try {
+      const res = await api.get('/usuarios', { params: { id: usuarioLocal.id } });
+      const usuarioAtualizado = res.data[0];
+  
+      if (usuarioAtualizado?.treinos?.length > 0) {
+
+        const treinosOrdenados = [...usuarioAtualizado.treinos].sort((a, b) => new Date(b.data) - new Date(a.data));
+        setUltimoTreino(treinosOrdenados[0]);
+      }
+    } catch (error) {
+      console.error("Erro ao buscar último treino:", error);
+    }
+  };
 
   const listaTreinosRapidos = async (movimentos_pernas) => {
     try {
@@ -150,6 +170,8 @@ export const AppContextProvider = ( props ) => {
       setUsuarios,
       adicionarUsuario,
       usuarioLog,
+      ultimoTreinoFunc,
+      ultimoTreino,
       setUsuarioLog,
       loginUsuario,
       rotaPrivada,

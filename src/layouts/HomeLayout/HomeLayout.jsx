@@ -6,7 +6,7 @@ const HomeLayout = () => {
   return (
     <>
       <Content>
-        <Container fluid className="overflow-x-hidden h-100">
+        <Container fluid className="overflow-x-hidden vh-100">
           <Outlet />
         </Container>
       </Content>

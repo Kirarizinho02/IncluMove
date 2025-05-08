@@ -1,5 +1,5 @@
-import { Button, Col, Container, Dropdown, Nav, Row } from "react-bootstrap";
-import { ButtonBack, ButtonLogOut, GraphsComponent, NavUsersHome, ProfessionalsComponent, ProfilePicture } from "../../components";
+import { Col, Row } from "react-bootstrap";
+import { ButtonBack, ButtonLogOut, GraphsComponent, NavUsersHome, ProfessionalsComponent, ProfilePicture, LastWorkout } from "../../components";
 import { UseAppContext } from "../../hooks";
 
 const Home = () => {
@@ -7,7 +7,7 @@ const Home = () => {
 
   return(
     <Row className="h-100">
-      <Col xl={6} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary shadow p-5">
+      <Col xl={6} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary p-5">
         <div className="w-100 my-4 d-flex flex-row justify-content-between">
           <div className="d-flex ms-md-3">
           <ButtonBack previousPage={"/"} />
@@ -29,10 +29,11 @@ const Home = () => {
           )}
           <NavUsersHome />
         {usuarioLog && <GraphsComponent usuario={usuarioLog} />}
+        
         <ProfessionalsComponent />
       </Col>
-      <Col xl={6} md={12} className="bg-white">
-        Seu último treino:
+      <Col xl={6} md={12} className="bg-white d-flex">
+        <LastWorkout />
       </Col>
     </Row>
   )
