@@ -23,18 +23,7 @@ export const AppContextProvider = ( props ) => {
   const [showNewWorkout, setShowNewWorkout] = useState(false);
   const [exerciciosSelecionados, setExerciciosSelecionados] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
-  const [usuarioLog, setUsuarioLog] = useState(() => {
-  const usuarioSalvo = localStorage.getItem('usuarioLogado');
-  if (usuarioSalvo && usuarioSalvo !== "undefined") {
-    try {
-      return JSON.parse(usuarioSalvo);
-    } catch {
-      localStorage.removeItem('usuarioLogado');
-      return null;
-    }
-  }
-  return null;
-});
+  const [usuarioLog, setUsuarioLog] = useState(null);
   const [ultimoTreino, setUltimoTreino] = useState(null);
 
   const loginUsuario = async ({ email, senha }) => {
