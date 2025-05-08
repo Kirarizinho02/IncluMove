@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 
 import { api } from "../services";
-import { Await, data, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 export const appContext = createContext({});
 
@@ -18,8 +18,13 @@ const rotaPrivada = ({ children }) => {
 export const AppContextProvider = ( props ) => {
   const { children } = props;
 
+  const [fotoPerfil, setFotoPerfil] = useState(null);
+  const [usuarioParcial, setUsuarioParcial] = useState(null);
+  const [showNewWorkout, setShowNewWorkout] = useState(false);
+  const [exerciciosSelecionados, setExerciciosSelecionados] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
   const [usuarioLog, setUsuarioLog] = useState(null);
+  const [ultimoTreino, setUltimoTreino] = useState(null);
 
   const loginUsuario = async ({ email, senha }) => {
     try {
@@ -34,6 +39,22 @@ export const AppContextProvider = ( props ) => {
       }
     } catch (error) {
       console.error("erro:", error);
+    }
+  };
+
+  const mudarFoto = async (foto) => {
+    try {
+      setFotoPerfil(foto);
+  
+      const res = await api.patch(`/usuarios/${usuarioLog.id}`, {
+        foto: foto, 
+      });
+
+      setUsuarioLog(res.data); 
+      localStorage.setItem('usuarioLogado', JSON.stringify(res.data)); 
+  
+    } catch (error) {
+      console.error("Erro ao atualizar a foto:", error);
     }
   };
 
@@ -56,6 +77,7 @@ export const AppContextProvider = ( props ) => {
         const userLoginNovo = response.data[0]; 
         setUsuarioLog(userLoginNovo);
         localStorage.setItem('usuarioLogado', JSON.stringify(userLoginNovo));
+        console.log(userLoginNovo)
       } catch (error) {
         console.error("erro:", error);
       }
@@ -65,6 +87,56 @@ export const AppContextProvider = ( props ) => {
   useEffect(() => {
     atualizarUserLogin();
   }, []);
+
+  const handleWorkoutTypeSelect = async (tipo) => {
+    if (!usuarioLog) return;
+
+    let lista = [];
+    try {
+      switch (tipo) {
+        case "Rapido":
+          lista = await listaTreinosRapidos(usuarioLog.movimento_pernas);
+          break;
+        case "Moderado":
+          lista = await listaTreinosMedios(usuarioLog.movimento_pernas);
+          break;
+        case "Pesado":
+          lista = await listaTreinosPesados(usuarioLog.movimento_pernas);
+          break;
+        default:
+          return;
+      }
+
+      if (lista && lista.length) {
+        const listaAleatoria = lista.sort(() => 0.5 - Math.random());
+  
+        const qtd = tipo === "Rapido" ? 3 : tipo === "Moderado" ? 4 : 5;
+        setExerciciosSelecionados(listaAleatoria.slice(0, qtd));
+        setShowNewWorkout(true);
+      }
+    } catch (error) {
+      console.error("erro:", error);
+    }
+  };
+
+  const ultimoTreinoFunc = async () => {
+    const usuarioSalvo = localStorage.getItem('usuarioLogado');
+    if (!usuarioSalvo) return;
+  
+    const usuarioLocal = JSON.parse(usuarioSalvo);
+    try {
+      const res = await api.get('/usuarios', { params: { id: usuarioLocal.id } });
+      const usuarioAtualizado = res.data[0];
+  
+      if (usuarioAtualizado?.treinos?.length > 0) {
+
+        const treinosOrdenados = [...usuarioAtualizado.treinos].sort((a, b) => new Date(b.data) - new Date(a.data));
+        setUltimoTreino(treinosOrdenados[0]);
+      }
+    } catch (error) {
+      console.error("Erro ao buscar último treino:", error);
+    }
+  };
 
   const listaTreinosRapidos = async (movimentos_pernas) => {
     try {
@@ -146,17 +218,31 @@ export const AppContextProvider = ( props ) => {
 
   return (
     <appContext.Provider value={{ 
+      ultimoTreinoFunc,
+      ultimoTreino,
+      
+      rotaPrivada,
+      
+      showNewWorkout,
+      handleWorkoutTypeSelect,
+      exerciciosSelecionados,
+      
       usuarios,
       setUsuarios,
       adicionarUsuario,
       usuarioLog,
       setUsuarioLog,
       loginUsuario,
-      rotaPrivada,
       atualizarUserLogin,
+      usuarioParcial,
+      setUsuarioParcial,
+
       listaTreinosRapidos,
       listaTreinosMedios,
-      listaTreinosPesados
+      listaTreinosPesados,
+
+      mudarFoto, 
+      fotoPerfil,
     }}>
       {children}
     </appContext.Provider>

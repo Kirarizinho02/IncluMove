@@ -1,8 +1,17 @@
-import { Button, Col, Container, Row } from 'react-bootstrap';
+import { Button, Carousel, Col, Container, Row } from 'react-bootstrap';
 
-import { ana_lemos, line_1, line_2, marco_aurelio, mulher_cadeira, ricardo_junior, stars } from '../../assets';
+import { ana_lemos, compromissos1, compromissos2, compromissos3, line_1, line_2, line_3, marco_aurelio, mulher_cadeira, ricardo_junior, stars } from '../../assets';
+import { useState } from 'react';
 
 const LandingPage = () => {
+
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+  };
+
+
   return (
     <>
       <div className='bg-primary pt-5'>
@@ -34,10 +43,10 @@ const LandingPage = () => {
       <div className='grad-primary-to-body-bg' />
       <div className='bg-white pt-3'>
         <Container>
-        <p className='title text-medium fw-bold text-center m-0'>Os profissionais</p>
-        <p className='text-center'>
-          O time da IncluMove já conta com fisioterapeutas capacitados para atendê-los. Conheça um pouco dos nossos destaques:
-        </p>
+          <p className='title text-medium fw-bold text-center m-0'>Os profissionais</p>
+          <p className='text-center'>
+            O time da IncluMove já conta com fisioterapeutas capacitados para atendê-los. Conheça um pouco dos nossos destaques:
+          </p>
           <Row className='mt-5 overflow-auto'>
             <Col md={12} lg={4} className='d-flex justify-content-center'>
               <div className='test text-center me-lg-auto'>
@@ -71,9 +80,85 @@ const LandingPage = () => {
         </Container>
       </div>
       <div className='grad-body-bg-to-primary' />
-      <div className='bg-primary vh-100'>
+      <div className='bg-primary'>
         <Container>
-          <h1>oi</h1>
+          <p className='title text-medium fw-bold text-center m-0'>Os compromissos</p>
+          <p className='text-center'>
+            Descubra mais sobre as pautas que movem nosso projeto:
+          </p>
+          <Carousel activeIndex={index} onSelect={handleSelect} data-bs-theme="dark" style={{ maxHeight: '80rem' }} className='mt-n5 mb-5'>
+            <Carousel.Item className='w-100 h-100' activeIndex>
+              <Carousel.Caption className='mt-5'>
+                <h1 className='title fw-bold'> 1. </h1>
+                <p className='mt-n2'> Diversidade, Equidade e Inclusão </p>
+              </Carousel.Caption>
+              <div className='d-flex flex-column align-items-center mt-n4'>
+                <img src={compromissos1} className='d-flex w-50'></img>
+              </div>
+              <Carousel.Caption >
+                <div className='w-100 d-flex flex-column align-items-center mb-2 '>
+                  <p className='w-50 w-lg-80 d-flex me-2'>Diversidade, equidade e inclusão (DEI), são três conceitos interligados que visam garantir que todos tenham acesso igual às
+                    oportunidades e se sintam valorizados, independentemente de suas características individuais.
+                  </p>
+                </div>
+              </Carousel.Caption >
+
+            </Carousel.Item>
+            <Carousel.Item className='w-100 h-100'>
+              <Carousel.Caption className='mt-5'>
+                <h1 className='title fw-bold'> 2. </h1>
+                <p className='mt-n2'> Educação e Conscientização Social </p>
+              </Carousel.Caption>
+              <div className='d-flex flex-column align-items-center mt-n4'>
+                <img src={compromissos2} className='d-flex w-75'></img>
+              </div>
+              <Carousel.Caption>
+                <div className='w-100 d-flex flex-column align-items-center mb-2 '>
+                  <p className='w-50 w-lg-80 d-flex me-2'>
+                    Promovemos por meio da plataforma a conscientização. Incentivamos a compreensão e o respeito pelas diferenças, combatendo preconceitos e estereótipos.
+                    O time IncluMove abraça a todos os usuários.
+                  </p>
+                </div>
+              </Carousel.Caption >
+            </Carousel.Item>
+            <Carousel.Item className='w-100 h-100'>
+              <Carousel.Caption className='mt-5'>
+                <h1 className='title fw-bold'> 3. </h1>
+                <p className='mt-n2'> Bem-estar </p>
+              </Carousel.Caption>
+              <div className='d-flex flex-column align-items-center mt-n4'>
+                <img src={compromissos3} className='d-flex w-50'></img>
+              </div>
+              <Carousel.Caption>
+                <div className='w-100 d-flex flex-column align-items-center mb-2 '>
+                  <p className='w-50 w-lg-80 d-flex me-2'>A OMS define saúde como um estado de completo bem-estar físico, mental e social, e não apenas a ausência de doença.
+                    Isso significa que para ter uma vida plena e saudável, é necessário cuidar de todas as dimensões do bem-estar.
+                  </p>
+                </div>
+              </Carousel.Caption >
+            </Carousel.Item>
+
+          </Carousel>
+          <div className='d-flex justify-content-center mt-n5'><img className='mb-n5 ' src={line_3} height={150} /></div>
+        </Container>
+      </div>
+      <div className='grad-primary-to-body-bg mt-n5' />
+      <div className='vh-100 bg-white pt-4' >
+        <Container>
+          <Row>
+          <p className='title text-medium fw-bold text-center m-0 mt-5'> O projeto </p>
+            <Col md={12} className='w-100'>
+              <div className='w-100 d-flex align-items-center flex-column'>
+              <p className='text-center w-50'>
+              Criado por estudantes da ETEC Bento Quirino como parte da resolução da proposta do <span className='fw-bold'>Hackteen</span> — uma competição idealizada e realizada pelo instituto Venturus Inovação e Tecnologia em parceria com a Fundação Iochpe  — 
+              o IncluMove é uma solução digital para o bem-estar físico inclusivo.  
+              </p>
+              </div>
+            </Col>
+            <Col md={12} >
+              <img className='mw-100' src={mulher_cadeira} />
+            </Col>
+          </Row>
         </Container>
       </div>
     </>

@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
 import { DefaultLayout, FormLayout, HomeLayout } from './layouts';
-import { About, LandingPage, LogIn, SignUp, Home, Error } from './pages';
+import { About, LandingPage, LogIn, SignUp, Home, Error, Disabilities } from './pages';
 import { UseAppContext } from './hooks';
 
 
@@ -20,6 +20,7 @@ const Router = () => {
       <Route path='/form' element={<FormLayout />}>
         <Route path='/form/login' element={<LogIn />} />
         <Route path='/form/signup' element={<SignUp />} /> 
+        <Route path='/form/disabilities' element={<Disabilities />} /> 
       </Route>
       <Route
           path="/home"

@@ -1,14 +1,21 @@
-import { Button, Col, Container, Dropdown, Nav, Row } from "react-bootstrap";
-import { ButtonBack, ButtonLogOut, GraphsComponent, NavUsersHome, ProfessionalsComponent, ProfilePicture } from "../../components";
+import { Col, Row } from "react-bootstrap";
+import { ButtonBack, ButtonLogOut, GraphsComponent, NavUsersHome, ProfessionalsComponent, ProfilePicture, LastWorkout, ButtonNewWorkout, NewWorkout } from "../../components";
 import { UseAppContext } from "../../hooks";
 
 const Home = () => {
-  const { usuarioLog } = UseAppContext();  
+  const {
+    usuarioLog,
+    handleWorkoutTypeSelect,
+    exerciciosSelecionados,
+    showNewWorkout,
+  } = UseAppContext();
+  
+
 
   return(
-    <Row className="h-100">
-      <Col xl={6} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary shadow p-5">
-        <div className="w-100 my-4 d-flex flex-row justify-content-between">
+    <Row >
+      <Col xl={6} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary p-5 h-100">
+        <div className="w-100 my-4 d-flex flex-row justify-content-between ">
           <div className="d-flex ms-md-3">
           <ButtonBack previousPage={"/"} />
           </div>
@@ -29,10 +36,14 @@ const Home = () => {
           )}
           <NavUsersHome />
         {usuarioLog && <GraphsComponent usuario={usuarioLog} />}
+
         <ProfessionalsComponent />
       </Col>
       <Col xl={6} md={12} className="bg-white">
-        Seu último treino:
+      {showNewWorkout ? <NewWorkout exercicios={exerciciosSelecionados} usuarioLog={usuarioLog} /> : <LastWorkout />}
+      <div className="d-flex justify-content-center mt-n4 me-4 mb-4">
+        <ButtonNewWorkout  onSelectWorkoutType={handleWorkoutTypeSelect} />
+      </div>
       </Col>
     </Row>
   )
