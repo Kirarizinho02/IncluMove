@@ -8,10 +8,20 @@ const Header = () => {
   const { usuarioLog, setUsuarioLog } = UseAppContext();
 
   useEffect(() => {
-    const usuarioSalvo = localStorage.getItem('usuarioLogado');
-    if (usuarioSalvo) {
-      setUsuarioLog(JSON.parse(usuarioSalvo));
+    let usuarioSalvo = localStorage.getItem('usuarioLogado');
+    if (usuarioSalvo && usuarioSalvo !== "undefined") {
+      try {
+        usuarioSalvo = JSON.parse(usuarioSalvo);
+      } catch (e) {
+        usuarioSalvo = null;
+        localStorage.removeItem('usuarioLogado');
+        console.error("erro:", e);
+      }
+    } else {
+      usuarioSalvo = null;
     }
+  
+  setUsuarioLog(usuarioSalvo);
   }, [setUsuarioLog]);
 
 

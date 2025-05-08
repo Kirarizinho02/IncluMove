@@ -14,18 +14,20 @@ const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const user = await loginUsuario({ email, senha });
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const user = await loginUsuario({ email, senha });
+    if (user) {
       localStorage.setItem('usuarioLogado', JSON.stringify(user));
-
       window.location.href = '/home'; 
-    } catch (error) {
-      setErro(error.message);
+    } else {
+      setErro("Usuário ou senha inválidos.");
     }
-  };
-
+  } catch (error) {
+    setErro(error.message);
+  }
+};
   return (
     <Row className='vh-100'>
       <Col xs={12} md={6} className='align-items-center bg-white ms-md-2 d-flex flex-column justify-content-between shadow'>
