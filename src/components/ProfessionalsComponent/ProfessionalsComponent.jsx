@@ -25,7 +25,7 @@ const ProfessionalsComponent = () => {
               Nosso time conta com mais de 200 fisioterapeutas e
               personal trainers que estão prontos para te ajudarem!
             </p>
-            <Button className="bg-tertiary p-1 w-100">
+            <Button className="bg-tertiary p-1 w-100" onClick={() => alert("Esta página ainda não foi implementada.")}>
               Mais Profissionais
             </Button>
           </Row>

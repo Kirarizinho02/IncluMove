@@ -15,7 +15,7 @@ IncluMove é uma aplicação web inclusiva que promove o bem-estar físico, ment
 
 ## Tecnologias utilizadas
 
-Todas as tecnologias e bibliotecas do curso do TIC em trilhas de react foram utilizadas no projeto, aqui estão incluidas apenas as que não estavam preentes no curso que utilizamos no projeto
+Todas as tecnologias e bibliotecas do curso do TIC em trilhas de react foram utilizadas no projeto, aqui estão incluidas apenas as que não estavam presentes no curso que utilizamos no projeto.
 
 ### Frontend
 - **React Bootstrap**: Utilizado para estilização e componentes prontos, acelerando o desenvolvimento.
@@ -28,7 +28,7 @@ Todas as tecnologias e bibliotecas do curso do TIC em trilhas de react foram uti
 
 1. Clone o repositório:
     ```bash
-    git clone <url-do-repositorio>
+    git clone https://github.com/Kirarizinho02/IncluMove.git
     cd IncluMove
 2. Instale as dependências:
     ```bash
@@ -39,13 +39,13 @@ Todas as tecnologias e bibliotecas do curso do TIC em trilhas de react foram uti
 4. Inicie o servidor local (em outro terminal):
     ```bash
     npx json-server db.json
-> tenha certeza de que o json-server esteja rodando na porta 3000, ou mude em src/services/api.js para a porta correta
+> !!! Altere o arquivo src/services/api.js para utilizar a porta do json server, senão não é possível acessar o back-end durante a utilização do site, se isso não funcionar, recomendo só acessar o deploy do Vercel normalmente.
 5. Abrir o aplicativo em: [localhost](http://localhost:5173/)
 
 ### Estilização
-- kebab-case para o nome de assets.
+- kebab-case para arquivos de assets.
 - snake_case para assets importados.
-- camelCase para os scripts de js (ex.: contexts).
+- camelCase para variáveis e funções scripts de js (ex.: contexts).
 - PascalCase para componentes.
 
 ## Integrantes
@@ -53,3 +53,8 @@ Todas as tecnologias e bibliotecas do curso do TIC em trilhas de react foram uti
 - Henrique Professor
 - Rodrigo Rio
 - Samuel Augusto
+
+## Links
+
+### Vídeo do projeto: [Youtube](https://youtu.be/Muj0ygfKkpo)
+### Deploy: [Vercel](https://inclumove.vercel.app/)
