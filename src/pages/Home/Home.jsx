@@ -19,7 +19,8 @@ const Home = () => {
     }
   }, [usuarioLog]);
 
-  if (loading || !usuarioLog) return <Loading />;
+if (loading) return <Loading />;
+if (!usuarioLog) return <h2 className="title text-center mt-2">Usuário não encontrado. Faça login novamente.</h2>;
 
   return(
     <Row >

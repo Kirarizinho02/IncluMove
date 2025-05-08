@@ -1,8 +1,12 @@
 import { open_door } from "../../assets";
+import { UseAppContext } from "../../hooks";
 
 const ButtonLogOut = () => {
+  const { setUsuarioLog } = UseAppContext();
+  
   const logOut = () => {
     localStorage.removeItem('usuarioLogado');
+    setUsuarioLog(null);
     window.location.href = "/form/login";
   }
   return (

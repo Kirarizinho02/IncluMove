@@ -9,7 +9,7 @@ import { ButtonBack } from '../ButtonBack';
 import { useState } from 'react';
 
 const LoginForm = () => {   
-  const { loginUsuario } = UseAppContext();
+  const { loginUsuario, setUsuarioLog } = UseAppContext();
   const [erro, setErro] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
@@ -20,6 +20,7 @@ const handleSubmit = async (e) => {
     const user = await loginUsuario({ email, senha });
     if (user) {
       localStorage.setItem('usuarioLogado', JSON.stringify(user));
+      setUsuarioLog(user);
       window.location.href = '/home'; 
     } else {
       setErro("Usuário ou senha inválidos.");

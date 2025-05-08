@@ -33,7 +33,9 @@ export const AppContextProvider = ( props ) => {
       });
   
       if (response.data.length > 0) {
+        
         return response.data[0]; 
+        
       } else {
         throw new Error("Email ou senha inválidos.");
       }
