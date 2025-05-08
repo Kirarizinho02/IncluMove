@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, useCallback } from "react";
 
 import { api } from "../services";
 import { Navigate } from "react-router-dom";
@@ -25,6 +25,7 @@ export const AppContextProvider = ( props ) => {
   const [usuarios, setUsuarios] = useState([]);
   const [usuarioLog, setUsuarioLog] = useState(null);
   const [ultimoTreino, setUltimoTreino] = useState(null);
+  let [usuarioLocal, setUsuarioLocal] = useState(null);
 
   const loginUsuario = async ({ email, senha }) => {
     try {
@@ -68,9 +69,10 @@ export const AppContextProvider = ( props ) => {
   };
 
 
-const atualizarUserLogin = async () => {
+const atualizarUserLogin = useCallback(async () => {
   const userLoginAtual = localStorage.getItem('usuarioLogado');
   let usuarioLocal = null;
+
   if (userLoginAtual && userLoginAtual !== "undefined") {
     try {
       usuarioLocal = JSON.parse(userLoginAtual);
@@ -91,11 +93,11 @@ const atualizarUserLogin = async () => {
       console.error("erro:", error);
     }
   }
-};
+}, []);
 
   useEffect(() => {
     atualizarUserLogin();
-  }, []);
+  }, [atualizarUserLogin]);
 
   const handleWorkoutTypeSelect = async (tipo) => {
     if (!usuarioLog) return;
@@ -129,10 +131,19 @@ const atualizarUserLogin = async () => {
   };
 
   const ultimoTreinoFunc = async () => {
-    const usuarioSalvo = localStorage.getItem('usuarioLogado');
-    if (!usuarioSalvo) return;
+  const userLoginAtual = localStorage.getItem('usuarioLogado');
+    usuarioLocal = null;
+    if (userLoginAtual && userLoginAtual !== "undefined") {
+      try {
+        usuarioLocal = JSON.parse(userLoginAtual);
+      } catch (e) {
+        setUsuarioLocal(null);
+        localStorage.removeItem('usuarioLogado');
+        console.error("erro:", e);
+      }
+    }
   
-    const usuarioLocal = JSON.parse(usuarioSalvo);
+    usuarioLocal = JSON.parse(userLoginAtual);
     try {
       const res = await api.get('/usuarios', { params: { id: usuarioLocal.id } });
       const usuarioAtualizado = res.data[0];
