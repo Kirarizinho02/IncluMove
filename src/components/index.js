@@ -7,6 +7,7 @@ export * from './Footer';
 export * from './GraphsComponent';
 export * from './Header';
 export * from './LastWorkout';
+export * from './Loading';
 export * from './LoginForm';
 export * from './NavUsersHome';
 export * from './NewWorkout';

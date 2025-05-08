@@ -1,6 +1,7 @@
 import { Col, Row } from "react-bootstrap";
-import { ButtonBack, ButtonLogOut, GraphsComponent, NavUsersHome, ProfessionalsComponent, ProfilePicture, LastWorkout, ButtonNewWorkout, NewWorkout } from "../../components";
+import { ButtonBack, ButtonLogOut, GraphsComponent, NavUsersHome, ProfessionalsComponent, ProfilePicture, LastWorkout, ButtonNewWorkout, NewWorkout, Loading } from "../../components";
 import { UseAppContext } from "../../hooks";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const {
@@ -9,8 +10,16 @@ const Home = () => {
     exerciciosSelecionados,
     showNewWorkout,
   } = UseAppContext();
-  
 
+    const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    if (usuarioLog !== null) {
+      setLoading(false);
+    }
+  }, [usuarioLog]);
+
+  if (loading || !usuarioLog) return <Loading />;
 
   return(
     <Row >
