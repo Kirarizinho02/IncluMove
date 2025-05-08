@@ -50,4 +50,6 @@ Todas as tecnologias e bibliotecas do curso do TIC em trilhas de react foram uti
 
 ## Integrantes
 
+- Henrique Professor
+- Rodrigo Rio
 - Samuel Augusto
