@@ -25,7 +25,6 @@ export const AppContextProvider = ( props ) => {
   const [usuarios, setUsuarios] = useState([]);
   const [usuarioLog, setUsuarioLog] = useState(null);
   const [ultimoTreino, setUltimoTreino] = useState(null);
-  let [usuarioLocal, setUsuarioLocal] = useState(null);
 
   const loginUsuario = async ({ email, senha }) => {
     try {
@@ -130,33 +129,32 @@ const atualizarUserLogin = useCallback(async () => {
     }
   };
 
-  const ultimoTreinoFunc = async () => {
+const ultimoTreinoFunc = async () => {
   const usuarioLog = localStorage.getItem('usuarioLogado');
-    usuarioLocal = null;
-    if (usuarioLog && usuarioLog !== "undefined") {
-      try {
-        usuarioLocal = JSON.parse(usuarioLog);
-      } catch (e) {
-        setUsuarioLocal(null);
-        localStorage.removeItem('usuarioLogado');
-        console.error("erro:", e);
-      }
+  let usuarioLocal = null;
+  if (usuarioLog && usuarioLog !== "undefined") {
+    try {
+      usuarioLocal = JSON.parse(usuarioLog);
+    } catch (e) {
+      usuarioLocal = null;
+      localStorage.removeItem('usuarioLogado');
+      console.error("erro:", e);
     }
-  
-    usuarioLocal = JSON.parse(usuarioLog);
+  }
+  if (usuarioLocal && usuarioLocal.id) {
     try {
       const res = await api.get('/usuarios', { params: { id: usuarioLocal.id } });
       const usuarioAtualizado = res.data[0];
-  
-      if (usuarioAtualizado?.treinos?.length > 0) {
 
+      if (usuarioAtualizado?.treinos?.length > 0) {
         const treinosOrdenados = [...usuarioAtualizado.treinos].sort((a, b) => new Date(b.data) - new Date(a.data));
         setUltimoTreino(treinosOrdenados[0]);
       }
     } catch (error) {
       console.error("Erro ao buscar último treino:", error);
     }
-  };
+  }
+};
 
   const listaTreinosRapidos = async (movimentos_pernas) => {
     try {

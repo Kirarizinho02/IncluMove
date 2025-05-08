@@ -1,16 +1,8 @@
 import { Button, Carousel, Col, Container, Row } from 'react-bootstrap';
 
 import { ana_lemos, compromissos1, compromissos2, compromissos3, line_1, line_2, line_3, marco_aurelio, mulher_cadeira, ricardo_junior, stars } from '../../assets';
-import { useState } from 'react';
 
 const LandingPage = () => {
-
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
-  };
-
 
   return (
     <>
@@ -86,8 +78,8 @@ const LandingPage = () => {
           <p className='text-center'>
             Descubra mais sobre as pautas que movem nosso projeto:
           </p>
-          <Carousel activeIndex={index} onSelect={handleSelect} data-bs-theme="dark" style={{ maxHeight: '80rem' }} className='mt-n5 mb-5'>
-            <Carousel.Item className='w-100 h-100' activeIndex>
+          <Carousel data-bs-theme="dark" style={{ maxHeight: '80rem' }} className='mt-n5 mb-5'>
+            <Carousel.Item className='w-100 h-100'>
               <Carousel.Caption className='mt-5'>
                 <h1 className='title fw-bold'> 1. </h1>
                 <p className='mt-n2'> Diversidade, Equidade e Inclusão </p>
