@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 import { api } from "../services";
 import { Await, data, Navigate } from "react-router-dom";
@@ -33,8 +33,7 @@ export const AppContextProvider = ( props ) => {
         throw new Error("Email ou senha inválidos.");
       }
     } catch (error) {
-      console.error("Erro ao fazer login:", error);
-      throw error;
+      console.error("erro:", error);
     }
   };
 
@@ -43,9 +42,29 @@ export const AppContextProvider = ( props ) => {
       const response = await api.post('/usuarios', usuario);
       setUsuarios([...usuarios, response.data]);
     } catch (error) {
-      console.error("Erro ao adicionar usuário:", error);
+      console.error("erro:", error);
     }
   };
+
+
+  const atualizarUserLogin = async () => {
+    const userLoginAtual = localStorage.getItem('usuarioLogado');
+    if (userLoginAtual) {
+      const usuarioLocal = JSON.parse(userLoginAtual);
+      try {
+        const response = await api.get(`/usuarios`, { params: { id: usuarioLocal.id } });
+        const userLoginNovo = response.data[0]; 
+        setUsuarioLog(userLoginNovo);
+        localStorage.setItem('usuarioLogado', JSON.stringify(userLoginNovo));
+      } catch (error) {
+        console.error("erro:", error);
+      }
+    }
+  };
+
+  useEffect(() => {
+    atualizarUserLogin();
+  }, []);
 
   const listaTreinosRapidos = async (movimentos_pernas) => {
     try {
@@ -134,6 +153,7 @@ export const AppContextProvider = ( props ) => {
       setUsuarioLog,
       loginUsuario,
       rotaPrivada,
+      atualizarUserLogin,
       listaTreinosRapidos,
       listaTreinosMedios,
       listaTreinosPesados

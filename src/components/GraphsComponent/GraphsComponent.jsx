@@ -1,38 +1,77 @@
 import { Col, Container, Row } from "react-bootstrap"
+import { GraficoPizza } from "./GraficoPizza/GraficoPizza";
 
 const GraphsComponent = (props) => {
-  const { imagem } = props;
+  const { usuario } = props;
+  const treinoDuracaoLabel = ["Rápido", "Moderado", "Pesado"];
+  const treinoCores = ["#f58a83", "#abf479", "#ab7af5"]; 
+  const treinoDuracoes = { Rapido: 0, Moderado: 0, Pesado: 0 };
+
+  usuario?.treinos?.forEach((treino) => {
+    treinoDuracoes[treino.duracao]++;
+  });
+
+  const treinoData = {
+    labels: treinoDuracaoLabel,
+    datasets: [
+      {
+        label: "Distribuição dos treinos",
+        data: [
+          treinoDuracoes.Rapido,
+          treinoDuracoes.Moderado,
+          treinoDuracoes.Pesado,
+        ],
+        backgroundColor: treinoCores,
+        hoverOffset: 6,
+      },
+    ],
+  };
+
+  console.log(usuario.treinos);
+
   return(
     <Container className="shadow p-4 mt-3 rounded-4 bg-white">
-          <Row>
-            <h4 className="fw-bold title ms-3"> Treinos nos últimos 30 dias: </h4>
-            <Col>
-            <img src={imagem} />
-            </Col>
-            <Col>
-              <Row className="h-100 align-items-center">
-                <Col md={12} className="mb-n3">
-                  <div className="bg-secondary rounded-4 d-inline-block" style={{width:"1.5rem"}}>  ­ </div> 
-                  <span className="ms-3 fs-5 fw-semibold text-center"> Treino Rápido </span>
-                  <br />
-                  <span className="ms-5 d-flex text-center"> 65% - 10 de 15 treinos</span>
-                </Col>
-                <Col md={12} className="mb-n3">
-                  <div className="bg-accent rounded-4 d-inline-block" style={{width:"1.5rem"}}>  ­ </div> 
-                  <span className="ms-3 fs-5 fw-semibold text-center"> Treino Médio </span>
-                  <br />
-                  <span className="ms-5 d-flex text-center"> 30% - 4 de 15 treinos</span>
-                </Col>
-                <Col md={12}>
-                  <div className="bg-tertiary rounded-4 d-inline-block" style={{width:"1.5rem"}}>  ­ </div> 
-                  <span className="ms-3 fs-5 fw-semibold "> Treino Pesado </span>
-                  <br />
-                  <span className="ms-5 d-flex text-center"> 5% - 1 de 15 treinos</span>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Container>
+      <Row>
+        <h4 className="fw-bold title ms-3"> Treinos nos últimos 30 dias: </h4>
+
+        <Col md={6} className="d-flex flex-column align-items-center h-100">
+          <GraficoPizza data={treinoData} />
+        </Col>
+
+        <Col md={6} className="d-flex justify-content-around flex-column align-items-center mt-4">
+          {treinoDuracoes.Rapido > 0 && (
+            <div className="d-flex align-items-center">
+              <div className="bg-secondary rounded-4 me-3 ms-n3" style={{ width: "1.5rem", height: "1.5rem" }}></div>
+              <div>
+                <div className="fs-5 fw-semibold">Treino Rápido</div>
+                <div>{((treinoDuracoes.Rapido / usuario.treinos.length)*100).toFixed(0)}% - {treinoDuracoes.Rapido} de {usuario.treinos.length} treinos</div>
+              </div>
+            </div>
+          )}
+
+          {treinoDuracoes.Moderado > 0 && (
+            <div className="d-flex align-items-center">
+              <div className="bg-accent rounded-4 me-3" style={{ width: "1.5rem", height: "1.5rem" }}></div>
+              <div>
+                <div className="fs-5 fw-semibold">Treino Moderado</div>
+                <div>{((treinoDuracoes.Moderado / usuario.treinos.length)*100).toFixed(0)}% - {treinoDuracoes.Moderado} de {usuario.treinos.length} treinos</div>
+              </div>
+            </div>
+          )}
+
+          {treinoDuracoes.Pesado > 0 && (
+            <div className="d-flex align-items-center">
+              <div className="bg-tertiary rounded-4 me-3 ms-n3" style={{ width: "1.5rem", height: "1.5rem" }}></div>
+              <div>
+                <div className="fs-5 fw-semibold">Treino Pesado</div>
+                <div>{((treinoDuracoes.Pesado / usuario.treinos.length)*100).toFixed(0)}% - {treinoDuracoes.Pesado} de {usuario.treinos.length} treinos</div>
+              </div>
+            </div>
+          )}
+        </Col>
+      </Row>
+    </Container>
   )
 }
+
 export { GraphsComponent };

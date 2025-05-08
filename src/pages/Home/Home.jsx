@@ -1,18 +1,9 @@
 import { Button, Col, Container, Dropdown, Nav, Row } from "react-bootstrap";
 import { ButtonBack, ButtonLogOut, GraphsComponent, NavUsersHome, ProfessionalsComponent, ProfilePicture } from "../../components";
-import { useEffect } from "react";
 import { UseAppContext } from "../../hooks";
-import { grafico_falso } from "../../assets";
 
 const Home = () => {
-  const { usuarioLog, setUsuarioLog } = UseAppContext();  
-
-  useEffect(() => {
-    const usuarioSalvo = localStorage.getItem('usuarioLogado');
-    if (usuarioSalvo) {
-      setUsuarioLog(JSON.parse(usuarioSalvo));
-    }
-  }, [setUsuarioLog]);
+  const { usuarioLog } = UseAppContext();  
 
   return(
     <Row className="h-100">
@@ -37,7 +28,7 @@ const Home = () => {
             <h2 className="title text-center mt-2">Carregando usuário...</h2>
           )}
           <NavUsersHome />
-        <GraphsComponent imagem={grafico_falso} />
+        {usuarioLog && <GraphsComponent usuario={usuarioLog} />}
         <ProfessionalsComponent />
       </Col>
       <Col xl={6} md={12} className="bg-white">
