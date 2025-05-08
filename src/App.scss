@@ -44,16 +44,16 @@ body {
 }
 
 @media (max-width: 992px) {
-  .text-medium {font-size: 3.3rem;}
+  .text-medium {font-size: 2.4rem;}
+  .text-big {font-size: 3.2rem;}
 }
 
 @media (min-width: 992px) {
-  .text-big {font-size: 5rem;}
+  .text-big {font-size: 5.6rem;}
 }
 
 @media (max-width: 992px) {
   .mt-exc-3 { margin-top: 1.5rem !important; }
-  .text-big {font-size: 4rem;}
 }
 
 @media (max-width: 1200px) {
@@ -64,6 +64,11 @@ body {
   .w-md-100 {width: 100% !important;}
   .align-center-important { align-items:center!important; }
 }
+
+.carousel-caption {
+  position:static
+}
+
 .grad-primary-to-body-bg {
   background: #ffffff;
   background: linear-gradient(0deg,rgba(255, 255, 255, 1) 0%, rgba(245, 241, 122, 1) 100%);

@@ -1,4 +1,5 @@
 export * from './ButtonBack';
+export * from './ButtonEdit';
 export * from './ButtonLogOut';
 export * from './ButtonNewWorkout';
 export * from './Content';

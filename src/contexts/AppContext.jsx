@@ -18,6 +18,8 @@ const rotaPrivada = ({ children }) => {
 export const AppContextProvider = ( props ) => {
   const { children } = props;
 
+  const [fotoPerfil, setFotoPerfil] = useState(null);
+  const [usuarioParcial, setUsuarioParcial] = useState(null);
   const [showNewWorkout, setShowNewWorkout] = useState(false);
   const [exerciciosSelecionados, setExerciciosSelecionados] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
@@ -37,6 +39,22 @@ export const AppContextProvider = ( props ) => {
       }
     } catch (error) {
       console.error("erro:", error);
+    }
+  };
+
+  const mudarFoto = async (foto) => {
+    try {
+      setFotoPerfil(foto);
+  
+      const res = await api.patch(`/usuarios/${usuarioLog.id}`, {
+        foto: foto, 
+      });
+
+      setUsuarioLog(res.data); 
+      localStorage.setItem('usuarioLogado', JSON.stringify(res.data)); 
+  
+    } catch (error) {
+      console.error("Erro ao atualizar a foto:", error);
     }
   };
 
@@ -200,22 +218,31 @@ export const AppContextProvider = ( props ) => {
 
   return (
     <appContext.Provider value={{ 
+      ultimoTreinoFunc,
+      ultimoTreino,
+      
+      rotaPrivada,
+      
+      showNewWorkout,
+      handleWorkoutTypeSelect,
+      exerciciosSelecionados,
+      
       usuarios,
       setUsuarios,
       adicionarUsuario,
       usuarioLog,
-      ultimoTreinoFunc,
-      ultimoTreino,
       setUsuarioLog,
       loginUsuario,
-      rotaPrivada,
       atualizarUserLogin,
+      usuarioParcial,
+      setUsuarioParcial,
+
       listaTreinosRapidos,
       listaTreinosMedios,
-      showNewWorkout,
-      exerciciosSelecionados,
-      handleWorkoutTypeSelect,
-      listaTreinosPesados
+      listaTreinosPesados,
+
+      mudarFoto, 
+      fotoPerfil,
     }}>
       {children}
     </appContext.Provider>
