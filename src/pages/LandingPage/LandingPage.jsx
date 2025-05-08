@@ -22,7 +22,7 @@ const LandingPage = () => {
               <p className='text-center text-md-start'>Já possui um cadastro? <a className='text-decoration-none link-tertiary' href='/form/login'>Entre na sua conta.</a></p>
             </Col>
             <Col md={12} lg={6}>
-              <img className='mw-100' src={mulher_cadeira} />
+              <img className='mw-100' src={mulher_cadeira} alt='Mulher feliz em cadeira de rodas'/>
             </Col>
           </Row>
           <img className='d-none d-lg-block position-absolute ms-n5 mt-xxl-n5' src={stars} />
@@ -42,7 +42,7 @@ const LandingPage = () => {
           <Row className='mt-5 overflow-auto'>
             <Col md={12} lg={4} className='d-flex justify-content-center'>
               <div className='test text-center me-lg-auto'>
-                <img src={marco_aurelio} />
+                <img src={marco_aurelio}  alt='Doutor Marco Aurélio'/>
                 <h2 className='title fw-bold'>Marco Aurélio</h2>
                 <p className='w-75 mx-auto'>
                   Formado em Fisioterapia e Educação Física, cuida de idosos e pessoas com mobilidade reduzida há mais de 10 anos.
@@ -51,7 +51,7 @@ const LandingPage = () => {
             </Col>
             <Col md={12} lg={4} className='d-flex justify-content-center'>
               <div className='test text-center me-lg-auto'>
-                <img src={ana_lemos} />
+                <img src={ana_lemos} alt='Doutora Ana Lemos'/>
                 <h2 className='title fw-bold'>Ana Lemos</h2>
                 <p className='w-75 mx-auto'>
                   Formada em Fisioterapia pela USP em 2017, atua na área cuidando de pacientes em quadros de tetraplegia desde 2019.
@@ -60,7 +60,7 @@ const LandingPage = () => {
             </Col>
             <Col md={12} lg={4} className='d-flex justify-content-center'>
               <div className='test text-center me-lg-auto'>
-                <img src={ricardo_junior} />
+                <img src={ricardo_junior} alt='Doutor Ricardo Júnior'/>
                 <h2 className='title fw-bold'>Ricardo Júnior</h2>
                 <p className='w-75 mx-auto'>
                   Formado em Fisioterapia e Educação Física, cuida de idosos e pessoas com mobilidade reduzida há mais de 10 anos.
@@ -85,7 +85,7 @@ const LandingPage = () => {
                 <p className='mt-n2'> Diversidade, Equidade e Inclusão </p>
               </Carousel.Caption>
               <div className='d-flex flex-column align-items-center mt-n4'>
-                <img src={compromissos1} className='d-flex w-50'></img>
+                <img src={compromissos1} className='d-flex w-50' alt='Grupo de pessoas diversas felizes'></img>
               </div>
               <Carousel.Caption >
                 <div className='w-100 d-flex flex-column align-items-center mb-2 '>
@@ -102,7 +102,7 @@ const LandingPage = () => {
                 <p className='mt-n2'> Educação e Conscientização Social </p>
               </Carousel.Caption>
               <div className='d-flex flex-column align-items-center mt-n4'>
-                <img src={compromissos2} className='d-flex w-75'></img>
+                <img src={compromissos2} className='d-flex w-75' alt='Roda de pessoas diversas felizes'></img>
               </div>
               <Carousel.Caption>
                 <div className='w-100 d-flex flex-column align-items-center mb-2 '>
@@ -119,7 +119,7 @@ const LandingPage = () => {
                 <p className='mt-n2'> Bem-estar </p>
               </Carousel.Caption>
               <div className='d-flex flex-column align-items-center mt-n4'>
-                <img src={compromissos3} className='d-flex w-50'></img>
+                <img src={compromissos3} className='d-flex w-50' alt='Mulher em uma caminhada com pensamentos positivos'></img>
               </div>
               <Carousel.Caption>
                 <div className='w-100 d-flex flex-column align-items-center mb-2 '>

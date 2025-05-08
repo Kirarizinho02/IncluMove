@@ -7,13 +7,13 @@ const ProfessionalsComponent = () => {
       <Row>
         <h4 className="fw-bold title ms-3 mb-4"> Profissionais recomendados: </h4>
         <Col lg={6} sm={12} className="d-flex flex-column justify-content-center align-items-center">
-          <img src={marco_aurelio} alt="" className="mw-100 w-75"/>
+          <img src={marco_aurelio} alt="Doutor Marco Aurélio" className="mw-100 w-75"/>
             <p className="fs-4 text-center">
             Marco Aurélio
             </p>
         </Col>
         <Col lg={6} sm={12}  className="d-flex flex-column justify-content-center align-items-center">
-          <img src={ana_lemos} className="mw-100 w-75" />
+          <img src={ana_lemos} alt="Doutora Ana Lemos" className="mw-100 w-75" />
             <p className="fs-4 text-center">
             Ana Lemos
             </p>

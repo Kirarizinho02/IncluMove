@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Card, Col, Row } from "react-bootstrap"
+import { Button, Card, Col, Row } from "react-bootstrap";
 import { api } from "../../services";
 
 const NewWorkout = ({ exercicios,  usuarioLog }) => {
@@ -23,22 +23,22 @@ const NewWorkout = ({ exercicios,  usuarioLog }) => {
   const handleCompletarTreino = async () => {
     const treino = 
     {
-          id: proximoId,
-          nome: `Treino - ${new Date().toLocaleDateString()}`,
-          descricao: "Treino personalizado",
-          data: new Date().toISOString().split("T")[0],
-          duracao: exercicios.length === 3 ? "Rapido" : exercicios.length === 4 ? "Moderado" : "Pesado",
-          exercicios: exercicios.map((ex, i) => ({
-            id: i + 1, 
-            nome: ex.nome,
-            movimento_pernas: usuarioLog.movimento_pernas,
-            equipamento_apoio: ex.equipamento_apoio,
-            equipamento_treino: ex.equipamento_treino,
-            descricao: ex.descricao,
-            series: ex.series,
-            foto: ex.foto,
-            repeticoes: ex.repeticoes
-          }))
+      id: proximoId,
+      nome: `Treino - ${new Date().toLocaleDateString()}`,
+      descricao: "Treino personalizado",
+      data: new Date().toISOString().split("T")[0],
+      duracao: exercicios.length === 3 ? "Rapido" : exercicios.length === 4 ? "Moderado" : "Pesado",
+      exercicios: exercicios.map((ex, i) => ({
+        id: i + 1, 
+        nome: ex.nome,
+        movimento_pernas: usuarioLog.movimento_pernas,
+        equipamento_apoio: ex.equipamento_apoio,
+        equipamento_treino: ex.equipamento_treino,
+        descricao: ex.descricao,
+        series: ex.series,
+        foto: ex.foto,
+        repeticoes: ex.repeticoes
+      }))
     };
 
     const usuarioAtualizado = {
@@ -66,7 +66,7 @@ const NewWorkout = ({ exercicios,  usuarioLog }) => {
         <Col key={index} md={6} lg={6} className="mb-4">
           <Card className="h-100 w-100 shadow-sm" style={{width:"25rem"}}>
             {exercicio.foto && (
-              <Card.Img variant="top" src={exercicio.foto} alt={exercicio.nome} className="object-fit-cover p-2"/>
+              <Card.Img variant="top" src={exercicio.foto} alt={"Exercício: "+exercicio.nome} className="object-fit-cover p-2"/>
             )}
             <Card.Body>
               <Card.Title>{exercicio.nome}</Card.Title>

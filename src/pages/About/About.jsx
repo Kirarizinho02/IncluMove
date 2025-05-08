@@ -17,7 +17,7 @@ const About = () => {
               <img className='d-none d-lg-block position-absolute ms-n5' height={290} src={stars} />
             </Col>
             <Col md={12} lg={6}>
-              <img className='mw-100' src={passaro_illustration} />
+              <img className='mw-100' src={passaro_illustration} alt='Ilustração de pássaro' />
             </Col>
           </Row>
           {/* <img className='d-none d-lg-block position-absolute ms-n5 mt-xxl-n5' src={stars}  style={{width: '20%', top: '30rem', left: '-2rem', }}/> */}
@@ -28,7 +28,7 @@ const About = () => {
         <Container>
           <Row className='mt-5'>
             <Col md={12} lg={6} className='d-flex justify-content-center align-items-center'>
-              <img className='mw-100 shadow' src={inclumove_team} style={{borderRadius: "10px"}} />
+              <img className='mw-100 shadow' src={inclumove_team} style={{borderRadius: "10px"}} alt='Time de desenvolvedores do IncluMove'/>
             </Col>
             <Col md={12} lg={6} className='d-flex flex-column px-3 md-px-5'>
               <h1 className='fw-bold title mt-exc-3 text-center text-md-start'> Sobre nós! </h1>

@@ -28,7 +28,7 @@ const Error = () => {
                 </p>
             </Col>
             <Col lg={12} className="d-flex flex-column justify-content-center align-items-center">
-              <img className='w-50' src={woman_confused} />
+              <img className='w-50' src={woman_confused} alt="Mulher confusa" />
             </Col>
           </Row>
         </Container>

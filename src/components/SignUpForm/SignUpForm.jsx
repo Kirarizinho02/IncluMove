@@ -146,7 +146,7 @@ const SignUpForm = () => {
       </Col>
 
       <Col className='d-none d-md-flex justify-content-center align-items-center vh-100'>
-        <img src={amigos_disabled} className='w-100' alt="Ilustração de inclusão" />
+        <img src={amigos_disabled} className='w-100' alt="Ilustração de deficientes variados felizes" />
       </Col>
     </Row>
   );

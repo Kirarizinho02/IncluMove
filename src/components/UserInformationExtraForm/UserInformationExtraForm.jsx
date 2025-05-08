@@ -115,7 +115,7 @@ const UserInformationExtraForm = () => {
       </Col>
 
       <Col className='d-none d-md-flex justify-content-center align-items-center vh-100'>
-        <img src={amigos} className='w-100' alt="Ilustração de inclusão" />
+        <img src={amigos} className='w-100' alt="Ilustração de amigos variados" />
       </Col>
     </Row>
   );

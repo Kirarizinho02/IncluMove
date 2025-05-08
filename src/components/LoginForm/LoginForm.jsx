@@ -83,7 +83,7 @@ const handleSubmit = async (e) => {
       </Col>
 
       <Col className='d-none d-md-flex justify-content-center align-items-center vh-100'>
-        <img src={mulher_perna_bionica} className='w-100' />
+        <img src={mulher_perna_bionica} className='w-100' alt='Ilustração de mulher confiante com perna biônica'/>
       </Col>
     </Row>
   )
