@@ -60,6 +60,10 @@ body {
   .w-lg-80 { width: 80%!important; }
 }
 
+@media (max-width: 768px) {
+  .w-md-100 {width: 100% !important;}
+  .align-center-important { align-items:center!important; }
+}
 .grad-primary-to-body-bg {
   background: #ffffff;
   background: linear-gradient(0deg,rgba(255, 255, 255, 1) 0%, rgba(245, 241, 122, 1) 100%);

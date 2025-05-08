@@ -1,6 +1,6 @@
 import { Col, Container, Row } from 'react-bootstrap'
 
-import { passaro_illustration, rodri_venturus, stars } from '../../assets';
+import { inclumove_team, passaro_illustration, stars } from '../../assets';
 
 const About = () => {
   return (
@@ -28,7 +28,7 @@ const About = () => {
         <Container>
           <Row className='mt-5'>
             <Col md={12} lg={6} className='d-flex justify-content-center align-items-center'>
-              <img className='mw-100 shadow' src={rodri_venturus} style={{borderRadius: "10px"}} />
+              <img className='mw-100 shadow' src={inclumove_team} style={{borderRadius: "10px"}} />
             </Col>
             <Col md={12} lg={6} className='d-flex flex-column px-3 md-px-5'>
               <h1 className='fw-bold title mt-exc-3 text-center text-md-start'> Sobre nós! </h1>

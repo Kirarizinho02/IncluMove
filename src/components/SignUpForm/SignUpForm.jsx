@@ -85,6 +85,6 @@ const SignUpForm = () => {
     </Row>
   )
 }
-
+  
 export { SignUpForm };
 

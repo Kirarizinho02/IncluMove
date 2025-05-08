@@ -7,13 +7,13 @@ const LastWorkout = () => {
 
   useEffect(() => {
     ultimoTreinoFunc();
-  }, [ultimoTreino, ultimoTreinoFunc]);
+  }, [ultimoTreinoFunc]);
 
   return (
     <>
       {ultimoTreino ? (
-        <div className="w-100 my-5 mx-4 p-4 border rounded">
-          <h2 className="title fw-bold"> Seu último treino: </h2>
+        <div className="my-5 mx-4 border rounded p-4" style={{width: "95%"}}>
+          <h2 className="title fw-bold"> Um destaque entre seus treinos recentes: </h2>
           <ul className="d-flex flex-column text-decoration-none">
               <li className="">
               <p className="fs-5"> <span className="fw-semibold"> Duração: </span> {ultimoTreino.duracao}</p>
@@ -46,6 +46,8 @@ const LastWorkout = () => {
                 </Card>
               </Col>
             ))}
+            <div className="w-100 align-items-center d-flex flex-column">
+            </div>
           </Row>
         </div>
       ) : (

@@ -18,6 +18,8 @@ const rotaPrivada = ({ children }) => {
 export const AppContextProvider = ( props ) => {
   const { children } = props;
 
+  const [showNewWorkout, setShowNewWorkout] = useState(false);
+  const [exerciciosSelecionados, setExerciciosSelecionados] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
   const [usuarioLog, setUsuarioLog] = useState(null);
   const [ultimoTreino, setUltimoTreino] = useState(null);
@@ -57,6 +59,7 @@ export const AppContextProvider = ( props ) => {
         const userLoginNovo = response.data[0]; 
         setUsuarioLog(userLoginNovo);
         localStorage.setItem('usuarioLogado', JSON.stringify(userLoginNovo));
+        console.log(userLoginNovo)
       } catch (error) {
         console.error("erro:", error);
       }
@@ -66,6 +69,37 @@ export const AppContextProvider = ( props ) => {
   useEffect(() => {
     atualizarUserLogin();
   }, []);
+
+  const handleWorkoutTypeSelect = async (tipo) => {
+    if (!usuarioLog) return;
+
+    let lista = [];
+    try {
+      switch (tipo) {
+        case "Rapido":
+          lista = await listaTreinosRapidos(usuarioLog.movimento_pernas);
+          break;
+        case "Moderado":
+          lista = await listaTreinosMedios(usuarioLog.movimento_pernas);
+          break;
+        case "Pesado":
+          lista = await listaTreinosPesados(usuarioLog.movimento_pernas);
+          break;
+        default:
+          return;
+      }
+
+      if (lista && lista.length) {
+        const listaAleatoria = lista.sort(() => 0.5 - Math.random());
+  
+        const qtd = tipo === "Rapido" ? 3 : tipo === "Moderado" ? 4 : 5;
+        setExerciciosSelecionados(listaAleatoria.slice(0, qtd));
+        setShowNewWorkout(true);
+      }
+    } catch (error) {
+      console.error("erro:", error);
+    }
+  };
 
   const ultimoTreinoFunc = async () => {
     const usuarioSalvo = localStorage.getItem('usuarioLogado');
@@ -178,6 +212,9 @@ export const AppContextProvider = ( props ) => {
       atualizarUserLogin,
       listaTreinosRapidos,
       listaTreinosMedios,
+      showNewWorkout,
+      exerciciosSelecionados,
+      handleWorkoutTypeSelect,
       listaTreinosPesados
     }}>
       {children}

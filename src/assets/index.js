@@ -13,6 +13,7 @@ import passaro_illustration from './passaro-inclumove.png';
 import rodri_venturus from './rodriventurus.jpeg';
 import grafico_falso from './grafico_falso.png';
 import open_door from './open_door.png';
+import inclumove_team from './inclumove-team.jpeg';
 import woman_confused from './woman_curious.png';
 
 export {
@@ -32,4 +33,5 @@ export {
   passaro_illustration,
   rodri_venturus,
   woman_confused,
+  inclumove_team,
 };
