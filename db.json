@@ -92,6 +92,28 @@
         "series": 3,
         "foto": "https://treinomestre.com.br/wp-content/uploads/2015/03/remada-curvada-capa.jpg",
         "repeticoes": 10
+      },
+      {
+        "id": 4,
+        "nome": "Supino Inclinado com halteres",
+        "movimento_pernas": "Reduzido",
+        "equipamento_apoio": "Banco com inclinação",
+        "equipamento_treino": "Halter",
+        "descricao": "Exercício para fortalecer o peito",
+        "series": 4,
+        "foto": "https://grandeatleta.com.br/blog/wp-content/uploads/2022/07/supino-inclinado-com-halteres-.jpg",
+        "repeticoes": 10
+      },
+      {
+        "id": 5,
+        "nome": "Supino Reto com barra",
+        "movimento_pernas": "Reduzido",
+        "equipamento_apoio": "Banco na horizontal",
+        "equipamento_treino": "Barra",
+        "descricao": "Exercício para fortalecer o peito",
+        "series": 4,
+        "foto": "https://treinomestre.com.br/wp-content/uploads/2017/08/supino-fechado-cp.jpg",
+        "repeticoes": 10
       }
     ]
 }
