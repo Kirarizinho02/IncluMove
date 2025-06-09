@@ -156,7 +156,7 @@ const LandingPage = () => {
                 width={640}
                 src='https://youtube.com/embed/Muj0ygfKkpo'
                 allow='autoplay; encrypted-media'
-                allowfullscreen
+                allowFullScreen
                 title='video'
               />
             </Col>
