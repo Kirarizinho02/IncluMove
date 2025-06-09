@@ -33,14 +33,10 @@ Todas as tecnologias e bibliotecas do curso do TIC em trilhas de react foram uti
 2. Instale as dependências:
     ```bash
     npm install
-3. Inicie o front-end:
+3. Inicie o programa:
     ```bash
-    npm run dev
-4. Inicie o servidor local (em outro terminal):
-    ```bash
-    npx json-server db.json
-> !!! Altere o arquivo src/services/api.js para utilizar a porta do json server, senão não é possível acessar o back-end durante a utilização do site, se isso não funcionar, recomendo só acessar o deploy do Vercel normalmente.
-5. Abrir o aplicativo em: [localhost](http://localhost:5173/)
+    npm run dev-full
+4. Abra o aplicativo em: [localhost](http://localhost:3000/)
 
 ### Estilização
 - kebab-case para arquivos de assets.
