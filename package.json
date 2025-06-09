@@ -4,17 +4,19 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3000",
+    "server": "json-server -w db.json -p 3001",
+    "dev-full": "concurrently \"npm run server\" \"npm run dev\"",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "node server/server.js",
-    "server": "json-server -w db.json -p 3001"
+    "start": "node server/server.js"
   },
   "dependencies": {
     "axios": "^1.9.0",
     "bootstrap": "^5.3.5",
     "chart.js": "^4.4.9",
+    "concurrently": "^9.1.2",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "inclumove": "file:",
