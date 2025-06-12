@@ -1,7 +1,8 @@
-import { Outlet } from "react-router-dom";
-import { Content } from "../../components";
-import { Container } from "react-bootstrap";
 import { useEffect } from "react";
+import { Outlet } from "react-router-dom";
+import { Container } from "react-bootstrap";
+
+import { Content, HeaderHome } from "../../components";
 
 const HomeLayout = () => {  
       useEffect(() => {
@@ -13,6 +14,7 @@ const HomeLayout = () => {
       );
   return (
     <>
+      <HeaderHome />
       <Content> 
         <Container fluid className="overflow-x-hidden">
           <Outlet />
