@@ -1,7 +1,14 @@
+import { UseAppContext } from '../../hooks/';
+
 const ProfilePicture = (props) => {
-  const { foto } = props;
+  const { size } = props;
+  
+  const { usuarioLog } = UseAppContext();
+
   return (
-    <img src={foto} alt="Foto de perfil" className="rounded-circle shadow object-fit-cover"  style={{width:"200px", height:"200px"}}/>
+    usuarioLog ?
+      <img src={usuarioLog.foto} alt="Foto de perfil" className="rounded-circle shadow object-fit-cover" width={size} height={size}/> :
+      "loading..."  
   )
 }
 export { ProfilePicture };

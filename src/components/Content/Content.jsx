@@ -8,4 +8,3 @@ const Content = (props) => {
 }
 
 export { Content };
-

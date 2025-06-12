@@ -1,7 +1,7 @@
-import { Col, Row } from "react-bootstrap";
-import { ButtonBack, ButtonLogOut, GraphsComponent, NavUsersHome, ProfessionalsComponent, ProfilePicture, LastWorkout, ButtonNewWorkout, NewWorkout, Loading } from "../../components";
-import { UseAppContext } from "../../hooks";
 import { useEffect, useState } from "react";
+import { Col, Row } from "react-bootstrap";
+import { ButtonBack, ButtonLogOut, ButtonNewWorkout, GraphsComponent, LastWorkout, Loading, NavUsersHome, NewWorkout, ProfessionalsComponent, ProfilePicture } from "../../components";
+import { UseAppContext } from "../../hooks";
 
 const Home = () => {
   const {
@@ -35,7 +35,7 @@ if (!usuarioLog) return <h2 className="title text-center mt-2">Usuário não enc
         </div>
         {usuarioLog ? (
             <>
-            <ProfilePicture foto={usuarioLog.foto} />
+            <ProfilePicture size={200} />
               <h2 className="title text-center mt-2">
                 Olá, <span className="fw-bold">{usuarioLog.nome}</span>
               </h2>
@@ -59,4 +59,4 @@ if (!usuarioLog) return <h2 className="title text-center mt-2">Usuário não enc
   )
 }
 
-export { Home };  
+export { Home };
