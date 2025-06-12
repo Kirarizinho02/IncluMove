@@ -1,4 +1,4 @@
-import { Button, Col, Row } from 'react-bootstrap';
+import { Button, Col, Row, Toast } from 'react-bootstrap';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 
@@ -9,8 +9,9 @@ import { ButtonBack } from '../ButtonBack';
 import { useState } from 'react';
 
 const LoginForm = () => {   
+
   const { loginUsuario, setUsuarioLog } = UseAppContext();
-  const [erro, setErro] = useState('');
+  const [erro, setErro] = useState(true);
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
@@ -21,7 +22,8 @@ const handleSubmit = async (e) => {
     if (user) {
       localStorage.setItem('usuarioLogado', JSON.stringify(user));
       setUsuarioLog(user);
-      window.location.href = '/home'; 
+      window.location.href = '/home';
+
     } else {
       setErro("Usuário ou senha inválidos.");
     }
@@ -69,6 +71,18 @@ const handleSubmit = async (e) => {
                 <Button variant="tertiary" type="submit" className='w-50 mt-4 title fw-medium shadow'>
                     Entrar
                 </Button>
+                <Toast onClose={toggleShowA} show={showA} animation={false}>
+                <Toast.Header>
+                  <img
+                    src="holder.js/20x20?text=%20"
+                    className="rounded me-2"
+                    alt=""
+                  />
+                  <strong className="me-auto">Bootstrap</strong>
+                  <small>11 mins ago</small>
+                </Toast.Header>
+                <Toast.Body>Woohoo, you're reading this text in a Toast!</Toast.Body>
+              </Toast>
               </div>
             </div>
             </form>
@@ -86,6 +100,7 @@ const handleSubmit = async (e) => {
         <img src={mulher_perna_bionica} className='w-100' alt='Ilustração de mulher confiante com perna biônica'/>
       </Col>
     </Row>
+    
   )
 }
 

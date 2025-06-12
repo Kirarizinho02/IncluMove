@@ -3,6 +3,7 @@ import { createContext, useEffect, useState, useCallback } from "react";
 import { api } from "../services";
 import { Navigate } from "react-router-dom";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const appContext = createContext({});
 
 const rotaPrivada = ({ children }) => {
@@ -27,6 +28,10 @@ export const AppContextProvider = ( props ) => {
   const [ultimoTreino, setUltimoTreino] = useState(null);
 
   const loginUsuario = async ({ email, senha }) => {
+    if (!email || !senha) {
+      throw new Error("Preencha todos os campos.");
+    }
+
     try {
       const response = await api.get(`/usuarios`, {
         params: { email, senha }
