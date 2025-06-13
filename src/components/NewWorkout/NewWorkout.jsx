@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { api } from "../../services";
+import { UseAppContext } from "../../hooks"; 
 
 const NewWorkout = ({ exercicios,  usuarioLog }) => {
+  const { setSelectedMenu, setShowNewWorkout, atualizarUserLogin } = UseAppContext();
   const [timer, setTimer] = useState(0);
 
   useEffect(() => {
@@ -49,16 +51,19 @@ const NewWorkout = ({ exercicios,  usuarioLog }) => {
     try {
       await api.put(`/usuarios/${usuarioLog.id}`, usuarioAtualizado);
       alert("Treino salvo com sucesso!");
-      window.location.href = '/home'; 
-    } catch (error) {
-      console.error("Erro ao registrar treino", error);
-      alert("Erro ao salvar o treino.");
+      setShowNewWorkout(false); 
+      setSelectedMenu("user");
+      await atualizarUserLogin();
+    } catch {
+      setShowNewWorkout(false); 
+      window.location.reload(); 
+      alert("Erro ao salvar treino.");
     }
   };
 
 
   return (
-    <div className="my-5 mx-4 border rounded p-4" style={{width: "95%"}}>
+    <div className="my-5 mx-4 border rounded p-4 bg-white" style={{width: "95%"}}>
     <h6 className="text-muted">Tempo: {formatTime(timer)}</h6>
     <h5 className="mb-3">Exercícios a serem realizados:</h5>
     <Row className="me-4">

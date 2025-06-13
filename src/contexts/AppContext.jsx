@@ -26,7 +26,11 @@ export const AppContextProvider = ( props ) => {
   const [usuarios, setUsuarios] = useState([]);
   const [usuarioLog, setUsuarioLog] = useState(null);
   const [ultimoTreino, setUltimoTreino] = useState(null);
-
+  const [showAside, setShowAside] = useState(false);
+  const [selectedMenu, setSelectedMenu] = useState(() => {
+    return localStorage.getItem("selectedMenu") || "treinos";
+  });
+  
   const loginUsuario = async ({ email, senha }) => {
     if (!email || !senha) {
       throw new Error("Preencha todos os campos.");
@@ -74,6 +78,13 @@ export const AppContextProvider = ( props ) => {
     }
   };
 
+  const logOut = () => {
+    localStorage.removeItem('usuarioLogado');
+    localStorage.removeItem('selectedMenu');
+    setUsuarioLog(null);
+    window.location.href = "/form/login";
+  }
+
 
 const atualizarUserLogin = useCallback(async () => {
   const usuarioLog = localStorage.getItem('usuarioLogado');
@@ -105,6 +116,10 @@ const atualizarUserLogin = useCallback(async () => {
     atualizarUserLogin();
   }, [atualizarUserLogin]);
 
+  useEffect(() => {
+  localStorage.setItem("selectedMenu", selectedMenu);
+}, [selectedMenu]);
+
   const handleWorkoutTypeSelect = async (tipo) => {
     if (!usuarioLog) return;
 
@@ -130,11 +145,15 @@ const atualizarUserLogin = useCallback(async () => {
         const qtd = tipo === "Rapido" ? 3 : tipo === "Moderado" ? 4 : 5;
         setExerciciosSelecionados(listaAleatoria.slice(0, qtd));
         setShowNewWorkout(true);
+        setSelectedMenu("treinos"); 
       }
     } catch (error) {
       console.error("erro:", error);
     }
   };
+
+  const handleCloseAside = () => setShowAside(false);
+  const handleShowAside = () => setShowAside(true);
 
 const ultimoTreinoFunc = async () => {
   const usuarioLog = localStorage.getItem('usuarioLogado');
@@ -248,6 +267,7 @@ const ultimoTreinoFunc = async () => {
       
       rotaPrivada,
       
+      setShowNewWorkout,
       showNewWorkout,
       handleWorkoutTypeSelect,
       exerciciosSelecionados,
@@ -261,6 +281,7 @@ const ultimoTreinoFunc = async () => {
       atualizarUserLogin,
       usuarioParcial,
       setUsuarioParcial,
+      logOut,
 
       listaTreinosRapidos,
       listaTreinosMedios,
@@ -268,6 +289,12 @@ const ultimoTreinoFunc = async () => {
 
       mudarFoto, 
       fotoPerfil,
+
+      showAside,
+      handleCloseAside,
+      handleShowAside,
+      selectedMenu,
+      setSelectedMenu,
     }}>
       {children}
     </appContext.Provider>

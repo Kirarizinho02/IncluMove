@@ -1,3 +1,4 @@
+export * from './AsideHome';
 export * from './ButtonBack';
 export * from './ButtonEdit';
 export * from './ButtonLogOut';
@@ -16,5 +17,6 @@ export * from './ProfessionalsComponent';
 export * from './ProfilePicture';
 export * from './SignUpForm';
 export * from './UserInformationExtraForm';
+export * from './UserStatistics';
 
 

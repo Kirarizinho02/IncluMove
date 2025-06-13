@@ -57,12 +57,17 @@ body {
 }
 
 @media (max-width: 1200px) {
+  .sm-especial { width: 15% !important; }
   .w-lg-80 { width: 80%!important; }
 }
 
 @media (max-width: 768px) {
   .w-md-100 {width: 100% !important;}
   .align-center-important { align-items:center!important; }
+}
+
+.logout-toggle::after {
+  display: none !important;
 }
 
 .carousel-caption {

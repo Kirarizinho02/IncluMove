@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { UseAppContext } from "../../hooks";
 import { Card, Col, Row } from "react-bootstrap";
+import { ButtonNewWorkout } from "../ButtonNewWorkout";
 
 const LastWorkout = () => {
-  const { ultimoTreino, ultimoTreinoFunc } = UseAppContext();  
+  const { ultimoTreino, ultimoTreinoFunc, usuarioLog, handleWorkoutTypeSelect } = UseAppContext();  
 
   useEffect(() => {
     ultimoTreinoFunc();
@@ -12,17 +13,27 @@ const LastWorkout = () => {
   return (
     <>
       {ultimoTreino ? (
-        <div className="my-5 mx-4 border rounded p-4" style={{width: "95%"}}>
-          <h2 className="title fw-bold"> Um destaque entre seus treinos recentes: </h2>
-          <ul className="d-flex flex-column text-decoration-none">
-              <li className="">
-              <p className="fs-5"> <span className="fw-semibold"> Duração: </span> {ultimoTreino.duracao}</p>
+        <div className="p-5" style={{width: "95%"}}>
+                       <h2 className="title mt-2">
+               Que bom ter você de volta, <span className="fw-bold">{usuarioLog.nome}!</span>
+             </h2>
+             <div className="bg-white rounded p-5">
+          <h2 className="title fw-bold ms-1"> Um destaque entre seus treinos recentes: </h2>
+          <ul className="d-flex flex-row">
+              <li className="me-4 ms-n4" style={{listStyle: "none"}}>
+                <p className="fs-5"> <span className="fw-semibold"> Duração: </span> {ultimoTreino.duracao} </p>
               </li>
-              <li className="">
-              <p className="fs-5"> <span className="fw-semibold"> Data: </span> {new Date(ultimoTreino.data).toLocaleDateString()}</p>
+              <li style={{listStyle: "none"}}>
+                <div className='vr fs-1 me-4'></div>
               </li>
-              <li className="">
-              <p className="fs-5"> <span className="fw-semibold"> Descrição: </span> {ultimoTreino.descricao || "Sem descrição."}</p>
+              <li className="me-4" style={{listStyle: "none"}}>
+                <p className="fs-5"> <span className="fw-semibold"> Data: </span> {new Date(ultimoTreino.data).toLocaleDateString()}</p>
+              </li>
+              <li style={{listStyle: "none"}}>
+                <div className='vr fs-1 me-4'></div>
+              </li>
+              <li className="me-4" style={{listStyle: "none"}}>
+                <p className="fs-5"> <span className="fw-semibold"> Descrição: </span> {ultimoTreino.descricao || "Sem descrição."}</p>
               </li>
             </ul>
 
@@ -48,7 +59,12 @@ const LastWorkout = () => {
             ))}
             <div className="w-100 align-items-center d-flex flex-column">
             </div>
+
           </Row>
+          <div className="d-flex flex-row justify-content-center mt-4">
+            <ButtonNewWorkout onSelectWorkoutType={handleWorkoutTypeSelect}/>
+          </div>
+          </div>
         </div>
       ) : (
         <div className="w-100 my-5 mx-4 p-4 border rounded">
