@@ -1,30 +1,32 @@
 import { useEffect, useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 import { ButtonBack, ButtonLogOut, ButtonNewWorkout, GraphsComponent, LastWorkout, Loading, NavUsersHome, NewWorkout, ProfessionalsComponent, ProfilePicture } from "../../components";
 import { UseAppContext } from "../../hooks";
+import { UserStatistics } from "../../components/UserStatistics";
 
 const Home = () => {
+  const {selectedMenu} = UseAppContext();
+
   const {
     usuarioLog,
-    handleWorkoutTypeSelect,
     exerciciosSelecionados,
     showNewWorkout,
   } = UseAppContext();
 
     const [loading, setLoading] = useState(true);
   
-  useEffect(() => {
-    if (usuarioLog !== null) {
-      setLoading(false);
-    }
-  }, [usuarioLog]);
-
-  if (loading) return <Loading />;
-  if (!usuarioLog) return <h2 className="title text-center mt-2">Usuário não encontrado. Faça login novamente.</h2>;
-
-  return(
-    <Row >
-      <Col xl={6} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary p-5 h-100">
+let conteudoPrincipal;
+if (selectedMenu === "treinos") {
+    conteudoPrincipal = showNewWorkout
+      ? <NewWorkout exercicios={exerciciosSelecionados} usuarioLog={usuarioLog} />
+      : <LastWorkout />;
+  }else if (selectedMenu === "user") {
+    conteudoPrincipal = (
+      <UserStatistics />
+    );
+  } else {
+    conteudoPrincipal = (
+      <>
         <div className="w-100 my-4 d-flex flex-row justify-content-between ">
           <div className="d-flex ms-md-3">
             <ButtonBack previousPage={"/"} />
@@ -48,16 +50,26 @@ const Home = () => {
         )}
         <NavUsersHome />
         {usuarioLog && <GraphsComponent usuario={usuarioLog} />}
-
         <ProfessionalsComponent />
+      </>
+    );
+  }
+
+  useEffect(() => {
+    if (usuarioLog !== null) {
+      setLoading(false);
+    }
+  }, [usuarioLog]);
+
+  if (loading) return <Loading />;
+  if (!usuarioLog) return <h2 className="title text-center mt-2">Usuário não encontrado. Faça login novamente.</h2>;
+
+  return (
+    <>
+      <Col xl={11} md={12} className="bg-primary">
+        {conteudoPrincipal}
       </Col>
-      <Col xl={6} md={12} className="bg-white">
-        {showNewWorkout ? <NewWorkout exercicios={exerciciosSelecionados} usuarioLog={usuarioLog} /> : <LastWorkout />}
-        <div className="d-flex justify-content-center mt-n4 me-4 mb-4">
-          <ButtonNewWorkout  onSelectWorkoutType={handleWorkoutTypeSelect} />
-        </div>
-      </Col>
-    </Row>
+   </>
   )
 }
 

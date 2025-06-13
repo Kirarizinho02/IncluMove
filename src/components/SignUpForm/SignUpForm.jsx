@@ -78,7 +78,7 @@ const SignUpForm = () => {
 
             <FloatingLabel controlId="floatingEmail" label="Email" className="mb-3">
               <Form.Control
-                type="email"
+                type="Email"
                 name="email"
                 placeholder="nome.sobrenome@exemplo.com"
                 value={form.email}

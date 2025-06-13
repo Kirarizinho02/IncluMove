@@ -2,6 +2,7 @@ import { Button, Carousel, Col, Container, Row } from 'react-bootstrap';
 
 import { ana_lemos, compromissos1, compromissos2, compromissos3, line_1, line_2, line_3, marco_aurelio, mulher_cadeira, ricardo_junior, stars } from '../../assets';
 
+
 const LandingPage = () => {
 
   return (
@@ -32,6 +33,7 @@ const LandingPage = () => {
           <div className='d-flex justify-content-center'><img className='mb-n5' src={line_1} height={150} /></div>
         </Container>
       </div>
+
       <div className='grad-primary-to-body-bg' />
       <div className='bg-white pt-3'>
         <Container>

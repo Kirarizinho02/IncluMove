@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
-import { Content, HeaderHome } from "../../components";
+import { AsideHome, Content, HeaderHome } from "../../components";
+import { UseAppContext } from "../../hooks";
 
 const HomeLayout = () => {  
+  const {setSelectedMenu} = UseAppContext();
+
       useEffect(() => {
           document.body.classList.add('bg-primary');
           return () => {
@@ -17,7 +20,13 @@ const HomeLayout = () => {
       <HeaderHome />
       <Content> 
         <Container fluid className="overflow-x-hidden">
-          <Outlet />
+          <Row>
+            <AsideHome 
+              abrirUserStatistics={() => setSelectedMenu("user")}
+              abrirTreinos={() => setSelectedMenu("treinos")}
+              abrirProfissionais={() => setSelectedMenu("profissionais")}/>
+              <Outlet />
+          </Row>
         </Container>
       </Content>
     </>

@@ -9,8 +9,9 @@ import { ButtonBack } from '../ButtonBack';
 import { useState } from 'react';
 
 const LoginForm = () => {   
+
   const { loginUsuario, setUsuarioLog } = UseAppContext();
-  const [erro, setErro] = useState('');
+  const [erro, setErro] = useState(true);
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
@@ -21,7 +22,8 @@ const handleSubmit = async (e) => {
     if (user) {
       localStorage.setItem('usuarioLogado', JSON.stringify(user));
       setUsuarioLog(user);
-      window.location.href = '/home'; 
+      window.location.href = '/home';
+
     } else {
       setErro("Usuário ou senha inválidos.");
     }
@@ -86,6 +88,7 @@ const handleSubmit = async (e) => {
         <img src={mulher_perna_bionica} className='w-100' alt='Ilustração de mulher confiante com perna biônica'/>
       </Col>
     </Row>
+    
   )
 }
 
