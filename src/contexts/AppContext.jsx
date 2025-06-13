@@ -118,6 +118,7 @@ const atualizarUserLogin = useCallback(async () => {
 
   useEffect(() => {
   localStorage.setItem("selectedMenu", selectedMenu);
+  handleCloseAside();
 }, [selectedMenu]);
 
   const handleWorkoutTypeSelect = async (tipo) => {

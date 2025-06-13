@@ -8,7 +8,7 @@ const LastWorkout = () => {
 
   useEffect(() => {
     ultimoTreinoFunc();
-  }, [ultimoTreinoFunc]);
+  }, []);
 
   return (
     <>
