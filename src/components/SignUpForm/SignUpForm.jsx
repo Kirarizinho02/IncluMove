@@ -3,7 +3,7 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 
 import { amigos_disabled } from '../../assets';
-import { ButtonBack } from '../ButtonBack';
+import { ButtonBack } from '../CommonUI/ButtonBack';
 import { UseAppContext } from '../../hooks';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';

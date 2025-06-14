@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
  
-import { arrow_back } from "../../assets";
+import { arrow_back } from "../../../assets";
 
 const ButtonBack = (props) => {
   const { previousPage } = props;

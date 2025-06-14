@@ -5,7 +5,6 @@ import { About, LandingPage, LogIn, SignUp, Home, Error, Disabilities } from './
 import { UseAppContext } from './hooks';
 
 
-
 const Router = () => {
   const { rotaPrivada: RotaPrivada } = UseAppContext();
 

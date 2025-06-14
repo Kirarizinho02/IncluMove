@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import { UseAppContext } from '../../hooks';
 import { mulher_perna_bionica } from '../../assets';
 
-import { ButtonBack } from '../ButtonBack';
+import { ButtonBack } from '../CommonUI/ButtonBack';
 import { useState } from 'react';
 
 const LoginForm = () => {   

@@ -1,6 +1,6 @@
 import { Button, Col, FloatingLabel, Form, Row } from "react-bootstrap";
 import { amigos } from "../../assets";
-import { ButtonBack } from "../ButtonBack";
+import { ButtonBack } from "../CommonUI/ButtonBack";
 import { UseAppContext } from "../../hooks";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";

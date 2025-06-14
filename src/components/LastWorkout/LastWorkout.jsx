@@ -9,7 +9,7 @@ const LastWorkout = () => {
   useEffect(() => {
     ultimoTreinoFunc();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); //warning desligada pois recebe a função do AppContext e deve ser apenas chamada uma vez (portanto o [])
+  }, []); // Warning desligada pois recebe a função do AppContext e deve ser apenas chamada uma vez (portanto o [])
 
   return (
     <>
