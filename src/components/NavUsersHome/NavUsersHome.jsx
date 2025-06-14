@@ -1,7 +1,7 @@
 import { Dropdown, Nav } from "react-bootstrap";
 import { ButtonNewWorkout } from "../ButtonNewWorkout";
 import { UseAppContext } from "../../hooks";
-import { ButtonEdit } from "../ButtonEdit";
+import { ButtonEdit } from "../CommonUI/ButtonEdit";
 
 const NavUsersHome = () => {
   const { handleWorkoutTypeSelect } = UseAppContext();

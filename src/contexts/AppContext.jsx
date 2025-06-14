@@ -30,6 +30,7 @@ export const AppContextProvider = ( props ) => {
   const [selectedMenu, setSelectedMenu] = useState(() => {
     return localStorage.getItem("selectedMenu") || "treinos";
   });
+
   
   const loginUsuario = async ({ email, senha }) => {
     if (!email || !senha) {
@@ -154,7 +155,7 @@ const atualizarUserLogin = useCallback(async () => {
   };
 
   const handleCloseAside = () => setShowAside(false);
-  const handleShowAside = () => setShowAside(true);
+  const handleShowAside = () => setShowAside(true); 
 
 const ultimoTreinoFunc = async () => {
   const usuarioLog = localStorage.getItem('usuarioLogado');

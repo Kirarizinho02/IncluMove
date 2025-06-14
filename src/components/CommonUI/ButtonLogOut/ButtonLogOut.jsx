@@ -1,5 +1,5 @@
-import { open_door } from "../../assets";
-import { UseAppContext } from "../../hooks";
+import { open_door } from "../../../assets";
+import { UseAppContext } from "../../../hooks";
 
 const ButtonLogOut = () => {
   const { logOut } = UseAppContext();
