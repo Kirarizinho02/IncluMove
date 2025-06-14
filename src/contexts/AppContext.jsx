@@ -1,7 +1,8 @@
-import { createContext, useEffect, useState, useCallback } from "react";
+import { createContext, useCallback, useEffect, useState } from "react";
+
+import { Navigate } from "react-router-dom";
 
 import { api } from "../services";
-import { Navigate } from "react-router-dom";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const appContext = createContext({});
@@ -43,9 +44,7 @@ export const AppContextProvider = ( props ) => {
       });
   
       if (response.data.length > 0) {
-        
         return response.data[0]; 
-        
       } else {
         throw new Error("Email ou senha inválidos.");
       }
@@ -86,41 +85,41 @@ export const AppContextProvider = ( props ) => {
     window.location.href = "/form/login";
   }
 
+  const atualizarUserLogin = useCallback(async () => {
+    const usuarioLog = localStorage.getItem('usuarioLogado');
+    let usuarioLocal = null;
 
-const atualizarUserLogin = useCallback(async () => {
-  const usuarioLog = localStorage.getItem('usuarioLogado');
-  let usuarioLocal = null;
+    if (usuarioLog && usuarioLog !== "undefined") {
+      try {
+        usuarioLocal = JSON.parse(usuarioLog);
+      } catch (err) {
+        usuarioLocal = null;
+        localStorage.removeItem('usuarioLogado');
+        console.error("erro:", err);
+      }
+    }
+    if (usuarioLocal && usuarioLocal.id) {
+      try {
+        const response = await api.get(`/usuarios`, { params: { id: usuarioLocal.id } });
+        const userLoginNovo = response.data[0];
 
-  if (usuarioLog && usuarioLog !== "undefined") {
-    try {
-      usuarioLocal = JSON.parse(usuarioLog);
-    } catch (err) {
-      usuarioLocal = null;
-      localStorage.removeItem('usuarioLogado');
-      console.error("erro:", err);
+        setUsuarioLog(userLoginNovo);
+        localStorage.setItem('usuarioLogado', JSON.stringify(userLoginNovo));
+        console.log(userLoginNovo);
+      } catch (error) {
+        console.error("erro:", error);
+      }
     }
-  }
-  if (usuarioLocal && usuarioLocal.id) {
-    try {
-      const response = await api.get(`/usuarios`, { params: { id: usuarioLocal.id } });
-      const userLoginNovo = response.data[0];
-      setUsuarioLog(userLoginNovo);
-      localStorage.setItem('usuarioLogado', JSON.stringify(userLoginNovo));
-      console.log(userLoginNovo);
-    } catch (error) {
-      console.error("erro:", error);
-    }
-  }
-}, []);
+  }, []);
 
   useEffect(() => {
     atualizarUserLogin();
   }, [atualizarUserLogin]);
 
   useEffect(() => {
-  localStorage.setItem("selectedMenu", selectedMenu);
-  handleCloseAside();
-}, [selectedMenu]);
+    localStorage.setItem("selectedMenu", selectedMenu);
+    handleCloseAside();
+  }, [selectedMenu]);
 
   const handleWorkoutTypeSelect = async (tipo) => {
     if (!usuarioLog) return;
@@ -143,8 +142,8 @@ const atualizarUserLogin = useCallback(async () => {
 
       if (lista && lista.length) {
         const listaAleatoria = lista.sort(() => 0.5 - Math.random());
-  
         const qtd = tipo === "Rapido" ? 3 : tipo === "Moderado" ? 4 : 5;
+
         setExerciciosSelecionados(listaAleatoria.slice(0, qtd));
         setShowNewWorkout(true);
         setSelectedMenu("treinos"); 
@@ -157,32 +156,32 @@ const atualizarUserLogin = useCallback(async () => {
   const handleCloseAside = () => setShowAside(false);
   const handleShowAside = () => setShowAside(true); 
 
-const ultimoTreinoFunc = async () => {
-  const usuarioLog = localStorage.getItem('usuarioLogado');
-  let usuarioLocal = null;
-  if (usuarioLog && usuarioLog !== "undefined") {
-    try {
-      usuarioLocal = JSON.parse(usuarioLog);
-    } catch (e) {
-      usuarioLocal = null;
-      localStorage.removeItem('usuarioLogado');
-      console.error("erro:", e);
-    }
-  }
-  if (usuarioLocal && usuarioLocal.id) {
-    try {
-      const res = await api.get('/usuarios', { params: { id: usuarioLocal.id } });
-      const usuarioAtualizado = res.data[0];
-
-      if (usuarioAtualizado?.treinos?.length > 0) {
-        const treinosOrdenados = [...usuarioAtualizado.treinos].sort((a, b) => new Date(b.data) - new Date(a.data));
-        setUltimoTreino(treinosOrdenados[0]);
+  const ultimoTreinoFunc = async () => {
+    const usuarioLog = localStorage.getItem('usuarioLogado');
+    let usuarioLocal = null;
+    if (usuarioLog && usuarioLog !== "undefined") {
+      try {
+        usuarioLocal = JSON.parse(usuarioLog);
+      } catch (e) {
+        usuarioLocal = null;
+        localStorage.removeItem('usuarioLogado');
+        console.error("erro:", e);
       }
-    } catch (error) {
-      console.error("Erro ao buscar último treino:", error);
     }
-  }
-};
+    if (usuarioLocal && usuarioLocal.id) {
+      try {
+        const res = await api.get('/usuarios', { params: { id: usuarioLocal.id } });
+        const usuarioAtualizado = res.data[0];
+
+        if (usuarioAtualizado?.treinos?.length > 0) {
+          const treinosOrdenados = [...usuarioAtualizado.treinos].sort((a, b) => new Date(b.data) - new Date(a.data));
+          setUltimoTreino(treinosOrdenados[0]);
+        }
+      } catch (error) {
+        console.error("Erro ao buscar último treino:", error);
+      }
+    }
+  };
 
   const listaTreinosRapidos = async (movimentos_pernas) => {
     try {
