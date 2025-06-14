@@ -14,32 +14,32 @@ const LastWorkout = () => {
   return (
     <>
       {ultimoTreino ? (
-        <div className="p-5" style={{width: "95%"}}>
+        <div className="p-2 p-md-5" style={{width: "95%"}}>
           <h2 className="title mt-2">
             Que bom ter você de volta, <span className="fw-bold">{usuarioLog.nome}!</span>
           </h2>
-          <div className="bg-white rounded p-5">
+          <div className="bg-body rounded p-5">
           <h2 className="title fw-bold ms-1"> Um destaque entre seus treinos recentes: </h2>
-          <ul className="d-flex flex-row">
-            <li className="me-4 ms-n4" style={{listStyle: "none"}}>
-              <p className="fs-5"> <span className="fw-semibold"> Duração: </span> {ultimoTreino.duracao} </p>
-            </li>
+          <ul className="d-flex flex-column flex-md-row gap-3 m-0 mb-4 p-0">
             <li style={{listStyle: "none"}}>
-              <div className='vr fs-1 me-4'></div>
+              <span className="fs-5"> <span className="fw-semibold"> Duração: </span> {ultimoTreino.duracao} </span>
             </li>
-            <li className="me-4" style={{listStyle: "none"}}>
-              <p className="fs-5"> <span className="fw-semibold"> Data: </span> {new Date(ultimoTreino.data).toLocaleDateString()}</p>
-            </li>
+
+            <div className='d-none d-md-block vr'></div>
+            
             <li style={{listStyle: "none"}}>
-              <div className='vr fs-1 me-4'></div>
+              <span className="fs-5"> <span className="fw-semibold"> Data: </span> {new Date(ultimoTreino.data).toLocaleDateString()}</span>
             </li>
-            <li className="me-4" style={{listStyle: "none"}}>
-              <p className="fs-5"> <span className="fw-semibold"> Descrição: </span> {ultimoTreino.descricao || "Sem descrição."}</p>
+
+            <div className='d-none d-md-block vr'></div>
+
+            <li style={{listStyle: "none"}}>
+              <span className="fs-5"> <span className="fw-semibold"> Descrição: </span> {ultimoTreino.descricao || "Sem descrição."}</span>
             </li>
           </ul>
 
           <h5 className="mb-3">Exercícios realizados:</h5>
-          <Row className="me-4">
+          <Row>
             {ultimoTreino.exercicios?.map((exercicio, index) => (
               <Col key={index} md={6} lg={6} className="mb-4">
                 <Card className="h-100 w-100 shadow-sm" style={{width:"25rem"}}>

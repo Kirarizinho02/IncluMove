@@ -1,6 +1,5 @@
 import { Col, Offcanvas } from "react-bootstrap";
 import { UseAppContext } from "../../hooks";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { TooltipLink } from "../";
 
@@ -12,7 +11,7 @@ const AsideHome = ({ abrirUserStatistics, abrirTreinos }) => {
 
   return (
     <>
-      <Col lg={1} className="d-none d-xl-block bg-white sm-especial border-end ">
+      <Col lg={1} className="d-none d-xl-block sm-especial border-end ">
         <aside className="d-flex flex-column align-items-center h-100">
           <TooltipLink title="Treinos" id="t-1" localizacao="right">
           <div className="p-3 text-center" onClick={abrirTreinos} style={{cursor: "pointer"}} >

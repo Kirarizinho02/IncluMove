@@ -9,8 +9,6 @@ import { motion } from 'motion/react';
 
 import { UseAppContext } from '../../hooks';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { IoSettingsOutline, IoLogOutOutline, IoLogOut, IoSettings, IoSunny, IoHelpCircle } from "react-icons/io5";
 import { FaBars, FaMoon } from "react-icons/fa6";
 
@@ -23,7 +21,7 @@ const HeaderHome = () => {
 
 
   return (
-    <div className='bg-white'>
+    <div>
       <Container fluid>
         <header className='d-flex flex-wrap justify-content-between align-items-center py-2 px-3 border-bottom'>
           <div className='d-flex align-items-center link-body-emphasis text-decoration-none flex-column d-none d-xl-flex'>
@@ -37,7 +35,7 @@ const HeaderHome = () => {
             </TooltipLink>
           </div>
 
-          <Button className="d-xl-none bg-white py-3" onClick={handleShowAside} style={{ border: 'none' }}>
+          <Button variant='link' className="d-xl-none py-3 btn link-body-emphasis" onClick={handleShowAside} style={{ border: 'none' }}>
             <FaBars size='2rem' />
           </Button>
 
@@ -72,11 +70,11 @@ const HeaderHome = () => {
                 </Dropdown.Toggle>
               </TooltipLink>
               <Dropdown.Menu className='shadow'>
-                <Dropdown.Item as={ToggleButton} className='d-flex align-items-center bg-white gap-3 ps-4 py-2 cursor' value={theme} onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+                <Dropdown.Item as={ToggleButton} className='d-flex align-items-center gap-3 ps-4 py-2 cursor' value={theme} onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
                   {theme === 'light' ? <FaMoon size='1.5rem' /> : <IoSunny size='1.5rem' />}
                   <span className='title fw-medium fs-6'>{theme === 'light' ? 'Tema Escuro' : 'Tema Claro'}</span>
                 </Dropdown.Item>
-                <Dropdown.Item className='d-flex justify-content-start align-items-center bg-white gap-3 ps-4 py-2'>
+                <Dropdown.Item className='d-flex justify-content-start align-items-center gap-3 ps-4 py-2'>
                   <IoHelpCircle size='1.5rem' />
                   <span className='title fw-medium fs-6'>Ajuda</span>
                 </Dropdown.Item>
@@ -91,7 +89,7 @@ const HeaderHome = () => {
 
               <Dropdown.Menu className='shadow mt-3'>
                 <Dropdown.Item 
-                  className='d-flex justify-content-center align-items-center bg-white' 
+                  className='d-flex justify-content-center align-items-center' 
                   onClick={logOut} 
                   onMouseEnter={() => setIsHoverLogOut(true)}
                   onMouseLeave={() => setIsHoverLogOut(false)}

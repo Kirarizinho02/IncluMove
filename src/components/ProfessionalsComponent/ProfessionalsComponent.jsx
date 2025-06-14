@@ -3,7 +3,7 @@ import { ana_lemos, marco_aurelio } from "../../assets"
 
 const ProfessionalsComponent = () => {
   return (
-    <Container className="shadow p-4 mt-3 rounded-4 bg-white">
+    <Container className="shadow p-4 mt-3 rounded-4 bg-body">
       <Row>
         <h4 className="fw-bold title ms-3 mb-4"> Profissionais recomendados: </h4>
         <Col lg={6} sm={12} className="d-flex flex-column justify-content-center align-items-center">

@@ -66,7 +66,7 @@ if (selectedMenu === "treinos") {
 
   return (
     <>
-      <Col xl={11} md={12} className="bg-primary">
+      <Col xl={11} md={12} className="d-flex justify-content-center bg-primary">
         {conteudoPrincipal}
       </Col>
    </>

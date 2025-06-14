@@ -35,7 +35,7 @@ const LandingPage = () => {
       </div>
 
       <div className='grad-primary-to-body-bg' />
-      <div className='bg-white pt-3'>
+      <div className='pt-3'>
         <Container>
           <p className='title text-medium fw-bold text-center m-0'>Os profissionais</p>
           <p className='text-center'>
@@ -80,14 +80,14 @@ const LandingPage = () => {
           <p className='text-center'>
             Descubra mais sobre as pautas que movem nosso projeto:
           </p>
-          <Carousel data-bs-theme="dark" style={{ maxHeight: '80rem' }} className='mt-n5 mb-5'>
+          <Carousel style={{ maxHeight: '80rem' }} className='mt-n5 mb-5'>
             <Carousel.Item className='w-100 h-100'>
               <Carousel.Caption className='mt-5'>
                 <h1 className='title fw-bold'> 1. </h1>
                 <p className='mt-n2'> Diversidade, Equidade e Inclusão </p>
               </Carousel.Caption>
               <div className='d-flex flex-column align-items-center mt-n4'>
-                <img src={compromissos1} className='d-flex w-50' alt='Grupo de pessoas diversas felizes'></img>
+                <img src={compromissos1} className='d-flex w-50 i' alt='Grupo de pessoas diversas felizes'></img>
               </div>
               <Carousel.Caption >
                 <div className='w-100 d-flex flex-column align-items-center mb-2 '>
@@ -136,8 +136,8 @@ const LandingPage = () => {
           <div className='d-flex justify-content-center mt-n5'><img className='mb-n5 ' src={line_3} height={150} /></div>
         </Container>
       </div>
-      <div className='grad-primary-to-body-bg mt-n5' />
-      <div className='bg-white pt-4' >
+      <div className='grad-primary-to-body-bg' />
+      <div className='pt-4' >
         <Container>
           <Row>
           <p className='title text-medium fw-bold text-center m-0 mt-5'> O projeto </p>

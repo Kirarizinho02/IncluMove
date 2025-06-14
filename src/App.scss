@@ -1,21 +1,68 @@
 //variaveis do sass vem aqui
 
+$primary: #f5f17a;
+$secondary: #f58a83;
+$tertiary: #ab7af5;
+$accent: #abf479;
+
 $theme-colors: (
-  primary: #f5f17a,
-  secondary: #f58a83,
-  tertiary: #ab7af5,
-  accent: #abf479,
+  primary: $primary,
+  secondary: $secondary,
+  tertiary: $tertiary,
+  accent: $accent,
   success: #28a745,
   info: #17a2b8,
   warning: #ffc107,
   danger: #dc3545,
   light: #fdfdfd,
-  dark: #343a40 
+  dark: #343a40
 );
 
 $enable-negative-margins: true;
 
 @import '../node_modules/bootstrap/scss/bootstrap';
+
+@include color-mode(dark) {    
+  $primary: #737239;
+
+  .bg-primary {
+    background-color: $primary !important;
+  }
+
+  .carousel-caption {
+    position:static;
+    color: $body-color-dark;
+  }
+
+  .grad-primary-to-body-bg {
+    background: $body-bg-dark;
+    background: linear-gradient(0deg, $body-bg-dark 0%, $primary 100%);
+    height: 40px;
+  }
+
+  .grad-body-bg-to-primary {
+    background: $body-bg-dark;
+    background: linear-gradient(180deg, $body-bg-dark 0%, $primary 100%);
+    height: 40px;
+  }
+}
+
+.carousel-caption {
+  position:static;
+  color: $body-color;
+}
+
+.grad-primary-to-body-bg {
+  background: $body-bg;
+  background: linear-gradient(0deg, $body-bg 0%, $primary 100%);
+  height: 40px;
+}
+
+.grad-body-bg-to-primary {
+  background: $body-bg-dark;
+  background: linear-gradient(180deg, $body-bg 0%, $primary 100%);
+  height: 40px;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -68,20 +115,4 @@ body {
 
 .logout-toggle::after {
   display: none !important;
-}
-
-.carousel-caption {
-  position:static
-}
-
-.grad-primary-to-body-bg {
-  background: #ffffff;
-  background: linear-gradient(0deg,rgba(255, 255, 255, 1) 0%, rgba(245, 241, 122, 1) 100%);
-  height: 40px;
-}
-
-.grad-body-bg-to-primary {
-  background: #ffffff;
-  background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(245, 241, 122, 1) 100%);
-  height: 40px;
 }

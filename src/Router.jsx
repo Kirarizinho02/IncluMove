@@ -29,7 +29,7 @@ const Router = () => {
             </RotaPrivada>
           }
         >
-        <Route path='/home' element={<Home />} />
+        <Route path='/user-area' element={<Home />} />
       {/*  <Route path='/home/experts' element={<Experts />} />
         <Route path='/home/profile' element={<Profile />} /> */}
       </Route> 

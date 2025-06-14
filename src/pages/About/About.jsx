@@ -24,7 +24,7 @@ const About = () => {
         </Container>
       </div>
       <div className='grad-primary-to-body-bg' />
-      <div className='bg-white pt-3 h-100'> 
+      <div className='pt-3 h-100'> 
         <Container>
           <Row className='mt-5'>
             <Col md={12} lg={6} className='d-flex justify-content-center align-items-center'>

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { Container, Row } from "react-bootstrap";
 
@@ -8,13 +7,6 @@ import { UseAppContext } from "../../hooks";
 const HomeLayout = () => {  
   const {setSelectedMenu} = UseAppContext();
 
-      useEffect(() => {
-          document.body.classList.add('bg-primary');
-          return () => {
-            document.body.classList.remove('bg-primary'); 
-          };
-        }, 
-      );
   return (
     <>
       <HeaderHome />
