@@ -6,7 +6,7 @@ const GraphsComponent = (props) => {
 
   if (!usuario?.treinos || usuario.treinos.length === 0 || !usuario.treinos[0]?.duracao) {
     return (
-      <Container className="shadow p-4 mt-3 rounded-4">
+      <Container className="shadow p-4 mt-3 rounded-4 bg-body">
         <h4 className="fw-bold title text-center"> Treinos nos últimos 30 dias: </h4>
         <h5 className="fw-regular title text-center">Nenhum treino cadastrado!</h5>
       </Container>

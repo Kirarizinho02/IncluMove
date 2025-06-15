@@ -22,7 +22,7 @@ const handleSubmit = async (e) => {
     if (user) {
       localStorage.setItem('usuarioLogado', JSON.stringify(user));
       setUsuarioLog(user);
-      window.location.href = '/home';
+      window.location.href = '/user-area';
 
     } else {
       setErro("Usuário ou senha inválidos.");

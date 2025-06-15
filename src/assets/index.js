@@ -22,8 +22,6 @@ import compromissos1 from './compromissos-1.png';
 import compromissos2 from './compromissos-2.png';
 import compromissos3 from './compromissos-3.png';
 import settings from './settings.svg';
-import light_mode from './light-mode.svg';
-import dark_mode from './dark-mode.svg';
 
 export {
   user,
@@ -50,6 +48,4 @@ export {
   compromissos2,
   compromissos3,
   settings,
-  light_mode,
-  dark_mode
 };

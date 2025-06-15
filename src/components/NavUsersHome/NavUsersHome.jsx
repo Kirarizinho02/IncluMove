@@ -1,4 +1,4 @@
-import { Dropdown, Nav } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import { ButtonNewWorkout } from "../ButtonNewWorkout";
 import { UseAppContext } from "../../hooks";
 import { ButtonEdit } from "../CommonUI/ButtonEdit";

@@ -15,6 +15,5 @@ export * from './ProfessionalsComponent';
 export * from './ProfilePicture';
 export * from './SignUpForm';
 export * from './UserInformationExtraForm';
-export * from './UserStatistics';
 
 
