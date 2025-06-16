@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, Container, Dropdown, ToggleButton } from 'react-bootstrap';
 
-import { ProfilePicture, TooltipLink } from '../..';
+import { ProfilePicture, TooltipLink } from '../../';
 import { logo } from '../../../assets';
 
 // eslint-disable-next-line no-unused-vars
@@ -14,11 +14,30 @@ import { IoHelpCircle, IoLogOut, IoLogOutOutline, IoSettings, IoSettingsOutline,
 
 const HeaderUser = () => {
   const { logOut, handleShowAside } = UseAppContext();
-
-  const [theme, setTheme] = useState('light');
+  
   const [isHover, setIsHover] = useState(false); 
-  const [IsHoverLogOut, setIsHoverLogOut] = useState(false); 
+  const [IsHoverLogOut, setIsHoverLogOut] = useState(false);
 
+  // essa implementação do tema escuro foi feito com javascript mais bruto pois o react-bootstrap não suporta nativamente o acesso ao tema global
+  // e essa é a própria recomendação deles, docs: https://react-bootstrap.netlify.app/docs/getting-started/color-modes/
+  const [theme, setTheme] = useState(() => {
+    if (localStorage.getItem('theme')) {
+      return localStorage.getItem('theme');
+    }
+    const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const preferredTheme = userPrefersDark ? 'dark' : 'light';
+    return preferredTheme;
+  });
+
+  const switchTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+  }
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.querySelector('html').setAttribute('data-bs-theme', theme);
+  }, [theme]);
 
   return (
     <div>
@@ -26,12 +45,6 @@ const HeaderUser = () => {
         <header className='d-flex flex-wrap justify-content-between align-items-center py-1 py-md-3 px-3 border-bottom'>
           <div className='d-flex align-items-center link-body-emphasis text-decoration-none flex-column d-none d-md-flex'>
             <TooltipLink title='Página Inicial' id='tl1' localizacao='right'>
-              {/* <a className='d-flex link-body-emphasis text-decoration-none flex-column' href="/">
-
-                <img height={30} src={logo} alt='Logo do IncluMove' />
-                <span className='title fw-medium fs-5'>IncluMove</span>
-
-              </a> */}
               <a className='d-flex align-items-center link-body-emphasis text-decoration-none gap-3' href="/">
                 <img height={40} src={logo} alt='Logo do IncluMove' />
                 <span className='title fw-medium fs-5'>IncluMove</span>
@@ -74,9 +87,17 @@ const HeaderUser = () => {
                 </Dropdown.Toggle>
               </TooltipLink>
               <Dropdown.Menu className='shadow'>
-                <Dropdown.Item as={ToggleButton} className='d-flex align-items-center gap-3 ps-4 py-2 cursor' value={theme} onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-                  {theme === 'light' ? <FaMoon size='1.5rem' /> : <IoSunny size='1.5rem' />}
-                  <span className='title fw-medium fs-6'>{theme === 'light' ? 'Tema Escuro' : 'Tema Claro'}</span>
+                <Dropdown.Item as={ToggleButton} className='d-flex align-items-center gap-3 ps-4 py-2 cursor' value={theme} onClick={switchTheme}>
+                  {theme === 'light' 
+                    ? <FaMoon size='1.5rem' /> 
+                    : <IoSunny size='1.5rem' />
+                  }
+                  <span className='title fw-medium fs-6'>
+                    {theme === 'light' 
+                      ? 'Tema Escuro' 
+                      : 'Tema Claro'
+                    }
+                  </span>
                 </Dropdown.Item>
                 <Dropdown.Item className='d-flex justify-content-start align-items-center gap-3 ps-4 py-2'>
                   <IoHelpCircle size='1.5rem' />
