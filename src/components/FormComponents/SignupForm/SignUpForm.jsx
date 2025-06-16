@@ -51,7 +51,7 @@ const SignUpForm = () => {
 
   return (
     <Row className='vh-100'>
-      <Col xs={12} md={6} className='align-items-center bg-white ms-md-2 d-flex flex-column justify-content-between shadow'>
+      <Col xs={12} md={6} className='align-items-center bg-body ms-md-2 d-flex flex-column justify-content-between shadow'>
 
         <Row className='w-100 mt-4'>
           <div className='d-flex justify-content-start ms-3 mb-4'>

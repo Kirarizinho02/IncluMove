@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Button, Container, Dropdown, ToggleButton } from 'react-bootstrap';
 
 import { ProfilePicture, TooltipLink } from '../../';
@@ -7,7 +7,7 @@ import { logo } from '../../../assets';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'motion/react';
 
-import { UseAppContext } from '../../../hooks';
+import { UseAppContext, UseThemeContext } from '../../../hooks';
 
 import { FaBars, FaMoon } from "react-icons/fa6";
 import { IoHelpCircle, IoLogOut, IoLogOutOutline, IoSettings, IoSettingsOutline, IoSunny } from "react-icons/io5";
@@ -18,26 +18,7 @@ const HeaderUser = () => {
   const [isHover, setIsHover] = useState(false); 
   const [IsHoverLogOut, setIsHoverLogOut] = useState(false);
 
-  // essa implementação do tema escuro foi feito com javascript mais bruto pois o react-bootstrap não suporta nativamente o acesso ao tema global
-  // e essa é a própria recomendação deles, docs: https://react-bootstrap.netlify.app/docs/getting-started/color-modes/
-  const [theme, setTheme] = useState(() => {
-    if (localStorage.getItem('theme')) {
-      return localStorage.getItem('theme');
-    }
-    const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const preferredTheme = userPrefersDark ? 'dark' : 'light';
-    return preferredTheme;
-  });
-
-  const switchTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-  }
-
-  useEffect(() => {
-    localStorage.setItem('theme', theme);
-    document.querySelector('html').setAttribute('data-bs-theme', theme);
-  }, [theme]);
+  const { switchTheme, theme } = UseThemeContext();
 
   return (
     <div>
