@@ -1,19 +1,7 @@
-export * from './AsideHome';
-export * from './ButtonNewWorkout';
 export * from './CommonUI';
 export * from './Content';
 export * from './Footer';
-export * from './GraphsComponent';
+export * from './FormComponents'
 export * from './Header';
-export * from './HeaderHome';
-export * from './LastWorkout';
-export * from './Loading';
-export * from './LoginForm';
-export * from './NavUsersHome';
-export * from './NewWorkout';
-export * from './ProfessionalsComponent';
-export * from './ProfilePicture';
-export * from './SignUpForm';
-export * from './UserInformationExtraForm';
-
+export * from './UserAreaComponents';
 

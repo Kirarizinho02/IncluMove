@@ -1,5 +1,5 @@
 import { Col } from "react-bootstrap"
-import { GraphsComponent, NavUsersHome, ProfilePicture, ProfessionalsComponent } from "../../components"
+import { GraphsComponent, UserToolbar, ProfilePicture, ProfessionalsComponent } from "../../components"
 import { UseAppContext } from "../../hooks"
 
 const Profile = () => {
@@ -24,7 +24,7 @@ const Profile = () => {
          ) : (
            <h2 className="title text-center mt-2">Carregando usuário...</h2>
          )}
-         <NavUsersHome />
+         <UserToolbar />
          {usuarioLog && <GraphsComponent usuario={usuarioLog} /> }
          <ProfessionalsComponent />
        </Col>

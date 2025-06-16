@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import { Button, Container, Dropdown, ToggleButton } from 'react-bootstrap';
 
-import { ProfilePicture, TooltipLink } from '../';
-import { logo } from '../../assets';
+import { ProfilePicture, TooltipLink } from '../..';
+import { logo } from '../../../assets';
 
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'motion/react';
 
-import { UseAppContext } from '../../hooks';
+import { UseAppContext } from '../../../hooks';
 
-import { IoSettingsOutline, IoLogOutOutline, IoLogOut, IoSettings, IoSunny, IoHelpCircle } from "react-icons/io5";
 import { FaBars, FaMoon } from "react-icons/fa6";
+import { IoHelpCircle, IoLogOut, IoLogOutOutline, IoSettings, IoSettingsOutline, IoSunny } from "react-icons/io5";
 
-const HeaderHome = () => {
+const HeaderUser = () => {
   const { logOut, handleShowAside } = UseAppContext();
 
   const [theme, setTheme] = useState('light');
@@ -128,5 +128,5 @@ const HeaderHome = () => {
   );
 }
 
-export { HeaderHome };
+export { HeaderUser };
 

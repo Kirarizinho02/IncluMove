@@ -1,9 +1,9 @@
 import { Col } from "react-bootstrap"
-import { ProfilePicture } from "../ProfilePicture"
-import { NavUsersHome } from "../NavUsersHome"
-import { GraphsComponent } from "../GraphsComponent"
-import { ProfessionalsComponent } from "../ProfessionalsComponent"
-import { UseAppContext } from "../../hooks"
+import { UseAppContext } from "../../../../hooks"
+import { ProfessionalsComponent } from "../../"
+import { GraphsComponent } from "../"
+import { UserToolbar } from "../"
+import { ProfilePicture } from "../../../"
 
 const UserStatistics = () => {
   const { usuarioLog } = UseAppContext();
@@ -27,7 +27,7 @@ const UserStatistics = () => {
          ) : (
            <h2 className="title text-center mt-2">Carregando usuário...</h2>
          )}
-         <NavUsersHome />
+         <UserToolbar />
          {usuarioLog && <GraphsComponent usuario={usuarioLog} /> }
          <ProfessionalsComponent />
        </Col>
@@ -35,4 +35,5 @@ const UserStatistics = () => {
   );        
 }
 
-export { UserStatistics };
+export { UserStatistics }
+

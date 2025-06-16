@@ -1,6 +1,6 @@
-import { UseAppContext } from '../../hooks/';
+import { UseAppContext } from '../../../hooks';
 
-import { user } from '../../assets/';
+import { user } from '../../../assets';
 
 const ProfilePicture = (props) => {
   const { size } = props;

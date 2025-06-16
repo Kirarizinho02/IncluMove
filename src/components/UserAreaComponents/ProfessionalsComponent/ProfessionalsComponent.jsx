@@ -1,5 +1,5 @@
-import { Button, Col, Container, Row } from "react-bootstrap"
-import { ana_lemos, marco_aurelio } from "../../assets"
+import { Button, Col, Container, Row } from "react-bootstrap";
+import { ana_lemos, marco_aurelio } from "../../../assets";
 
 const ProfessionalsComponent = () => {
   return (

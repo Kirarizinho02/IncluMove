@@ -1,17 +1,16 @@
+import { Col, Container, Row } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
-import { Container, Col, Row } from "react-bootstrap";
 
-import { AsideHome, Content, HeaderHome } from "../../components";
-import { UseAppContext } from "../../hooks";
+import { AsideUser, Content, HeaderUser } from "../../components";
 
 const RestrictedLayout = () => {  
   return (
     <>
-      <HeaderHome />
+      <HeaderUser />
       <Content> 
         <Container fluid className="overflow-x-hidden h-100 bg-primary">
           <Row>
-            <AsideHome />
+            <AsideUser />
               <Col xl={11} md={10} className="d-flex justify-content-center bg-primary">
                 <Outlet />
               </Col>
@@ -23,3 +22,4 @@ const RestrictedLayout = () => {
 }
 
 export { RestrictedLayout };
+

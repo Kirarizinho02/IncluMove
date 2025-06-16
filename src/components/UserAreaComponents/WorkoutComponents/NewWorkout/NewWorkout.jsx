@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
-import { api } from "../../services";
-import { UseAppContext } from "../../hooks"; 
+import { UseAppContext } from "../../../../hooks";
+import { api } from "../../../../services";
 
 const NewWorkout = ({ exercicios,  usuarioLog }) => {
   const { setSelectedMenu, setShowNewWorkout, atualizarUserLogin } = UseAppContext();
@@ -97,3 +97,4 @@ const NewWorkout = ({ exercicios,  usuarioLog }) => {
 }
 
 export { NewWorkout };
+

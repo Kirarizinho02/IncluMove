@@ -1,12 +1,11 @@
-import { Button, Col, Row } from 'react-bootstrap';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import { Button, Col, FloatingLabel, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 
-import { amigos_disabled } from '../../assets';
-import { ButtonBack } from '../CommonUI/ButtonBack';
-import { UseAppContext } from '../../hooks';
-import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ButtonBack } from '../../';
+import { amigos_disabled } from '../../../assets';
+import { UseAppContext } from '../../../hooks';
 
 const SignUpForm = () => {
   const { setUsuarioParcial } = UseAppContext();
@@ -153,3 +152,4 @@ const SignUpForm = () => {
 };
 
 export { SignUpForm };
+

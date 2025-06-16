@@ -1,9 +1,9 @@
 import { Nav } from "react-bootstrap";
-import { ButtonNewWorkout } from "../ButtonNewWorkout";
-import { UseAppContext } from "../../hooks";
-import { ButtonEdit } from "../CommonUI/ButtonEdit";
+import { ButtonNewWorkout } from "../../";
+import { ButtonEdit } from "../../../";
+import { UseAppContext } from "../../../../hooks";
 
-const NavUsersHome = () => {
+const UserToolbar = () => {
   const { handleWorkoutTypeSelect } = UseAppContext();
 
   return (
@@ -23,4 +23,5 @@ const NavUsersHome = () => {
   )
 }
 
-export { NavUsersHome };
+export { UserToolbar };
+

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { UseAppContext } from "../../hooks";
 import { Card, Col, Row } from "react-bootstrap";
-import { ButtonNewWorkout } from "../ButtonNewWorkout";
+import { UseAppContext } from "../../../../hooks";
+import { ButtonNewWorkout } from "../";
 
 const LastWorkout = () => {
   const { ultimoTreino, ultimoTreinoFunc, usuarioLog, handleWorkoutTypeSelect } = UseAppContext();  

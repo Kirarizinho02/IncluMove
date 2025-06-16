@@ -1,14 +1,14 @@
-import { Col, Offcanvas, Nav } from "react-bootstrap";
-import { UseAppContext } from "../../hooks";
+import { Col, Nav, Offcanvas } from "react-bootstrap";
+import { UseAppContext } from "../../../hooks";
 
-import { TooltipLink } from "../";
+import { TooltipLink } from "../..";
 
-import { FaDumbbell, FaPeopleGroup } from "react-icons/fa6";
 import { FaUserCircle } from "react-icons/fa";
+import { FaDumbbell, FaPeopleGroup } from "react-icons/fa6";
 
-import { logo } from "../../assets";
+import { logo } from "../../../assets";
 
-const AsideHome = () => {
+const AsideUser = () => {
   const { showAside, handleCloseAside } = UseAppContext();
 
   return (
@@ -72,4 +72,5 @@ const AsideHome = () => {
   );
 }
 
-export { AsideHome };
+export { AsideUser };
+
