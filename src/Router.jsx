@@ -1,9 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { DefaultLayout, FormLayout, HomeLayout } from './layouts';
-import { About, LandingPage, LogIn, SignUp, Home, Error, Disabilities } from './pages';
 import { UseAppContext } from './hooks';
-
+import { DefaultLayout, FormLayout, RestrictedLayout } from './layouts';
+import { About, Disabilities, Error, Profile, LandingPage, LogIn, SignUp, Workouts } from './pages';
 
 const Router = () => {
   const { rotaPrivada: RotaPrivada } = UseAppContext();
@@ -22,16 +21,17 @@ const Router = () => {
         <Route path='/form/disabilities' element={<Disabilities />} /> 
       </Route>
       <Route
-          path="/home"
-          element={
-            <RotaPrivada>
-              <HomeLayout />
-            </RotaPrivada>
-          }
-        >
-        <Route path='/home' element={<Home />} />
-      {/*  <Route path='/home/experts' element={<Experts />} />
-        <Route path='/home/profile' element={<Profile />} /> */}
+        path="/user-area"
+        element={
+          <RotaPrivada>
+            <RestrictedLayout />
+          </RotaPrivada>
+        }
+      >
+        <Route path='/user-area/' element={<Profile />} />
+        <Route path='/user-area/workouts' element={<Workouts />} />
+      {/*  <Route path='/user-area/experts' element={<Experts />} />
+        <Route path='/user-area/profile' element={<Profile />} /> */}
       </Route> 
 
     </Routes>

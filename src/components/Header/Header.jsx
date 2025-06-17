@@ -32,20 +32,19 @@ const Header = () => {
           <img className='me-3 ms-md-3' height={70} src={logo} alt='Logo do IncluMove' />
           <span className='title fw-medium fs-1'>IncluMove</span>
         </a>
-        <Nav defaultActiveKey='/' as='ul'>
+        <Nav activeKey={location.pathname} as='ul'>
           <Nav.Item as='li'>
-            <Nav.Link className='fs-3 link-body-emphasis' href='/'>Página Inicial</Nav.Link>
+            <Nav.Link className='fs-3 link-body-emphasis header-link' href='/' eventKey='/'>Página Inicial</Nav.Link>
           </Nav.Item>
           <div className='vr'></div>
           <Nav.Item as='li'>
-            <Nav.Link className='fs-3 link-body-emphasis' href='/about' eventKey='link-1'>Sobre</Nav.Link>
+            <Nav.Link className='fs-3 link-body-emphasis header-link' href='/about' eventKey='/about'>Sobre</Nav.Link>
           </Nav.Item>
           <div className='vr'></div>
           <Nav.Item as='li'>
           <Nav.Link
-              className='fs-3 link-body-emphasis'
-              href={usuarioLog ? '/home' : '/form/login'}
-              eventKey='link-2'
+              className='fs-3 link-body-emphasis header-link'
+              href={usuarioLog ? '/user-area' : '/form/login'}
             >
               {usuarioLog ? 'Conta' : 'Login'}
             </Nav.Link>
