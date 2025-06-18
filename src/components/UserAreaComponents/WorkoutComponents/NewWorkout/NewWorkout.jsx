@@ -2,10 +2,15 @@ import { useEffect, useState } from "react";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { UseAppContext } from "../../../../hooks";
 import { api } from "../../../../services";
+import { useNavigate } from "react-router-dom";
+
+
 
 const NewWorkout = ({ exercicios,  usuarioLog }) => {
-  const { setSelectedMenu, setShowNewWorkout, atualizarUserLogin } = UseAppContext();
+  const { setShowNewWorkout, atualizarUserLogin } = UseAppContext();
   const [timer, setTimer] = useState(0);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     const intervaloTreino = setInterval(() => setTimer((prev) => prev + 1), 1000);
@@ -23,6 +28,8 @@ const NewWorkout = ({ exercicios,  usuarioLog }) => {
   : 1;
 
   const handleCompletarTreino = async () => {
+
+
     const treino = 
     {
       id: proximoId,
@@ -52,7 +59,7 @@ const NewWorkout = ({ exercicios,  usuarioLog }) => {
       await api.put(`/usuarios/${usuarioLog.id}`, usuarioAtualizado);
       alert("Treino salvo com sucesso!");
       setShowNewWorkout(false); 
-      setSelectedMenu("user");
+      navigate("/user-area/workouts");
       await atualizarUserLogin();
     } catch {
       setShowNewWorkout(false); 

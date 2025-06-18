@@ -1,6 +1,6 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 import { api } from "../services";
 
@@ -19,6 +19,7 @@ const rotaPrivada = ({ children }) => {
 
 export const AppContextProvider = ( props ) => {
   const { children } = props;
+  const navigate = useNavigate();
 
   const [fotoPerfil, setFotoPerfil] = useState(null);
   const [usuarioParcial, setUsuarioParcial] = useState(null);
@@ -28,9 +29,6 @@ export const AppContextProvider = ( props ) => {
   const [usuarioLog, setUsuarioLog] = useState(null);
   const [ultimoTreino, setUltimoTreino] = useState(null);
   const [showAside, setShowAside] = useState(false);
-  const [selectedMenu, setSelectedMenu] = useState(() => {
-    return localStorage.getItem("selectedMenu") || "treinos";
-  });
 
   
   const loginUsuario = async ({ email, senha }) => {
@@ -78,6 +76,9 @@ export const AppContextProvider = ( props ) => {
     }
   };
 
+    const getIconColor = (path) =>
+    location.pathname === path ? "var(--bs-tertiary)" : undefined;
+
   const logOut = () => {
     localStorage.removeItem('usuarioLogado');
     localStorage.removeItem('selectedMenu');
@@ -116,11 +117,6 @@ export const AppContextProvider = ( props ) => {
     atualizarUserLogin();
   }, [atualizarUserLogin]);
 
-  useEffect(() => {
-    localStorage.setItem("selectedMenu", selectedMenu);
-    handleCloseAside();
-  }, [selectedMenu]);
-
   const handleWorkoutTypeSelect = async (tipo) => {
     if (!usuarioLog) return;
 
@@ -146,7 +142,7 @@ export const AppContextProvider = ( props ) => {
 
         setExerciciosSelecionados(listaAleatoria.slice(0, qtd));
         setShowNewWorkout(true);
-        setSelectedMenu("treinos"); 
+        navigate("/user-area/workouts");
       }
     } catch (error) {
       console.error("erro:", error);
@@ -294,8 +290,7 @@ export const AppContextProvider = ( props ) => {
       showAside,
       handleCloseAside,
       handleShowAside,
-      selectedMenu,
-      setSelectedMenu,
+      getIconColor,
     }}>
       {children}
     </appContext.Provider>

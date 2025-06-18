@@ -11,7 +11,7 @@ const RestrictedLayout = () => {
         <Container fluid className="overflow-x-hidden h-100 bg-primary">
           <Row>
             <AsideUser />
-              <Col xl={11} md={10} className="d-flex justify-content-center bg-primary">
+              <Col xl={11} md={10} className="d-flex justify-content-center bg-primary h-100">
                 <Outlet />
               </Col>
           </Row>

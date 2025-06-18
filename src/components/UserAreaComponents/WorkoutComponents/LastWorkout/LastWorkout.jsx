@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import { UseAppContext } from "../../../../hooks";
 import { ButtonNewWorkout } from "../";
+import { stars } from "../../../../assets";
 
 const LastWorkout = () => {
   const { ultimoTreino, ultimoTreinoFunc, usuarioLog, handleWorkoutTypeSelect } = UseAppContext();  
@@ -16,7 +17,7 @@ const LastWorkout = () => {
       {ultimoTreino ? (
         <div className="p-2 p-md-5" style={{width: "95%"}}>
           <h2 className="title mt-2">
-            Que bom ter você de volta, <span className="fw-bold">{usuarioLog.nome}!</span>
+            Que bom ter você de volta, <span className="fw-bold">{usuarioLog?.nome || "Usuário"}!</span>
           </h2>
           <div className="bg-body rounded p-5">
           <h2 className="title fw-bold ms-1"> Um destaque entre seus treinos recentes: </h2>
@@ -66,9 +67,16 @@ const LastWorkout = () => {
         </div>
       </div>
       ) : (
-        <div className="w-100 my-5 mx-4 p-4 border rounded">
-          <h4 className="text-center title fw-bold">Nenhum treino encontrado.</h4>
-          <p className="text-center"> Aqui será exibido o seu último treino cadastrado ou o seu treino atual. <br />Que tal começar com um novo treino rápido? </p>
+          <div className="w-100 h-100 my-3 d-flex flex-column justify-content-center align-items-center border rounded overflow-hidden" style={{ minHeight: "90vh" }}>
+          <div className="w-100 my-5 mx-4 p-4 h-100 d-flex flex-column justify-content-center align-items-center">
+            <img className='d-none d-xl-block position-absolute' src={stars} style={{top: 80, left: 160, width:"20rem"}}/>
+            <h4 className="text-center title fw-bold">Nenhum treino encontrado.</h4>
+            <p className="text-center"> Aqui será exibido o seu último treino cadastrado ou o seu treino atual. <br />Que tal começar com um novo treino rápido? </p>
+            <div className="mt-2">
+              <ButtonNewWorkout onSelectWorkoutType={handleWorkoutTypeSelect} />
+            </div>
+            <img className='d-none d-xl-block position-absolute' src={stars} style={{bottom: 80, right: 30, width:"20rem" }}/>
+          </div>
         </div>
       )}
     </>
