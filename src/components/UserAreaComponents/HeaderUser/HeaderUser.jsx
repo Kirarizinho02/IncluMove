@@ -23,7 +23,7 @@ const HeaderUser = () => {
   return (
     <div>
       <Container fluid>
-        <header className='d-flex flex-wrap justify-content-between align-items-center py-1 py-md-3 px-3 border-bottom'>
+        <header className='d-flex flex-wrap justify-content-between align-items-center py-1 py-md-3 px-3 border-bottom' > 
           <div className='d-flex align-items-center link-body-emphasis text-decoration-none flex-column d-none d-md-flex'>
             <TooltipLink title='Página Inicial' id='tl1' localizacao='right'>
               <a className='d-flex align-items-center link-body-emphasis text-decoration-none gap-3' href="/">

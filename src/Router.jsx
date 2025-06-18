@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { UseAppContext } from './hooks';
 import { DefaultLayout, FormLayout, RestrictedLayout } from './layouts';
@@ -21,17 +21,17 @@ const Router = () => {
         <Route path='/form/disabilities' element={<Disabilities />} /> 
       </Route>
       <Route
-        path="/user-area"
+        path="/user-area/"
         element={
           <RotaPrivada>
             <RestrictedLayout />
           </RotaPrivada>
         }
       >
-        <Route path='/user-area/' element={<Profile />} />
+        <Route index element={<Navigate to="/user-area/profile" replace />} />
         <Route path='/user-area/workouts' element={<Workouts />} />
-      {/*  <Route path='/user-area/experts' element={<Experts />} />
-        <Route path='/user-area/profile' element={<Profile />} /> */}
+      {/*  <Route path='/user-area/experts' element={<Experts />} />*/}
+        <Route path='/user-area/profile' element={<Profile />} /> 
       </Route> 
 
     </Routes>
