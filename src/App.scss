@@ -23,7 +23,11 @@ $enable-negative-margins: true;
 @import '../node_modules/bootstrap/scss/bootstrap';
 
 @include color-mode(dark) {    
-  $primary: #737239;
+  $primary: #695B45;
+
+  .signuplink {
+    color: $accent !important;
+  }
 
   .bg-primary {
     background-color: $primary !important;
@@ -137,4 +141,63 @@ body {
 
 .logout-toggle::after {
   display: none !important;
+}
+
+.btn-flyout-animated {
+  background: linear-gradient(90deg, $tertiary, #8a60c9 );
+  color: #fff !important;
+  border: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-flyout-animated:hover, .btn-flyout-animated:focus {
+  transform: scale(1.04);
+  color: #fff !important;
+}
+
+.flyout-menu-animated {
+  min-width: 245px;
+  border-radius: 0.5rem;
+  animation: flyoutIn 0.5s ease-in-out;
+}
+
+@keyframes flyoutIn {
+  from {
+    opacity: 0;
+    transform:  scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform:  scale(1);
+  }
+}
+
+.flyout-item:hover, .flyout-item:focus {
+  background: $gray-200;
+  transition:ease-in-out 0.2s;
+  color: $tertiary !important;
+}
+
+.transition {
+  transition: transform 0.5s;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.treino-card-animado {
+  transition: transform 0.18s, box-shadow 0.18s;
+  box-shadow: 0 4px 24px 0 rgba(171, 122, 245, 0.12);
+  position: relative;
+}
+
+.btn-completar-treino {
+  background: linear-gradient(90deg, $accent, #82bd5b);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.btn-completar-treino:hover, .btn-completar-treino:focus {
+  transform: scale(1.04);
 }

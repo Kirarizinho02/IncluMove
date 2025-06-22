@@ -20,7 +20,7 @@ const LandingPage = () => {
                   <span className='title'>Inscreva-se</span>
                 </Button>
               </div>
-              <p className='text-center text-md-start'>Já possui um cadastro? <a className='text-decoration-none link-tertiary' href='/form/login'>Entre na sua conta.</a></p>
+              <p className='text-center text-md-start'>Já possui um cadastro? <a className='text-decoration-none link-tertiary signuplink' href='/form/login'>Entre na sua conta.</a></p>
             </Col>
             <Col md={12} lg={6}>
               <img className='mw-100' src={mulher_cadeira} alt='Mulher feliz em cadeira de rodas'/>
