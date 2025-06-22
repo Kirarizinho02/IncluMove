@@ -142,6 +142,7 @@ body {
 }
 
 @media (max-width: 768px) {
+  .w-md-75 { width: 75% !important; }
   .w-md-100 {width: 100% !important;}
   .align-center-important { align-items:center!important; }
 }
@@ -151,19 +152,25 @@ body {
 }
 
 .btn-flyout-animated {
-  background: linear-gradient(90deg, $tertiary, #8a60c9 );
-  color: #fff !important;
+  color: black !important;
   border: none;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .btn-flyout-animated:hover, .btn-flyout-animated:focus {
   transform: scale(1.04);
-  color: #fff !important;
+}
+
+.btn-edit-animated {
+  border: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-edit-animated:hover, .btn-edit-animated:focus {
+  transform: scale(1.04);
 }
 
 .flyout-menu-animated {
-  min-width: 245px;
   border-radius: 0.5rem;
   animation: flyoutIn 0.5s ease-in-out;
 }

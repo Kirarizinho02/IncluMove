@@ -9,15 +9,17 @@ const ButtonNewWorkout = (props) => {
   const [show, setShow] = useState(false);
 
   return (
-    <Dropdown show={show} onToggle={setShow} className="shadow-sm">
+    <Dropdown show={show} onToggle={setShow} className="shadow-sm w-100">
       <Dropdown.Toggle
         variant="tertiary"
         id="dropdown-basic"
-        className="p-3 btn-flyout-animated logout-toggle d-flex align-items-center gap-2 fs-4 fw-bold"
+        className="p-3 btn-flyout-animated logout-toggle d-flex align-items-center gap-2 fs-4 rounded-4 w-100 text-center"
       >
+        <span className="d-flex align-items-center w-100 justify-content-center">
         <FaFire className="me-1" />
         Novo treino
         <FaChevronDown className={`ms-2 transition ${show ? "rotate-180" : ""}`} />
+        </span>
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="flyout-menu-animated fs-5">

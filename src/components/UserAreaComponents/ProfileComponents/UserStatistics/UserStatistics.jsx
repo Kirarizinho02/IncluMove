@@ -1,6 +1,6 @@
 import { Col } from "react-bootstrap"
 import { UseAppContext } from "../../../../hooks"
-import { ProfessionalsComponent } from "../../"
+import { LevelComponent } from "../../LevelComponent"
 import { GraphsComponent } from "../"
 import { UserToolbar } from "../"
 import { ProfilePicture } from "../../../"

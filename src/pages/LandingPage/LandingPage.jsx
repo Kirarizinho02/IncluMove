@@ -2,8 +2,20 @@ import { Button, Carousel, Col, Container, Row } from 'react-bootstrap';
 
 import { ana_lemos, compromissos1, compromissos2, compromissos3, line_1, line_2, line_3, marco_aurelio, mulher_cadeira, ricardo_junior, stars } from '../../assets';
 
+// eslint-disable-next-line no-unused-vars
+import { motion, useInView } from "motion/react"
+import { useRef } from 'react';
+
 
 const LandingPage = () => {
+  const marcoRef = useRef(null);
+  const anaRef = useRef(null);
+  const ricardoRef = useRef(null);
+
+  const marcoInView = useInView(marcoRef, { once: true });
+  const anaInView = useInView(anaRef, { once: true });
+  const ricardoInView = useInView(ricardoRef, { once: true });
+
 
   return (
     <>
@@ -23,7 +35,7 @@ const LandingPage = () => {
               <p className='text-center text-md-start'>Já possui um cadastro? <a className='text-decoration-none link-tertiary signuplink' href='/form/login'>Entre na sua conta.</a></p>
             </Col>
             <Col md={12} lg={6}>
-              <img className='mw-100' src={mulher_cadeira} alt='Mulher feliz em cadeira de rodas'/>
+              <img className='mw-100' src={mulher_cadeira} alt='Mulher feliz em cadeira de rodas' />
             </Col>
           </Row>
           <img className='d-none d-lg-block position-absolute ms-n5 mt-xxl-n5' src={stars} />
@@ -41,36 +53,58 @@ const LandingPage = () => {
           <p className='text-center'>
             O time da IncluMove já conta com fisioterapeutas capacitados para atendê-los. Conheça um pouco dos nossos destaques:
           </p>
-          <Row className='mt-5 overflow-auto'>
-            <Col md={12} lg={4} className='d-flex justify-content-center'>
-              <div className='test text-center me-lg-auto'>
-                <img src={marco_aurelio}  alt='Doutor Marco Aurélio'/>
-                <h2 className='title fw-bold'>Marco Aurélio</h2>
-                <p className='w-75 mx-auto'>
-                  Formado em Fisioterapia e Educação Física, cuida de idosos e pessoas com mobilidade reduzida há mais de 10 anos.
-                </p>
-              </div>
+          <Row className='mt-5'>
+            <Col md={12} lg={4} className='d-flex justify-content-center' style={{ transform: 'translateY(-2rem)' }}>
+              <motion.div
+                ref={marcoRef}
+                initial={{ opacity: 0, y: 30 }}
+                animate={marcoInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1, ease: "easeOut" }}
+              >
+                <div className='test text-center me-lg-auto'>
+                  <img src={marco_aurelio} alt='Doutor Marco Aurélio' />
+                  <h2 className='title fw-bold'>Marco Aurélio</h2>
+                  <p className='w-75 mx-auto'>
+                    Formado em Fisioterapia e Educação Física, cuida de idosos e pessoas com mobilidade reduzida há mais de 10 anos.
+                  </p>
+                </div>
+              </motion.div>
             </Col>
             <Col md={12} lg={4} className='d-flex justify-content-center'>
-              <div className='test text-center me-lg-auto'>
-                <img src={ana_lemos} alt='Doutora Ana Lemos'/>
-                <h2 className='title fw-bold'>Ana Lemos</h2>
-                <p className='w-75 mx-auto'>
-                  Formada em Fisioterapia pela USP em 2017, atua na área cuidando de pacientes em quadros de tetraplegia desde 2019.
-                </p>
-              </div>
+              <motion.div
+                ref={anaRef}
+                initial={{ opacity: 0, y: 30 }}
+                animate={anaInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 1.75, ease: "easeOut" }}
+              >
+                <div className='test text-center me-lg-auto'>
+                  <img src={ana_lemos} alt='Doutora Ana Lemos'/>
+                  <h2 className='title fw-bold'>Ana Lemos</h2>
+                  <p className='w-75 mx-auto'>
+                    Formada em Fisioterapia pela USP em 2017, atua na área cuidando de pacientes em quadros de tetraplegia desde 2019.
+                  </p>
+                </div>
+              </motion.div>
             </Col>
-            <Col md={12} lg={4} className='d-flex justify-content-center'>
-              <div className='test text-center me-lg-auto'>
-                <img src={ricardo_junior} alt='Doutor Ricardo Júnior'/>
-                <h2 className='title fw-bold'>Ricardo Júnior</h2>
-                <p className='w-75 mx-auto'>
-                  Formado em Fisioterapia e Educação Física, cuida de idosos e pessoas com mobilidade reduzida há mais de 10 anos.
-                </p>
-              </div>
+            <Col md={12} lg={4} className='d-flex justify-content-center' style={{ transform: 'translateY(2rem)' }}>
+              <motion.div
+                ref={ricardoRef}
+                initial={{ opacity: 0, y: 30 }}
+                animate={ricardoInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 2.25, ease: "easeOut" }}
+              >
+                <div className='test text-center me-lg-auto'>
+                  <img src={ricardo_junior} alt='Doutor Ricardo Júnior' />
+                  <h2 className='title fw-bold'>Ricardo Júnior</h2>
+                  <p className='w-75 mx-auto'>
+                    Formado em Fisioterapia e Educação Física, cuida de idosos e pessoas com mobilidade reduzida há mais de 10 anos.
+                  </p>
+                </div>
+              </motion.div>
             </Col>
+
           </Row>
-          <div className='d-flex justify-content-center'><img className='mb-n5' src={line_2} height={212} /></div>
+          <div className='d-flex justify-content-center'><img className='mb-n5 mt-4' src={line_2} height={210} /></div>
         </Container>
       </div>
       <div className='grad-body-bg-to-primary' />
@@ -80,14 +114,14 @@ const LandingPage = () => {
           <p className='text-center'>
             Descubra mais sobre as pautas que movem nosso projeto:
           </p>
-          <Carousel style={{ maxHeight: '80rem' }} className='mt-n5 mb-5'>
+          <Carousel style={{ maxHeight: '70rem' }} className='mt-n5 mb-5'>
             <Carousel.Item className='w-100 h-100'>
               <Carousel.Caption className='mt-5'>
                 <h1 className='title fw-bold'> 1. </h1>
                 <p className='mt-n2'> Diversidade, Equidade e Inclusão </p>
               </Carousel.Caption>
               <div className='d-flex flex-column align-items-center mt-n4'>
-                <img src={compromissos1} className='d-flex w-50 i' alt='Grupo de pessoas diversas felizes'></img>
+                <img src={compromissos1} className='d-flex i w-md-75' alt='Grupo de pessoas diversas felizes' style={{ maxWidth: "30rem" }}></img>
               </div>
               <Carousel.Caption >
                 <div className='w-100 d-flex flex-column align-items-center mb-2 '>
@@ -103,8 +137,8 @@ const LandingPage = () => {
                 <h1 className='title fw-bold'> 2. </h1>
                 <p className='mt-n2'> Educação e Conscientização Social </p>
               </Carousel.Caption>
-              <div className='d-flex flex-column align-items-center mt-n4'>
-                <img src={compromissos2} className='d-flex w-75' alt='Roda de pessoas diversas felizes'></img>
+              <div className='d-flex flex-column align-items-center mt-n4 mb-2'>
+                <img src={compromissos2} className='d-flex w-md-75' alt='Roda de pessoas diversas felizes' style={{ maxWidth: "44rem" }}></img>
               </div>
               <Carousel.Caption>
                 <div className='w-100 d-flex flex-column align-items-center mb-2 '>
@@ -121,7 +155,7 @@ const LandingPage = () => {
                 <p className='mt-n2'> Bem-estar </p>
               </Carousel.Caption>
               <div className='d-flex flex-column align-items-center mt-n4'>
-                <img src={compromissos3} className='d-flex w-50' alt='Mulher em uma caminhada com pensamentos positivos'></img>
+                <img src={compromissos3} className='d-flex w-md-75' alt='Mulher em uma caminhada com pensamentos positivos' style={{ maxWidth: "30rem" }}></img>
               </div>
               <Carousel.Caption>
                 <div className='w-100 d-flex flex-column align-items-center mb-2 '>
@@ -140,15 +174,15 @@ const LandingPage = () => {
       <div className='pt-4' >
         <Container>
           <Row>
-          <p className='title text-medium fw-bold text-center m-0 mt-5'> O projeto </p>
+            <p className='title text-medium fw-bold text-center m-0 mt-5'> O projeto </p>
             <Col md={12}>
               <div className='w-100 d-flex align-items-center flex-column'>
-              <p className='text-center w-75'>
-                Criado por estudantes da ETEC Bento Quirino como parte da resolução da proposta do <span className='fw-bold'>Hackteen</span> — uma competição idealizada e realizada pelo instituto Venturus Inovação e Tecnologia em parceria com a Fundação Iochpe  — 
-                o IncluMove é uma solução digital para o bem-estar físico inclusivo. <br />
-              <br /> 
-                Aqui está o vídeo pitch feito para a entrega inicial do projeto:
-              </p>
+                <p className='text-center w-75'>
+                  Criado por estudantes da ETEC Bento Quirino como parte da resolução da proposta do <span className='fw-bold'>Hackteen</span> — uma competição idealizada e realizada pelo instituto Venturus Inovação e Tecnologia em parceria com a Fundação Iochpe  —
+                  o IncluMove é uma solução digital para o bem-estar físico inclusivo. <br />
+                  <br />
+                  Aqui está o vídeo pitch feito para a entrega inicial do projeto:
+                </p>
               </div>
             </Col>
             <Col md={12} className='d-flex justify-content-center'>

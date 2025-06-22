@@ -24,6 +24,7 @@ export const AppContextProvider = ( props ) => {
   const [fotoPerfil, setFotoPerfil] = useState(null);
   const [usuarioParcial, setUsuarioParcial] = useState(null);
   const [showNewWorkout, setShowNewWorkout] = useState(false);
+  const [showWorkoutToast, setShowWorkoutToast] = useState(false);
   const [exerciciosSelecionados, setExerciciosSelecionados] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
   const [usuarioLog, setUsuarioLog] = useState(null);
@@ -266,6 +267,8 @@ export const AppContextProvider = ( props ) => {
       
       setShowNewWorkout,
       showNewWorkout,
+      showWorkoutToast,
+      setShowWorkoutToast,
       handleWorkoutTypeSelect,
       exerciciosSelecionados,
       

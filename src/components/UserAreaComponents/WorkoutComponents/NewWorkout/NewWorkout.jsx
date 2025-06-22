@@ -11,7 +11,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { FaCheck } from "react-icons/fa6";
 
 const NewWorkout = ({ exercicios, usuarioLog }) => {
-  const { setShowNewWorkout, atualizarUserLogin } = UseAppContext();
+  const { setShowNewWorkout, atualizarUserLogin, setShowWorkoutToast } = UseAppContext();
 
   const [timer, setTimer] = useState(0);
   const [checked, setChecked] = useState(Array(exercicios.length).fill(false));
@@ -81,6 +81,7 @@ const NewWorkout = ({ exercicios, usuarioLog }) => {
         await api.put(`/usuarios/${usuarioLog.id}`, usuarioAtualizado);
         setTimeout(async () => {
           setShowNewWorkout(false);
+          setShowWorkoutToast(true);
           navigate("/user-area/workouts");
           await atualizarUserLogin();
         }, 500);
