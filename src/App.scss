@@ -25,6 +25,13 @@ $enable-negative-margins: true;
 @include color-mode(dark) {    
   $primary: #695B45;
 
+  .workout-details {
+    color: white !important; 
+  }
+  .workout-details.bg-accent {
+    color: black !important; 
+  }
+
   .signuplink {
     color: $accent !important;
   }
