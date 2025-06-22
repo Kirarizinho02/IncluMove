@@ -1734,7 +1734,7 @@
             {
               "id": 2,
               "nome": "Agachamento",
-              "movimento_pernas": "Nenhum",
+              "movimento_pernas": "Nenhum",      
               "equipamento_apoio": "Pé",
               "equipamento_treino": "NuloEquip",
               "descricao": "Exercício para fortalecer as pernas",
@@ -2962,7 +2962,7 @@
       "equipamento_treino": "NuloEquip",
       "descricao": "Exercício para fortalecer as pernas",
       "series": 3,
-      "foto": "/src/assets/workoutAssets/agachamento.png",
+      "foto": "/workoutAssets/agachamento.png",
       "repeticoes": 10
     },
     {
@@ -2973,7 +2973,7 @@
       "equipamento_treino": "TotalEquip",
       "descricao": "Exercício para fortalecer o peito",
       "series": 3,
-      "foto": "/src/assets/workoutAssets/supino.png",
+      "foto": "/workoutAssets/supino.png",
       "repeticoes": 10
     },
     {
@@ -2984,7 +2984,7 @@
       "equipamento_treino": "TotalEquip",
       "descricao": "Exercício para fortalecer as costas",
       "series": 3,
-      "foto": "/src/assets/workoutAssets/remada.png",
+      "foto": "/workoutAssets/remada.png",
       "repeticoes": 10
     },
     {
@@ -2995,7 +2995,7 @@
       "equipamento_treino": "ParcialSingleEquip",
       "descricao": "Exercício sentado para fortalecer os ombros",
       "series": 3,
-      "foto": "/src/assets/workoutAssets/elevacaoFrontalHalter.png",
+      "foto": "/workoutAssets/elevacaoFrontalHalter.png",
       "repeticoes": 12
     },
     {
@@ -3006,7 +3006,7 @@
       "equipamento_treino": "ParcialEquip",
       "descricao": "Exercício para fortalecer os bíceps, pode ser feito sentado",
       "series": 3,
-      "foto": "/src/assets/workoutAssets/roscaDiretaHalter.png",
+      "foto": "/workoutAssets/roscaDiretaHalter.png",
       "repeticoes": 12
     },
     {
@@ -3017,7 +3017,7 @@
       "equipamento_treino": "NuloEquip",
       "descricao": "Flexão adaptada, usando a parede como suporte para quem não consegue ir ao chão",
       "series": 3,
-      "foto": "/src/assets/workoutAssets/flexaoParede.png",
+      "foto": "/workoutAssets/flexaoParede.png",
       "repeticoes": 15
     },
     {
@@ -3028,7 +3028,7 @@
       "equipamento_treino": "ParcialEquip",
       "descricao": "Exercício sentado para fortalecer os ombros e tríceps",
       "series": 3,
-      "foto": "/src/assets/workoutAssets/desenvolvimentoHalters.png",
+      "foto": "/workoutAssets/desenvolvimentoHalters.png",
       "repeticoes": 10
     },
     {
@@ -3039,7 +3039,7 @@
       "equipamento_treino": "Faixa elástica",
       "descricao": "Exercício para fortalecer costas e braços",
       "series": 3,
-      "foto": "/src/assets/workoutAssets/latPulldown.png",
+      "foto": "/workoutAssets/latPulldown.png",
       "repeticoes": 12
     },
     {
@@ -3050,7 +3050,7 @@
       "equipamento_treino": "ParcialSingleEquip",
       "descricao": "Exercício voltado para desenvolvimento dos ombros",
       "series": 3,
-      "foto": "/src/assets/workoutAssets/elevacaoLateral.png",
+      "foto": "/workoutAssets/elevacaoLateral.png",
       "repeticoes": 12
     },
     {
@@ -3061,7 +3061,7 @@
       "equipamento_treino": "ParcialSingleEquip",
       "descricao": "Exercício para fortalecer os bíceps com foco nos antebraços, adaptado para posição sentada",
       "series": 3,
-      "foto": "/src/assets/workoutAssets/roscaMartelo.png",
+      "foto": "/workoutAssets/roscaMartelo.png",
       "repeticoes": 12
     },
     {
@@ -3072,7 +3072,7 @@
       "equipamento_treino": "ParcialSingleEquip",
       "descricao": "Exercício para fortalecer a região dos tríceps de maneira segura e eficiente",
       "series": 3,
-      "foto": "/src/assets/workoutAssets/tricepsTesta.png",
+      "foto": "/workoutAssets/tricepsTesta.png",
       "repeticoes": 10
     },
     {
@@ -3083,7 +3083,7 @@
       "equipamento_treino": "ParcialSingleEquip",
       "descricao": "Exercício focado em peito e ombros, realizado em posição sentada",
       "series": 3,
-      "foto": "/src/assets/workoutAssets/crucifixo.png",
+      "foto": "/workoutAssets/crucifixo.png",
       "repeticoes": 12
     },
     {
@@ -3094,7 +3094,7 @@
       "equipamento_treino": "ParcialSingleEquip",
       "descricao": "Exercício seguro para fortalecimento dos ombros utilizando faixa elástica",
       "series": 3,
-      "foto": "/src/assets/workoutAssets/abducaoElastico.png",
+      "foto": "/workoutAssets/abducaoElastico.png",
       "repeticoes": 12
     }
   ]
