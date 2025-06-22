@@ -9,9 +9,12 @@ const RestrictedLayout = () => {
       <HeaderUser />
       <Content> 
         <Container fluid className="overflow-x-hidden h-100 bg-primary">
-          <Row>
+          <Row className="h-100">
             <AsideUser />
-              <Col xl={11} md={10} className="d-flex justify-content-center bg-primary h-100">
+            <Col
+              xl={11}
+              md={10}
+              className="d-flex justify-content-center bg-primary p-0">
                 <Outlet />
               </Col>
           </Row>
