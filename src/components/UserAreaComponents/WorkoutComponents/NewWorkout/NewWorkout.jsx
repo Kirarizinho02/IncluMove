@@ -180,10 +180,9 @@ const NewWorkout = ({ exercicios, usuarioLog }) => {
                       onClick={() => handleCheck(index)}
                     >
                       <Card
-                        className={`h-100 shadow treino-card-animado border-3 ${checked[index] ? "bg-accent border-accent" : ""
+                        className={`h-100 shadow treino-card-animado border-3 workout-details ${checked[index] ? "bg-accent border-accent" : ""
                           }`}
                         style={{
-                          color: checked[index] ? "black" : "white",
                           borderColor: checked[index] ? "#abf479" : undefined,
                           transition: "background 0.3s, color 0.3s, border 0.3s",
                           position: "relative",
@@ -235,7 +234,7 @@ const NewWorkout = ({ exercicios, usuarioLog }) => {
                   </Col>
                 ))}
               </Row>
-              
+
               <div className="w-100 align-items-center d-flex flex-column mt-4">
                 <Button
                   className="btn-completar-treino"
