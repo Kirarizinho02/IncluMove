@@ -1,21 +1,20 @@
+import { useRef } from 'react';
+
+// eslint-disable-next-line no-unused-vars
+import { motion, useInView } from "motion/react"
 import { Button, Carousel, Col, Container, Row } from 'react-bootstrap';
 
 import { ana_lemos, compromissos1, compromissos2, compromissos3, line_1, line_2, line_3, marco_aurelio, mulher_cadeira, ricardo_junior, stars } from '../../assets';
 
-// eslint-disable-next-line no-unused-vars
-import { motion, useInView } from "motion/react"
-import { useRef } from 'react';
-
-
 const LandingPage = () => {
+
   const marcoRef = useRef(null);
-  const anaRef = useRef(null);
+  const anaRef = useRef(null); 
   const ricardoRef = useRef(null);
 
   const marcoInView = useInView(marcoRef, { once: true });
   const anaInView = useInView(anaRef, { once: true });
   const ricardoInView = useInView(ricardoRef, { once: true });
-
 
   return (
     <>

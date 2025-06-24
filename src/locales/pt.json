@@ -1,0 +1,17 @@
+{
+  "translation": {
+    "profile": {
+      "greeting": "Olá, <1>{{name}}</1>",
+      "loading": "Loading user...",
+      "email": "{{email}}"
+    },
+    "tooltips": {
+      "settings": "Configurações",
+      "workouts": "Treinos",
+      "experts": "Profissionais",
+      "profile": "Conta",
+      "home": "Página Inicial",
+      "language": "Idioma"
+    }
+  }
+}

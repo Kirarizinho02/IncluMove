@@ -21,7 +21,7 @@ const LastWorkout = () => {
 
   return (
     <>
-      <Row className="h-100 w-100 m-0 p-0 align-items-stretch" style={{ minHeight: "90vh" }}>
+      <Row className="h-100 w-100 m-0 p-0 align-items-stretch" style={{ minHeight: "91vh" }}>
         <Col
           lg={9}
           md={12}

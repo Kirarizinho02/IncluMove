@@ -3,6 +3,7 @@ import { createContext, useCallback, useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
 import { api } from "../services";
+import { useTranslation } from "react-i18next";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const appContext = createContext({});
@@ -30,6 +31,9 @@ export const AppContextProvider = ( props ) => {
   const [usuarioLog, setUsuarioLog] = useState(null);
   const [ultimoTreino, setUltimoTreino] = useState(null);
   const [showAside, setShowAside] = useState(false);
+    
+  const { i18n: {changeLanguage, language} } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState(language);
 
   
   const loginUsuario = async ({ email, senha }) => {
@@ -256,7 +260,13 @@ export const AppContextProvider = ( props ) => {
     } catch (error) {
       console.error("Erro ao listar os treinos", error);
     }
-  };  
+  }; 
+
+  const handleChangeLanguage = (langCode) => {
+    changeLanguage(langCode);
+    setCurrentLanguage(langCode);
+  };
+
 
   return (
     <appContext.Provider value={{ 
@@ -294,6 +304,9 @@ export const AppContextProvider = ( props ) => {
       handleCloseAside,
       handleShowAside,
       getIconColor,
+
+      handleChangeLanguage,
+      currentLanguage,
     }}>
       {children}
     </appContext.Provider>
