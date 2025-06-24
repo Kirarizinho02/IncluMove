@@ -38,15 +38,15 @@ const GraphsComponent = (props) => {
   };
 
   return(
-    <Container className="shadow p-4 mt-3 rounded-4 bg-body">
-      <Row>
-        <h4 className="fw-bold title ms-3"> Últimos treinos realizados: </h4>
+    <Container className="shadow p-4 mt-3 rounded-4 bg-body h-100">
+      <Row className="d-flex flex-column align-items-center justify-content-center w-100 p-0 m-0">
+        <h4 className="fw-bold title text-center"> Últimos treinos realizados: </h4>
 
-        <Col md={6} className="d-flex flex-column align-items-center h-100">
+        <Col md={12} className="d-flex flex-column align-items-center justify-content-center w-75">
           <GraficoPizza data={treinoData} />
         </Col>
 
-        <Col md={6} className="d-flex justify-content-center flex-column align-items-start mt-4 align-center-important">
+        <Col md={12} className="d-flex justify-content-center flex-column align-items-center mt-4 w-100">
           {treinoDuracoes.Rapido > 0 && (
             <div className="d-flex align-items-center p-2">
               <div className="bg-secondary rounded-4 me-3 ms-n" style={{ width: "1.5rem", height: "1.5rem" }}></div>

@@ -1,4 +1,4 @@
-import { Nav } from "react-bootstrap";
+import { Col, Nav, Row } from "react-bootstrap";
 import { ButtonNewWorkout } from "../../";
 import { ButtonEdit } from "../../../";
 import { UseAppContext } from "../../../../hooks";
@@ -7,19 +7,14 @@ const UserToolbar = () => {
   const { handleWorkoutTypeSelect } = UseAppContext();
 
   return (
-    <Nav defaultActiveKey='/' className="justify-content-center w-100" >
-      <Nav.Item className="my-2">
-        <Nav.Link className='fs-6 link-body-emphasis' href='/'>Profissionais</Nav.Link>
-      </Nav.Item>
-      <div className='vr d-none d-sm-flex'></div>
-      <Nav.Item className="my-2 mx-3">
+    <Row className="w-100" >
+      <Col md={6} lg={12} className="my-2 w-100 d-flex justify-content-center">
         <ButtonEdit />
-      </Nav.Item>
-      <div className='vr d-none d-sm-flex'></div>
-      <Nav.Item className="my-2 mx-3">
+      </Col>
+      <Col md={6} lg={12} className="my-2 w-100 d-flex justify-content-center">
         <ButtonNewWorkout onSelectWorkoutType={handleWorkoutTypeSelect}/>
-      </Nav.Item>
-    </Nav>
+      </Col>
+    </Row>
   )
 }
 

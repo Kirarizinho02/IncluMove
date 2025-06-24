@@ -1,0 +1,17 @@
+{
+  "translation": {
+    "profile": {
+      "greeting": "Hello, <1>{{name}}</1>",
+      "loading": "Loading user...",
+      "email": "{{email}}"
+    },
+    "tooltips": {
+      "settings": "Settings",
+      "workouts": "Workouts",
+      "experts": "Experts",
+      "profile": "Profile",
+      "home": "Home Page",
+      "language": "Language"
+    }
+  }
+}

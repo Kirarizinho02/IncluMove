@@ -1,5 +1,6 @@
 export * from './ButtonBack';
 export * from './ButtonEdit';
+export * from './ButtonLanguage';
 export * from './ButtonLogOut';
 export * from './Loading';
 export * from './ProfilePicture';

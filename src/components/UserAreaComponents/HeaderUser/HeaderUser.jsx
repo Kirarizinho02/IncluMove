@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Button, Container, Dropdown, ToggleButton } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 
-import { ProfilePicture, TooltipLink } from '../../';
+import { ButtonLanguage, ProfilePicture, TooltipLink } from '../../';
 import { logo } from '../../../assets';
 
 // eslint-disable-next-line no-unused-vars
@@ -14,18 +15,20 @@ import { IoHelpCircle, IoLogOut, IoLogOutOutline, IoSettings, IoSettingsOutline,
 
 const HeaderUser = () => {
   const { logOut, handleShowAside } = UseAppContext();
+  const { switchTheme, theme } = UseThemeContext();
+
+  const { t } = useTranslation();
   
   const [isHover, setIsHover] = useState(false); 
   const [IsHoverLogOut, setIsHoverLogOut] = useState(false);
 
-  const { switchTheme, theme } = UseThemeContext();
 
   return (
     <div>
       <Container fluid>
         <header className='d-flex flex-wrap justify-content-between align-items-center py-1 py-md-3 px-3 border-bottom' > 
           <div className='d-flex align-items-center link-body-emphasis text-decoration-none flex-column d-none d-md-flex'>
-            <TooltipLink title='Página Inicial' id='tl1' localizacao='right'>
+            <TooltipLink title={t('tooltips.home')} id='tl1' localizacao='bottom'>
               <a className='d-flex align-items-center link-body-emphasis text-decoration-none gap-3' href="/">
                 <img height={40} src={logo} alt='Logo do IncluMove' />
                 <span className='title fw-medium fs-5'>IncluMove</span>
@@ -39,9 +42,10 @@ const HeaderUser = () => {
 
 
           <div className='d-flex align-items-center gap-4'>
+            <ButtonLanguage />
 
             <Dropdown className='mt-1'>
-              <TooltipLink title='Configurações' id='tl2' localizacao='left'>
+              <TooltipLink title={t('tooltips.settings')} id='tl2' localizacao='bottom'>
                 <Dropdown.Toggle
                   className='logout-toggle'
                   as='span'
@@ -87,10 +91,12 @@ const HeaderUser = () => {
               </Dropdown.Menu>
             </Dropdown>
             <Dropdown className='mb-1'>
-              <TooltipLink title='Conta' id='tl3' localizacao='left'>
+              <TooltipLink title={t('tooltips.profile')} id='tl3' localizacao='bottom'>
+                <div className='p-1'>
                 <Dropdown.Toggle as='span' className="logout-toggle" style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
                   <ProfilePicture size={40} alt='Botão de logout' />
                 </Dropdown.Toggle>
+                </div>
               </TooltipLink>
 
               <Dropdown.Menu className='shadow mt-3'>
