@@ -27,12 +27,12 @@ const AsideUser = () => {
                 </TooltipLink>
               </Nav.Link>
 
-              <Nav.Link className="p-3 text-center pe-auto link-body-emphasis aside-link w-100 text-wrap" eventKey="/user-area/experts" href="#">
+              {/* <Nav.Link className="p-3 px-1 text-center pe-auto link-body-emphasis aside-link w-100 text-wrap" eventKey="/user-area/experts" href="#">
                 <TooltipLink title={t('tooltips.experts')} id="t-3" localizacao="right">
                   <FaPeopleGroup className="w-100" size="2rem" />
                   <span className="fs-6">Profissionais</span>
                 </TooltipLink>
-              </Nav.Link>
+              </Nav.Link> */}
 
               <Nav.Link className="p-3 text-center pe-auto link-body-emphasis aside-link w-100" eventKey="/user-area/profile" href="/user-area/profile">
                 <TooltipLink title={t('tooltips.profile')} id="t-2" localizacao="right">
@@ -63,10 +63,12 @@ const AsideUser = () => {
               <FaDumbbell className="w-100" size="2rem" color={getIconColor("/user-area/workouts")}/>
               <span className="fs-6">Treinos</span>
             </Nav.Link>
-            <Nav.Link className="p-3 text-center pe-auto link-body-emphasis aside-link" eventKey="/user-area/experts" href="#">
+
+            {/* <Nav.Link className="p-3 text-center pe-auto link-body-emphasis aside-link" eventKey="/user-area/experts" href="#">
               <FaPeopleGroup className="w-100" size="2rem" />
               <span className="fs-6">Profissionais</span>
-            </Nav.Link>
+            </Nav.Link> */}
+            
             <Nav.Link className="p-3 text-center pe-auto link-body-emphasis aside-link" eventKey="/user-area/profile" href="/user-area/profile">
               <FaUserCircle className="w-100" size="2rem" color={getIconColor("/user-area/profile")}/>
               <span className="fs-6">Conta</span>

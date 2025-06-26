@@ -41,7 +41,7 @@ const LandingPage = () => {
           <p className='title fs-1 text-center mt-lg-5 mt-xxl-3 mb-0'>
             Descubra o <span className='fw-bold'>IncluMove</span>
           </p>
-          <div className='d-flex justify-content-center'><img className='mb-n5' src={line_1} height={150} /></div>
+          <div className='d-flex justify-content-center'><img className='mb-n5 test' src={line_1} height={150} /></div>
         </Container>
       </div>
 
@@ -60,7 +60,7 @@ const LandingPage = () => {
                 animate={marcoInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1, ease: "easeOut" }}
               >
-                <div className='test text-center me-lg-auto'>
+                <div className='text-center me-lg-auto'>
                   <img src={marco_aurelio} alt='Doutor Marco Aurélio' />
                   <h2 className='title fw-bold'>Marco Aurélio</h2>
                   <p className='w-75 mx-auto'>
@@ -76,7 +76,7 @@ const LandingPage = () => {
                 animate={anaInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 1.75, ease: "easeOut" }}
               >
-                <div className='test text-center me-lg-auto'>
+                <div className='text-center me-lg-auto'>
                   <img src={ana_lemos} alt='Doutora Ana Lemos'/>
                   <h2 className='title fw-bold'>Ana Lemos</h2>
                   <p className='w-75 mx-auto'>
@@ -92,7 +92,7 @@ const LandingPage = () => {
                 animate={ricardoInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 2.25, ease: "easeOut" }}
               >
-                <div className='test text-center me-lg-auto'>
+                <div className='text-center me-lg-auto'>
                   <img src={ricardo_junior} alt='Doutor Ricardo Júnior' />
                   <h2 className='title fw-bold'>Ricardo Júnior</h2>
                   <p className='w-75 mx-auto'>
@@ -103,7 +103,7 @@ const LandingPage = () => {
             </Col>
 
           </Row>
-          <div className='d-flex justify-content-center'><img className='mb-n5 mt-4' src={line_2} height={210} /></div>
+          <div className='d-flex justify-content-center'><img className='mb-n5 mt-4 test' src={line_2} height={210} /></div>
         </Container>
       </div>
       <div className='grad-body-bg-to-primary' />
@@ -166,7 +166,7 @@ const LandingPage = () => {
             </Carousel.Item>
 
           </Carousel>
-          <div className='d-flex justify-content-center mt-n5'><img className='mb-n5 ' src={line_3} height={150} /></div>
+          <div className='d-flex justify-content-center mt-n5'><img className='mb-n5 test' src={line_3} height={150} /></div>
         </Container>
       </div>
       <div className='grad-primary-to-body-bg' />
