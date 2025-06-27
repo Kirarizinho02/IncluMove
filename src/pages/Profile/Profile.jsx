@@ -29,10 +29,10 @@ const Profile = () => {
           <UserToolbar />
           </Col>
           <Col xl={4} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary">
-          {usuarioLog && <GraphsComponent usuario={usuarioLog} />}
+            {usuarioLog && <GraphsComponent usuario={usuarioLog} />}
           </Col>
           <Col xl={4} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary">
-          <LevelComponent />
+            <LevelComponent />
           </Col>
         </Row>
       </Col>

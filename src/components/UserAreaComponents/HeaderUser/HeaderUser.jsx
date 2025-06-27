@@ -72,7 +72,7 @@ const HeaderUser = () => {
                 </Dropdown.Toggle>
               </TooltipLink>
               <Dropdown.Menu className='shadow'>
-                <Dropdown.Item as={ToggleButton} className='d-flex align-items-center gap-3 ps-4 py-2 cursor' value={theme} onClick={switchTheme}>
+                <Dropdown.Item className='d-flex align-items-center gap-3 ps-4 py-2 cursor' value={theme} onClick={switchTheme}>
                   {theme === 'light' 
                     ? <FaMoon size='1.5rem' /> 
                     : <IoSunny size='1.5rem' />

@@ -17,7 +17,7 @@ const ButtonLanguage = () => {
   return (
     <Dropdown>
       <TooltipLink title={t('tooltips.language')} id='tl4' localizacao='bottom'>
-        <Dropdown.Toggle variant="outline" className="d-flex align-items-center gap-2 logout-toggle fs-6">
+        <Dropdown.Toggle variant="outline" className="p-1 d-flex align-items-center gap-2 logout-toggle fs-6">
           <FaGlobe />
           <span>
             {languages.find(l => l.code === currentLanguage)?.label || currentLanguage.toUpperCase()}

@@ -18,11 +18,15 @@ $theme-colors: (
   dark: #343a40
 );
 
+$carousel-control-color: #212529;
+$carousel-indicator-active-bg: #212529;
+$carousel-dark-indicator-active-bg: #dee2e6;
+
 $enable-negative-margins: true;
 
 @import '../node_modules/bootstrap/scss/bootstrap';
 
-@include color-mode(dark) {    
+@include color-mode(dark) {
   $primary: #695B45;
 
   .workout-details {
@@ -60,6 +64,28 @@ $enable-negative-margins: true;
   .aside-link.active {
     background-color: $gray-800;
   }
+
+  .test {
+    filter: invert(1);
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+//outras mudanças de css vem aqui
+
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
 }
 
 .carousel-caption {
@@ -92,6 +118,16 @@ $enable-negative-margins: true;
   text-decoration: underline;
 }
 
+.header-theme-toggle {
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.header-theme-toggle:hover {
+  opacity: 0.7;
+}
+
 .aside-link .aside-icon {
   transition: color 0.2s;
 }
@@ -99,24 +135,6 @@ $enable-negative-margins: true;
 .aside-link:hover .aside-icon,
 .aside-link.active .aside-icon {
   color: var(--bs-tertiary) !important;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-
-//outras mudanças de css vem aqui
-
-#root {
-  height: 100%;
-  margin: 0;
-}
-
-body {
-  font-family: "Lato", sans-serif;
-}
-
-.title {
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
 }
 
 @media (min-width: 992px) {
