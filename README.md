@@ -20,7 +20,7 @@ Todas as tecnologias e bibliotecas do curso do TIC em trilhas de react foram uti
 ### Frontend
 - **React Bootstrap**: Utilizado para estilização e componentes prontos, acelerando o desenvolvimento.
 - **Chart.js**: Para exibição de gráficos interativos, como o gráfico de distribuição de treinos.
-- **Day.js**: Para manipulação e exibição mais avançada de interações com datas (em treinos).
+- **Day.js**: Para manipulação e exibição mais avançada de interações com datas.
 - **i18n**: Para traduções simples do conteúdo em outros idiomas.
 
 ### Estilização
