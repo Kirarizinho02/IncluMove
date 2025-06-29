@@ -23,6 +23,10 @@ Todas as tecnologias e bibliotecas do curso do TIC em trilhas de react foram uti
 - **Day.js**: Para manipulação e exibição mais avançada de interações com datas.
 - **i18n**: Para traduções simples do conteúdo em outros idiomas.
 
+### Backend
+- **Axios**: Cliente de HTTP para fazer as requisições do back-end mockado.
+- **json-server**: Capacita a criação de uma REST api simples para o backend mockado (db.json).
+
 ### Estilização
 - **Sass**: Escolhido para facilitar a manutenção e reutilização de estilos do bootstrap com variáveis e mixins.
 - **Bootstrap**: Para garantir uma interface responsiva e consistente, simples de desenvolver.
