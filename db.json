@@ -3040,6 +3040,70 @@
               "repeticoes": 10
             }
           ]
+        },
+        {
+          "id": 57,
+          "nome": "Treino - 6/29/2025",
+          "descricao": "teste",
+          "data": "2025-06-29",
+          "duracao": "Pesado",
+          "exercicios": [
+            {
+              "id": 1,
+              "nome": "Agachamento",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Pé",
+              "equipamento_treino": "NuloEquip",
+              "descricao": "Exercício para fortalecer as pernas",
+              "series": 3,
+              "foto": "/workoutAssets/agachamento.png",
+              "repeticoes": 10
+            },
+            {
+              "id": 2,
+              "nome": "Desenvolvimento com halteres",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Cadeira de rodas",
+              "equipamento_treino": "ParcialEquip",
+              "descricao": "Exercício sentado para fortalecer os ombros e tríceps",
+              "series": 3,
+              "foto": "/workoutAssets/desenvolvimentoHalters.png",
+              "repeticoes": 10
+            },
+            {
+              "id": 3,
+              "nome": "Flexão de braço na parede",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Nenhum",
+              "equipamento_treino": "NuloEquip",
+              "descricao": "Flexão adaptada, usando a parede como suporte para quem não consegue ir ao chão",
+              "series": 3,
+              "foto": "/workoutAssets/flexaoParede.png",
+              "repeticoes": 15
+            },
+            {
+              "id": 4,
+              "nome": "Pulldown adatado com máquina",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Pé",
+              "equipamento_treino": "Faixa elástica",
+              "descricao": "Exercício para fortalecer costas e braços",
+              "series": 3,
+              "foto": "/workoutAssets/latPulldown.png",
+              "repeticoes": 12
+            },
+            {
+              "id": 5,
+              "nome": "Supino",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Pé",
+              "equipamento_treino": "TotalEquip",
+              "descricao": "Exercício para fortalecer o peito",
+              "series": 3,
+              "foto": "/workoutAssets/supino.png",
+              "repeticoes": 10
+            }
+          ]
         }
       ]
     },
