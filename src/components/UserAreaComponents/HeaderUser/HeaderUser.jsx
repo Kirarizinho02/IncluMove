@@ -24,14 +24,13 @@ const HeaderUser = () => {
 
 
   return (
-    <div>
       <Container fluid>
         <header className='d-flex flex-wrap justify-content-between align-items-center py-1 py-md-3 px-3 border-bottom' > 
           <div className='d-flex align-items-center link-body-emphasis text-decoration-none flex-column d-none d-md-flex'>
             <TooltipLink title={t('tooltips.home')} id='tl1' localizacao='bottom'>
-              <a className='d-flex align-items-center link-body-emphasis text-decoration-none gap-3' href="/">
-                <img height={40} src={logo} alt='Logo do IncluMove' />
-                <span className='title fw-medium fs-5'>IncluMove</span>
+              <a className='d-flex align-items-center link-body-emphasis text-decoration-none gap-3 ms-1' href="/">
+                <img height={56} src={logo} alt='Logo do IncluMove' />
+                <span className='title fw-medium fs-2'>IncluMove</span>
               </a>
             </TooltipLink>
           </div>
@@ -132,7 +131,6 @@ const HeaderUser = () => {
           </div>
         </header>
       </Container>
-    </div>
   );
 }
 

@@ -21,10 +21,11 @@ const LastWorkout = () => {
 
   return (
     <>
-      <Row className="h-100 w-100 m-0 p-0 align-items-stretch" style={{ minHeight: "91vh" }}>
+    <Row className="h-100 w-100 m-0 flex-nowrap">
         <Col
           lg={9}
           md={12}
+
           className="d-flex align-items-center justify-content-around pb-4 bg-primary"
         >
           <motion.div
@@ -133,7 +134,6 @@ const LastWorkout = () => {
           </div>
         </Col>
 
-      </Row>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1}}
@@ -160,6 +160,7 @@ const LastWorkout = () => {
         </Toast.Body>
       </Toast>
       </motion.div>
+                    </Row>
     </>
   );
 };

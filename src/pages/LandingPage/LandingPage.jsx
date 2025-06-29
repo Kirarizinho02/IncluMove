@@ -5,6 +5,7 @@ import { motion, useInView } from "motion/react"
 import { Button, Carousel, Col, Container, Row } from 'react-bootstrap';
 
 import { ana_lemos, compromissos1, compromissos2, compromissos3, line_1, line_2, line_3, marco_aurelio, mulher_cadeira, ricardo_junior, stars } from '../../assets';
+import { LineFiller } from '../../components';
 
 const LandingPage = () => {
 
@@ -41,7 +42,7 @@ const LandingPage = () => {
           <p className='title fs-1 text-center mt-lg-5 mt-xxl-3 mb-0'>
             Descubra o <span className='fw-bold'>IncluMove</span>
           </p>
-          <div className='d-flex justify-content-center'><img className='mb-n5 test' src={line_1} height={150} /></div>
+          <div className='d-flex justify-content-center'><LineFiller className='mb-n5 test' src={line_1} height={150} /></div>
         </Container>
       </div>
 
@@ -64,7 +65,7 @@ const LandingPage = () => {
                   <img src={marco_aurelio} alt='Doutor Marco Aurélio' />
                   <h2 className='title fw-bold'>Marco Aurélio</h2>
                   <p className='w-75 mx-auto'>
-                    Formado em Fisioterapia e Educação Física, cuida de idosos e pessoas com mobilidade reduzida há mais de 10 anos.
+                    Formado em Educação Física, cuida de idosos e pessoas com mobilidade reduzida há mais de 5 anos.
                   </p>
                 </div>
               </motion.div>
@@ -96,14 +97,14 @@ const LandingPage = () => {
                   <img src={ricardo_junior} alt='Doutor Ricardo Júnior' />
                   <h2 className='title fw-bold'>Ricardo Júnior</h2>
                   <p className='w-75 mx-auto'>
-                    Formado em Fisioterapia e Educação Física, cuida de idosos e pessoas com mobilidade reduzida há mais de 10 anos.
+                    Com um doutorado em Fisioterapia pela USF, é especialista em reabilitação de pacientes com deficiências motoras e neurológicas.
                   </p>
                 </div>
               </motion.div>
             </Col>
 
           </Row>
-          <div className='d-flex justify-content-center'><img className='mb-n5 mt-4 test' src={line_2} height={210} /></div>
+          <div className='d-flex justify-content-center mt-4'><LineFiller className='mb-n5 test' src={line_2} height={210} /></div>
         </Container>
       </div>
       <div className='grad-body-bg-to-primary' />
@@ -166,14 +167,14 @@ const LandingPage = () => {
             </Carousel.Item>
 
           </Carousel>
-          <div className='d-flex justify-content-center mt-n5'><img className='mb-n5 test' src={line_3} height={150} /></div>
+          <div className='d-flex justify-content-center mt-n5'><LineFiller className='mb-n5 test' src={line_3} height={150} /></div>
         </Container>
       </div>
       <div className='grad-primary-to-body-bg' />
       <div className='pt-4' >
         <Container>
           <Row>
-            <p className='title text-medium fw-bold text-center m-0 mt-5'> O projeto </p>
+            <p className='title text-medium fw-bold text-center m-0 mt-n2'> O projeto </p>
             <Col md={12}>
               <div className='w-100 d-flex align-items-center flex-column'>
                 <p className='text-center w-75'>
