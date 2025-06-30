@@ -17,7 +17,7 @@ const LineFiller = ({ src, height, className = '' }) => {
         className="d-block position-relative w-100 test"
         style={{
           zIndex: 1,
-          opacity: 0.2,
+          opacity: 0.15,
         }}
         alt="Linha decorativa de preenchimento, indicando que o conteúdo está carregando."
       />

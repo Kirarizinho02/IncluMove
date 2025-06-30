@@ -12,6 +12,74 @@
       "profile": "Profile",
       "home": "Home Page",
       "language": "Language"
+    },
+    "landing": {
+      "hero": {
+        "title": "Exercises adapted for",
+        "all": "everyone",
+        "desc": "The commitment of",
+        "desc2": "is with the user. We want to embrace all bodies, with or without limitations, with a platform for adapted physical well-being.",
+        "cta": "Sign Up",
+        "haveAccount": "Already have an account? ",
+        "login": "Log in to your account.",
+        "imgAlt": "Happy woman in a wheelchair."
+      },
+      "discover": "Discover",
+      "professionals": {
+        "title": "The Professionals",
+        "desc": "The IncluMove team already includes physiotherapists trained to aid you. Meet a few of our highlights:",
+        "marco": {
+          "imgAlt": "Doctor Marco Aurélio",
+          "name": "Marco Aurélio",
+          "desc": "Graduated in Physical Education, has been caring for the elderly and people with reduced mobility for over 5 years."
+        },
+        "ana": {
+          "imgAlt": "Doctor Ana Lemos",
+          "name": "Ana Lemos",
+          "desc": "Graduated in Physiotherapy from USP in 2017, has been working in the field caring for patients with paraplegia since 2019."
+        },
+        "ricardo": {
+          "imgAlt": "Doctor Ricardo Júnior",
+          "name": "Ricardo Júnior",
+          "desc": "With a PhD in Physiotherapy from USF, he specializes in the rehabilitation of patients with motor and neurological disabilities."
+        }
+      },
+      "commitments": {
+        "title": "The Commitments",
+        "desc": "Discover more about some the causes that drive our project.",
+        "diversity": {
+          "title": "Diversity, Equity, and Inclusion",
+          "imgAlt": "Group of diverse and happy people.",
+          "desc": "Diversity, equity, and inclusion (DEI) are three interconnected concepts that aim to ensure everyone has equal access to opportunities and feels valued, regardless of their individual characteristics."
+        },
+        "education": {
+          "title": "Education and Social Awareness",
+          "imgAlt": "Circle of diverse and happy people",
+          "desc": " We promote awareness through the platform. We encourage understanding and respect for differences, combating prejudices and stereotypes. The IncluMove team embraces all users."
+        },
+        "wellbeing": {
+          "title": "Well Being",
+          "imgAlt": "Woman walking while having positive thoughts",
+          "desc": "OMS defines well-being as a state of complete physical, mental, and social well-being, not merely the absence of disease or infirmity. It is a holistic concept that encompasses various aspects of life, including physical health, mental health, emotional health, and social relationships."
+        }
+      },
+      "project": {
+        "title": "The Project",
+        "desc": "Created by ETEC Bento Quirino students as a part of the",
+        "desc2": "A competition idealized and run by the Venturus Inovation and Technology institute in partnership with Iochpe Foundation — Inclumove is a digital solution for the inclusive physical well beign.",
+        "video": "Watch the pitch made for the first project issue:"
+      }
+    },
+    "about": {
+      "mission": {
+        "title": "Our mission!",
+        "desc": "To democratize a technological solution that promotes access to physical, mental, and social well-being through an inclusive and welcoming platform. We want all bodies — with or without limitations — to be welcomed by our application and find in it a safe space for physical activities."
+      },
+      "team": {
+        "imgAlt": "IncluMove development team",
+        "title": "About us!",
+        "desc": "Our development team is made up of three third-year Systems Development students from ETEC Bento Quirino: <strong>Henrique Professor, Rodrigo Scatolin, and Samuel Augusto</strong>. Passionate about web development, we joined forces to complete the Hackteen challenge.<br/> <br/> We thought a lot about the theme and decided to create an application that could help people with disabilities to exercise, since physical well-being is essential for everyone's mental and social health. Our goal is for IncluMove to be without limitations, so we dedicated a lot of time to ensuring the site's responsiveness and accessibility. <br/> <br/>We had the support of our Web Programming teachers, classmates and relatives, who inspired us to create this project. At last, we thank everyone who helped us on this journey!"
+      }
     }
   }
 }
