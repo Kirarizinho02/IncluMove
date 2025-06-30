@@ -8,7 +8,7 @@ const Profile = () => {
 
   return (
     <>
-      <Col xl={12} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary p-5 h-100" style={{ minHeight: "91vh" }}>
+      <Col xl={12} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary p-5 h-100" style={{ minHeight: "90vh" }}>
         <Row>
           <Col xl={4} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary p-5">
           {usuarioLog ? (
