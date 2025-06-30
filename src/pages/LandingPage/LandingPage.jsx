@@ -53,7 +53,7 @@ const LandingPage = () => {
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     style={{ display: "inline-block" }}
                   >
-                    <FaArrowRight size="1rem"                    className="ms-1 mb-1" />
+                    <FaArrowRight size="1rem" className="ms-1 mb-1" />
                   </motion.span>
                 </Button>
               </div>
@@ -246,7 +246,7 @@ const LandingPage = () => {
             </Col>
             <Col md={12} className='d-flex justify-content-center'>
               <iframe
-                className='mw-100 rounded-4 shadow-lg'
+                className='mw-100 rounded-4 shadow-lg mb-4'
                 height={360}
                 width={640}
                 src='https://youtube.com/embed/Muj0ygfKkpo'

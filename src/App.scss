@@ -1,6 +1,6 @@
 //variaveis do sass vem aqui
 
-$primary: #f5f17a;
+$primary: #FEF97E;
 $secondary: #f58a83;
 $tertiary: #ab7af5;
 $accent: #abf479;
@@ -68,13 +68,14 @@ $enable-negative-margins: true;
   }
 
   .cta-gradient-btn {
-  background: linear-gradient(90deg, rgba($tertiary, 0.92) 0%, rgba($tertiary, 0.98) 60%, rgba($tertiary, 1) 100%);
+  background: linear-gradient(135deg, rgba($accent, 0.05) 50%, rgba($tertiary, 0.5) 60%, rgba($tertiary, 1) 100%);
   background-size: 200% 100%;
   background-position: 0% 0%;
   transition:
     background-position 0.6s cubic-bezier(0.4,0,0.2,1),
     box-shadow 0.2s,
     border-color 0.3s;
+  animation: background-move 7s linear infinite;
   box-shadow: 0 2px 12px 0 rgba(171, 122, 245, 0.08);
   border: 2px solid rgba(255, 255, 255, 0.281);
 }
@@ -93,6 +94,19 @@ $enable-negative-margins: true;
   .test {
     filter: invert(1);
   }
+
+  @keyframes background-move {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  } 
+  
+}
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
@@ -111,21 +125,25 @@ body {
   font-optical-sizing: auto;
 }
 
+
 .carousel-caption {
   position: static;
   color: $body-color;
 }
 
 .cta-gradient-btn {
-  background: linear-gradient(135deg, rgba($tertiary, 0.80) 0%, rgba($tertiary, 1) 100%);
+  background: linear-gradient(135deg, rgba($info, 0.2) 50%, rgba($tertiary, 0.5) 60%, rgba($tertiary, 1) 100%);
+  background-size: 200% 100%;
   transition:
     background-position 0.6s cubic-bezier(0.4,0,0.2,1),
     box-shadow 0.2s,
     border-color 0.3s;
   z-index: 20;
+  animation: background-move 7s linear infinite;
   box-shadow: 0 2px 12px 0 rgba(171, 122, 245, 0.08);
-  border: 2px solid transparent;
+  border: 2px solid rgba(255, 255, 255, 0.377);
 }
+
 
 .cta-gradient-btn:hover,
 .cta-gradient-btn:focus {
@@ -154,10 +172,6 @@ body {
 .sm-especial {
   padding: 0 !important;
   margin: 0 !important;
-}
-
-.header-link.active {
-  text-decoration: underline;
 }
 
 .header-theme-toggle {
@@ -370,10 +384,12 @@ body {
   display: block;
   position: absolute;
   left: 0;
-  bottom: 0.2rem;
+  bottom: 0rem;
   width: 0;
   height: 3px;
-  background: $secondary;
+  background: linear-gradient(90deg, $secondary, rgba($secondary, 0.8));
+  background-size: 300% 100%;
+  animation: background-move 5s linear infinite;
   transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 2px;
 }
@@ -382,4 +398,17 @@ body {
 .header-link:focus-visible::after,
 .header-link.active::after {
   width: 100%;
+}
+
+@keyframes background-move {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 0%;
+  } 
+  
 }

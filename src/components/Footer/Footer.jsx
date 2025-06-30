@@ -11,7 +11,7 @@ const Footer = () => {
   return (
 
     <Container fluid
-      className='bg-body-tertiary mt-4 border-top bg-body-tertiary'
+      className='bg-body-tertiary border-top bg-body-tertiary'
       style={{ borderBottomLeftRadius: '0', borderBottomRightRadius: '0', borderTopLeftRadius: '2rem', borderTopRightRadius: '2rem' }}
     >
       <Container>
@@ -30,6 +30,7 @@ const Footer = () => {
             </div>
             <div>
               <Nav
+                activeKey={location.pathname}
                 as='ul'
                 className='justify-content-between d-flex py-2 me-auto gap-4 flex-column flex-md-row'
               >
@@ -43,7 +44,7 @@ const Footer = () => {
                   <Nav.Link className='fs-5 link-body-emphasis header-link px-3 text-center' href='/faq' eventKey='/faq'>{t('nav.faq')}</Nav.Link>
                 </Nav.Item>
                 <Nav.Item as='li'>
-                  <Nav.Link className='fs-5 link-body-emphasis header-link px-3 text-center' href='/faq' eventKey='/faq'>{t('nav.contact')}</Nav.Link>
+                  <Nav.Link className='fs-5 link-body-emphasis header-link px-3 text-center' href='/contact' eventKey='/contact'>{t('nav.contact')}</Nav.Link>
                 </Nav.Item>
               </Nav>
             </div>

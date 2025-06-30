@@ -81,13 +81,49 @@
         "desc": "O nosso time de desenvolvedores é formado por três estudantes do terceiro ano de Desenvolvimento de Sistemas da ETEC Bento Quirino: <strong>Henrique Professor, Rodrigo Scatolin e Samuel Augusto</strong>. Apaixonados por desenvolvimento para a web, nós unimos esforços para concluir a tarefa do Hackteens. <br/><br/>Pensamos muito a respeito do tema e decidimos criar uma aplicação que pudesse ajudar pessoas com deficiências a se exercitarem, visto que o bem-estar físico é essencial para a saúde mental e social de todos. Nossa meta é que a IncluMove seja sem limitações, por isso dedicamos grande parte do tempo para garantir a responsividade e acessibilidade do site.<br/><br/> Contamos com o apoio dos nossos professores de Programação Web, dos nossos colegas de classe e familiares, que nos inspiraram para a criação deste projeto. Agradecemos a todos que nos ajudaram nessa jornada!"
       }
     },
-    "footer": {
+    "nav": {
       "home": "Página Inicial",
       "about": "Sobre",
       "faq": "Perguntas Frequentes",
       "contact": "Contate-nos",
       "rights": "Todos os direitos reservados.",
       "logoAlt": "Logo IncluMove"
+    },
+    "faq": {
+      "faqTitle": "Perguntas Frequentes!",
+      "faqSubheading": "Essas são as perguntas mais frequentes feitas pelos usuários do IncluMove, caso sua pergunta não esteja aqui, você pode nos mandar uma mensagem!",
+      "questions": [
+        {
+          "id": 1,
+          "question": "O IncluMove é gratuito?",
+          "answer": "O IncluMove é uma plataforma criada para promover soluções de mobilidade inclusiva para pessoas com deficiência, oferecendo todos os serviços de forma gratuita. Não é necessário inserir informações de cartão de crédito ou qualquer outro método de pagamento."
+        },
+        {
+          "id": 2,
+          "question": "Existe uma forma de contribuir para o desenvolvimento do IncluMove?",
+          "answer": "Ao realizar o cadastro, você já está contribuindo ativamente para o desenvolvimento do projeto! Você também pode contribuir compartilhando suas experiências, sugerindo melhorias ou apontando erros que encontrar."
+        },
+        { 
+          "id": 3,
+          "question": "Onde encontro mais informações?",
+          "answer": "Mais informações podem ser encontradas em nosso site ou entrando em contato diretamente conosco."
+        },
+        {
+          "id": 4,
+          "question": "Como reporto um problema na plataforma?",
+          "answer": "Você pode reportar problemas através do nosso formulário de contato ou enviando um e-mail para nossa equipe de suporte."
+        },
+        {
+          "id": 5,
+          "question": "Existe um aplicativo para celular?",
+          "answer": "Atualmente, não temos um aplicativo móvel, mas nosso site é totalmente adaptado para dispositivos móveis."
+        },
+        {
+          "id": 6,
+          "question": "Como posso entrar em contato com a equipe do IncluMove?",
+          "answer": "Você pode entrar em contato conosco através do formulário de contato disponível em nosso site ou enviando um e-mail para nossa equipe de suporte."
+        }
+      ]
     }
   }
 }

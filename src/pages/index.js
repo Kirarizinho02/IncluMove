@@ -1,4 +1,5 @@
 export * from './About'
+export * from './Contact'
 export * from './Disabilities'
 export * from './Error'
 export * from './Experts'

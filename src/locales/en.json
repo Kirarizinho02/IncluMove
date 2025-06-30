@@ -88,6 +88,37 @@
       "contact": "Contact Us",
       "rights": "All rights reserved.",
       "logoAlt": "IncluMove Logo"
+    },
+    "faq": {
+      "faqTitle": "Frequently Asked Questions!",
+      "faqSubheading": "These are the most frequently asked questions by IncluMove users, if your question is not here, you can send us a message!",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Is IncluMove free?",
+          "answer": "IncluMove is a platform created to promote inclusive mobility solutions for people with disabilities, offering all services for free. There's no need to insert credit card information or any other payment method."
+        },
+        {
+          "id": 2,
+          "question": "Is there a way to contribute IncluMove's development?",
+          "answer": "By registering, you are already actively contributing to the project's development! You can also contribute by sharing your experiences, suggesting improvements, or pointing out any errors you find."
+        },
+        { 
+          "id": 3,
+          "question": "Onde encontro mais informações?",
+          "answer": "Mais informações podem ser encontradas em nosso site ou entrando em contato diretamente conosco."
+        },
+        {
+          "id": 4,
+          "question": "Como reporto um problema na plataforma?",
+          "answer": "Você pode reportar problemas através do nosso formulário de contato ou enviando um e-mail para nossa equipe de suporte."
+        },
+        {
+          "id": 5,
+          "question": "Existe um aplicativo para celular?",
+          "answer": "Atualmente, não temos um aplicativo móvel, mas nosso site é totalmente adaptado para dispositivos móveis."
+        }
+      ]
     }
   }
 }

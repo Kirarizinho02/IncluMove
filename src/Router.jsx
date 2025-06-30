@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { UseAppContext } from './hooks';
 import { DefaultLayout, FormLayout, RestrictedLayout } from './layouts';
-import { About, Disabilities, Error, Profile, LandingPage, LogIn, SignUp, Workouts, FrequentlyAskedQuestions } from './pages';
+import { About, Disabilities, Error, Profile, LandingPage, LogIn, SignUp, Workouts, FrequentlyAskedQuestions, Contact } from './pages';
 
 const Router = () => {
   const { rotaPrivada: RotaPrivada } = UseAppContext();
@@ -15,6 +15,7 @@ const Router = () => {
         <Route path='*' element={<Error />} />
         <Route path='/about' element={<About />} />
         <Route path='/faq' element={<FrequentlyAskedQuestions />} />
+        <Route path='/contact' element={<Contact />} />
       </Route>
       <Route path='/form' element={<FormLayout />}>
         <Route path='/form/login' element={<LogIn />} />
