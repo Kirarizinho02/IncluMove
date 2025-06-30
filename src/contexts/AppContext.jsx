@@ -32,8 +32,9 @@ export const AppContextProvider = ( props ) => {
   const [ultimoTreino, setUltimoTreino] = useState(null);
   const [showAside, setShowAside] = useState(false);
     
+  const storedLang = localStorage.getItem("language");
   const { i18n: {changeLanguage, language} } = useTranslation();
-  const [currentLanguage, setCurrentLanguage] = useState(language);
+  const [currentLanguage, setCurrentLanguage] = useState(storedLang || language);
 
   
   const loginUsuario = async ({ email, senha }) => {
@@ -120,6 +121,10 @@ export const AppContextProvider = ( props ) => {
 
   useEffect(() => {
     atualizarUserLogin();
+    if (storedLang && storedLang !== language) {
+    changeLanguage(storedLang);
+  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [atualizarUserLogin]);
 
   const handleWorkoutTypeSelect = async (tipo) => {
@@ -265,6 +270,7 @@ export const AppContextProvider = ( props ) => {
   const handleChangeLanguage = (langCode) => {
     changeLanguage(langCode);
     setCurrentLanguage(langCode);
+    localStorage.setItem("language", langCode);
   };
 
 

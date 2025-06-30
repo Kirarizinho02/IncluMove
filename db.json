@@ -3043,31 +3043,190 @@
         },
         {
           "id": 57,
-          "nome": "Treino - 6/29/2025",
-          "descricao": "teste",
-          "data": "2025-06-29",
+          "nome": "Treino - 28/06/2025",
+          "descricao": "",
+          "data": "2025-06-28",
           "duracao": "Pesado",
           "exercicios": [
             {
               "id": 1,
-              "nome": "Agachamento",
+              "nome": "Flexão de braço na parede",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Nenhum",
+              "equipamento_treino": "NuloEquip",
+              "descricao": "Flexão adaptada, usando a parede como suporte para quem não consegue ir ao chão",
+              "series": 3,
+              "foto": "/workoutAssets/flexaoParede.png",
+              "repeticoes": 15
+            },
+            {
+              "id": 2,
+              "nome": "Elevação frontal com halteres",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Nenhum",
+              "equipamento_treino": "ParcialSingleEquip",
+              "descricao": "Exercício sentado para fortalecer os ombros",
+              "series": 3,
+              "foto": "/workoutAssets/elevacaoFrontalHalter.png",
+              "repeticoes": 12
+            },
+            {
+              "id": 3,
+              "nome": "Remada",
               "movimento_pernas": "Nenhum",
               "equipamento_apoio": "Pé",
-              "equipamento_treino": "NuloEquip",
-              "descricao": "Exercício para fortalecer as pernas",
+              "equipamento_treino": "TotalEquip",
+              "descricao": "Exercício para fortalecer as costas",
               "series": 3,
-              "foto": "/workoutAssets/agachamento.png",
+              "foto": "/workoutAssets/remada.png",
+              "repeticoes": 10
+            },
+            {
+              "id": 4,
+              "nome": "Tríceps testa com halteres",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Cadeira de rodas",
+              "equipamento_treino": "ParcialSingleEquip",
+              "descricao": "Exercício para fortalecer a região dos tríceps de maneira segura e eficiente",
+              "series": 3,
+              "foto": "/workoutAssets/tricepsTesta.png",
+              "repeticoes": 10
+            },
+            {
+              "id": 5,
+              "nome": "Pulldown adatado com máquina",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Pé",
+              "equipamento_treino": "Faixa elástica",
+              "descricao": "Exercício para fortalecer costas e braços",
+              "series": 3,
+              "foto": "/workoutAssets/latPulldown.png",
+              "repeticoes": 12
+            }
+          ]
+        },
+        {
+          "id": 58,
+          "nome": "Treino - 28/06/2025",
+          "descricao": "",
+          "data": "2025-06-28",
+          "duracao": "Moderado",
+          "exercicios": [
+            {
+              "id": 1,
+              "nome": "Pulldown adatado com máquina",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Pé",
+              "equipamento_treino": "Faixa elástica",
+              "descricao": "Exercício para fortalecer costas e braços",
+              "series": 3,
+              "foto": "/workoutAssets/latPulldown.png",
+              "repeticoes": 12
+            },
+            {
+              "id": 2,
+              "nome": "Flexão de braço na parede",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Nenhum",
+              "equipamento_treino": "NuloEquip",
+              "descricao": "Flexão adaptada, usando a parede como suporte para quem não consegue ir ao chão",
+              "series": 3,
+              "foto": "/workoutAssets/flexaoParede.png",
+              "repeticoes": 15
+            },
+            {
+              "id": 3,
+              "nome": "Elevação frontal com halteres",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Nenhum",
+              "equipamento_treino": "ParcialSingleEquip",
+              "descricao": "Exercício sentado para fortalecer os ombros",
+              "series": 3,
+              "foto": "/workoutAssets/elevacaoFrontalHalter.png",
+              "repeticoes": 12
+            },
+            {
+              "id": 4,
+              "nome": "Elevação lateral com halteres",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Cadeira de rodas",
+              "equipamento_treino": "ParcialSingleEquip",
+              "descricao": "Exercício voltado para desenvolvimento dos ombros",
+              "series": 3,
+              "foto": "/workoutAssets/elevacaoLateral.png",
+              "repeticoes": 12
+            }
+          ]
+        },
+        {
+          "id": 59,
+          "nome": "Treino - 28/06/2025",
+          "descricao": "",
+          "data": "2025-06-28",
+          "duracao": "Rapido",
+          "exercicios": [
+            {
+              "id": 1,
+              "nome": "Supino",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Pé",
+              "equipamento_treino": "TotalEquip",
+              "descricao": "Exercício para fortalecer o peito",
+              "series": 3,
+              "foto": "/workoutAssets/supino.png",
               "repeticoes": 10
             },
             {
               "id": 2,
-              "nome": "Desenvolvimento com halteres",
+              "nome": "Crucifixo com halteres",
               "movimento_pernas": "Nenhum",
               "equipamento_apoio": "Cadeira de rodas",
-              "equipamento_treino": "ParcialEquip",
-              "descricao": "Exercício sentado para fortalecer os ombros e tríceps",
+              "equipamento_treino": "ParcialSingleEquip",
+              "descricao": "Exercício focado em peito e ombros, realizado em posição sentada",
               "series": 3,
-              "foto": "/workoutAssets/desenvolvimentoHalters.png",
+              "foto": "/workoutAssets/crucifixo.png",
+              "repeticoes": 12
+            },
+            {
+              "id": 3,
+              "nome": "Pulldown adatado com máquina",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Pé",
+              "equipamento_treino": "Faixa elástica",
+              "descricao": "Exercício para fortalecer costas e braços",
+              "series": 3,
+              "foto": "/workoutAssets/latPulldown.png",
+              "repeticoes": 12
+            }
+          ]
+        },
+        {
+          "id": 60,
+          "nome": "Treino - 28/06/2025",
+          "descricao": "",
+          "data": "2025-06-28",
+          "duracao": "Moderado",
+          "exercicios": [
+            {
+              "id": 1,
+              "nome": "Tríceps testa com halteres",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Cadeira de rodas",
+              "equipamento_treino": "ParcialSingleEquip",
+              "descricao": "Exercício para fortalecer a região dos tríceps de maneira segura e eficiente",
+              "series": 3,
+              "foto": "/workoutAssets/tricepsTesta.png",
+              "repeticoes": 10
+            },
+            {
+              "id": 2,
+              "nome": "Supino",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Pé",
+              "equipamento_treino": "TotalEquip",
+              "descricao": "Exercício para fortalecer o peito",
+              "series": 3,
+              "foto": "/workoutAssets/supino.png",
               "repeticoes": 10
             },
             {
@@ -3083,6 +3242,90 @@
             },
             {
               "id": 4,
+              "nome": "Desenvolvimento com halteres",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Cadeira de rodas",
+              "equipamento_treino": "ParcialEquip",
+              "descricao": "Exercício sentado para fortalecer os ombros e tríceps",
+              "series": 3,
+              "foto": "/workoutAssets/desenvolvimentoHalters.png",
+              "repeticoes": 10
+            }
+          ]
+        },
+        {
+          "id": 61,
+          "nome": "Treino - 28/06/2025",
+          "descricao": "",
+          "data": "2025-06-28",
+          "duracao": "Rapido",
+          "exercicios": [
+            {
+              "id": 1,
+              "nome": "Remada",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Pé",
+              "equipamento_treino": "TotalEquip",
+              "descricao": "Exercício para fortalecer as costas",
+              "series": 3,
+              "foto": "/workoutAssets/remada.png",
+              "repeticoes": 10
+            },
+            {
+              "id": 2,
+              "nome": "Agachamento",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Pé",
+              "equipamento_treino": "NuloEquip",
+              "descricao": "Exercício para fortalecer as pernas",
+              "series": 3,
+              "foto": "/workoutAssets/agachamento.png",
+              "repeticoes": 10
+            },
+            {
+              "id": 3,
+              "nome": "Rosca direta alternada com halteres",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Nenhum",
+              "equipamento_treino": "ParcialEquip",
+              "descricao": "Exercício para fortalecer os bíceps, pode ser feito sentado",
+              "series": 3,
+              "foto": "/workoutAssets/roscaDiretaHalter.png",
+              "repeticoes": 12
+            }
+          ]
+        },
+        {
+          "id": 62,
+          "nome": "Treino - 28/06/2025",
+          "descricao": "",
+          "data": "2025-06-28",
+          "duracao": "Moderado",
+          "exercicios": [
+            {
+              "id": 1,
+              "nome": "Elevação frontal com halteres",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Nenhum",
+              "equipamento_treino": "ParcialSingleEquip",
+              "descricao": "Exercício sentado para fortalecer os ombros",
+              "series": 3,
+              "foto": "/workoutAssets/elevacaoFrontalHalter.png",
+              "repeticoes": 12
+            },
+            {
+              "id": 2,
+              "nome": "Elevação lateral com halteres",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Cadeira de rodas",
+              "equipamento_treino": "ParcialSingleEquip",
+              "descricao": "Exercício voltado para desenvolvimento dos ombros",
+              "series": 3,
+              "foto": "/workoutAssets/elevacaoLateral.png",
+              "repeticoes": 12
+            },
+            {
+              "id": 3,
               "nome": "Pulldown adatado com máquina",
               "movimento_pernas": "Nenhum",
               "equipamento_apoio": "Pé",
@@ -3093,7 +3336,38 @@
               "repeticoes": 12
             },
             {
-              "id": 5,
+              "id": 4,
+              "nome": "Crucifixo com halteres",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Cadeira de rodas",
+              "equipamento_treino": "ParcialSingleEquip",
+              "descricao": "Exercício focado em peito e ombros, realizado em posição sentada",
+              "series": 3,
+              "foto": "/workoutAssets/crucifixo.png",
+              "repeticoes": 12
+            }
+          ]
+        },
+        {
+          "id": 63,
+          "nome": "Treino - 28/06/2025",
+          "descricao": "",
+          "data": "2025-06-28",
+          "duracao": "Rapido",
+          "exercicios": [
+            {
+              "id": 1,
+              "nome": "Agachamento",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Pé",
+              "equipamento_treino": "NuloEquip",
+              "descricao": "Exercício para fortalecer as pernas",
+              "series": 3,
+              "foto": "/workoutAssets/agachamento.png",
+              "repeticoes": 10
+            },
+            {
+              "id": 2,
               "nome": "Supino",
               "movimento_pernas": "Nenhum",
               "equipamento_apoio": "Pé",
@@ -3101,6 +3375,17 @@
               "descricao": "Exercício para fortalecer o peito",
               "series": 3,
               "foto": "/workoutAssets/supino.png",
+              "repeticoes": 10
+            },
+            {
+              "id": 3,
+              "nome": "Desenvolvimento com halteres",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Cadeira de rodas",
+              "equipamento_treino": "ParcialEquip",
+              "descricao": "Exercício sentado para fortalecer os ombros e tríceps",
+              "series": 3,
+              "foto": "/workoutAssets/desenvolvimentoHalters.png",
               "repeticoes": 10
             }
           ]
