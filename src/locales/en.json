@@ -80,6 +80,14 @@
         "title": "About us!",
         "desc": "Our development team is made up of three third-year Systems Development students from ETEC Bento Quirino: <strong>Henrique Professor, Rodrigo Scatolin, and Samuel Augusto</strong>. Passionate about web development, we joined forces to complete the Hackteen challenge.<br/> <br/> We thought a lot about the theme and decided to create an application that could help people with disabilities to exercise, since physical well-being is essential for everyone's mental and social health. Our goal is for IncluMove to be without limitations, so we dedicated a lot of time to ensuring the site's responsiveness and accessibility. <br/> <br/>We had the support of our Web Programming teachers, classmates and relatives, who inspired us to create this project. At last, we thank everyone who helped us on this journey!"
       }
+    },
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "faq": "Frequently Asked Questions",
+      "contact": "Contact Us",
+      "rights": "All rights reserved.",
+      "logoAlt": "IncluMove Logo"
     }
   }
 }

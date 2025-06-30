@@ -117,12 +117,11 @@ body {
 }
 
 .cta-gradient-btn {
-  background: linear-gradient(135deg, rgba($tertiary, 0.92) 0%, rgba($tertiary, 1) 100%);
+  background: linear-gradient(135deg, rgba($tertiary, 0.80) 0%, rgba($tertiary, 1) 100%);
   transition:
     background-position 0.6s cubic-bezier(0.4,0,0.2,1),
     box-shadow 0.2s,
     border-color 0.3s;
-  position: relative;
   z-index: 20;
   box-shadow: 0 2px 12px 0 rgba(171, 122, 245, 0.08);
   border: 2px solid transparent;

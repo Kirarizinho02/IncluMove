@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 // eslint-disable-next-line no-unused-vars
@@ -8,8 +8,7 @@ import { Button, Carousel, Col, Container, Row } from 'react-bootstrap';
 import { ana_lemos, compromissos1, compromissos2, compromissos3, line_1, line_2, line_3, marco_aurelio, mulher_cadeira, mulher_cadeira_dark, ricardo_junior, stars, card_pin } from '../../assets';
 import { LineFiller } from '../../components';
 import { UseThemeContext } from '../../hooks';
-import { FaArrowAltCircleRight, FaArrowRight } from 'react-icons/fa';
-import { MdOutlineKeyboardArrowRight, MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
+import { FaArrowRight } from 'react-icons/fa';
 
 const LandingPage = () => {
   const theme = UseThemeContext();
@@ -22,6 +21,8 @@ const LandingPage = () => {
   const marcoInView = useInView(marcoRef, { once: true });
   const anaInView = useInView(anaRef, { once: true });
   const ricardoInView = useInView(ricardoRef, { once: true });
+
+    const [ctaHovered, setCtaHovered] = useState(false);
 
   return (
     <>
@@ -40,8 +41,20 @@ const LandingPage = () => {
                   size='lg'
                   className='col-sm-6 col-md-4 col-lg-6 col-xl-4 mb-3 me-md-auto rounded-5 bg-tertiary text-body cta-gradient-btn'
                   href='/form/signup'
+                  onMouseEnter={() => setCtaHovered(true)}
+                  onMouseLeave={() => setCtaHovered(false)}
+                  onFocus={() => setCtaHovered(true)}
+                  onBlur={() => setCtaHovered(false)}
                 >
-                  <span className='title fw-bold '>{t('landing.hero.cta')}  </span> <FaArrowRight className='ms-1 mb-1' size="1rem" />
+                  <span className='title fw-bold '>{t('landing.hero.cta')}  </span>
+                  <motion.span
+
+                    animate={{ x: ctaHovered ? 10 : 0 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    style={{ display: "inline-block" }}
+                  >
+                    <FaArrowRight size="1rem"                    className="ms-1 mb-1" />
+                  </motion.span>
                 </Button>
               </div>
               <p className='text-center text-md-start'>

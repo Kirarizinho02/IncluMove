@@ -10,11 +10,14 @@ import { logo_inset } from '../../assets';
 import { UseAppContext, UseThemeContext } from '../../hooks';
 
 import { ButtonLanguage } from '../CommonUI';
+import { useTranslation } from 'react-i18next';
 
 const Header = () => {
   const { usuarioLog, setUsuarioLog } = UseAppContext();
   const { theme, switchTheme } = UseThemeContext();
   const [showMenu, setShowMenu] = useState(false);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     let usuarioSalvo = localStorage.getItem('usuarioLogado');
@@ -42,7 +45,7 @@ const Header = () => {
           className='d-flex flex-wrap justify-content-center align-items-center py-3'
         >
           <a className='mt-md-2 d-flex align-items-center mb-2 mb-md-0 me-auto link-body-emphasis text-decoration-none gap-2' href="/">
-            <img className='me-2 ms-3 pb-1' height={56} src={logo_inset} alt='Logo do IncluMove' />
+            <img className='me-2 ms-3 pb-1' height={56} src={logo_inset} alt={t('nav.logoAlt')} />
             <span className='title fw-medium fs-2 inclumove-title'>Inclu</span> <span className='title fw-bold fs-2 inclumove-title ms-n2'>Move</span>
           </a>
           <Nav
@@ -51,15 +54,15 @@ const Header = () => {
             className='justify-content-between d-none d-xl-flex rounded-5 py-2 me-auto'
           >
             <Nav.Item as='li'>
-              <Nav.Link className='fs-5 link-body-emphasis header-link px-3 text-center' href='/' eventKey='/'>Página Inicial</Nav.Link>
+              <Nav.Link className='fs-5 link-body-emphasis header-link px-3 text-center' href='/' eventKey='/'>{t('nav.home')}</Nav.Link>
             </Nav.Item>
             <div className="vr mx-2" />
             <Nav.Item as='li'>
-              <Nav.Link className='fs-5 link-body-emphasis header-link px-3 text-center' href='/about' eventKey='/about'>Sobre</Nav.Link>
+              <Nav.Link className='fs-5 link-body-emphasis header-link px-3 text-center' href='/about' eventKey='/about'>{t('nav.about')}</Nav.Link>
             </Nav.Item>
             <div className="vr mx-2" />
             <Nav.Item as='li'>
-              <Nav.Link className='fs-5 link-body-emphasis header-link px-3 text-center' href='/faq' eventKey='/faq'>Perguntas Frequentes</Nav.Link>
+              <Nav.Link className='fs-5 link-body-emphasis header-link px-3 text-center' href='/faq' eventKey='/faq'>{t('nav.faq')}</Nav.Link>
             </Nav.Item>
           </Nav>
           <div className="d-flex align-items-center gap-2">

@@ -80,6 +80,14 @@
         "title": "Sobre nós!",
         "desc": "O nosso time de desenvolvedores é formado por três estudantes do terceiro ano de Desenvolvimento de Sistemas da ETEC Bento Quirino: <strong>Henrique Professor, Rodrigo Scatolin e Samuel Augusto</strong>. Apaixonados por desenvolvimento para a web, nós unimos esforços para concluir a tarefa do Hackteens. <br/><br/>Pensamos muito a respeito do tema e decidimos criar uma aplicação que pudesse ajudar pessoas com deficiências a se exercitarem, visto que o bem-estar físico é essencial para a saúde mental e social de todos. Nossa meta é que a IncluMove seja sem limitações, por isso dedicamos grande parte do tempo para garantir a responsividade e acessibilidade do site.<br/><br/> Contamos com o apoio dos nossos professores de Programação Web, dos nossos colegas de classe e familiares, que nos inspiraram para a criação deste projeto. Agradecemos a todos que nos ajudaram nessa jornada!"
       }
+    },
+    "footer": {
+      "home": "Página Inicial",
+      "about": "Sobre",
+      "faq": "Perguntas Frequentes",
+      "contact": "Contate-nos",
+      "rights": "Todos os direitos reservados.",
+      "logoAlt": "Logo IncluMove"
     }
   }
 }
