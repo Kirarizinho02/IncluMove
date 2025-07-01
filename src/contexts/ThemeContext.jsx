@@ -20,13 +20,21 @@ export const ThemeContextProvider = ({ children }) => {
     setTheme(newTheme);
   }
 
+  const setBodyClass = (className) => {
+    document.body.classList.add(className);
+    return () => {
+      document.body.classList.remove(className);
+    };
+  };
+
+
   useEffect(() => {
     localStorage.setItem('theme', theme);
     document.querySelector('html').setAttribute('data-bs-theme', theme);
   }, [theme]);
 
   return (
-    <themeContext.Provider value={{ theme, switchTheme }}>
+    <themeContext.Provider value={{ theme, switchTheme, setBodyClass }}>
       {children}
     </themeContext.Provider>
   );

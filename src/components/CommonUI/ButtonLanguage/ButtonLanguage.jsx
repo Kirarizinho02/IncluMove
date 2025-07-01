@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 const languages = [
   { code: "pt", label: "Português" },
   { code: "en", label: "English" },
+  { code: "es", label: "Español" },
 ];
 
 const ButtonLanguage = () => {

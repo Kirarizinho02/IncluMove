@@ -14,7 +14,7 @@ const LineFiller = ({ src, height, className = '' }) => {
       <img
         src={src}
         height={height}
-        className="d-block position-relative w-100 test"
+        className="d-block position-relative w-100 inverted"
         style={{
           zIndex: 1,
           opacity: 0.15,
@@ -24,7 +24,7 @@ const LineFiller = ({ src, height, className = '' }) => {
       <motion.img
         src={src}
         height={height}
-        className="d-block position-absolute w-100 test"
+        className="d-block position-absolute w-100 inverted"
         style={{
           left: 0,
           top: 0,

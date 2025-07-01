@@ -1,0 +1,133 @@
+{
+  "translation": {
+    "profile": {
+      "greeting": "Hola, <1>{{name}}</1>",
+      "loading": "Cargando usuario...",
+      "email": "{{email}}"
+    },
+    "tooltips": {
+      "settings": "Configuración",
+      "workouts": "Entrenamientos",
+      "experts": "Expertos",
+      "profile": "Perfil",
+      "home": "Página de inicio",
+      "language": "Idioma"
+    },
+    "landing": {
+      "hero": {
+        "title": "Ejercicios adaptados para",
+        "all": "todos",
+        "desc": "El compromiso de",
+        "desc2": "es con el usuario. Queremos acoger todos los cuerpos, con o sin limitaciones, con una plataforma de bienestar físico adaptado.",
+        "cta": "Regístrate",
+        "haveAccount": "¿Ya tienes una cuenta? ",
+        "login": "Inicia sesión en tu cuenta.",
+        "imgAlt": "Mujer feliz en una silla de ruedas."
+      },
+      "discover": "Descubra el",
+      "professionals": {
+        "title": "Los Profesionales",
+        "desc": "El equipo de IncluMove ya cuenta con fisioterapeutas capacitados para ayudarte. Conoce a algunos de nuestros destacados:",
+        "marco": {
+          "imgAlt": "Doctor Marco Aurélio",
+          "name": "Marco Aurélio",
+          "desc": "Graduado en Educación Física, cuida de personas mayores y personas con movilidad reducida desde hace más de 5 años."
+        },
+        "ana": {
+          "imgAlt": "Doctora Ana Lemos",
+          "name": "Ana Lemos",
+          "desc": "Graduada en Fisioterapia por la USP en 2017, trabaja con pacientes con paraplejía desde 2019."
+        },
+        "ricardo": {
+          "imgAlt": "Doctor Ricardo Júnior",
+          "name": "Ricardo Júnior",
+          "desc": "Doctor en Fisioterapia por la USF, se especializa en la rehabilitación de pacientes con discapacidades motoras y neurológicas."
+        }
+      },
+      "commitments": {
+        "title": "Los Compromisos",
+        "desc": "Conoce más sobre algunas de las causas que impulsan nuestro proyecto.",
+        "diversity": {
+          "title": "Diversidad, Equidad e Inclusión",
+          "imgAlt": "Grupo de personas diversas y felices.",
+          "desc": "La diversidad, la equidad y la inclusión (DEI) son conceptos interrelacionados que buscan garantizar que todos tengan acceso igualitario a oportunidades y se sientan valorados, independientemente de sus características individuales."
+        },
+        "education": {
+          "title": "Educación y Conciencia Social",
+          "imgAlt": "Círculo de personas diversas y felices",
+          "desc": "Promovemos la conciencia a través de la plataforma. Fomentamos la comprensión y el respeto por las diferencias, combatiendo los prejuicios y estereotipos. El equipo de IncluMove acoge a todos los usuarios."
+        },
+        "wellbeing": {
+          "title": "Bienestar",
+          "imgAlt": "Mujer caminando mientras tiene pensamientos positivos",
+          "desc": "La OMS define el bienestar como un estado de completo bienestar físico, mental y social, y no solamente la ausencia de afecciones o enfermedades. Es un concepto holístico que abarca varios aspectos de la vida, incluyendo la salud física, la salud mental, la salud emocional y las relaciones sociales."
+        }
+      },
+      "project": {
+        "title": "El Proyecto",
+        "desc": "Creado por estudiantes de ETEC Bento Quirino como parte del",
+        "desc2": "Un concurso idealizado y promovido por el instituto Venturus de Innovación y Tecnología en asociación con la Fundación Iochpe — IncluMove es una solución digital para el bienestar físico inclusivo.",
+        "video": "Mira el pitch realizado para la primera edición del proyecto:"
+      }
+    },
+    "about": {
+      "mission": {
+        "title": "¡Nuestra misión!",
+        "desc": "Democratizar una solución tecnológica que promueva el acceso al bienestar físico, mental y social mediante una plataforma inclusiva y acogedora. Queremos que todos los cuerpos —con o sin limitaciones— sean bienvenidos en nuestra aplicación y encuentren en ella un espacio seguro para realizar actividades físicas."
+      },
+      "team": {
+        "imgAlt": "Equipo de desarrollo de IncluMove",
+        "title": "¡Sobre nosotros!",
+        "desc": "Nuestro equipo de desarrollo está compuesto por tres estudiantes del tercer año de Desarrollo de Sistemas de ETEC Bento Quirino: <strong>Henrique Professor, Rodrigo Scatolin y Samuel Augusto</strong>. Apasionados por el desarrollo web, unimos fuerzas para completar el desafío Hackteen.<br/><br/>Pensamos mucho en el tema y decidimos crear una aplicación que pudiera ayudar a personas con discapacidades a ejercitarse, ya que el bienestar físico es esencial para la salud mental y social de todos. Nuestro objetivo es que IncluMove no tenga limitaciones, por eso dedicamos mucho tiempo a garantizar la responsividad y accesibilidad del sitio.<br/><br/>Contamos con el apoyo de nuestros profesores de Programación Web, compañeros de clase y familiares, quienes nos inspiraron a crear este proyecto. ¡A todos ellos, nuestro más sincero agradecimiento!"
+      }
+    },
+    "nav": {
+      "home": "Inicio",
+      "about": "Sobre",
+      "faq": "Preguntas Frecuentes",
+      "contact": "Contáctanos",
+      "rights": "Todos los derechos reservados.",
+      "logoAlt": "Logo de IncluMove",
+      "lightTheme": "Tema Claro",
+      "darkTheme": "Tema Oscuro",
+      "account": "Cuenta",
+      "login": "Iniciar Sesión"
+    },
+    "faq": {
+      "faqTitle": "¡Preguntas Frecuentes!",
+      "faqSubheading": "Estas son las preguntas más comunes de los usuarios de IncluMove. Si tu duda no está aquí, ¡puedes enviarnos un mensaje!",
+      "questions": [
+        {
+          "id": 1,
+          "question": "¿IncluMove es gratuito?",
+          "answer": "IncluMove es una plataforma creada para promover soluciones de movilidad inclusiva para personas con discapacidades, ofreciendo todos los servicios de forma gratuita. No es necesario ingresar información de tarjeta de crédito ni otro método de pago."
+        },
+        {
+          "id": 2,
+          "question": "¿Hay alguna manera de contribuir al desarrollo de IncluMove?",
+          "answer": "¡Al registrarte, ya estás contribuyendo activamente al desarrollo del proyecto! También puedes colaborar compartiendo tus experiencias, sugiriendo mejoras o señalando errores que encuentres."
+        },
+        {
+          "id": 3,
+          "question": "No tengo ninguna dificultad motora o neurológica, ¿puedo usar IncluMove?",
+          "answer": "¡Sí! IncluMove es una plataforma inclusiva y acogedora diseñada para servir a todos los usuarios, independientemente de sus limitaciones. Incluso si no tienes dificultades motoras o neurológicas, puedes beneficiarte de las funciones de nuestro proyecto y de la comunidad que estamos construyendo."
+        },
+        {
+          "id": 4,
+          "question": "¿Cómo me pongo en contacto para reportar un problema en la plataforma?",
+          "answer": "Puedes comunicarte con nosotros a través del formulario de contacto disponible en nuestro sitio web o enviando un correo electrónico a nuestro equipo de soporte a <a href=\"mailto:inclumove@gmail.com\" target=\"_blank\" rel=\"noopener noreferrer\">inclumove@gmail.com</a>"
+        },
+        {
+          "id": 5,
+          "question": "¿Existe una aplicación móvil?",
+          "answer": "Actualmente, no tenemos una aplicación móvil disponible para descargar. Sin embargo, nuestro sitio web es completamente responsivo y puede ser accedido desde cualquier dispositivo, incluidos teléfonos móviles y tabletas."
+        },
+        {
+          "id": 6,
+          "question": "No creo que pueda terminar mi entrenamiento, ¿qué debo hacer?",
+          "answer": "Si no te sientes bien o crees que no puedes completar tu entrenamiento, es importante escuchar a tu cuerpo. Puedes optar por finalizar el entrenamiento antes de tiempo, tomar un descanso o ajustar la intensidad del ejercicio. Recuerda que lo más importante es respetar tus límites y priorizar tu salud y bienestar."
+        }
+      ]
+    }
+  }
+}

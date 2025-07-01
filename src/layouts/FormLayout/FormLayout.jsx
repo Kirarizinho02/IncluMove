@@ -2,15 +2,15 @@ import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Content } from '../../components';
 import { Container } from 'react-bootstrap';
+import { UseThemeContext } from '../../hooks';
 
 const FormLayout = () => {
-    useEffect(() => {
-        document.body.classList.add('bg-primary');
-        return () => {
-          document.body.classList.remove('bg-primary'); 
-        };
-      }, 
-    );
+  const { setBodyClass } = UseThemeContext();
+
+  useEffect(() => {
+    const remove = setBodyClass('bg-primary');
+    return remove;
+  }, [setBodyClass]);
 
   return (
     <>
