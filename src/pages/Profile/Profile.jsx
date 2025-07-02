@@ -8,7 +8,6 @@ const Profile = () => {
 
   return (
     <>
-      <Col xl={12} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary p-5 h-100">
         <Row>
           <Col xl={4} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary p-5">
           {usuarioLog ? (
@@ -34,8 +33,7 @@ const Profile = () => {
           <Col xl={4} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary">
             <LevelComponent />
           </Col>
-        </Row>
-      </Col>
+          </Row>
     </>
   );
 }

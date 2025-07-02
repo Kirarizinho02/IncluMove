@@ -21,11 +21,10 @@ const LastWorkout = () => {
 
   return (
     <>
-    <Row className="w-100 m-0 flex-nowrap">
         <Col
           lg={9}
           md={12}
-          className="d-flex align-items-center justify-content-around pb-4 bg-primary"
+          className="d-inline-flex align-items-center justify-content-around pb-4 bg-primary"
         >
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -103,9 +102,11 @@ const LastWorkout = () => {
           </motion.div>
         </Col>
         <Col
+          xs={12}
           md={12}
+          sm={12}
           lg={3}
-          className="d-flex flex-column gap-4 py-4"
+          className="d-inline-flex flex-column gap-4 p-4"
         >
 
           <Card className="shadow-sm text-center border-0 rounded" style={{
@@ -159,7 +160,6 @@ const LastWorkout = () => {
         </Toast.Body>
       </Toast>
       </motion.div>
-                    </Row>
     </>
   );
 };

@@ -19,7 +19,7 @@ import { motion } from "framer-motion";
 
 import { AsideItems } from "./AsideItems";
 
-const AsideUser = () => {
+const AsideUser = ({ isOffcanvas = false }) => {
   const languages = [
     { code: "pt", label: "Português" },
     { code: "en", label: "English" },
@@ -38,16 +38,17 @@ const AsideUser = () => {
 
   return (
     <>
-      <Container className="p-0 m-0 h-100">
-        <aside className="bg-body vh-100 w-100 shadow border-end border-secondary h-100"
-          style={{
-            width: expanded ? 240 : 64,
-            minWidth: expanded ? 240 : 64,
-            maxWidth: expanded ? 240 : 64,
-            transition: "all 0.4s",
-            overflow: "hidden",
-          }}
-        >
+    <Container className={`overflow-x-hidden p-0 m-0 h-100${isOffcanvas ? '' : ''}`}>
+      <aside
+        className="bg-body vh-100 w-100 shadow border-end border-secondary h-100"
+        style={{
+          width: isOffcanvas ? 240 : expanded ? 240 : 64,
+          minWidth: isOffcanvas ? 240 : expanded ? 240 : 64,
+          maxWidth: isOffcanvas ? 240 : expanded ? 240 : 64,
+          transition: "all 0.4s",
+          overflow: "hidden",
+        }}
+      >
           <Nav className="d-flex justify-content-between flex-column h-100" activeKey={location.pathname}>
             <div className="d-flex p-3 justify-content-between align-items-center">
               <TooltipLink title={t('tooltips.home')} id="tl1" localizacao="right">

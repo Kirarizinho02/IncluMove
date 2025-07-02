@@ -3389,6 +3389,70 @@
               "repeticoes": 10
             }
           ]
+        },
+        {
+          "id": 64,
+          "nome": "Treino - 02/07/2025",
+          "descricao": "",
+          "data": "2025-07-02",
+          "duracao": "Pesado",
+          "exercicios": [
+            {
+              "id": 1,
+              "nome": "Rosca martelo com halteres",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Cadeira de rodas",
+              "equipamento_treino": "ParcialSingleEquip",
+              "descricao": "Exercício para fortalecer os bíceps com foco nos antebraços, adaptado para posição sentada",
+              "series": 3,
+              "foto": "/workoutAssets/roscaMartelo.png",
+              "repeticoes": 12
+            },
+            {
+              "id": 2,
+              "nome": "Abdução de ombro com elástico",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Cadeira de rodas",
+              "equipamento_treino": "ParcialSingleEquip",
+              "descricao": "Exercício seguro para fortalecimento dos ombros utilizando faixa elástica",
+              "series": 3,
+              "foto": "/workoutAssets/abducaoElastico.png",
+              "repeticoes": 12
+            },
+            {
+              "id": 3,
+              "nome": "Pulldown adatado com máquina",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Pé",
+              "equipamento_treino": "Faixa elástica",
+              "descricao": "Exercício para fortalecer costas e braços",
+              "series": 3,
+              "foto": "/workoutAssets/latPulldown.png",
+              "repeticoes": 12
+            },
+            {
+              "id": 4,
+              "nome": "Rosca direta alternada com halteres",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Nenhum",
+              "equipamento_treino": "ParcialEquip",
+              "descricao": "Exercício para fortalecer os bíceps, pode ser feito sentado",
+              "series": 3,
+              "foto": "/workoutAssets/roscaDiretaHalter.png",
+              "repeticoes": 12
+            },
+            {
+              "id": 5,
+              "nome": "Elevação lateral com halteres",
+              "movimento_pernas": "Nenhum",
+              "equipamento_apoio": "Cadeira de rodas",
+              "equipamento_treino": "ParcialSingleEquip",
+              "descricao": "Exercício voltado para desenvolvimento dos ombros",
+              "series": 3,
+              "foto": "/workoutAssets/elevacaoLateral.png",
+              "repeticoes": 12
+            }
+          ]
         }
       ]
     },

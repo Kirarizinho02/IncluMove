@@ -1,7 +1,7 @@
 import { Container, Row } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 
-import { AsideUser } from "../../components";
+import { AsideUser, HeaderUser } from "../../components";
 import { UseAppContext } from "../../hooks";
 
 const RestrictedLayout = () => {
@@ -11,6 +11,7 @@ const RestrictedLayout = () => {
 
   return (
     <Container fluid className="overflow-x-hidden bg-primary p-0 m-0">
+      <div className="d-md-none w-100"> <HeaderUser /> </div>
       <Row className="h-100 flex-nowrap">
         <div
           style={{
@@ -28,7 +29,7 @@ const RestrictedLayout = () => {
             flex: 1,
             transition: "all 0.4s",
           }}
-          className="p-0 m-0 overflow-x-hidden overflow-y-auto vh-100"
+          className="p-0 m-0 overflow-x-hidden overflow-y-auto vh-md-100"
         >
           <Outlet />
         </div>

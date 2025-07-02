@@ -3,8 +3,9 @@ import { createContext, useEffect, useState } from 'react';
 // eslint-disable-next-line react-refresh/only-export-components
 export const themeContext = createContext({});
 
-// essa implementação do tema escuro foi feito com javascript mais bruto pois o react-bootstrap não suporta nativamente o acesso ao tema global
-// e essa é a própria recomendação deles, docs: https://react-bootstrap.netlify.app/docs/getting-started/color-modes/
+// Essa implementação do tema escuro foi feito com javascript mais bruto, visto que o react-bootstrap não suporta nativamente o acesso ao tema global
+// E essa é a própria recomendação deles, docs: https://react-bootstrap.netlify.app/docs/getting-started/color-modes/
+
 export const ThemeContextProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     if (localStorage.getItem('theme')) {
@@ -26,7 +27,6 @@ export const ThemeContextProvider = ({ children }) => {
       document.body.classList.remove(className);
     };
   };
-
 
   useEffect(() => {
     localStorage.setItem('theme', theme);
