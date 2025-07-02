@@ -125,7 +125,7 @@
         {
           "id": 4,
           "question": "How do I contact to report a problem on the platform?",
-          "answer": " You can contact us through the contact form available on our website or by sending an email to our support team at <a href=\"mailto:inclumove@gmail.com\" target=\"_blank\" rel=\"noopener noreferrer\">inclumove@gmail.com"
+          "answer": " You can contact us through the contact form available on our website or by sending an email to our support team at <a href=\"mailto:inclumove@gmail.com\" target=\"_blank\" class=\"email-link\" rel=\"noopener noreferrer\">inclumove@gmail.com"
         },
         {
           "id": 5,
@@ -138,6 +138,31 @@
           "answer": "If you're not feeling well or think you can't complete your workout, it's important to listen to your body. You can choose to end the workout early, take a break, or adjust the intensity of the exercise. Remember that the most important thing is to respect your limits and prioritize your health and well-being."
         }
       ]
+    },
+    "contact": {
+      "title": "Contact Us!",
+      "subtitle": "Tell us about your experience with IncluMove, we are here to help you! Make sure your message is clear and objective so we can assist you as quickly as possible.",
+      "form": {
+        "name": "Name",
+        "email": "E-mail"
+      },
+      "motive": {
+        "label": "Reason for contact",
+        "options": [
+          { "value": "doubt", "label": "Doubt" },
+          { "value": "suggestion", "label": "Suggestion" },
+          { "value": "compliment", "label": "Compliment" },
+          { "value": "problem", "label": "Problem" },
+          { "value": "other", "label": "Other..." }
+        ]
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Write your message here..."
+      },
+      "submitButton": {
+        "text": "Send"
+      }
     }
   }
 }

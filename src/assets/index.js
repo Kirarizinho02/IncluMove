@@ -11,6 +11,7 @@ import logo_3 from './logo-3.png';
 import logo from './logo.svg';
 import logo_inset from './logo-inset.svg';
 import arrow_back from './arrow-back.svg';
+import flowers from './flowers.svg';
 import mulher_perna_bionica from './mulher-perna-bionica.svg';
 import amigos_disabled from './disabled-day-concept-illustration.png';
 import passaro_illustration from './passaro-inclumove.png';
@@ -30,6 +31,7 @@ import card_pin from './card-pin.svg';
 
 export {
   user,
+  flowers,
   mulher_cadeira,
   mulher_cadeira_dark,
   marco_aurelio,

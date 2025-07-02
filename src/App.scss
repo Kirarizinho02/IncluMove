@@ -85,47 +85,51 @@ $enable-negative-margins: true;
       border-color 0.3s,
       filter 0.5s;
     animation: background-move 10s linear infinite;
-    box-shadow: 0 2px 12px 0 rgba(171, 122, 245, 0.08);
+    box-shadow: 0px 2px 3px 1px #6500C4;
     border: 2px solid rgba(255, 255, 255, 0.281);
   }
 
   .cta-gradient-btn:hover,
   .cta-gradient-btn:focus {
     background-position: 50% 110%;
-    box-shadow: 0 4px 24px 0 rgba(171, 122, 245, 0.15);
+    box-shadow: 0px 2px 3px 1px #8240c0;
     border-color: #fff;
     filter: brightness(1.08);
   }
 
-.aside-link.active {
-  background-color: $gray-700;
-  transition: background 0.2s, border-radius 0.2s;
-  position: relative;
-}
+  .aside-link.active {
+    background-color: $gray-700;
+    transition: background 0.2s, border-radius 0.2s;
+    position: relative;
+  }
 
-.aside-link.active .aside-icon {
-  color: #986cdb !important;
-}
+  .aside-link.active .aside-icon {
+    color: #986cdb !important;
+  }
 
-.aside-link:not(:hover):not(:focus):not(.active) .aside-icon {
-  background: none;
-}
+  .aside-link:not(:hover):not(:focus):not(.active) .aside-icon {
+    background: none;
+  }
 
-.aside-link.collapsed.active {
-  background: none;
-}
+  .email-link {
+    color: $accent !important;
+  }
 
-.aside-link.collapsed.active .aside-icon {
-  background: $gray-400;
-  border-radius: 50%;
-  padding: 0.25rem;
-  transition: background 0.2s, border-radius 0.2s;
-}
+  .aside-link.collapsed.active {
+    background: none;
+  }
 
-.aside-link:hover{
-  background: $gray-700;
-  transition: background 0.2s, border-radius 0.2s;
-}
+  .aside-link.collapsed.active .aside-icon {
+    background: $gray-400;
+    border-radius: 50%;
+    padding: 0.25rem;
+    transition: background 0.2s, border-radius 0.2s;
+  }
+
+  .aside-link:hover {
+    background: $gray-700;
+    transition: background 0.2s, border-radius 0.2s;
+  }
 
   .inverted {
     filter: invert(1);
@@ -179,7 +183,7 @@ body {
     border-color 0.3s;
   z-index: 20;
   animation: background-move 7s linear infinite;
-  box-shadow: 0 2px 12px 0 rgba(171, 122, 245, 0.08);
+  box-shadow: 0px 3px 3px 0px #6500C4;
   border: 2px solid rgba(255, 255, 255, 0.171);
 }
 
@@ -187,9 +191,9 @@ body {
 .cta-gradient-btn:hover,
 .cta-gradient-btn:focus {
   background-position: 100% 0%;
-  box-shadow: 0 4px 24px 0 rgba(171, 122, 245, 0.15);
+  box-shadow: 0px 3px 3px 0px #8240c0;
   border-color: #fff;
-      filter: brightness(1.08);
+  filter: brightness(1.08);
 }
 
 
@@ -257,7 +261,7 @@ body {
   transition: background 0.2s, border-radius 0.2s;
 }
 
-.aside-link:hover{
+.aside-link:hover {
   background: $gray-200;
   transition: background 0.2s, border-radius 0.2s;
 }
@@ -390,6 +394,10 @@ body {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+.email-link {
+  color: #7150A4 !important;
 }
 
 .flyout-item:hover,

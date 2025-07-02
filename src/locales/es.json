@@ -102,7 +102,6 @@
         "en": "English",
         "es": "Español"
       }
-
     },
     "faq": {
       "faqTitle": "¡Preguntas Frecuentes!",
@@ -126,7 +125,7 @@
         {
           "id": 4,
           "question": "¿Cómo me pongo en contacto para reportar un problema en la plataforma?",
-          "answer": "Puedes comunicarte con nosotros a través del formulario de contacto disponible en nuestro sitio web o enviando un correo electrónico a nuestro equipo de soporte a <a href=\"mailto:inclumove@gmail.com\" target=\"_blank\" rel=\"noopener noreferrer\">inclumove@gmail.com</a>"
+          "answer": "Puedes comunicarte con nosotros a través del formulario de contacto disponible en nuestro sitio web o enviando un correo electrónico a nuestro equipo de soporte a <a href=\"mailto:inclumove@gmail.com\" class=\"email-link\" target=\"_blank\" rel=\"noopener noreferrer\">inclumove@gmail.com</a>"
         },
         {
           "id": 5,
@@ -139,6 +138,31 @@
           "answer": "Si no te sientes bien o crees que no puedes completar tu entrenamiento, es importante escuchar a tu cuerpo. Puedes optar por finalizar el entrenamiento antes de tiempo, tomar un descanso o ajustar la intensidad del ejercicio. Recuerda que lo más importante es respetar tus límites y priorizar tu salud y bienestar."
         }
       ]
+    },
+    "contact": {
+      "title": "Contáctanos!",
+      "subtitle": "Cuéntanos sobre tu experiencia con IncluMove, estamos aquí para ayudarte! Asegúrate de que tu mensaje sea claro y objetivo para que podamos asistirte lo más pronto posible.",
+      "form": {
+        "name": "Nombre",
+        "email": "Correo electrónico"
+      },
+      "motive": {
+        "label": "Motivo del contacto",
+        "options": [
+          { "value": "doubt", "label": "Duda" },
+          { "value": "suggestion", "label": "Sugerencia" },
+          { "value": "compliment", "label": "Elogio" },
+          { "value": "problem", "label": "Problema" },
+          { "value": "other", "label": "Otro..." }
+        ]
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Escribe tu mensaje aquí..."
+      },
+      "submitButton": {
+        "text": "Enviar"
+      }
     }
   }
 }

@@ -125,7 +125,7 @@
         {
           "id": 4,
           "question": "Como entro em contato para reportar um problema na plataforma?",
-          "answer": "Você pode entrar em contato conosco através do formulário de contato disponível em nosso site ou enviando um e-mail para nossa equipe de suporte em <a href=\"mailto:inclumove@gmail.com\" target=\"_blank\" rel=\"noopener noreferrer\">inclumove@gmail.com</a>."
+          "answer": "Você pode entrar em contato conosco através do formulário de contato disponível em nosso site ou enviando um e-mail para nossa equipe de suporte em <a href=\"mailto:inclumove@gmail.com\" class=\"email-link\" target=\"_blank\" rel=\"noopener noreferrer\">inclumove@gmail.com</a>."
         },
         {
           "id": 5,
@@ -138,6 +138,32 @@
           "answer": "Se você não está se sentindo bem ou acha que não consegue completar seu treino, é importante ouvir seu corpo. Você pode optar por encerrar o treino mais cedo, fazer uma pausa ou ajustar a intensidade do exercício. Lembre-se de que o mais importante é respeitar seus limites e priorizar sua saúde e bem-estar."
         }
       ]
+    },
+    "contact": {
+      "title": "Entre em Contato!",
+      "subtitle": " Nos conte a respeito de sua experiência com o Inclumove, estamos aqui para te ajuda! Certifique-se de que sua mensagem seja clara e objetiva para que possamos te atender o mais rápido possível.",
+      "form": {
+        "name": "Nome",
+        "email": "E-mail"
+      },
+      "motive": {
+        "label": "Motivo do contato",
+        "options": [
+          { "value": "doubt", "label": "Dúvida" },
+          { "value": "suggestion", "label": "Sugestão" },
+          { "value": "compliment", "label": "Elogio" },
+          { "value": "problem", "label": "Problema" },
+          { "value": "other", "label": "Outro" }
+        ]
+      },
+      "message": {
+        "label": "Mensagem",
+        "placeholder": "Escreva sua mensagem aqui..."
+      },
+      "submitButton": {
+        "text": "Enviar"
+      },
+      "findUs": "Encontre-nos por estes canais também"
     }
   }
 }
