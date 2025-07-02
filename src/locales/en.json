@@ -91,7 +91,17 @@
       "lightTheme": "Light Theme",
       "darkTheme": "Dark Theme",
       "account": "Account",
-      "login": "Login"
+      "login": "Login",
+      "langModal": {
+        "title": "Select Language",
+        "desc": "Choose your preferred language for the platform. The change will take effect immediately.",
+        "currentLanguage": "Current language: "
+      },
+      "languages": {
+        "en": "English",
+        "pt": "Português",
+        "es": "Español"
+      }
     },
     "faq": {
       "faqTitle": "Frequently Asked Questions!",

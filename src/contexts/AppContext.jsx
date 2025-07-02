@@ -22,6 +22,7 @@ export const AppContextProvider = ( props ) => {
   const { children } = props;
   const navigate = useNavigate();
 
+  const [expanded, setExpanded] = useState(true);
   const [fotoPerfil, setFotoPerfil] = useState(null);
   const [usuarioParcial, setUsuarioParcial] = useState(null);
   const [showNewWorkout, setShowNewWorkout] = useState(false);
@@ -71,6 +72,10 @@ export const AppContextProvider = ( props ) => {
     } catch (error) {
       console.error("Erro ao atualizar a foto:", error);
     }
+  };
+
+  const handleExpanded = () => {
+    setExpanded(current => !current);
   };
 
   const adicionarUsuario = async (usuario) => {
@@ -313,6 +318,9 @@ export const AppContextProvider = ( props ) => {
 
       handleChangeLanguage,
       currentLanguage,
+      handleExpanded,
+      expanded,
+      setExpanded,
     }}>
       {children}
     </appContext.Provider>

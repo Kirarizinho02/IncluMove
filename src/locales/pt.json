@@ -91,7 +91,17 @@
       "lightTheme": "Tema Claro",
       "darkTheme": "Tema Escuro",
       "account": "Conta",
-      "login": "Login"
+      "login": "Login",
+      "langModal": {
+        "title": "Selecione o idioma",
+        "desc": "Escolha o idioma que deseja utilizar na plataforma.",
+        "currentLanguage": "Idioma atual: ",
+        "languages": {
+          "pt": "Português",
+          "en": "Inglês",
+          "es": "Espanhol"
+        }
+      }
     },
     "faq": {
       "faqTitle": "Perguntas Frequentes!",
