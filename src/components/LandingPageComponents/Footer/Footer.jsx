@@ -1,6 +1,6 @@
 import { Container, Nav } from 'react-bootstrap';
 
-import { logo_inset } from '../../assets';
+import { logo_inset } from '../../../assets';
 import { FaGithub } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'react-router-dom';

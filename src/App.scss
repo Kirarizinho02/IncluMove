@@ -205,13 +205,35 @@ body {
   transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.aside-link .aside-icon {
-  transition: color 0.2s;
+
+.aside-link.active {
+  background-color: $gray-200;
+  transition: background 0.2s, border-radius 0.2s;
+  position: relative;
 }
 
-.aside-link:hover .aside-icon,
 .aside-link.active .aside-icon {
-  color: var(--bs-tertiary) !important;
+  color: $tertiary !important;
+}
+
+.aside-link:not(:hover):not(:focus):not(.active) .aside-icon {
+  background: none;
+}
+
+.aside-link.collapsed.active {
+  background: none;
+}
+
+.aside-link.collapsed.active .aside-icon {
+  background: $gray-200;
+  border-radius: 50%;
+  padding: 0.35rem;
+  transition: background 0.2s, border-radius 0.2s;
+}
+
+.aside-link:hover{
+  background: $gray-200;
+  transition: background 0.2s, border-radius 0.2s;
 }
 
 @media (max-width: 1200px) {

@@ -6,11 +6,11 @@ import { motion } from 'motion/react';
 
 import { FaInfo, FaMoon, FaQuestion, FaUser } from "react-icons/fa6";
 import { IoSunny, IoMenu } from "react-icons/io5";
-import { logo_inset } from '../../assets';
+import { logo_inset } from '../../../assets';
 
-import { UseAppContext, UseThemeContext } from '../../hooks';
+import { UseAppContext, UseThemeContext } from '../../../hooks';
 
-import { ButtonLanguage } from '../CommonUI';
+import { ButtonLanguage } from '../../CommonUI';
 import { useTranslation } from 'react-i18next';
 import { FaHome } from 'react-icons/fa';
 

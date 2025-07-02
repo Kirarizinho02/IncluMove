@@ -14,8 +14,6 @@ const LandingPage = () => {
   const theme = UseThemeContext();
   const { t } = useTranslation();
 
-
-
   const [ctaHovered, setCtaHovered] = useState(false);
 
   return (

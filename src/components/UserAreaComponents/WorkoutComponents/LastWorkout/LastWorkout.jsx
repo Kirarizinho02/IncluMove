@@ -21,11 +21,10 @@ const LastWorkout = () => {
 
   return (
     <>
-    <Row className="h-100 w-100 m-0 flex-nowrap">
+    <Row className="w-100 m-0 flex-nowrap">
         <Col
           lg={9}
           md={12}
-
           className="d-flex align-items-center justify-content-around pb-4 bg-primary"
         >
           <motion.div
@@ -48,7 +47,7 @@ const LastWorkout = () => {
                 <span className="fs-5 mb-3">
                   <strong>Exercícios:</strong>
                 </span>
-                <Row className="w-100 g-4 justify-content-center">
+                <Row className="w-75 g-4 justify-content-center">
                   {ultimoTreino?.exercicios?.map((exercicio, index) => (
                     <Col key={index} sm={12} md={6} lg={6} xl={4} className="d-flex justify-content-center">
                       <motion.div

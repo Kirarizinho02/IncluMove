@@ -4,9 +4,9 @@ import { useRef } from "react";
 import { useInView, motion } from "framer-motion";
 
 import { Col, Container, Row } from "react-bootstrap";
-import { ana_lemos, card_pin, line_2, marco_aurelio, ricardo_junior } from "../../assets";
+import { ana_lemos, card_pin, line_2, marco_aurelio, ricardo_junior } from "../../../assets";
 import { useTranslation } from "react-i18next";
-import { LineFiller } from "../CommonUI";
+import { LineFiller } from "../../CommonUI";
 
 const ProfessionalsLandingPage = () => {
   const { t } = useTranslation();
