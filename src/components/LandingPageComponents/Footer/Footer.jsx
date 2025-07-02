@@ -1,15 +1,19 @@
 import { Container, Nav } from 'react-bootstrap';
 
-import { logo_inset } from '../../assets';
+import { logo_inset } from '../../../assets';
 import { FaGithub } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
 const Footer = () => {
   const year = new Date().getFullYear()
+  const location = useLocation();
   const { t } = useTranslation();
 
-  return (
+  const mainBg = location.pathname === "/faq" ? "bg-primary" : "bg-body";
 
+  return (
+    <Container fluid className={`${mainBg} p-0`}>
     <Container fluid
       className='bg-body-tertiary border-top bg-body-tertiary'
       style={{ borderBottomLeftRadius: '0', borderBottomRightRadius: '0', borderTopLeftRadius: '2rem', borderTopRightRadius: '2rem' }}
@@ -56,6 +60,7 @@ const Footer = () => {
             </div>
         </footer>
       </Container>
+    </Container>
     </Container>
   )
 }

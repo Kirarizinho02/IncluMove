@@ -31,8 +31,8 @@ const About = () => {
           </Row>
         </Container>
       </div>
-      <div className='grad-primary-to-body-bg' />
-      <div className='pt-3 h-100'> 
+      <div className='grad-primary-to-body-bg pb-2' />
+      <div className='pt-4 h-100 pb-5 bg-body'> 
         <Container>
           <Row className='mt-5 pt-2'>
             <Col md={12} lg={6} className='d-flex justify-content-center align-items-center'>

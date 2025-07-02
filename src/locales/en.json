@@ -87,7 +87,21 @@
       "faq": "Frequently Asked Questions",
       "contact": "Contact Us",
       "rights": "All rights reserved.",
-      "logoAlt": "IncluMove Logo"
+      "logoAlt": "IncluMove Logo",
+      "lightTheme": "Light Theme",
+      "darkTheme": "Dark Theme",
+      "account": "Account",
+      "login": "Login",
+      "langModal": {
+        "title": "Select Language",
+        "desc": "Choose your preferred language for the platform. The change will take effect immediately.",
+        "currentLanguage": "Current language: "
+      },
+      "languages": {
+        "en": "English",
+        "pt": "Português",
+        "es": "Español"
+      }
     },
     "faq": {
       "faqTitle": "Frequently Asked Questions!",
@@ -105,18 +119,23 @@
         },
         { 
           "id": 3,
-          "question": "Onde encontro mais informações?",
-          "answer": "Mais informações podem ser encontradas em nosso site ou entrando em contato diretamente conosco."
+          "question": "I don't have any motor or neurological difficulties, can I use IncluMove?",
+          "answer": "Yes! IncluMove is an inclusive and welcoming platform designed to serve all users, regardless of their limitations. Even if you don't have motor or neurological difficulties, you can still benefit from the functions provided by our project and the community we are building."
         },
         {
           "id": 4,
-          "question": "Como reporto um problema na plataforma?",
-          "answer": "Você pode reportar problemas através do nosso formulário de contato ou enviando um e-mail para nossa equipe de suporte."
+          "question": "How do I contact to report a problem on the platform?",
+          "answer": " You can contact us through the contact form available on our website or by sending an email to our support team at <a href=\"mailto:inclumove@gmail.com\" target=\"_blank\" rel=\"noopener noreferrer\">inclumove@gmail.com"
         },
         {
           "id": 5,
-          "question": "Existe um aplicativo para celular?",
-          "answer": "Atualmente, não temos um aplicativo móvel, mas nosso site é totalmente adaptado para dispositivos móveis."
+          "question": "Is there a mobile app?",
+          "answer": "Currently, we do not have a mobile app available for download. However, our website is fully responsive and can be accessed on any device, including smartphones and tablets."
+        },
+                {
+          "id": 6,
+          "question": "I don't think I can finish my workout, what should I do?",
+          "answer": "If you're not feeling well or think you can't complete your workout, it's important to listen to your body. You can choose to end the workout early, take a break, or adjust the intensity of the exercise. Remember that the most important thing is to respect your limits and prioritize your health and well-being."
         }
       ]
     }

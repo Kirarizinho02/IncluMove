@@ -34,6 +34,14 @@ $enable-negative-margins: true;
     color: white !important;
   }
 
+  .flyout-item:hover,
+  .flyout-item:focus {
+    background: $gray-200;
+    transition: ease-in-out 0.2s;
+    color: $tertiary !important;
+    border-radius: 1rem;
+  }
+
   .workout-details.bg-accent {
     color: black !important;
   }
@@ -68,45 +76,75 @@ $enable-negative-margins: true;
   }
 
   .cta-gradient-btn {
-  background: linear-gradient(135deg, rgba($accent, 0.05) 50%, rgba($tertiary, 0.5) 60%, rgba($tertiary, 1) 100%);
-  background-size: 200% 100%;
-  background-position: 0% 0%;
-  transition:
-    background-position 0.6s cubic-bezier(0.4,0,0.2,1),
-    box-shadow 0.2s,
-    border-color 0.3s;
-  animation: background-move 7s linear infinite;
-  box-shadow: 0 2px 12px 0 rgba(171, 122, 245, 0.08);
-  border: 2px solid rgba(255, 255, 255, 0.281);
-}
-
-.cta-gradient-btn:hover,
-.cta-gradient-btn:focus {
-  background-position: 100% 0%;
-  box-shadow: 0 4px 24px 0 rgba(171, 122, 245, 0.15);
-  border-color: #fff;
-}
-
-  .aside-link.active {
-    background-color: $gray-800;
+    background: linear-gradient(135deg, rgba($info, 0.4) 10%, rgba($tertiary, 0.9) 60%, rgba($tertiary, 1) 100%);
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+    transition:
+      background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.2s,
+      border-color 0.3s,
+      filter 0.5s;
+    animation: background-move 10s linear infinite;
+    box-shadow: 0 2px 12px 0 rgba(171, 122, 245, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.281);
   }
 
-  .test {
+  .cta-gradient-btn:hover,
+  .cta-gradient-btn:focus {
+    background-position: 50% 110%;
+    box-shadow: 0 4px 24px 0 rgba(171, 122, 245, 0.15);
+    border-color: #fff;
+    filter: brightness(1.08);
+  }
+
+.aside-link.active {
+  background-color: $gray-700;
+  transition: background 0.2s, border-radius 0.2s;
+  position: relative;
+}
+
+.aside-link.active .aside-icon {
+  color: #986cdb !important;
+}
+
+.aside-link:not(:hover):not(:focus):not(.active) .aside-icon {
+  background: none;
+}
+
+.aside-link.collapsed.active {
+  background: none;
+}
+
+.aside-link.collapsed.active .aside-icon {
+  background: $gray-400;
+  border-radius: 50%;
+  padding: 0.25rem;
+  transition: background 0.2s, border-radius 0.2s;
+}
+
+.aside-link:hover{
+  background: $gray-700;
+  transition: background 0.2s, border-radius 0.2s;
+}
+
+  .inverted {
     filter: invert(1);
   }
 
   @keyframes background-move {
-  0% {
-    background-position: 0% 0%;
+    0% {
+      background-position: 0% 0%;
+    }
+
+    50% {
+      background-position: 100% 0%;
+    }
+
+    100% {
+      background-position: 0% 0%;
+    }
+
   }
-  50% {
-    background-position: 100% 0%;
-  }
-  100% {
-    background-position: 0% 0%;
-  } 
-  
-}
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
@@ -114,6 +152,7 @@ $enable-negative-margins: true;
 #root {
   height: 100%;
   margin: 0;
+  --bs-dropdown-padding-y: 0rem !important;
 }
 
 body {
@@ -132,16 +171,16 @@ body {
 }
 
 .cta-gradient-btn {
-  background: linear-gradient(135deg, rgba($info, 0.2) 50%, rgba($tertiary, 0.5) 60%, rgba($tertiary, 1) 100%);
+  background: linear-gradient(135deg, rgba($info, 0.9) 20%, rgba($tertiary, 0.9) 60%, rgba($tertiary, 1) 100%);
   background-size: 200% 100%;
   transition:
-    background-position 0.6s cubic-bezier(0.4,0,0.2,1),
+    background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.2s,
     border-color 0.3s;
   z-index: 20;
   animation: background-move 7s linear infinite;
   box-shadow: 0 2px 12px 0 rgba(171, 122, 245, 0.08);
-  border: 2px solid rgba(255, 255, 255, 0.377);
+  border: 2px solid rgba(255, 255, 255, 0.171);
 }
 
 
@@ -150,6 +189,7 @@ body {
   background-position: 100% 0%;
   box-shadow: 0 4px 24px 0 rgba(171, 122, 245, 0.15);
   border-color: #fff;
+      filter: brightness(1.08);
 }
 
 
@@ -165,13 +205,13 @@ body {
   height: 40px;
 }
 
-.aside-link.active {
-  background-color: $gray-200;
-}
-
 .sm-especial {
   padding: 0 !important;
   margin: 0 !important;
+}
+
+.vh-md-100 {
+  height: 100vh !important;
 }
 
 .header-theme-toggle {
@@ -185,19 +225,41 @@ body {
 }
 
 .card-pin-img {
-    top: -1.5rem;
-    width: 6.5rem;
-    height: 5.5rem;
-    transition: all 0.7s cubic-bezier(0.4,0,0.2,1);
+  top: -1.5rem;
+  width: 6.5rem;
+  height: 5.5rem;
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.aside-link .aside-icon {
-  transition: color 0.2s;
+
+.aside-link.active {
+  background-color: $gray-200;
+  transition: background 0.2s, border-radius 0.2s;
+  position: relative;
 }
 
-.aside-link:hover .aside-icon,
 .aside-link.active .aside-icon {
-  color: var(--bs-tertiary) !important;
+  color: $tertiary !important;
+}
+
+.aside-link:not(:hover):not(:focus):not(.active) .aside-icon {
+  background: none;
+}
+
+.aside-link.collapsed.active {
+  background: none;
+}
+
+.aside-link.collapsed.active .aside-icon {
+  background: $gray-200;
+  border-radius: 50%;
+  padding: 0.35rem;
+  transition: background 0.2s, border-radius 0.2s;
+}
+
+.aside-link:hover{
+  background: $gray-200;
+  transition: background 0.2s, border-radius 0.2s;
 }
 
 @media (max-width: 1200px) {
@@ -213,7 +275,7 @@ body {
     left: -1.5rem !important;
     top: -1.5rem;
     height: 5rem;
-}
+  }
 }
 
 @media (min-width: 992px) {
@@ -242,7 +304,7 @@ body {
   .mt-exc-3 {
     margin-top: 1.5rem !important;
   }
-  
+
   .card-pin-img {
     left: 10rem !important;
     top: -1.5rem;
@@ -262,6 +324,10 @@ body {
 @media (max-width: 768px) {
   .mt-md-2 {
     margin-top: 0.5rem !important;
+  }
+
+  .vh-md-100 {
+    height: auto !important;
   }
 
   .mt-md-4 {
@@ -289,7 +355,7 @@ body {
 }
 
 @media (max-width: 480px) {
-  .card-pin-img{
+  .card-pin-img {
     display: none !important;
   }
 }
@@ -297,17 +363,6 @@ body {
 
 .logout-toggle::after {
   display: none !important;
-}
-
-.btn-flyout-animated {
-  color: black !important;
-  border: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.btn-flyout-animated:hover,
-.btn-flyout-animated:focus {
-  transform: scale(1.04);
 }
 
 .btn-edit-animated {
@@ -341,7 +396,8 @@ body {
 .flyout-item:focus {
   background: $gray-200;
   transition: ease-in-out 0.2s;
-  color: $tertiary !important;
+  color: #7150A4 !important;
+  border-radius: 1rem
 }
 
 .transition {
@@ -404,11 +460,13 @@ body {
   0% {
     background-position: 0% 0%;
   }
+
   50% {
     background-position: 100% 0%;
   }
+
   100% {
     background-position: 0% 0%;
-  } 
-  
+  }
+
 }

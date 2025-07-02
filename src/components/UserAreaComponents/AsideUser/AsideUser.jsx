@@ -1,85 +1,224 @@
-import { Col, Nav, Offcanvas } from "react-bootstrap";
-import { UseAppContext } from "../../../hooks";
+import { useState } from "react";
+import { Container, Modal, Nav } from "react-bootstrap";
+import { UseAppContext, UseThemeContext } from "../../../hooks";
 
-import { TooltipLink } from "../..";
+import { ProfilePicture, TooltipLink } from "../..";
 
-import { FaUserCircle } from "react-icons/fa";
-import { FaDumbbell, FaPeopleGroup } from "react-icons/fa6";
+import { FaMoon } from "react-icons/fa";
+import { FaGlobe, } from "react-icons/fa6";
+import { IoSunny } from "react-icons/io5";
+import { LuChevronFirst, LuChevronLast } from "react-icons/lu";
+import { FiMoreVertical } from "react-icons/fi";
 
-import { logo } from "../../../assets";
+import { logo_inset } from "../../../assets";
+
 import { useTranslation } from "react-i18next";
 
-const AsideUser = () => {
-  const { showAside, handleCloseAside, getIconColor } = UseAppContext();
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
+
+import { AsideItems } from "./AsideItems";
+
+const AsideUser = ({ isOffcanvas = false }) => {
+  const languages = [
+    { code: "pt", label: "Português" },
+    { code: "en", label: "English" },
+    { code: "es", label: "Español" },
+  ];
+
+  const [showLangModal, setShowLangModal] = useState(false);
+
+  const { usuarioLog, handleChangeLanguage, currentLanguage, handleExpanded, expanded } = UseAppContext();
 
   const { t } = useTranslation();
 
+  const { theme, switchTheme } = UseThemeContext();
+
+
+
   return (
     <>
-      <Col md={2} lg={1} className="d-none d-md-block sm-especial border-end bg-body overflow-hidden h-100">
-        <aside className="d-flex flex-column align-items-center w-100">
-          <Nav className="d-flex justify-content-center w-100" activeKey={location.pathname}>
+    <Container className={`overflow-x-hidden p-0 m-0 h-100${isOffcanvas ? '' : ''}`}>
+      <aside
+        className="bg-body vh-100 w-100 shadow border-end border-secondary h-100"
+        style={{
+          width: isOffcanvas ? 240 : expanded ? 240 : 64,
+          minWidth: isOffcanvas ? 240 : expanded ? 240 : 64,
+          maxWidth: isOffcanvas ? 240 : expanded ? 240 : 64,
+          transition: "all 0.4s",
+          overflow: "hidden",
+        }}
+      >
+          <Nav className="d-flex justify-content-between flex-column h-100" activeKey={location.pathname}>
+            <div className="d-flex p-3 justify-content-between align-items-center">
+              <TooltipLink title={t('tooltips.home')} id="tl1" localizacao="right">
+                <a
+                  className="d-flex align-items-center link-body-emphasis text-decoration-none gap-2 overflow-hidden ps-2"
+                  href="/"
+                  style={{ width: expanded ? '100%' : '0' }}
+                >
+                  <img height={40} src={logo_inset} alt={t('nav.logoAlt')}
+                    style={{
+                      transition: "opacity 0.5s",
+                      opacity: expanded ? 1 : 0,
+                    }}
+                  />
+                  <motion.span className='title fw-medium fs-5'
+                    animate={{
+                      opacity: expanded ? 1 : 0,
+                      x: expanded ? 0 : -16,
+                      transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+                    }}
+                  >
+                    Inclu
+                  </motion.span>
+                  <motion.span className='title fw-bold fs-5 ms-n2'
+                    animate={{
+                      opacity: expanded ? 1 : 0,
+                      x: expanded ? 0 : -16,
+                      transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+                    }}
+                  >
+                    Move
+                  </motion.span>
+                </a>
+              </TooltipLink>
+              {expanded ? (
+                <LuChevronFirst
+                  className="text-body-secondary rounded-3 bg-secondary me-2"
+                  size="2rem"
+                  style={{ cursor: "pointer" }}
+                  onClick={handleExpanded}
+                />
+              ) : (
+                <LuChevronLast
+                  className="text-body-secondary rounded-3 bg-secondary"
+                  size="2rem"
+                  style={{ cursor: "pointer", marginRight: "3.7rem" }}
+                  onClick={handleExpanded}
+                />
+              )}
+            </div>
 
-              <Nav.Link className="p-3 text-center pe-auto link-body-emphasis aside-link w-100" eventKey="/user-area/workouts" href="/user-area/workouts">
-                <TooltipLink title={t('tooltips.workouts')} id="t-1" localizacao="right"> 
-                  <FaDumbbell className="w-100 aside-icon" size="2rem" color={getIconColor("/user-area/workouts")}/>
-                  <span className="fs-6">Treinos</span>
-                </TooltipLink>
-              </Nav.Link>
+            <AsideItems />
 
-               <Nav.Link className="p-3 px-1 text-center pe-auto link-body-emphasis aside-link w-100 text-wrap" eventKey="/user-area/experts" href="#">
-                <TooltipLink title={t('tooltips.experts')} id="t-3" localizacao="right">
-                  <FaPeopleGroup className="w-100" size="2rem" />
-                  <span className="fs-6">Profissionais</span>
-                </TooltipLink>
-              </Nav.Link> 
+            <section className="ps-2">
+              <div
+                className="d-flex align-items-center fs-6 w-100 ps-3"
+                style={{
+                  transition: "all 0.4s",
+                  cursor: "pointer",
+                  marginLeft: "-0.05rem"
+                }}
+                onClick={() => setShowLangModal(true)}
+              >
+                <FaGlobe className="ms-1" size="1.2rem" />
+                <motion.div
+                  className="align-items-center ms-3 overflow-hidden"
+                  initial={false}
+                  animate={{
+                    opacity: expanded ? 1 : 0,
+                    x: expanded ? 0 : -16,
+                    transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+                  }}
+                  style={{
+                    whiteSpace: "nowrap",
+                    display: expanded ? "inline-block" : "none",
+                  }}
+                >
+                  <span>
+                    {languages.find(l => l.code === currentLanguage)?.label}
+                  </span>
+                </motion.div>
+              </div>
 
-              <Nav.Link className="p-3 text-center pe-auto link-body-emphasis aside-link w-100" eventKey="/user-area/profile" href="/user-area/profile">
-                <TooltipLink title={t('tooltips.profile')} id="t-2" localizacao="right">
-                  <FaUserCircle className="w-100 aside-icon" size="2rem" color={getIconColor("/user-area/profile")} />
-                  <span className="fs-6">Conta</span>
-                </TooltipLink>                
-              </Nav.Link>
+              <Modal show={showLangModal} onHide={() => setShowLangModal(false)} centered>
+                <Modal.Header closeButton>
+                  <Modal.Title className="title">
+                    {t('nav.langModal.title')}
+                  </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <p className="mb-3" style={{ fontSize: 15 }}>
+                    {t('nav.langModal.desc')}
+                  </p>
+                  {languages.map(lang => (
+                    <button
+                      key={lang.code}
+                      className={`btn w-100 mb-2 text-start${lang.code === currentLanguage ? " btn-tertiary" : " btn-outline-tertiary"}`}
+                      onClick={() => {
+                        handleChangeLanguage(lang.code);
+                        setShowLangModal(false);
+                      }}
+                    >
+                      {lang.label}
+                    </button>
+                  ))}
+                </Modal.Body>
+              </Modal>
+              <div className="d-flex align-items-center gap-2">
 
+                <div
+                  variant="link"
+                  className="p-3 header-theme-toggle"
+                  style={{ boxShadow: "none", marginLeft: "0.1rem" }}
+                  onClick={switchTheme}
+                  aria-label="Alternar tema"
+                >
+                  {theme === 'dark'
+                    ? <FaMoon size='1.3rem' color='white' className="mb-1" />
+                    : <IoSunny size='1.3rem' color='black' className="mb-1" />
+                  }
+                  <motion.div
+                    className="align-items-center ms-3 overflow-hidden"
+                    initial={false}
+                    animate={{
+                      opacity: expanded ? 1 : 0,
+                      x: expanded ? 0 : -16,
+                      transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+                    }}
+                    style={{
+                      whiteSpace: "nowrap",
+                      display: expanded ? "inline-flex" : "none",
+                    }}
+                  >
+                    {theme === 'dark' ? t('nav.darkTheme') : t('nav.lightTheme')}
+                  </motion.div>
+                </div>
+              </div>
+
+              <div className="d-flex border-top p-3 align-items-center" style={{ width: expanded ? "100%" : "63px" }}>
+                <div style={{ marginLeft: expanded ? "0.1rem" : "-0.45rem" }}>
+                  <ProfilePicture size={40} />
+                </div>
+                <div
+                  className="d-flex justify-content-between align-items-center overflow-hidden pe-1"
+                  style={{
+                    width: expanded ? 160 : 0,
+                    opacity: expanded ? 1 : 0,
+                    marginLeft: expanded ? "0.75rem" : 0,
+                    transition: "all 0.5s",
+                  }}
+                >
+                  <div>
+                    <span className="fw-semibold">
+                      {usuarioLog ? usuarioLog.nome : "Usuário Desconhecido"}
+                    </span>
+                    <span className="text-body-secondary d-block" style={{ fontSize: 13 }}>
+                      {usuarioLog ? usuarioLog.email : "Email Desconhecido"}
+                    </span>
+                  </div>
+                  <FiMoreVertical size="1.5rem" className="h-100" />
+                </div>
+
+              </div>
+            </section>
           </Nav>
         </aside>
-      </Col>
-
-      <Offcanvas show={showAside} className="bg-body-tertiary" onHide={handleCloseAside}>
-        <Offcanvas.Header closeButton>
-          {/* <Offcanvas.Title>Menu</Offcanvas.Title> */}
-          <TooltipLink title='Página Inicial' id='tl1' localizacao='right'>
-            <a className='d-flex align-items-center link-body-emphasis text-decoration-none gap-2' href="/">
-
-              <img height={40} src={logo} alt='Logo do IncluMove' />
-              <span className='title fw-medium fs-5'>IncluMove</span>
-
-            </a>
-          </TooltipLink>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          <Nav className="d-flex flex-column justify-content-center" activeKey={location.pathname}>
-            <Nav.Link className="p-3 text-center pe-auto link-body-emphasis aside-link" eventKey="/user-area/workouts" href="/user-area/workouts">
-              <FaDumbbell className="w-100" size="2rem" color={getIconColor("/user-area/workouts")}/>
-              <span className="fs-6">Treinos</span>
-            </Nav.Link>
-
-            {/* <Nav.Link className="p-3 text-center pe-auto link-body-emphasis aside-link" eventKey="/user-area/experts" href="#">
-              <FaPeopleGroup className="w-100" size="2rem" />
-              <span className="fs-6">Profissionais</span>
-            </Nav.Link> */}
-            
-            <Nav.Link className="p-3 text-center pe-auto link-body-emphasis aside-link" eventKey="/user-area/profile" href="/user-area/profile">
-              <FaUserCircle className="w-100" size="2rem" color={getIconColor("/user-area/profile")}/>
-              <span className="fs-6">Conta</span>
-            </Nav.Link>
-          </Nav>
-        </Offcanvas.Body>
-      </Offcanvas>
+      </Container >
 
     </>
   );
 }
 
 export { AsideUser };
-
