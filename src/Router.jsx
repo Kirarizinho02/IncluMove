@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { UseAppContext } from './hooks';
 import { DefaultLayout, FormLayout, RestrictedLayout } from './layouts';
-import { About, Disabilities, Error, Profile, LandingPage, LogIn, SignUp, Workouts, FrequentlyAskedQuestions, Contact } from './pages';
+import { About, Disabilities, Error, Profile, LandingPage, LogIn, SignUp, Workouts, FrequentlyAskedQuestions, Contact, Professionals } from './pages';
 
 const Router = () => {
   const { rotaPrivada: RotaPrivada } = UseAppContext();
@@ -32,7 +32,7 @@ const Router = () => {
       >
         <Route index element={<Navigate to="/user-area/profile" replace />} />
         <Route path='/user-area/workouts' element={<Workouts />} />
-      {/*  <Route path='/user-area/experts' element={<Experts />} />*/}
+        <Route path='/user-area/professionals' element={<Professionals />} />
         <Route path='/user-area/profile' element={<Profile />} /> 
       </Route> 
 

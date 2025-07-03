@@ -117,7 +117,7 @@
           "question": "Is there a way to contribute IncluMove's development?",
           "answer": "By registering, you are already actively contributing to the project's development! You can also contribute by sharing your experiences, suggesting improvements, or pointing out any errors you find."
         },
-        { 
+        {
           "id": 3,
           "question": "I don't have any motor or neurological difficulties, can I use IncluMove?",
           "answer": "Yes! IncluMove is an inclusive and welcoming platform designed to serve all users, regardless of their limitations. Even if you don't have motor or neurological difficulties, you can still benefit from the functions provided by our project and the community we are building."
@@ -125,19 +125,163 @@
         {
           "id": 4,
           "question": "How do I contact to report a problem on the platform?",
-          "answer": " You can contact us through the contact form available on our website or by sending an email to our support team at <a href=\"mailto:inclumove@gmail.com\" target=\"_blank\" rel=\"noopener noreferrer\">inclumove@gmail.com"
+          "answer": " You can contact us through the contact form available on our website or by sending an email to our support team at <a href=\"mailto:inclumove@gmail.com\" target=\"_blank\" class=\"email-link\" rel=\"noopener noreferrer\">inclumove@gmail.com"
         },
         {
           "id": 5,
           "question": "Is there a mobile app?",
           "answer": "Currently, we do not have a mobile app available for download. However, our website is fully responsive and can be accessed on any device, including smartphones and tablets."
         },
-                {
+        {
           "id": 6,
           "question": "I don't think I can finish my workout, what should I do?",
           "answer": "If you're not feeling well or think you can't complete your workout, it's important to listen to your body. You can choose to end the workout early, take a break, or adjust the intensity of the exercise. Remember that the most important thing is to respect your limits and prioritize your health and well-being."
         }
       ]
+    },
+    "contact": {
+      "title": "Contact Us!",
+      "subtitle": "Tell us about your experience with IncluMove, we are here to help you! Make sure your message is clear and objective so we can assist you as quickly as possible.",
+      "form": {
+        "name": "Name",
+        "email": "E-mail"
+      },
+      "motive": {
+        "label": "Reason for contact",
+        "options": [
+          { "value": "doubt", "label": "Doubt" },
+          { "value": "suggestion", "label": "Suggestion" },
+          { "value": "compliment", "label": "Compliment" },
+          { "value": "problem", "label": "Problem" },
+          { "value": "other", "label": "Other..." }
+        ]
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Write your message here..."
+      },
+      "submitButton": {
+        "text": "Send"
+      },
+      "findUs": "Other ways to contact",
+      "ourLocation": "Our Location",
+      "getInTouch": "Get in Touch",
+      "hoursOfOperation": "Hours of Operation",
+      "monToFri": "Monday to Friday:",
+      "saturday": "Saturday:",
+      "sunday": "Sunday:",
+      "sundayClosed": "Closed"
+    },
+    "signup": {
+      "title": "Sign Up",
+      "description": "IncluMove is committed to its users. We welcome all bodies, with or without limitations, through a platform focused on adapted physical well-being.",
+      "form": {
+        "name": "Full Name",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "birthDate": "Date of Birth",
+        "gender": "Gender",
+        "genderOptions": {
+          "select": "Select...",
+          "male": "Male",
+          "female": "Female",
+          "nonBinary": "Non-Binary",
+          "other": "Other"
+        },
+        "submit": "Continue"
+      },
+      "alreadyHaveAccount": "Already have an account?",
+      "loginLink": "Log into your account.",
+      "imgAlt": "Happy friends playing sports together, each with different types of physical disabilities.",
+      "errors": {
+        "required": "Please fill in all fields.",
+        "invalidEmail": "Please enter a valid email.",
+        "passwordLength": "Password must be at least 6 characters long.",
+        "passwordMismatch": "Passwords do not match!"
+      }
+    },
+    "login": {
+      "title": "Login",
+      "subtitle": "Welcome back! We're very happy to see you here again.",
+      "form": {
+        "email": "Email",
+        "emailPlaceholder": "name.surname@example.com",
+        "password": "Password",
+        "passwordPlaceholder": "Password",
+        "submit": "Sign In"
+      },
+      "noAccount": "Don't have an account?",
+      "createAccount": "Create one.",
+      "imgAlt": "Illustration of a confident woman with a bionic leg",
+      "errors": {
+        "required": "Please fill in all fields.",
+        "invalid": "Invalid email or password."
+      }
+    },
+    "userExtra": {
+      "title": "Tell us more about you!",
+      "subtitle": "We want to get to know you better! For each question, select the option that best matches your reality.",
+      "form": {
+        "goal": "Goal",
+        "legsMovement": "Leg Movement",
+        "equipment": "Equipment",
+        "support": "Support",
+        "select": "Select...",
+        "goalOptions": {
+          "loseWeight": "My goal is to lose weight",
+          "gainMuscle": "My goal is to gain muscle mass",
+          "changeRoutine": "My goal is to change my routine",
+          "tryNew": "My goal is to try new things"
+        },
+        "legsOptions": {
+          "none": "I have no movement in my legs",
+          "partialOne": "I have partial movement in only one leg",
+          "partialBoth": "I have partial movement in both legs",
+          "total": "I have full movement in my legs"
+        },
+        "equipmentOptions": {
+          "none": "I don't have any of the listed equipment",
+          "dumbbellsBands": "I have dumbbells and resistance bands",
+          "dumbbellsBandsBar": "I have dumbbells, resistance bands, and a bar",
+          "gym": "I will work out in a fully equipped gym"
+        },
+        "supportOptions": {
+          "cane": "I use a cane or walker",
+          "wheelchair": "I use a wheelchair",
+          "stand": "I can stand without help or support"
+        },
+        "submit": "Continue"
+      },
+      "alreadyHaveAccount": "Already have an account?",
+      "loginLink": "Log into your account.",
+      "imgAlt": "Illustration of diverse friends",
+      "errors": {
+        "required": "Please fill in all fields.",
+        "noBasicInfo": "Basic information not found."
+      }
+    },
+    "professionals": {
+      "online": "Online service",
+      "hybrid": "Online and in-person service",
+      "inPerson": "In-person service",
+      "favorite": "Favorite professional",
+      "unfavorite": "Unfavorite professional",
+      "contact": "Contact",
+      "specialties": "Specialties",
+      "location": "Location",
+      "filter": "Filter by specialty",
+      "all": "All specialties",
+      "specialty": {
+        "amputados": "Amputees",
+        "cadeirantes": "Wheelchair users",
+        "idosos": "Elderly",
+        "fisioterapeuta": "Physiotherapist",
+        "geriatra": "Geriatrician",
+        "educadorfisico": "Physical Educator",
+        "personaltrainer": "Personal Trainer"
+      },
+      "rating": "Rating"
     }
   }
 }

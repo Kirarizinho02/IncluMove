@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 // eslint-disable-next-line no-unused-vars
-import { motion, } from "motion/react"
+import { motion } from "motion/react"
 import { Button, Col, Container, Row } from 'react-bootstrap';
 
 import { line_1, line_3, mulher_cadeira, mulher_cadeira_dark, stars } from '../../assets';
@@ -51,7 +51,7 @@ const LandingPage = () => {
               </div>
               <p className='text-center text-md-start'>
                 {t('landing.hero.haveAccount')}
-                <a className='text-decoration-none link-tertiary signuplink' href='/form/login'>
+                <a className='text-decoration-none signuplink' href='/form/login'>
                   {t('landing.hero.login')}
                 </a>
               </p>

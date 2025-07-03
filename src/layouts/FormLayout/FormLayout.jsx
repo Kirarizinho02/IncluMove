@@ -15,7 +15,7 @@ const FormLayout = () => {
   return (
     <>
       <Content>
-        <Container fluid className='overflow-x-hidden'>
+        <Container fluid className='overflow-x-hidden p-0 m-0 h-100 w-100'>
           <Outlet />
         </Container> 
       </Content>

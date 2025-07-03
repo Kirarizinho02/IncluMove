@@ -85,46 +85,69 @@ $enable-negative-margins: true;
       border-color 0.3s,
       filter 0.5s;
     animation: background-move 10s linear infinite;
-    box-shadow: 0 2px 12px 0 rgba(171, 122, 245, 0.08);
+    box-shadow: 0px 2px 3px 1px #6500C4;
     border: 2px solid rgba(255, 255, 255, 0.281);
   }
 
   .cta-gradient-btn:hover,
   .cta-gradient-btn:focus {
     background-position: 50% 110%;
-    box-shadow: 0 4px 24px 0 rgba(171, 122, 245, 0.15);
+    box-shadow: 0px 2px 3px 1px #8240c0;
     border-color: #fff;
     filter: brightness(1.08);
   }
 
-.aside-link.active {
-  background-color: $gray-700;
-  transition: background 0.2s, border-radius 0.2s;
-  position: relative;
+  .aside-link.active {
+    background-color: $gray-700;
+    transition: background 0.2s, border-radius 0.2s;
+    position: relative;
+  }
+
+  .aside-link.active .aside-icon {
+    color: #986cdb !important;
+  }
+
+  .aside-link:not(:hover):not(:focus):not(.active) .aside-icon {
+    background: none;
+  }
+
+  .email-link {
+    color: $accent !important;
+  }
+
+  .aside-link.collapsed.active {
+    background: none;
+  }
+
+  .aside-link.collapsed.active .aside-icon {
+    background: $gray-400;
+    border-radius: 50%;
+    padding: 0.25rem;
+    transition: background 0.2s, border-radius 0.2s;
+  }
+
+  .aside-link:hover {
+    background: $gray-700;
+    transition: background 0.2s, border-radius 0.2s;
+  }
+
+.btn-back {
+  background-color: transparent;
+  border-radius: 100px; 
+  border: 1px solid $gray-600;
+  padding: 0.5rem;
+  transition: background-color 0.2s, border-radius 0.2s, border 0.2s;
 }
 
-.aside-link.active .aside-icon {
-  color: #986cdb !important;
+.btn-back:hover {
+  background-color: $gray-600;
+  border-radius: 100px; 
+  border: 1px solid $gray-600;
+  padding: 0.5rem;
 }
 
-.aside-link:not(:hover):not(:focus):not(.active) .aside-icon {
-  background: none;
-}
-
-.aside-link.collapsed.active {
-  background: none;
-}
-
-.aside-link.collapsed.active .aside-icon {
-  background: $gray-400;
-  border-radius: 50%;
-  padding: 0.25rem;
-  transition: background 0.2s, border-radius 0.2s;
-}
-
-.aside-link:hover{
-  background: $gray-700;
-  transition: background 0.2s, border-radius 0.2s;
+  .shadow-form {
+    box-shadow: 4px 4px 3px 1px #a14d47;
 }
 
   .inverted {
@@ -179,17 +202,24 @@ body {
     border-color 0.3s;
   z-index: 20;
   animation: background-move 7s linear infinite;
-  box-shadow: 0 2px 12px 0 rgba(171, 122, 245, 0.08);
+  box-shadow: 0px 3px 3px 0px #6500C4;
   border: 2px solid rgba(255, 255, 255, 0.171);
 }
 
+.signuplink {
+  color: #825CBB !important;
+}
+
+.shadow-form {
+    box-shadow: 4px 4px 3px 1px #f58a83;
+}
 
 .cta-gradient-btn:hover,
 .cta-gradient-btn:focus {
   background-position: 100% 0%;
-  box-shadow: 0 4px 24px 0 rgba(171, 122, 245, 0.15);
+  box-shadow: 0px 3px 3px 0px #8240c0;
   border-color: #fff;
-      filter: brightness(1.08);
+  filter: brightness(1.08);
 }
 
 
@@ -246,6 +276,22 @@ body {
   background: none;
 }
 
+.btn-back {
+  background-color: transparent;
+  border-radius: 100px; 
+  border: 1px solid $gray-200;
+  padding: 0.5rem;
+  transition: background-color 0.2s, border-radius 0.2s, border 0.2s;
+}
+
+.btn-back:hover {
+  background-color: $gray-200;
+  border-radius: 100px; 
+  border: 1px solid $gray-200;
+  padding: 0.5rem;
+}
+
+
 .aside-link.collapsed.active {
   background: none;
 }
@@ -257,7 +303,7 @@ body {
   transition: background 0.2s, border-radius 0.2s;
 }
 
-.aside-link:hover{
+.aside-link:hover {
   background: $gray-200;
   transition: background 0.2s, border-radius 0.2s;
 }
@@ -267,8 +313,8 @@ body {
     width: 15% !important;
   }
 
-  .w-lg-80 {
-    width: 80% !important;
+  .w-lg-90 {
+    width: 90% !important;
   }
 
   .card-pin-img {
@@ -281,6 +327,14 @@ body {
 @media (min-width: 992px) {
   .text-medium {
     font-size: 4.2rem;
+  }
+
+  .w-lg-100{
+    width: 100% !important;
+  }
+
+  .rounded-lg-4 {
+    border-radius: 1.5rem !important;
   }
 }
 
@@ -390,6 +444,10 @@ body {
     opacity: 1;
     transform: scale(1);
   }
+}
+
+.email-link {
+  color: #7150A4 !important;
 }
 
 .flyout-item:hover,

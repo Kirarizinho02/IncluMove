@@ -102,7 +102,6 @@
         "en": "English",
         "es": "Español"
       }
-
     },
     "faq": {
       "faqTitle": "¡Preguntas Frecuentes!",
@@ -126,7 +125,7 @@
         {
           "id": 4,
           "question": "¿Cómo me pongo en contacto para reportar un problema en la plataforma?",
-          "answer": "Puedes comunicarte con nosotros a través del formulario de contacto disponible en nuestro sitio web o enviando un correo electrónico a nuestro equipo de soporte a <a href=\"mailto:inclumove@gmail.com\" target=\"_blank\" rel=\"noopener noreferrer\">inclumove@gmail.com</a>"
+          "answer": "Puedes comunicarte con nosotros a través del formulario de contacto disponible en nuestro sitio web o enviando un correo electrónico a nuestro equipo de soporte a <a href=\"mailto:inclumove@gmail.com\" class=\"email-link\" target=\"_blank\" rel=\"noopener noreferrer\">inclumove@gmail.com</a>"
         },
         {
           "id": 5,
@@ -139,6 +138,150 @@
           "answer": "Si no te sientes bien o crees que no puedes completar tu entrenamiento, es importante escuchar a tu cuerpo. Puedes optar por finalizar el entrenamiento antes de tiempo, tomar un descanso o ajustar la intensidad del ejercicio. Recuerda que lo más importante es respetar tus límites y priorizar tu salud y bienestar."
         }
       ]
+    },
+    "contact": {
+      "title": "Contáctanos!",
+      "subtitle": "Cuéntanos sobre tu experiencia con IncluMove, estamos aquí para ayudarte! Asegúrate de que tu mensaje sea claro y objetivo para que podamos asistirte lo más pronto posible.",
+      "form": {
+        "name": "Nombre",
+        "email": "Correo electrónico"
+      },
+      "motive": {
+        "label": "Motivo del contacto",
+        "options": [
+          { "value": "doubt", "label": "Duda" },
+          { "value": "suggestion", "label": "Sugerencia" },
+          { "value": "compliment", "label": "Elogio" },
+          { "value": "problem", "label": "Problema" },
+          { "value": "other", "label": "Otro..." }
+        ]
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Escribe tu mensaje aquí..."
+      },
+      "submitButton": {
+        "text": "Enviar"
+      },
+      "findUs": "Otras formas de contacto",
+      "ourLocation": "Nuestra Ubicación",
+      "getInTouch": "Contáctanos",
+      "hoursOfOperation": "Horario de Atención",
+      "monToFri": "Lunes a Viernes:",
+      "saturday": "Sábado:",
+      "sunday": "Domingo:",
+      "sundayClosed": "Cerrado"
+    },
+    "signup": {
+      "title": "Registro",
+      "description": "IncluMove está comprometida con sus usuarios. Queremos acoger todos los cuerpos, con o sin limitaciones, a través de una plataforma de bienestar físico adaptado.",
+      "form": {
+        "name": "Nombre completo",
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "confirmPassword": "Confirmar contraseña",
+        "birthDate": "Fecha de nacimiento",
+        "gender": "Género",
+        "genderOptions": {
+          "select": "Seleccione...",
+          "male": "Masculino",
+          "female": "Femenino",
+          "nonBinary": "No Binario",
+          "other": "Otro"
+        },
+        "submit": "Continuar"
+      },
+      "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+      "loginLink": "Ingresa a tu cuenta.",
+      "imgAlt": "Amigos felices practicando deportes juntos, con diferentes tipos de discapacidades físicas.",
+      "errors": {
+        "required": "Por favor, completa todos los campos.",
+        "invalidEmail": "Por favor, introduce un correo electrónico válido.",
+        "passwordLength": "La contraseña debe tener al menos 6 caracteres.",
+        "passwordMismatch": "¡Las contraseñas no coinciden!"
+      }
+    },
+    "login": {
+      "title": "Iniciar Sesión",
+      "subtitle": "¡Bienvenido de nuevo! Estamos muy felices de verte por aquí otra vez.",
+      "form": {
+        "email": "Correo electrónico",
+        "emailPlaceholder": "nombre.apellido@ejemplo.com",
+        "password": "Contraseña",
+        "passwordPlaceholder": "Contraseña",
+        "submit": "Ingresar"
+      },
+      "noAccount": "¿No tienes una cuenta?",
+      "createAccount": "Crea una.",
+      "imgAlt": "Ilustración de una mujer segura de sí misma con una pierna biónica",
+      "errors": {
+        "required": "Por favor, completa todos los campos.",
+        "invalid": "Correo o contraseña inválidos."
+      }
+    },
+    "userExtra": {
+      "title": "¡Cuéntanos más sobre ti!",
+      "subtitle": "¡Queremos conocerte mejor! Para cada pregunta, selecciona la alternativa que más se relacione con tu realidad.",
+      "form": {
+        "goal": "Objetivo",
+        "legsMovement": "Movimiento de piernas",
+        "equipment": "Equipo",
+        "support": "Apoyo",
+        "select": "Seleccione...",
+        "goalOptions": {
+          "loseWeight": "Mi objetivo es bajar de peso",
+          "gainMuscle": "Mi objetivo es ganar masa muscular",
+          "changeRoutine": "Mi objetivo es cambiar mi rutina",
+          "tryNew": "Mi objetivo es probar cosas nuevas"
+        },
+        "legsOptions": {
+          "none": "No tengo movimiento en las piernas",
+          "partialOne": "Tengo movimiento parcial en solo una pierna",
+          "partialBoth": "Tengo movimiento parcial en ambas piernas",
+          "total": "Tengo movimiento total en las piernas"
+        },
+        "equipmentOptions": {
+          "none": "No tengo ninguno de los equipos mencionados",
+          "dumbbellsBands": "Tengo mancuernas y bandas elásticas",
+          "dumbbellsBandsBar": "Tengo mancuernas, bandas y una barra",
+          "gym": "Entrenaré en un gimnasio completamente equipado"
+        },
+        "supportOptions": {
+          "cane": "Utilizo un bastón o andador",
+          "wheelchair": "Utilizo una silla de ruedas",
+          "stand": "Puedo estar de pie sin ayuda ni apoyo"
+        },
+        "submit": "Continuar"
+      },
+      "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+      "loginLink": "Ingresa a tu cuenta.",
+      "imgAlt": "Ilustración de amigos diversos",
+      "errors": {
+        "required": "Por favor, completa todos los campos.",
+        "noBasicInfo": "Información básica no encontrada."
+      }
+    },
+    "professionals": {
+      "online": "Atiende en línea",
+      "hybrid": "Atiende en línea y presencial",
+      "inPerson": "Atiende presencialmente",
+      "favorite": "Favorito",
+      "unfavorite": "Quitar de favoritos",
+      "contact": "Contactar",
+      "specialties": "Especialidades",
+      "location": "Ubicación",
+      "filter": "Filtrar especialidad",
+      "all": "Todas especialidades",
+      "specialty": {
+        "amputados": "Amputados",
+        "cadeirantes": "Usuarios de silla de ruedas",
+        "idosos": "Ancianos",
+        "fisioterapeuta": "Fisioterapeuta",
+        "geriatra": "Geriatra",
+        "educadorfisico": "Educador físico",
+        "personaltrainer": "Entrenador personal"
+      },
+      "rating": "Valoración"
     }
   }
 }

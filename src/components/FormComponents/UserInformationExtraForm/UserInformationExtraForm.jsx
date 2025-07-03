@@ -1,11 +1,21 @@
 import { useState } from "react";
-import { Button, Col, FloatingLabel, Form, Row } from "react-bootstrap";
+import { Button, Col, FloatingLabel, Form, Row, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+
 import { ButtonBack } from "../../";
-import { amigos } from "../../../assets";
-import { UseAppContext } from "../../../hooks";
+
+import { useTranslation } from "react-i18next";
+import { homem_supino } from "../../../assets";
+
+import { UseAppContext, UseMinHeightResize } from "../../../hooks";
+
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 const UserInformationExtraForm = () => {
+  const minHeightResize = UseMinHeightResize();
+  const { t } = useTranslation();
+
   const { usuarioParcial, adicionarUsuario } = UseAppContext();
   const navigate = useNavigate();
 
@@ -18,17 +28,33 @@ const UserInformationExtraForm = () => {
     treinos: [],
   });
 
+  const [status, setStatus] = useState(null);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    if (e) e.preventDefault();
+
+    if (
+      !form.objetivo.trim() ||
+      !form.movimento_pernas.trim() ||
+      !form.equipamento_treino.trim() ||
+      !form.equipamento_apoio.trim()
+    ) {
+      setStatus({ type: "error", message: t('userExtra.errors.required') });
+      return;
+    }
+
     if (!usuarioParcial) {
-      alert('Informações básicas não encontradas.');
+      alert(t('userExtra.errors.noBasicInfo'));
       navigate('/form/signup');
       return;
     }
+
+    setStatus(null);
 
     const usuarioCompleto = {
       ...usuarioParcial,
@@ -36,13 +62,17 @@ const UserInformationExtraForm = () => {
     };
 
     await adicionarUsuario(usuarioCompleto);
-    console.log("Usuário completo a ser enviado:", usuarioCompleto);
     navigate('/form/login');
   };
 
   return (
-    <Row className='vh-100'>
-      <Col xs={12} md={6} className='align-items-center bg-white ms-md-2 d-flex flex-column justify-content-between shadow'>
+    <Row className="h-100 p-0 m-0">
+      <Col
+        md={12}
+        lg={6}
+        className='align-items-center bg-body ms-lg-3 my-lg-3 d-flex flex-column justify-content-between shadow-sm rounded-lg-4'
+        style={{ minHeight: minHeightResize }}
+      >
 
         <Row className='w-100 mt-4'>
           <div className='d-flex justify-content-start ms-3 mb-4'>
@@ -51,57 +81,58 @@ const UserInformationExtraForm = () => {
         </Row>
 
         <Row className='w-100 mb-5 pb-5'>
-          <div className='col-xl-8 col-xxl-8 w-lg-80 mx-auto'>
-            <h1 className='text-start title fw-semibold'>Conte-nos mais sobre você!</h1>
-            <p className='mt-n2'>Queremos te conhecer melhor! Para cada uma das perguntas, selecione a alternativa que mais se relaciona com a sua realidade.</p>
+          <div className='col-xl-8 col-xxl-8 w-lg-90 mx-auto'>
+            <h1 className='text-start title fw-semibold'>{t('userExtra.title')}</h1>
+            <p className='mt-n2'>{t('userExtra.subtitle')}</p>
 
-            <FloatingLabel controlId="floatingObjetivo" label="Objetivo" className="mb-3">
-              <Form.Select name="objetivo" value={form.objetivo} onChange={handleChange}>
-                <option value="">Selecione...</option>
-                <option value="Emagrecer">Meu objetivo é emagrecer</option>
-                <option value="Musculos">Meu objetivo é ganhar massa muscular</option>
-                <option value="Mudanca">Meu objetivo é mudar de rotina</option>
-                <option value="Incomum">Meu objetivo é testar coisas novas</option>
+            {status && status.type === "error" && (
+              <Alert variant="danger" className="mb-3 rounded-4">
+                {status.message}
+              </Alert>
+            )}
+
+            <FloatingLabel controlId="floatingObjetivo" label={t('userExtra.form.goal')} className="mb-3">
+              <Form.Select name="objetivo" value={form.objetivo} onChange={handleChange} className="rounded-4">
+                <option value="">{t('userExtra.form.select')}</option>
+                <option value="Emagrecer">{t('userExtra.form.goalOptions.loseWeight')}</option>
+                <option value="Musculos">{t('userExtra.form.goalOptions.gainMuscle')}</option>
+                <option value="Mudanca">{t('userExtra.form.goalOptions.changeRoutine')}</option>
+                <option value="Incomum">{t('userExtra.form.goalOptions.tryNew')}</option>
               </Form.Select>
             </FloatingLabel>
 
-            <FloatingLabel controlId="floatingMovimento" label="Movimento" className="mb-3">
-              <Form.Select name="movimento_pernas" value={form.movimento_pernas} onChange={handleChange}>
-                <option value="">Selecione...</option>
-                <option value="Nulo">Não tenho movimento nas pernas</option>
-                <option value="ParcialSingle">Tenho movimento parcial em apenas uma perna</option>
-                <option value="Parcial">Tenho movimento parcial das duas pernas</option>
-                <option value="Total">Tenho movimento total das pernas</option>
+            <FloatingLabel controlId="floatingMovimento" label={t('userExtra.form.legsMovement')} className="mb-3">
+              <Form.Select name="movimento_pernas" value={form.movimento_pernas} onChange={handleChange} className="rounded-4">
+                <option value="">{t('userExtra.form.select')}</option>
+                <option value="Nulo">{t('userExtra.form.legsOptions.none')}</option>
+                <option value="ParcialSingle">{t('userExtra.form.legsOptions.partialOne')}</option>
+                <option value="Parcial">{t('userExtra.form.legsOptions.partialBoth')}</option>
+                <option value="Total">{t('userExtra.form.legsOptions.total')}</option>
               </Form.Select>
             </FloatingLabel>
 
-            <FloatingLabel controlId="floatingEquipamentos" label="Equipamento" className="mb-3">
-              <Form.Select name="equipamento_treino" value={form.equipamento_treino} onChange={handleChange}>
-                <option value="">Selecione...</option>
-                <option value="NuloEquip">Não possuo nenhum equipamento listado</option>
-                <option value="ParcialSingleEquip">Tenho halteres e elásticos</option>
-                <option value="ParcialEquip">Tenho halteres, elásticos e uma barra</option>
-                <option value="TotalEquip">Farei meus treinos em uma academia equipada</option>
+            <FloatingLabel controlId="floatingEquipamentos" label={t('userExtra.form.equipment')} className="mb-3">
+              <Form.Select name="equipamento_treino" value={form.equipamento_treino} onChange={handleChange} className="rounded-4">
+                <option value="">{t('userExtra.form.select')}</option>
+                <option value="NuloEquip">{t('userExtra.form.equipmentOptions.none')}</option>
+                <option value="ParcialSingleEquip">{t('userExtra.form.equipmentOptions.dumbbellsBands')}</option>
+                <option value="ParcialEquip">{t('userExtra.form.equipmentOptions.dumbbellsBandsBar')}</option>
+                <option value="TotalEquip">{t('userExtra.form.equipmentOptions.gym')}</option>
               </Form.Select>
             </FloatingLabel>
 
-            <FloatingLabel controlId="floatingApoio" label="Apoio" className="mb-3">
-              <Form.Select name="equipamento_apoio" value={form.equipamento_apoio} onChange={handleChange}>
-                <option value="">Selecione...</option>
-                <option value="Bengala">Disponho de bengala ou andador</option>
-                <option value="Cadeira de rodas">Disponho de uma cadeira de rodas</option>
-                <option value="Pé">Consigo ficar em pé sem necessidade de ajuda ou apoio</option>
+            <FloatingLabel controlId="floatingApoio" label={t('userExtra.form.support')} className="mb-3">
+              <Form.Select name="equipamento_apoio" value={form.equipamento_apoio} onChange={handleChange} className="rounded-4">
+                <option value="">{t('userExtra.form.select')}</option>
+                <option value="Bengala">{t('userExtra.form.supportOptions.cane')}</option>
+                <option value="Cadeira de rodas">{t('userExtra.form.supportOptions.wheelchair')}</option>
+                <option value="Pé">{t('userExtra.form.supportOptions.stand')}</option>
               </Form.Select>
             </FloatingLabel>
 
             <div className='d-flex flex-row-reverse'>
-              <Button
-                variant="tertiary"
-                type="button"
-                onClick={handleSubmit}
-                className='w-50 mt-4 title fw-medium shadow'
-              >
-                Entrar
+              <Button type="submit" className='w-50 mt-4 title fw-medium shadow cta-gradient-btn text-body rounded-4' onClick={handleSubmit} >
+                {t('userExtra.form.submit')}
               </Button>
             </div>
           </div>
@@ -109,17 +140,16 @@ const UserInformationExtraForm = () => {
 
         <Row className='w-100 mb-4'>
           <p className='text-center w-100'>
-            Já possui cadastro? <a href="/form/login" className='text-tertiary'>Entre na sua conta.</a>
+            {t('userExtra.alreadyHaveAccount')} <a href="/form/login" className='link-tertiary signuplink'>{t('userExtra.loginLink')}</a>
           </p>
         </Row>
       </Col>
 
-      <Col className='d-none d-md-flex justify-content-center align-items-center vh-100'>
-        <img src={amigos} className='w-100' alt="Ilustração de amigos variados" />
+      <Col className='d-none d-lg-flex justify-content-center align-items-center'>
+        <img src={homem_supino} className="w-100" alt={t('userExtra.imgAlt')} />
       </Col>
     </Row>
   );
 };
 
 export { UserInformationExtraForm };
-

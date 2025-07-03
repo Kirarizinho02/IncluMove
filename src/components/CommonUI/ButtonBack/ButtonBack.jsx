@@ -1,13 +1,15 @@
 import { Button } from "react-bootstrap";
- 
-import { arrow_back } from "../../../assets";
+
+import { FaArrowLeft } from "react-icons/fa6";
 
 const ButtonBack = (props) => {
   const { previousPage } = props;
   return (
-    <Button variant="secondary" className="shadow h-100 p-3 mw-25" style={{ borderRadius: "100px"}} href={previousPage}>
-      <img src={arrow_back} alt="Voltar" />
-    </Button>
+    <a href={previousPage}>
+      <div className="h-100 p-3 mw-25 btn-back text-body">
+        <FaArrowLeft size="2rem" />
+      </div>
+    </a>
   )
 }
 

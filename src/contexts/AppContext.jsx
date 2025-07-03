@@ -4,6 +4,8 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 import { api } from "../services";
 import { useTranslation } from "react-i18next";
+import { FaPersonCircleCheck, FaVideo } from "react-icons/fa6";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const appContext = createContext({});
@@ -18,7 +20,7 @@ const rotaPrivada = ({ children }) => {
   return children;
 };
 
-export const AppContextProvider = ( props ) => {
+export const AppContextProvider = (props) => {
   const { children } = props;
   const navigate = useNavigate();
 
@@ -32,12 +34,12 @@ export const AppContextProvider = ( props ) => {
   const [usuarioLog, setUsuarioLog] = useState(null);
   const [ultimoTreino, setUltimoTreino] = useState(null);
   const [showAside, setShowAside] = useState(false);
-    
+
   const storedLang = localStorage.getItem("language");
-  const { i18n: {changeLanguage, language} } = useTranslation();
+  const { i18n: { changeLanguage, language } } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState(storedLang || language);
 
-  
+
   const loginUsuario = async ({ email, senha }) => {
     if (!email || !senha) {
       throw new Error("Preencha todos os campos.");
@@ -47,9 +49,9 @@ export const AppContextProvider = ( props ) => {
       const response = await api.get(`/usuarios`, {
         params: { email, senha }
       });
-  
+
       if (response.data.length > 0) {
-        return response.data[0]; 
+        return response.data[0];
       } else {
         throw new Error("Email ou senha inválidos.");
       }
@@ -61,14 +63,14 @@ export const AppContextProvider = ( props ) => {
   const mudarFoto = async (foto) => {
     try {
       setFotoPerfil(foto);
-  
+
       const res = await api.patch(`/usuarios/${usuarioLog.id}`, {
-        foto: foto, 
+        foto: foto,
       });
 
-      setUsuarioLog(res.data); 
-      localStorage.setItem('usuarioLogado', JSON.stringify(res.data)); 
-  
+      setUsuarioLog(res.data);
+      localStorage.setItem('usuarioLogado', JSON.stringify(res.data));
+
     } catch (error) {
       console.error("Erro ao atualizar a foto:", error);
     }
@@ -87,7 +89,7 @@ export const AppContextProvider = ( props ) => {
     }
   };
 
-    const getIconColor = (path) =>
+  const getIconColor = (path) =>
     location.pathname === path ? "var(--bs-tertiary)" : undefined;
 
   const logOut = () => {
@@ -127,9 +129,9 @@ export const AppContextProvider = ( props ) => {
   useEffect(() => {
     atualizarUserLogin();
     if (storedLang && storedLang !== language) {
-    changeLanguage(storedLang);
-  }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+      changeLanguage(storedLang);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [atualizarUserLogin]);
 
   const handleWorkoutTypeSelect = async (tipo) => {
@@ -165,7 +167,7 @@ export const AppContextProvider = ( props ) => {
   };
 
   const handleCloseAside = () => setShowAside(false);
-  const handleShowAside = () => setShowAside(true); 
+  const handleShowAside = () => setShowAside(true);
 
   const ultimoTreinoFunc = async () => {
     const usuarioLog = localStorage.getItem('usuarioLogado');
@@ -199,7 +201,7 @@ export const AppContextProvider = ( props ) => {
       const response = await api.get(`/exercicios`, {
         params: { movimentos_pernas }
       });
-  
+
       if (response.data.length >= 3) {
         const listaRapida = response.data.map(exercicio => ({
           nome: exercicio.nome,
@@ -214,18 +216,18 @@ export const AppContextProvider = ( props ) => {
       } else {
         throw new Error("Não há exercícios recomendados");
       }
-  
+
     } catch (error) {
       console.error("Erro ao listar os treinos", error);
     }
-  };  
+  };
 
   const listaTreinosMedios = async (movimentos_pernas) => {
     try {
       const response = await api.get(`/exercicios`, {
         params: { movimentos_pernas }
       });
-  
+
       if (response.data.length >= 4) {
         const listaMedia = response.data.map(exercicio => ({
           nome: exercicio.nome,
@@ -240,18 +242,18 @@ export const AppContextProvider = ( props ) => {
       } else {
         throw new Error("Não há exercícios recomendados");
       }
-  
+
     } catch (error) {
       console.error("Erro ao listar os treinos", error);
     }
   };
-  
+
   const listaTreinosPesados = async (movimentos_pernas) => {
     try {
       const response = await api.get(`/exercicios`, {
         params: { movimentos_pernas }
       });
-  
+
       if (response.data.length >= 5) {
         const listaPesada = response.data.map(exercicio => ({
           nome: exercicio.nome,
@@ -266,11 +268,11 @@ export const AppContextProvider = ( props ) => {
       } else {
         throw new Error("Não há exercícios recomendados");
       }
-  
+
     } catch (error) {
       console.error("Erro ao listar os treinos", error);
     }
-  }; 
+  };
 
   const handleChangeLanguage = (langCode) => {
     changeLanguage(langCode);
@@ -278,21 +280,46 @@ export const AppContextProvider = ( props ) => {
     localStorage.setItem("language", langCode);
   };
 
+  const getAtendimentoLabel = (atende, t) => {
+    if (atende.includes("online") && atende.includes("presencial")) {
+      return (
+        <span>
+          <FaVideo className="me-1 mb-1" /> {t("professionals.hybrid")}{" "}
+        </span>
+      );
+    }
+    if (atende.includes("online")) {
+      return (
+        <span>
+          <FaVideo className="me-1 mb-1" /> {t("professionals.online")}
+        </span>
+      );
+    }
+    if (atende.includes("presencial")) {
+      return (
+        <span> 
+          <FaPersonCircleCheck className="me-1 mb-1" /> {t("professionals.inPerson")} 
+        </span>
+      );
+    }
+    return null;
+  };
+
 
   return (
-    <appContext.Provider value={{ 
+    <appContext.Provider value={{
       ultimoTreinoFunc,
       ultimoTreino,
-      
+
       rotaPrivada,
-      
+
       setShowNewWorkout,
       showNewWorkout,
       showWorkoutToast,
       setShowWorkoutToast,
       handleWorkoutTypeSelect,
       exerciciosSelecionados,
-      
+
       usuarios,
       setUsuarios,
       adicionarUsuario,
@@ -308,7 +335,7 @@ export const AppContextProvider = ( props ) => {
       listaTreinosMedios,
       listaTreinosPesados,
 
-      mudarFoto, 
+      mudarFoto,
       fotoPerfil,
 
       showAside,
@@ -321,6 +348,8 @@ export const AppContextProvider = ( props ) => {
       handleExpanded,
       expanded,
       setExpanded,
+
+      getAtendimentoLabel,
     }}>
       {children}
     </appContext.Provider>
