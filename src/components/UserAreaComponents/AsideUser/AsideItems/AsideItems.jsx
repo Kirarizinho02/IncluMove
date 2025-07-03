@@ -64,8 +64,8 @@ const AsideItems = () => {
       >
         <Nav.Link
           className={`py-3 px-3 my-1 link-body-emphasis aside-link fw-semibold d-flex overflow-hidden align-items-center${!expanded ? " collapsed px-3 ms-1" : " ps-4"}`}
-          eventKey="/user-area/experts"
-          href="#"
+          eventKey="/user-area/professionals"
+          href="/user-area/professionals"
         >
           <FaPeopleGroup className="" size="2rem" />
           <motion.div

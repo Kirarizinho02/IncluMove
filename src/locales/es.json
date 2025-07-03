@@ -260,6 +260,28 @@
         "required": "Por favor, completa todos los campos.",
         "noBasicInfo": "Información básica no encontrada."
       }
+    },
+    "professionals": {
+      "online": "Atiende en línea",
+      "hybrid": "Atiende en línea y presencial",
+      "inPerson": "Atiende presencialmente",
+      "favorite": "Favorito",
+      "unfavorite": "Quitar de favoritos",
+      "contact": "Contactar",
+      "specialties": "Especialidades",
+      "location": "Ubicación",
+      "filter": "Filtrar especialidad",
+      "all": "Todas especialidades",
+      "specialty": {
+        "amputados": "Amputados",
+        "cadeirantes": "Usuarios de silla de ruedas",
+        "idosos": "Ancianos",
+        "fisioterapeuta": "Fisioterapeuta",
+        "geriatra": "Geriatra",
+        "educadorfisico": "Educador físico",
+        "personaltrainer": "Entrenador personal"
+      },
+      "rating": "Valoración"
     }
   }
 }

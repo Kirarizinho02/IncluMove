@@ -4237,5 +4237,111 @@
       "foto": "/workoutAssets/abducaoElastico.png",
       "repeticoes": 12
     }
+  ],
+    "profissionais": [
+    {
+      "id": "p1",
+      "nome": "Dra. Ana Paula",
+      "foto": "/professionalsAssets/ana-paula.jpg",
+      "especialidade": "fisioterapeuta",
+      "atende": ["online", "presencial"],
+      "local": "Campinas/SP",
+      "hibrido": true,
+      "especialidades": ["Amputados", "Cadeirantes"],
+      "avaliacoes": 4.8,
+      "avaliacoesQtd": 32,
+      "contato": "https://wa.me/5511999999999"
+    },
+    {
+      "id": "p2",
+      "nome": "Dr. João Silva",
+      "foto": "/professionalsAssets/brooke-cagle.jpg", 
+      "especialidade": "educadorfisico",
+      "atende": ["online"],
+      "local": "",
+      "hibrido": false,
+      "especialidades": ["Cadeirantes"],
+      "avaliacoes": 2.5,
+      "avaliacoesQtd": 21,
+      "contato": "mailto:joao.silva@gmail.com"
+    },
+    {
+      "id": "p3",
+      "nome": "Dra. Camila Souza",
+      "foto": "/professionalsAssets/camila-souza.jpg",
+      "especialidade": "personaltrainer",
+      "atende": ["presencial"],
+      "local": "São Paulo/SP",
+      "hibrido": false,
+      "especialidades": ["Amputados"],
+      "avaliacoes": 4.9,
+      "avaliacoesQtd": 40,
+      "contato": "https://wa.me/5511988888888"
+    },
+    {
+      "id": "p4",
+      "nome": "Dr. Lucas Pereira",
+      "foto": "/professionalsAssets/lucas-pereira.jpg",
+      "especialidade": "fisioterapeuta",
+      "atende": ["online", "presencial"],
+      "local": "Rio de Janeiro/RJ",
+      "hibrido": true,
+      "especialidades": ["Amputados", "Cadeirantes"],
+      "avaliacoes": 4.7,
+      "avaliacoesQtd": 28,
+      "contato": "https://wa.me/5511977777777"
+    },
+        {
+      "id": "p5",
+      "nome": "Dra. Beatriz Ramos",
+      "foto": "/professionalsAssets/beatriz-ramos.jpg",
+      "especialidade": "geriatra",
+      "atende": ["presencial"],
+      "local": "Belo Horizonte/MG",
+      "hibrido": false,
+      "especialidades": ["Idosos"],
+      "avaliacoes": 4.6,
+      "avaliacoesQtd": 19,
+      "contato": "mailto:beatriz.ramos@exemplo.com"
+    },
+    {
+      "id": "p6",
+      "nome": "Dr. Pedro Martins",
+      "foto": "/professionalsAssets/pedro-martins.jpg",
+      "especialidade": "fisioterapeuta",
+      "atende": ["online"],
+      "local": "",
+      "hibrido": false,
+      "especialidades": ["Idosos", "Cadeirantes"],
+      "avaliacoes": 4.3,
+      "avaliacoesQtd": 15,
+      "contato": "https://wa.me/5511966666666"
+    },
+    {
+      "id": "p7",
+      "nome": "Dra. Juliana Costa",
+      "foto": "/professionalsAssets/juliana-costa.jpg",
+      "especialidade": "educadorfisico",
+      "atende": ["online", "presencial"],
+      "local": "Curitiba/PR",
+      "hibrido": true,
+      "especialidades": ["Idosos", "Amputados"],
+      "avaliacoes": 4.9,
+      "avaliacoesQtd": 37,
+      "contato": "mailto:juliana.costa@exemplo.com"
+    },
+    {
+      "id": "p8",
+      "nome": "Dr. Rafael Lima",
+      "foto": "/professionalsAssets/rafael-lima.jpg",
+      "especialidade": "personaltrainer",
+      "atende": ["presencial"],
+      "local": "Salvador/BA",
+      "hibrido": false,
+      "especialidades": ["Idosos"],
+      "avaliacoes": 4.2,
+      "avaliacoesQtd": 12,
+      "contato": "https://wa.me/5571999999999"
+    }
   ]
 }
