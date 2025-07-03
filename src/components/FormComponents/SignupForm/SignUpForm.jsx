@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ButtonBack } from '../../';
 import { inclusive_sports } from '../../../assets';
-import { UseAppContext, UseMinHeightResize } from '../../../hooks';
+import { UseAppContext, UseResize } from '../../../hooks';
 import { useTranslation } from 'react-i18next';
 
 // eslint-disable-next-line no-unused-vars
@@ -12,7 +12,7 @@ import { motion, } from "motion/react"
 import { FaArrowRight } from 'react-icons/fa6';
 
 const SignUpForm = () => {
-    const minHeightResize = UseMinHeightResize();
+    const minHeightResize = UseResize();
   const { t } = useTranslation();
 
   const { setUsuarioParcial } = UseAppContext();

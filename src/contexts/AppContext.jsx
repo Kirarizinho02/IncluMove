@@ -10,10 +10,10 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 // eslint-disable-next-line react-refresh/only-export-components
 export const appContext = createContext({});
 
-const rotaPrivada = ({ children }) => {
+export const RotaPrivada = ({ children }) => {
   const usuarioLogado = localStorage.getItem("usuarioLogado");
 
-  if (!usuarioLogado) {
+  if (!usuarioLogado || usuarioLogado === "undefined") {
     return <Navigate to="/error" state={{ textoRota: "Não é possível acessar uma conta sem estar logado." }} />;
   }
 
@@ -23,6 +23,9 @@ const rotaPrivada = ({ children }) => {
 export const AppContextProvider = (props) => {
   const { children } = props;
   const navigate = useNavigate();
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const isOffcanvas = window.innerWidth <= 768;
 
   const [expanded, setExpanded] = useState(true);
   const [fotoPerfil, setFotoPerfil] = useState(null);
@@ -76,8 +79,20 @@ export const AppContextProvider = (props) => {
     }
   };
 
-  const handleExpanded = () => {
-    setExpanded(current => !current);
+  useEffect(() => {
+    function handleResizeWidth() {
+      setWindowWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', handleResizeWidth);
+    return () => window.removeEventListener('resize', handleResizeWidth);
+  }, []);
+
+  const handleResponsiveExpanded = () => {
+    if (windowWidth <= 768 && isOffcanvas) {
+      setShowAside(false);
+    } else {
+      setExpanded(current => !current);
+    }
   };
 
   const adicionarUsuario = async (usuario) => {
@@ -311,8 +326,6 @@ export const AppContextProvider = (props) => {
       ultimoTreinoFunc,
       ultimoTreino,
 
-      rotaPrivada,
-
       setShowNewWorkout,
       showNewWorkout,
       showWorkoutToast,
@@ -345,7 +358,7 @@ export const AppContextProvider = (props) => {
 
       handleChangeLanguage,
       currentLanguage,
-      handleExpanded,
+      handleResponsiveExpanded,
       expanded,
       setExpanded,
 

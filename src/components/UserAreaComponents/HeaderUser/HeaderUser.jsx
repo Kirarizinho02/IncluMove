@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Button, Container, Dropdown, ToggleButton } from 'react-bootstrap';
+import { Button, Dropdown } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 
-import { ButtonLanguage, ProfilePicture, TooltipLink } from '../../';
+import { ProfilePicture, TooltipLink } from '../../';
 import { logo_inset } from '../../../assets';
 
 // eslint-disable-next-line no-unused-vars
@@ -12,7 +12,7 @@ import { UseAppContext } from '../../../hooks';
 
 import { FaBars } from "react-icons/fa6";
 import { IoHelpCircle, IoLogOut, IoLogOutOutline } from "react-icons/io5";
-import { AsideOffcanvas } from '../AsideUser/AsideOffCanvas';
+import { AsideOffCanvas } from '../AsideUser/AsideOffCanvas';
 
 const HeaderUser = () => {
   const { logOut, handleShowAside, showAside, handleCloseAside } = UseAppContext();
@@ -90,7 +90,7 @@ const HeaderUser = () => {
           </Dropdown>
         </div>
       </header>
-      <AsideOffcanvas show={showAside} onHide={handleCloseAside} />
+      <AsideOffCanvas show={showAside} onHide={handleCloseAside} />
     </>
   );
 }

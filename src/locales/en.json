@@ -3,7 +3,20 @@
     "profile": {
       "greeting": "Hello, <1>{{name}}</1>",
       "loading": "Loading user...",
-      "email": "{{email}}"
+      "email": "{{email}}",
+      "editProfile": "Edit profile",
+      "photoAlt": "Profile photo",
+      "clickToChangePhoto": "Click the photo to change it",
+      "name": "Name",
+      "emailModal": "Email",
+      "newPassword": "New password",
+      "passwordPlaceholder": "Leave blank if you don't want to change it.",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving your information...",
+      "profile": "Profile",
+      "updateSuccess": "Information updated successfully!",
+      "updateError": "Error updating information."
     },
     "tooltips": {
       "settings": "Settings",
@@ -282,6 +295,22 @@
         "personaltrainer": "Personal Trainer"
       },
       "rating": "Rating"
+    },
+    "lastWorkout": {
+      "title": "Last Workout",
+      "dateUnavailable": "Date not available",
+      "description": "Description",
+      "descriptionUnavailable": "No description available.",
+      "exercises": "Exercises",
+      "noWorkoutTitle": "No workout found.",
+      "noWorkoutText": "Here you’ll see your most recent or current workout.\nHow about starting with a quick one?",
+      "startNow": "Start now!",
+      "greeting": "Hello, {{name}}!",
+      "howAreYou": "How are you feeling today?",
+      "totalWorkouts": "Total Workouts",
+      "series": "Sets",
+      "repetitions": "Repetitions",
+      "workoutSaved": "Workout saved successfully!"
     }
   }
 }

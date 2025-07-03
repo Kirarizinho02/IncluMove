@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function UseMinHeightResize() {
+function UseResize() {
   const [minHeight, setMinHeight] = useState('calc(100vh - 2rem)');
 
   useEffect(() => {
@@ -19,4 +19,4 @@ function UseMinHeightResize() {
   return minHeight;
 }
 
-export {UseMinHeightResize}; 
+export { UseResize }; 

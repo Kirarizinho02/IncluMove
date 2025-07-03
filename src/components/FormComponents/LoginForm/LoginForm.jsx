@@ -3,14 +3,16 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 
 import { logo_inset, mulher_perna_bionica } from '../../../assets';
-import { UseAppContext, UseMinHeightResize } from '../../../hooks';
+import { UseAppContext, UseResize } from '../../../hooks';
 
 import { useState } from 'react';
-import { ButtonBack } from '../../';
+import { Loading } from '../../';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
-  const minHeightResize = UseMinHeightResize();
+  const minHeightResize = UseResize();
+    const navigate = useNavigate();
 
   const { t } = useTranslation();
 
@@ -18,6 +20,7 @@ const LoginForm = () => {
   const [erro, setErro] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,19 +28,28 @@ const LoginForm = () => {
       setErro(t('login.errors.required'));
       return;
     }
+    setLoading(true);
     try {
       const user = await loginUsuario({ email, senha });
       if (user) {
         localStorage.setItem('usuarioLogado', JSON.stringify(user));
         setUsuarioLog(user);
-        window.location.href = '/user-area';
+        setTimeout(() => {
+        navigate('/user-area/profile', { replace: true });
+        }, 2000);
       } else {
         setErro(t('login.errors.invalid'));
+        setLoading(false);
       }
     } catch (error) {
       setErro(error.message);
+      setLoading(false);
     }
   };
+
+  if (loading) {
+    return <Loading isLogin={true} />;
+  }
 
   return (
     <Row className='h-100 m-0 p-0'>

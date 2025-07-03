@@ -44,9 +44,10 @@ const LevelComponent = () => {
   }
 
   return (
-    <Container className="shadow p-4 mt-3 rounded-4 bg-body h-100">
-      <Row>
-      <h4 className="fw-bold title mb-4">
+    <Container fluid className="h-100 rounded-4 h-100 border border-1 border-body mt-3 p-1">
+      <Container className="shadow-sm p-4 bg-body h-100 rounded-4" >
+      <Row className="bg-body d-flex justify-content-around h-100 flex-column">
+      <h4 className="fw-bold title mb-4 text-center">
         Seu nível: <span className={`text-${level.color}`}>{level.name}</span>
       </h4>
       <Col className="d-flex flex-column align-items-center mb-4">
@@ -61,17 +62,18 @@ const LevelComponent = () => {
               variant={level.color}
               className="w-75 mb-2"
             />
-            <span className="fs-6 text-muted">
+            <span className="fs-6 text-muted text-center">
               Faltam <b>{max - qtdTreinos}</b> treino{max - qtdTreinos === 1 ? "" : "s"} para o próximo nível: <b>{nextLevel.name}</b>
             </span>
           </>
         )}
         {level.name === "Mestre" && (
-          <span className="fs-6 text-success">Você atingiu o nível máximo!</span>
+          <span className="fs-6 text-success mb-2">Você atingiu o nível máximo!</span>
         )}
-        <span className="fs-6 mt-3">{daysMsg}</span>
+        <span className="fs-6 text-center">{daysMsg}</span>
       </Col>
       </Row>
+      </Container>
     </Container>
   );
 };

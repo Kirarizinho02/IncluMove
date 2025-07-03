@@ -2,6 +2,7 @@ export * from './ButtonBack';
 export * from './ButtonEdit';
 export * from './ButtonLanguage';
 export * from './ButtonLogOut';
+export * from './CustomPagination';
 export * from './LineFiller';
 export * from './Loading';
 export * from './ProfilePicture';
