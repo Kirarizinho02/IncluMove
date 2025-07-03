@@ -162,6 +162,103 @@
       },
       "submitButton": {
         "text": "Enviar"
+      },
+      "findUs": "Otras formas de contacto",
+      "ourLocation": "Nuestra Ubicación",
+      "getInTouch": "Contáctanos",
+      "hoursOfOperation": "Horario de Atención",
+      "monToFri": "Lunes a Viernes:",
+      "saturday": "Sábado:",
+      "sunday": "Domingo:",
+      "sundayClosed": "Cerrado"
+    },
+    "signup": {
+      "title": "Registro",
+      "description": "IncluMove está comprometida con sus usuarios. Queremos acoger todos los cuerpos, con o sin limitaciones, a través de una plataforma de bienestar físico adaptado.",
+      "form": {
+        "name": "Nombre completo",
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "confirmPassword": "Confirmar contraseña",
+        "birthDate": "Fecha de nacimiento",
+        "gender": "Género",
+        "genderOptions": {
+          "select": "Seleccione...",
+          "male": "Masculino",
+          "female": "Femenino",
+          "nonBinary": "No Binario",
+          "other": "Otro"
+        },
+        "submit": "Continuar"
+      },
+      "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+      "loginLink": "Ingresa a tu cuenta.",
+      "imgAlt": "Amigos felices practicando deportes juntos, con diferentes tipos de discapacidades físicas.",
+      "errors": {
+        "required": "Por favor, completa todos los campos.",
+        "invalidEmail": "Por favor, introduce un correo electrónico válido.",
+        "passwordLength": "La contraseña debe tener al menos 6 caracteres.",
+        "passwordMismatch": "¡Las contraseñas no coinciden!"
+      }
+    },
+    "login": {
+      "title": "Iniciar Sesión",
+      "subtitle": "¡Bienvenido de nuevo! Estamos muy felices de verte por aquí otra vez.",
+      "form": {
+        "email": "Correo electrónico",
+        "emailPlaceholder": "nombre.apellido@ejemplo.com",
+        "password": "Contraseña",
+        "passwordPlaceholder": "Contraseña",
+        "submit": "Ingresar"
+      },
+      "noAccount": "¿No tienes una cuenta?",
+      "createAccount": "Crea una.",
+      "imgAlt": "Ilustración de una mujer segura de sí misma con una pierna biónica",
+      "errors": {
+        "required": "Por favor, completa todos los campos.",
+        "invalid": "Correo o contraseña inválidos."
+      }
+    },
+    "userExtra": {
+      "title": "¡Cuéntanos más sobre ti!",
+      "subtitle": "¡Queremos conocerte mejor! Para cada pregunta, selecciona la alternativa que más se relacione con tu realidad.",
+      "form": {
+        "goal": "Objetivo",
+        "legsMovement": "Movimiento de piernas",
+        "equipment": "Equipo",
+        "support": "Apoyo",
+        "select": "Seleccione...",
+        "goalOptions": {
+          "loseWeight": "Mi objetivo es bajar de peso",
+          "gainMuscle": "Mi objetivo es ganar masa muscular",
+          "changeRoutine": "Mi objetivo es cambiar mi rutina",
+          "tryNew": "Mi objetivo es probar cosas nuevas"
+        },
+        "legsOptions": {
+          "none": "No tengo movimiento en las piernas",
+          "partialOne": "Tengo movimiento parcial en solo una pierna",
+          "partialBoth": "Tengo movimiento parcial en ambas piernas",
+          "total": "Tengo movimiento total en las piernas"
+        },
+        "equipmentOptions": {
+          "none": "No tengo ninguno de los equipos mencionados",
+          "dumbbellsBands": "Tengo mancuernas y bandas elásticas",
+          "dumbbellsBandsBar": "Tengo mancuernas, bandas y una barra",
+          "gym": "Entrenaré en un gimnasio completamente equipado"
+        },
+        "supportOptions": {
+          "cane": "Utilizo un bastón o andador",
+          "wheelchair": "Utilizo una silla de ruedas",
+          "stand": "Puedo estar de pie sin ayuda ni apoyo"
+        },
+        "submit": "Continuar"
+      },
+      "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+      "loginLink": "Ingresa a tu cuenta.",
+      "imgAlt": "Ilustración de amigos diversos",
+      "errors": {
+        "required": "Por favor, completa todos los campos.",
+        "noBasicInfo": "Información básica no encontrada."
       }
     }
   }

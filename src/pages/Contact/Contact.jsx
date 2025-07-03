@@ -1,9 +1,10 @@
 import { Col, Container, Row, Form, Button, Alert } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
-import { FaClock, FaLocationPin, FaLocationPinLock, FaMessage } from "react-icons/fa6";
+import { FaClock, FaMessage } from "react-icons/fa6";
 import { FaEnvelope, FaPhone } from "react-icons/fa";
-import { flowers } from "../../assets";
+import { hexagons } from "../../assets";
+import { MdLocationOn } from "react-icons/md";
 
 
 const Contact = () => {
@@ -32,16 +33,16 @@ const Contact = () => {
       <Container>
         <Row className='mx-xxl-2 d-flex align-items-center'>
           <Col md={12} lg={6} className='p-3'>
-            <h1 className='title fw-bold mt-exc-3 text-center text-md-start'>
+            <h1 className='title fw-bold mt-exc-3 text-center text-lg-start'>
               {t('contact.title')}
             </h1>
-            <p className='pe-xl-5 me-xl-5 text-center text-md-start'>
-              {t('contact.subtitle')}
-            </p>
-            <img src={flowers} className='d-none d-lg-block position-absolute ms-n5 mt-4 py-2 mb-5' height={280} alt="Decorative flowers" />
+            <div className='pe-xl-5 me-xl-5 text-center text-lg-start w-75 w-lg-100 mx-auto'>
+              <p className="">{t('contact.subtitle')}</p>
+            </div>
+            <img src={hexagons} className='d-none d-lg-block position-absolute ms-n3 mt-4 py-2' height={220} alt="Decorative flowers" />
           </Col>
           <Col md={12} lg={6} className="p-3">
-            <Form onSubmit={handleSubmit} className="rounded-4 bg-body p-4 shadow-sm">
+            <Form onSubmit={handleSubmit} className="rounded-4 bg-body p-4 shadow-form">
               <Form.Group className="mb-3" controlId="contactName">
                 <Form.Label className="title">{t('contact.form.name')}</Form.Label>
                 <Form.Control
@@ -98,9 +99,11 @@ const Contact = () => {
                   required
                 />
               </Form.Group>
-              <Button type="submit" className="w-100 fw-semibold rounded-pill shadow-sm bg-tertiary" >
+              <div className="d-flex justify-content-center align-items-center">
+              <Button type="submit" className="w-50 fw-semibold rounded-pill shadow-sm bg-tertiary text-body cta-gradient-btn" >
                 {t('contact.submitButton.text')}
               </Button>
+              </div>
               {status === "success" && (
                 <Alert variant="success" className="mt-3">
                   {t('contact.successMessage')}
@@ -129,15 +132,15 @@ const Contact = () => {
           </div>
           <Row className="d-flex justify-content-center flex-row bg-body">
             <Col lg={4} md={12} className="justify-content-start d-flex align-items-center flex-column pb-4">
-              <FaLocationPin size="2rem" />
-              <h5 className="title fw-semibold pt-2"> Onde Estamos </h5>
+              <MdLocationOn size="2rem" />
+              <h5 className="title fw-semibold pt-2"> {t('contact.ourLocation')} </h5>
               <a href="https://maps.app.goo.gl/4218V4uit7xcUcKAA" className="link-body-emphasis w-50 text-center text-decoration-none text-tertiary" target="_blank" rel="noopener noreferrer">
                 <span className="fw-semibold"> Av. Orosimbo Maia, 2600 - Cambuí, Campinas - SP, 13024-045</span>
               </a>
             </Col>
             <Col lg={4} md={12} className="justify-content-start d-flex align-items-center flex-column pb-4">
               <FaMessage size="2rem" />
-              <h5 className="title fw-semibold pt-2"> Fale Conosco </h5>
+              <h5 className="title fw-semibold pt-2"> {t('contact.getInTouch')} </h5>
               <a href="mailto: Inclumove@gmail.com" className="link-body-emphasis w-50 text-center text-decoration-none text-tertiary mb-1" target="_blank" rel="noopener noreferrer">
                 <span className="fw-semibold"> <FaEnvelope size="1.2rem" className="mb-1 me-1" /> inclumove@gmail.com </span>
               </a>
@@ -147,15 +150,15 @@ const Contact = () => {
             </Col>
             <Col lg={4} md={12} className="justify-content-start d-flex align-items-center flex-column pb-4">
               <FaClock size="2rem" />
-              <h5 className="title fw-semibold pt-2"> Horário de Atendimento </h5>
+              <h5 className="title fw-semibold pt-2"> {t('contact.hoursOfOperation')} </h5>
               <p className="text-center text-body-secondary">
-                <span className="fw-semibold"> Segunda a Sexta: </span> 07:45 - 15:45 <br />
-                <span className="fw-semibold"> Sábado: </span> 07:45 - 12:15 <br />
-                <span className="fw-semibold"> Domingo: </span> Fechado
+                <span className="fw-semibold"> {t('contact.monToFri')} </span> 07:45 - 15:45 <br />
+                <span className="fw-semibold"> {t('contact.saturday')} </span> 07:45 - 12:15 <br />
+                <span className="fw-semibold"> {t('contact.sunday')} </span> {t('contact.sundayClosed')}
               </p>
             </Col>
             <Col lg={12} className="d-flex justify-content-center align-items-center pb-4 flex-column">
-              <iframe className="rounded-4 shadow" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.683949634015!2d-47.049291288300076!3d-22.888130679181792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8cf58413de7e5%3A0x1bc2dcd07edbb973!2sETEC%20Bento%20Quirino!5e0!3m2!1spt-BR!2sbr!4v1751482324116!5m2!1spt-BR!2sbr" width="600" height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+              <iframe className="rounded-4 shadow mw-100" width={640} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.683949634015!2d-47.049291288300076!3d-22.888130679181792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8cf58413de7e5%3A0x1bc2dcd07edbb973!2sETEC%20Bento%20Quirino!5e0!3m2!1spt-BR!2sbr!4v1751482324116!5m2!1spt-BR!2sbr" height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
             </Col>
           </Row>
         </Container>

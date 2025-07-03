@@ -10,8 +10,8 @@ import line_3 from './landing-line-3.svg';
 import logo_3 from './logo-3.png';
 import logo from './logo.svg';
 import logo_inset from './logo-inset.svg';
-import arrow_back from './arrow-back.svg';
 import flowers from './flowers.svg';
+import hexagons from './hexagons.svg';
 import mulher_perna_bionica from './mulher-perna-bionica.svg';
 import amigos_disabled from './disabled-day-concept-illustration.png';
 import passaro_illustration from './passaro-inclumove.png';
@@ -22,16 +22,20 @@ import open_door from './open_door.png';
 import inclumove_team from './inclumove-team.jpeg';
 import woman_confused from './woman-curious.png';
 import amigos from './amigos_inclusao.png';
+import inclusive_sports from './inclusive-friends-sports.svg';
 import user from './blue-circle-with-white-user.png';
 import compromissos1 from './compromissos-1.png';
 import compromissos2 from './compromissos-2.png';
 import compromissos3 from './compromissos-3.png';
+import homem_supino from './homem-supino-disabled.png';
 import settings from './settings.svg';
 import card_pin from './card-pin.svg';
 
 export {
   user,
   flowers,
+  hexagons,
+  inclusive_sports,
   mulher_cadeira,
   mulher_cadeira_dark,
   marco_aurelio,
@@ -47,8 +51,8 @@ export {
   logo_inset,
   logo_3,
   open_door,
-  arrow_back,
   mulher_perna_bionica,
+  homem_supino,
   amigos_disabled,
   passaro_illustration,
   passaro_illustration_dark,

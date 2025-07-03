@@ -131,6 +131,25 @@ $enable-negative-margins: true;
     transition: background 0.2s, border-radius 0.2s;
   }
 
+.btn-back {
+  background-color: transparent;
+  border-radius: 100px; 
+  border: 1px solid $gray-600;
+  padding: 0.5rem;
+  transition: background-color 0.2s, border-radius 0.2s, border 0.2s;
+}
+
+.btn-back:hover {
+  background-color: $gray-600;
+  border-radius: 100px; 
+  border: 1px solid $gray-600;
+  padding: 0.5rem;
+}
+
+  .shadow-form {
+    box-shadow: 4px 4px 3px 1px #a14d47;
+}
+
   .inverted {
     filter: invert(1);
   }
@@ -187,6 +206,13 @@ body {
   border: 2px solid rgba(255, 255, 255, 0.171);
 }
 
+.signuplink {
+  color: #825CBB !important;
+}
+
+.shadow-form {
+    box-shadow: 4px 4px 3px 1px #f58a83;
+}
 
 .cta-gradient-btn:hover,
 .cta-gradient-btn:focus {
@@ -250,6 +276,22 @@ body {
   background: none;
 }
 
+.btn-back {
+  background-color: transparent;
+  border-radius: 100px; 
+  border: 1px solid $gray-200;
+  padding: 0.5rem;
+  transition: background-color 0.2s, border-radius 0.2s, border 0.2s;
+}
+
+.btn-back:hover {
+  background-color: $gray-200;
+  border-radius: 100px; 
+  border: 1px solid $gray-200;
+  padding: 0.5rem;
+}
+
+
 .aside-link.collapsed.active {
   background: none;
 }
@@ -271,8 +313,8 @@ body {
     width: 15% !important;
   }
 
-  .w-lg-80 {
-    width: 80% !important;
+  .w-lg-90 {
+    width: 90% !important;
   }
 
   .card-pin-img {
@@ -285,6 +327,14 @@ body {
 @media (min-width: 992px) {
   .text-medium {
     font-size: 4.2rem;
+  }
+
+  .w-lg-100{
+    width: 100% !important;
+  }
+
+  .rounded-lg-4 {
+    border-radius: 1.5rem !important;
   }
 }
 

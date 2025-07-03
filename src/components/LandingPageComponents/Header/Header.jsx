@@ -47,7 +47,7 @@ const Header = () => {
           className='d-flex flex-wrap justify-content-center align-items-center py-3'
         >
           <a className='mt-md-2 d-flex align-items-center mb-2 mb-md-0 me-auto link-body-emphasis text-decoration-none gap-2' href="/">
-            <img className='me-2 ms-3 pb-1' height={56} src={logo_inset} alt={t('nav.logoAlt')} />
+            <img className='ms-3 pb-1' height={56} src={logo_inset} alt={t('nav.logoAlt')} />
             <span className='title fw-medium fs-2 inclumove-title'>Inclu</span> <span className='title fw-bold fs-2 inclumove-title ms-n2'>Move</span>
           </a>
           <Nav
