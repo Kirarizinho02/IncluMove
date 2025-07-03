@@ -52,7 +52,7 @@ const AsideOffCanvas = ({ show, onHide }) => {
         </div>
         <div className="d-flex flex-column gap-2 mt-4 align-items-stretch">
           <Button
-            variant="outline-info"
+            variant="outline-light"
             className="w-100 d-flex align-items-center justify-content-center gap-2"
             onClick={switchTheme}
             aria-label="Alternar tema"
@@ -81,7 +81,7 @@ const AsideOffCanvas = ({ show, onHide }) => {
               </div>
             </div>
             <Dropdown className='mb-1'>
-              <TooltipLink title={t('tooltips.profile')} id='tl3' localizacao='bottom'>
+              <TooltipLink title={t('tooltips.profile')} id='tl3' localizacao='top'>
                 <div className='p-1'>
                   <Dropdown.Toggle as='span' className="logout-toggle" style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
                     <FiMoreVertical />

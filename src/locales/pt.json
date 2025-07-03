@@ -3,7 +3,20 @@
     "profile": {
       "greeting": "Olá, <1>{{name}}</1>",
       "loading": "Loading user...",
-      "email": "{{email}}"
+      "email": "{{email}}",
+      "editProfile": "Editar perfil",
+      "photoAlt": "Foto de perfil",
+      "clickToChangePhoto": "Clique na foto para alterar",
+      "name": "Nome",
+      "emailModal": "E-mail",
+      "newPassword": "Nova senha",
+      "passwordPlaceholder": "Caso não queira alterar, deixe em branco.",
+      "cancel": "Cancelar",
+      "save": "Salvar",
+      "saving": "Salvando suas informações...",
+      "profile": "Perfil",
+      "updateSuccess": "Informações atualizadas com sucesso!",
+      "updateError": "Erro ao atualizar informações."
     },
     "tooltips": {
       "settings": "Configurações",
@@ -282,6 +295,22 @@
         "geriatra": "Geriatra"
       },
       "rating": "Avaliação"
+    },
+    "lastWorkout": {
+      "title": "Último Treino",
+      "dateUnavailable": "Data não disponível",
+      "description": "Descrição",
+      "descriptionUnavailable": "Nenhuma descrição disponível.",
+      "exercises": "Exercícios",
+      "noWorkoutTitle": "Nenhum treino encontrado.",
+      "noWorkoutText": "Aqui será exibido o seu último treino cadastrado ou o seu treino atual.\nQue tal começar com um novo treino rápido?",
+      "startNow": "Começar agora!",
+      "greeting": "Olá, {{name}}!",
+      "howAreYou": "Como está se sentindo hoje?",
+      "totalWorkouts": "Total de Treinos",
+      "series": "Séries",
+      "repetitions": "Repetições",
+      "workoutSaved": "Treino salvo com sucesso!"
     }
   }
 }

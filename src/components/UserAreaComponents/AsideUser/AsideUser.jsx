@@ -35,9 +35,9 @@ const AsideUser = () => {
 
   return (
     <>
-      <Container className="overflow-x-hidden p-0 m-0 h-100">
+      <Container className="overflow-hidden p-0 m-0 h-100">
         <aside
-          className="bg-body w-100 shadow border-end border-secondary flex-column d-flex"
+          className="bg-body w-100 shadow border-end border-body flex-column d-flex"
           style={{
             width: expanded ? 240 : 64,
             minWidth: expanded ? 240 : 64,
@@ -144,7 +144,7 @@ const AsideUser = () => {
                   {languages.map(lang => (
                     <button
                       key={lang.code}
-                      className={`btn w-100 mb-2 text-start${lang.code === currentLanguage ? " btn-tertiary" : " btn-outline-tertiary"}`}
+                      className={`btn w-100 mb-2 text-center${lang.code === currentLanguage ? " btn-light" : " btn-outline-light"}`}
                       onClick={() => {
                         handleChangeLanguage(lang.code);
                         setShowLangModal(false);

@@ -14,7 +14,7 @@ const GraphsComponent = (props) => {
   }
 
   const treinoDuracaoLabel = ["Rápido", "Moderado", "Pesado"];
-  const treinoCores = ["#f58a83", "#abf479", "#ab7af5"]; 
+  const treinoCores = ["#f58a83", "#abf479", "#ab7af5"];
   const treinoDuracoes = { Rapido: 0, Moderado: 0, Pesado: 0 };
 
   usuario?.treinos?.forEach((treino) => {
@@ -33,51 +33,54 @@ const GraphsComponent = (props) => {
         ],
         backgroundColor: treinoCores,
         hoverOffset: 6,
+        borderWidth: 2,
       },
     ],
   };
 
-  return(
-    <Container className="shadow p-4 mt-3 rounded-4 bg-body h-100">
-      <Row className="d-flex flex-column align-items-center justify-content-center w-100 p-0 m-0">
-        <h4 className="fw-bold title text-center"> Últimos treinos realizados: </h4>
+  return (
+    <Container fluid className="h-100 rounded-4 h-100 border border-1 border-body mt-3 p-1">
+      <Container className="shadow-sm p-4 rounded-4 bg-body h-100 justify-content-between d-flex">
+        <Row className="d-flex flex-column align-items-center justify-content-center w-100 p-0 m-0">
+          <h4 className="fw-bold title text-center"> Últimos treinos realizados: </h4>
 
-        <Col md={12} className="d-flex flex-column align-items-center justify-content-center w-75">
-          <GraficoPizza data={treinoData} />
-        </Col>
+          <Col md={12} className="d-flex flex-column align-items-center justify-content-center w-100">
+            <GraficoPizza data={treinoData} />
+          </Col>
 
-        <Col md={12} className="d-flex justify-content-center flex-column align-items-center mt-4 w-100">
-          {treinoDuracoes.Rapido > 0 && (
-            <div className="d-flex align-items-center p-2">
-              <div className="bg-secondary rounded-4 me-3 ms-n" style={{ width: "1.5rem", height: "1.5rem" }}></div>
-              <div>
-                <div className="fs-5 fw-semibold">Treino Rápido</div>
-                <div>{((treinoDuracoes.Rapido / usuario.treinos.length)*100).toFixed(0)}% - {treinoDuracoes.Rapido} de {usuario.treinos.length} treinos</div>
+          <Col md={12} className="d-flex justify-content-center flex-column align-items-center mt-2 w-100">
+            {treinoDuracoes.Rapido > 0 && (
+              <div className="d-flex align-items-center p-2">
+                <div className="bg-secondary rounded-4 me-3 ms-n" style={{ width: "1.5rem", height: "1.5rem" }}></div>
+                <div>
+                  <div className="fs-5 fw-semibold">Treino Rápido</div>
+                  <div>{((treinoDuracoes.Rapido / usuario.treinos.length) * 100).toFixed(0)}% - {treinoDuracoes.Rapido} de {usuario.treinos.length} treinos</div>
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-          {treinoDuracoes.Moderado > 0 && (
-            <div className="d-flex align-items-center p-2">
-              <div className="bg-accent rounded-4 me-3" style={{ width: "1.5rem", height: "1.5rem" }}></div>
-              <div>
-                <div className="fs-5 fw-semibold">Treino Moderado</div>
-                <div>{((treinoDuracoes.Moderado / usuario.treinos.length)*100).toFixed(0)}% - {treinoDuracoes.Moderado} de {usuario.treinos.length} treinos</div>
+            {treinoDuracoes.Moderado > 0 && (
+              <div className="d-flex align-items-center p-2">
+                <div className="bg-accent rounded-4 me-3" style={{ width: "1.5rem", height: "1.5rem" }}></div>
+                <div>
+                  <div className="fs-5 fw-semibold">Treino Moderado</div>
+                  <div>{((treinoDuracoes.Moderado / usuario.treinos.length) * 100).toFixed(0)}% - {treinoDuracoes.Moderado} de {usuario.treinos.length} treinos</div>
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
-          {treinoDuracoes.Pesado > 0 && (
-            <div className="d-flex align-items-center p-2">
-              <div className="bg-tertiary rounded-4 me-3"  style={{ width: "1.5rem", height: "1.5rem" }}></div>
-              <div>
-                <div className="fs-5 fw-semibold">Treino Pesado</div>
-                <div>{((treinoDuracoes.Pesado / usuario.treinos.length)*100).toFixed(0)}% - {treinoDuracoes.Pesado} de {usuario.treinos.length} treinos</div>
+            {treinoDuracoes.Pesado > 0 && (
+              <div className="d-flex align-items-center p-2">
+                <div className="bg-tertiary rounded-4 me-3" style={{ width: "1.5rem", height: "1.5rem" }}></div>
+                <div>
+                  <div className="fs-5 fw-semibold">Treino Pesado</div>
+                  <div>{((treinoDuracoes.Pesado / usuario.treinos.length) * 100).toFixed(0)}% - {treinoDuracoes.Pesado} de {usuario.treinos.length} treinos</div>
+                </div>
               </div>
-            </div>
-          )}
-        </Col>
-      </Row>
+            )}
+          </Col>
+        </Row>
+      </Container>
     </Container>
   )
 }

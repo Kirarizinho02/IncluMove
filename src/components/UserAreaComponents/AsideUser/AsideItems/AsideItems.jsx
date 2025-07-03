@@ -9,6 +9,8 @@ import { useTranslation } from "react-i18next";
 import { UseAppContext } from "../../../../hooks";
 
 const AsideItems = () => {
+  const professionalsImport = () => import("../../../../pages/Professionals/Professionals");
+
   const { getIconColor, expanded } = UseAppContext();
   const { t } = useTranslation();
 
@@ -63,11 +65,12 @@ const AsideItems = () => {
         styles={expandedTooltip ? { width: "100%" } : {}}
       >
         <Nav.Link
+          onMouseEnter={professionalsImport}
           className={`py-3 px-3 my-1 link-body-emphasis aside-link fw-semibold d-flex overflow-hidden align-items-center${!expanded ? " collapsed px-3 ms-1" : " ps-4"}`}
           eventKey="/user-area/professionals"
           href="/user-area/professionals"
         >
-          <FaPeopleGroup className="" size="2rem" />
+          <FaPeopleGroup className="aside-icon" size="2rem" />
           <motion.div
             className="align-items-center ms-3 overflow-hidden"
             initial={false}

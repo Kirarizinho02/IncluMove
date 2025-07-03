@@ -2,8 +2,11 @@ import { useState } from "react";
 import { Button, Modal, Form, Toast } from "react-bootstrap";
 import { UseAppContext } from "../../../hooks";
 import { api } from "../../../services/api";
+import { FaUserCircle } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 const ButtonEdit = () => {
+  const { t } = useTranslation();
   const { usuarioLog, mudarFoto, atualizarUserLogin } = UseAppContext();
   const [showModal, setShowModal] = useState(false);
   const [showToast, setShowToast] = useState(false);
@@ -43,19 +46,20 @@ const ButtonEdit = () => {
       setShowModal(false);
       setShowToast(true);
     } catch (err) {
-      err("Erro ao atualizar informações.");
+      err(t("profile.updateError"));
     }
     setLoading(false);
   };
 
   return (
     <>
-      <Button variant="secondary" className="title btn-edit-animated gap-2 fs-4 p-3 w-100 rounded-4" onClick={() => setShowModal(true)}>
-        Editar perfil
+      <Button variant="secondary" className="title btn-edit-animated gap-2 fs-5 fw-bold p-3 w-100 rounded-pill" onClick={() => setShowModal(true)}>
+        <FaUserCircle className="fs-4 mb-1 me-2" />
+        {t("profile.editProfile", "Editar perfil")}
       </Button>
       <Modal show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Header closeButton>
-          <Modal.Title className="title fs-3">Editar perfil</Modal.Title>
+          <Modal.Title className="title fs-3 fw-semibold">{t("profile.editProfile")}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -63,8 +67,8 @@ const ButtonEdit = () => {
               <label htmlFor="fotoPerfilInput" style={{ cursor: "pointer" }}>
                 <img
                   src={foto || usuarioLog?.foto || "/default-profile.png"}
-                  alt="Foto de perfil"
-                  className="rounded-circle shadow border border-tertiary border-3"
+                  alt={t("profile.photoAlt", "Foto de perfil")}
+                  className="rounded-circle shadow border border-tertiary border-2"
                   style={{ width: 100, height: 100, objectFit: "cover" }}
                 />
                 <Form.Control
@@ -74,10 +78,10 @@ const ButtonEdit = () => {
                   onChange={handleFileChange}
                 />
               </label>
-              <small className="text-muted mt-1">Clique na foto para alterar</small>
+              <small className="text-muted mt-1">{t("profile.clickToChangePhoto")}</small>
             </div>
             <Form.Group className="mb-3">
-              <Form.Label className="title">Nome</Form.Label>
+              <Form.Label className="title">{t("profile.name")}</Form.Label>
               <Form.Control
                 type="text"
                 value={nome}
@@ -85,7 +89,7 @@ const ButtonEdit = () => {
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label className="title">Email</Form.Label>
+              <Form.Label className="title">{t("profile.emailModal")}</Form.Label>
               <Form.Control
                 type="email"
                 value={email}
@@ -93,22 +97,22 @@ const ButtonEdit = () => {
               />
             </Form.Group>
             <Form.Group className="mb-2">
-              <Form.Label className="title">Nova senha</Form.Label>
+              <Form.Label className="title">{t("profile.newPassword")}</Form.Label>
               <Form.Control
                 type="password"
                 value={senha}
                 onChange={e => setSenha(e.target.value)}
-                placeholder="Caso não queira alterar, deixe em branco."
+                placeholder={t("profile.passwordPlaceholder")}
               />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowModal(false)}>
-            Cancelar
+          <Button variant="outline-danger" className="rounded-pill fw-semibold shadow-sm" onClick={() => setShowModal(false)}>
+            {t("profile.cancel")}
           </Button>
-          <Button variant="accent" onClick={handleSave} disabled={loading}>
-            {loading ? "Salvando suas informações..." : "Salvar"}
+          <Button variant="accent" className="rounded-pill fw-semibold shadow-sm" onClick={handleSave} disabled={loading}>
+            {loading ? t("profile.saving") : t("profile.save")}
           </Button>
         </Modal.Footer>
       </Modal>
@@ -124,10 +128,10 @@ const ButtonEdit = () => {
         }}
       >
         <Toast.Header>
-          <strong className="me-auto fs-6 title">Perfil</strong>
+          <strong className="me-auto fs-6 title">{t("profile.profile")}</strong>
         </Toast.Header>
         <Toast.Body className="text-black fs-6">
-          Informações atualizadas com sucesso!
+          {t("profile.updateSuccess")}
         </Toast.Body>
       </Toast>
     </>

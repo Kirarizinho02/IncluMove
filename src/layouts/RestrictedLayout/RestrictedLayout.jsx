@@ -10,9 +10,9 @@ const RestrictedLayout = () => {
   const asideWidth = expanded ? 240 : 64;
 
   return (
-    <Container fluid className="overflow-x-hidden bg-primary p-0 m-0">
+    <Container fluid className="overflow-hidden bg-primary p-0 m-0">
       <div className="d-md-none w-100"> <HeaderUser /> </div>
-      <Row className="h-100 flex-nowrap">
+      <Row className="h-100 flex-nowrap overflow-hidden">
         <div
           style={{
             width: asideWidth,
@@ -29,7 +29,7 @@ const RestrictedLayout = () => {
             flex: 1,
             transition: "all 0.4s",
           }}
-          className="p-0 m-0 overflow-x-hidden overflow-y-auto vh-md-100"
+          className="p-0 overflow-x-hidden overflow-y-auto vh-md-100 me-scrollbar"
         >
           <Outlet />
         </div>

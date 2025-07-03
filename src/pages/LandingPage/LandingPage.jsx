@@ -9,8 +9,10 @@ import { line_1, line_3, mulher_cadeira, mulher_cadeira_dark, stars } from '../.
 import { CommitmentsCarousel, LineFiller, ProfessionalsLandingPage } from '../../components';
 import { UseThemeContext } from '../../hooks';
 import { FaArrowRight } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   const theme = UseThemeContext();
   const { t } = useTranslation();
 
@@ -32,7 +34,7 @@ const LandingPage = () => {
                 <Button
                   size='lg'
                   className='cta-gradient-btn col-sm-6 col-md-4 col-lg-6 col-xl-4 mb-3 me-md-auto rounded-5 bg-tertiary text-body'
-                  href='/form/signup'
+                  onClick={() => navigate('/form/signup')}
                   onMouseEnter={() => setCtaHovered(true)}
                   onMouseLeave={() => setCtaHovered(false)}
                   onFocus={() => setCtaHovered(true)}

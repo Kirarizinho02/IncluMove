@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
-import { Card, Col, Row, Button, Badge, Container, Dropdown } from "react-bootstrap";
+import { Card, Col, Row, Button, Badge, Container, Dropdown, Pagination } from "react-bootstrap";
 import { FaStar, FaRegStar, FaUserCheck, FaWheelchair, FaHeart, FaRegHeart, FaMapMarkerAlt } from "react-icons/fa";
 import { api } from "../../services";
 import { useTranslation } from "react-i18next";
 import { UseAppContext } from "../../hooks";
 import { MdElderly } from "react-icons/md";
-
 import { motion, AnimatePresence } from 'motion/react';
-
 import { FaFilter } from "react-icons/fa6";
+import { CustomPagination } from "../../components";
 
 const Professionals = () => {
   const { t } = useTranslation();
-
-  const { getAtendimentoLabel } = UseAppContext();
+  const { getAtendimentoLabel, usuarioLog } = UseAppContext();
 
   const [filter, setFilter] = useState("");
   const [professionals, setProfessionals] = useState([]);
@@ -21,6 +19,9 @@ const Professionals = () => {
     const fav = localStorage.getItem("favoriteProfessionals");
     return fav ? JSON.parse(fav) : [];
   });
+  const [currentPage, setCurrentPage] = useState(1);
+  const [showOnlyFavorites, setShowOnlyFavorites] = useState(false);
+  const professionalsPerPage = 9;
 
   useEffect(() => {
     api.get("/profissionais")
@@ -33,24 +34,14 @@ const Professionals = () => {
       .catch(() => setProfessionals([]));
   }, []);
 
+  useEffect(() => {
+    if (usuarioLog?.id) {
+      api.get(`/usuarios/${usuarioLog.id}`)
+        .then(res => setFavorites(res.data.favoritos || []));
+    }
+  }, [usuarioLog]);
 
-  const specialties = Array.from(
-    new Set(
-      professionals.flatMap(prof => prof.especialidades || [])
-    )
-  );
-
-  const filteredProfessionals = filter
-    ? professionals.filter(prof => (prof.especialidades || []).includes(filter))
-    : professionals;
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -30 }
-  };
-
-  const toggleFavorite = (id) => {
+  const toggleFavorite = async (id) => {
     let newFavs;
     if (favorites.includes(id)) {
       newFavs = favorites.filter(fav => fav !== id);
@@ -58,20 +49,53 @@ const Professionals = () => {
       newFavs = [...favorites, id];
     }
     setFavorites(newFavs);
-    localStorage.setItem("favoriteProfessionals", JSON.stringify(newFavs));
+
+    if (usuarioLog?.id) {
+      await api.patch(`/usuarios/${usuarioLog.id}`, { favoritos: newFavs });
+    }
   };
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filter]);
+
+  const specialties = Array.from(
+    new Set(
+      professionals.flatMap(prof => prof.especialidades || [])
+    )
+  );
+
+  var filteredProfessionals = filter
+    ? professionals.filter(prof => (prof.especialidades || []).includes(filter))
+    : professionals;
+
+  if (showOnlyFavorites) {
+    filteredProfessionals = filteredProfessionals.filter(prof => favorites.includes(prof.id));
+  }
+
+  const indexOfLast = currentPage * professionalsPerPage;
+  const indexOfFirst = indexOfLast - professionalsPerPage;
+  const currentProfessionals = filteredProfessionals.slice(indexOfFirst, indexOfLast);
+  const totalPages = Math.ceil(filteredProfessionals.length / professionalsPerPage);
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -30 }
+  };
+
 
   return (
     <Container fluid className="m-0 p-0 d-flex align-items-center justify-content-center flex-column">
-      <Container className="p-0 m-0">
-        <div className="d-flex justify-content-between align-items-center m-3 pt-1">
+      <Container className="p-0 m-0 px-md-3">
+        <div className="d-flex justify-content-between align-items-center my-4 p-2 top-0 z-1 h-100 w-100 bg-primary">
           <div className="lh-1">
-            <h5 className="title fw-semibold">Veja o perfil dos nossos profissionais disponíveis na plataforma: </h5>
-            <span className="text-body-secondary"> Se gostar de algum, entre em contato!</span>
+            <h5 className="title fw-semibold">{t("professionals.title", "Veja o perfil dos nossos profissionais disponíveis na plataforma: ")}</h5>
+            <span className="text-body-secondary">{t("professionals.subtitle", "Se gostar de algum, entre em contato!")}</span>
           </div>
           <div className="d-flex gap-2">
             <Dropdown>
-              <Dropdown.Toggle className="rounded-pill shadow d-flex align-items-center gap-2 cta-gradient-btn text-body">
+              <Dropdown.Toggle className="rounded-pill shadow-sm d-flex align-items-center gap-2 cta-gradient-btn text-body">
                 <FaFilter /> {filter ? t(`professionals.specialty.${filter.toLowerCase()}`, filter) : t("professionals.filter")}
               </Dropdown.Toggle>
               <Dropdown.Menu>
@@ -85,13 +109,23 @@ const Professionals = () => {
                 ))}
               </Dropdown.Menu>
             </Dropdown>
+            <Button
+              variant={showOnlyFavorites ? "danger" : "outline-danger"}
+              className="rounded-pill shadow-sm d-flex align-items-center gap-2"
+              onClick={() => setShowOnlyFavorites(fav => !fav)}
+              aria-pressed={showOnlyFavorites}
+              title={t("professionals.onlyFavorites", "Mostrar apenas favoritos")}
+            >
+              <FaHeart />
+              {showOnlyFavorites ? t("professionals.onlyFavoritesOn", "Apenas favoritos") : t("professionals.onlyFavoritesOff", "Todos")}
+            </Button>
           </div>
         </div>
-        <Container className="border bg-body py-3 rounded mb-lg-3">
-          <div className="d-flex justify-content-center align-items-center" style={{ minHeight: "80vh" }}>
+        <Container className="border bg-body border-body py-3 rounded-2 mb-lg-3">
+          <div className="d-flex justify-content-center align-items-center" style={{ minHeight: "83vh" }}>
             <Row className="p-3 g-4 w-100 justify-content-center">
               <AnimatePresence>
-                {filteredProfessionals.map(prof => (
+                {currentProfessionals.map(prof => (
                   <Col
                     as={motion.div}
                     key={prof.id}
@@ -103,13 +137,13 @@ const Professionals = () => {
                     animate="visible"
                     className="d-flex justify-content-center"
                     variants={cardVariants}
-                    transition={{ duration: 0.3, type: "linear" }}
+                    transition={{ duration: 0.4, type: "ease" }}
                   >
                     <motion.div
                       whileHover={{
                         scale: 1.01,
                         y: -8,
-                        boxShadow: "0 12px 12px 0 var(--bs-primary)",
+                        boxShadow: "0 4px 12px 0 var(--bs-primary)",
                       }}
                       transition={{ type: "spring", stiffness: 250, damping: 20, ease: "easeInOut" }}
                       className="w-100 rounded-4 h-100"
@@ -120,7 +154,7 @@ const Professionals = () => {
                             variant="top"
                             src={prof.foto}
                             alt={prof.nome}
-                            className="w-100"
+                            className="w-100 rounded-top-4"
                             style={{ height: "200px", objectFit: "cover" }}
                           />
                           <Button
@@ -158,7 +192,7 @@ const Professionals = () => {
                           <div className="mb-2">
                             <span className="fw-semibold">{t("professionals.specialties")}:</span>{" "}
                             {prof.especialidades.map((esp) => (
-                              <Badge key={esp} bg="secondary" className="mx-1">{t(`professionals.specialty.${esp.toLowerCase()}`)}</Badge>
+                              <Badge key={esp} bg="info" className="mx-1">{t(`professionals.specialty.${esp.toLowerCase()}`)}</Badge>
                             ))}
                           </div>
                           <div className="mb-2">
@@ -192,9 +226,15 @@ const Professionals = () => {
               </AnimatePresence>
             </Row>
           </div>
+          <CustomPagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
+          />
         </Container>
       </Container>
     </Container>
   );
 };
+
 export { Professionals };

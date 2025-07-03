@@ -7,11 +7,11 @@ const UserToolbar = () => {
   const { handleWorkoutTypeSelect } = UseAppContext();
 
   return (
-    <Row className="w-100" >
-      <Col md={6} lg={12} className="my-2 w-100 d-flex justify-content-center">
+    <Row className="w-100 d-flex justify-content-center align-items-center flex-column">
+      <Col className="my-2 w-75 d-flex">
         <ButtonEdit />
       </Col>
-      <Col md={6} lg={12} className="my-2 w-100 d-flex justify-content-center">
+      <Col className="my-2 w-75 d-flex">
         <ButtonNewWorkout onSelectWorkoutType={handleWorkoutTypeSelect}/>
       </Col>
     </Row>

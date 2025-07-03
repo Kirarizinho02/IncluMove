@@ -10,10 +10,10 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 // eslint-disable-next-line react-refresh/only-export-components
 export const appContext = createContext({});
 
-const rotaPrivada = ({ children }) => {
+export const RotaPrivada = ({ children }) => {
   const usuarioLogado = localStorage.getItem("usuarioLogado");
 
-  if (!usuarioLogado) {
+  if (!usuarioLogado || usuarioLogado === "undefined") {
     return <Navigate to="/error" state={{ textoRota: "Não é possível acessar uma conta sem estar logado." }} />;
   }
 
@@ -325,8 +325,6 @@ export const AppContextProvider = (props) => {
     <appContext.Provider value={{
       ultimoTreinoFunc,
       ultimoTreino,
-
-      rotaPrivada,
 
       setShowNewWorkout,
       showNewWorkout,
