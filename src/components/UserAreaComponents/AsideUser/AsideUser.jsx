@@ -5,7 +5,7 @@ import { UseAppContext, UseThemeContext } from "../../../hooks";
 import { ProfilePicture, TooltipLink } from "../..";
 
 import { FaMoon } from "react-icons/fa";
-import { FaGlobe, } from "react-icons/fa6";
+import { FaGlobe } from "react-icons/fa6";
 import { IoSunny } from "react-icons/io5";
 import { LuChevronFirst, LuChevronLast } from "react-icons/lu";
 import { FiMoreVertical } from "react-icons/fi";
@@ -19,36 +19,35 @@ import { motion } from "framer-motion";
 
 import { AsideItems } from "./AsideItems";
 
-const AsideUser = ({ isOffcanvas = false }) => {
+const AsideUser = () => {
+  const { t } = useTranslation();
+
+  const { theme, switchTheme } = UseThemeContext();
+  const { usuarioLog, handleChangeLanguage, currentLanguage, handleResponsiveExpanded, expanded } = UseAppContext();
+
   const languages = [
     { code: "pt", label: "Português" },
     { code: "en", label: "English" },
     { code: "es", label: "Español" },
-  ];
+  ];  
 
   const [showLangModal, setShowLangModal] = useState(false);
 
-  const { usuarioLog, handleChangeLanguage, currentLanguage, handleExpanded, expanded } = UseAppContext();
-
-  const { t } = useTranslation();
-
-  const { theme, switchTheme } = UseThemeContext();
-
-
-
   return (
     <>
-    <Container className={`overflow-x-hidden p-0 m-0 h-100${isOffcanvas ? '' : ''}`}>
-      <aside
-        className="bg-body vh-100 w-100 shadow border-end border-secondary h-100"
-        style={{
-          width: isOffcanvas ? 240 : expanded ? 240 : 64,
-          minWidth: isOffcanvas ? 240 : expanded ? 240 : 64,
-          maxWidth: isOffcanvas ? 240 : expanded ? 240 : 64,
-          transition: "all 0.4s",
-          overflow: "hidden",
-        }}
-      >
+      <Container className="overflow-x-hidden p-0 m-0 h-100">
+        <aside
+          className="bg-body w-100 shadow border-end border-secondary flex-column d-flex"
+          style={{
+            width: expanded ? 240 : 64,
+            minWidth: expanded ? 240 : 64,
+            maxWidth: expanded ? 240 : 64,
+            minHeight: "100vh",
+            height: "100vh",
+            transition: "all 0.4s",
+            overflow: "hidden",
+          }}
+        >
           <Nav className="d-flex justify-content-between flex-column h-100" activeKey={location.pathname}>
             <div className="d-flex p-3 justify-content-between align-items-center">
               <TooltipLink title={t('tooltips.home')} id="tl1" localizacao="right">
@@ -88,14 +87,14 @@ const AsideUser = ({ isOffcanvas = false }) => {
                   className="text-body-secondary rounded-3 bg-secondary me-2"
                   size="2rem"
                   style={{ cursor: "pointer" }}
-                  onClick={handleExpanded}
+                  onClick={handleResponsiveExpanded}
                 />
               ) : (
                 <LuChevronLast
                   className="text-body-secondary rounded-3 bg-secondary"
                   size="2rem"
                   style={{ cursor: "pointer", marginRight: "3.7rem" }}
-                  onClick={handleExpanded}
+                  onClick={handleResponsiveExpanded}
                 />
               )}
             </div>
@@ -215,8 +214,7 @@ const AsideUser = ({ isOffcanvas = false }) => {
             </section>
           </Nav>
         </aside>
-      </Container >
-
+      </Container>
     </>
   );
 }

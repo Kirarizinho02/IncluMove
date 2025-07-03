@@ -1,3 +1,3 @@
 export * from './UseAppContext';
-export * from './UseMinHeightResize';
+export * from './UseResize';
 export * from './UseThemeContext';

@@ -7,13 +7,13 @@ import { ButtonBack } from "../../";
 import { useTranslation } from "react-i18next";
 import { homem_supino } from "../../../assets";
 
-import { UseAppContext, UseMinHeightResize } from "../../../hooks";
+import { UseAppContext, UseResize } from "../../../hooks";
 
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 const UserInformationExtraForm = () => {
-  const minHeightResize = UseMinHeightResize();
+  const minHeightResize = UseResize();
   const { t } = useTranslation();
 
   const { usuarioParcial, adicionarUsuario } = UseAppContext();

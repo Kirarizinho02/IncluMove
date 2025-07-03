@@ -24,6 +24,9 @@ export const AppContextProvider = (props) => {
   const { children } = props;
   const navigate = useNavigate();
 
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const isOffcanvas = window.innerWidth <= 768;
+
   const [expanded, setExpanded] = useState(true);
   const [fotoPerfil, setFotoPerfil] = useState(null);
   const [usuarioParcial, setUsuarioParcial] = useState(null);
@@ -76,8 +79,20 @@ export const AppContextProvider = (props) => {
     }
   };
 
-  const handleExpanded = () => {
-    setExpanded(current => !current);
+  useEffect(() => {
+    function handleResizeWidth() {
+      setWindowWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', handleResizeWidth);
+    return () => window.removeEventListener('resize', handleResizeWidth);
+  }, []);
+
+  const handleResponsiveExpanded = () => {
+    if (windowWidth <= 768 && isOffcanvas) {
+      setShowAside(false);
+    } else {
+      setExpanded(current => !current);
+    }
   };
 
   const adicionarUsuario = async (usuario) => {
@@ -345,7 +360,7 @@ export const AppContextProvider = (props) => {
 
       handleChangeLanguage,
       currentLanguage,
-      handleExpanded,
+      handleResponsiveExpanded,
       expanded,
       setExpanded,
 

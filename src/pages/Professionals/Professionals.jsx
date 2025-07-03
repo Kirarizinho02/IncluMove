@@ -87,7 +87,7 @@ const Professionals = () => {
             </Dropdown>
           </div>
         </div>
-        <Container className="border bg-body py-3 rounded mb-3">
+        <Container className="border bg-body py-3 rounded mb-lg-3">
           <div className="d-flex justify-content-center align-items-center" style={{ minHeight: "80vh" }}>
             <Row className="p-3 g-4 w-100 justify-content-center">
               <AnimatePresence>
@@ -114,7 +114,7 @@ const Professionals = () => {
                       transition={{ type: "spring", stiffness: 250, damping: 20, ease: "easeInOut" }}
                       className="w-100 rounded-4 h-100"
                     >
-                      <Card className="shadow-sm rounded-4 d-flex flex-column w-100 h-100">
+                      <Card className="shadow-sm rounded-4 d-flex flex-column w-100 h-100 bg-body-tertiary">
                         <div className="position-relative">
                           <Card.Img
                             variant="top"

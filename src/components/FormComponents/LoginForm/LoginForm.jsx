@@ -3,14 +3,14 @@ import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 
 import { logo_inset, mulher_perna_bionica } from '../../../assets';
-import { UseAppContext, UseMinHeightResize } from '../../../hooks';
+import { UseAppContext, UseResize } from '../../../hooks';
 
 import { useState } from 'react';
 import { ButtonBack } from '../../';
 import { useTranslation } from 'react-i18next';
 
 const LoginForm = () => {
-  const minHeightResize = UseMinHeightResize();
+  const minHeightResize = UseResize();
 
   const { t } = useTranslation();
 
