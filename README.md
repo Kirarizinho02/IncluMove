@@ -1,6 +1,6 @@
 # IncluMove
 
-IncluMove é uma aplicação web inclusiva que promove o bem-estar físico, mental e social, oferecendo treinos adaptados para pessoas com diferentes níveis de mobilidade. O projeto foi desenvolvido como parte do Hackteen da Venturus e fundação Iochpe, com o objetivo de criar uma solução digital acessível e acolhedora.
+IncluMove é uma aplicação web inclusiva desenvolvida por estudantes da ETEC Bento Quirino que promove o bem-estar físico, mental e social, oferecendo treinos adaptados para pessoas com diferentes níveis de mobilidade. O projeto foi desenvolvido como parte do Hackteen da Venturus e fundação Iochpe, com o objetivo de criar uma solução digital acessível e acolhedora.
 
 ## Funcionalidades
 
@@ -8,7 +8,6 @@ IncluMove é uma aplicação web inclusiva que promove o bem-estar físico, ment
 - **Treinos personalizados**: Geração de treinos adaptados com base no perfil do usuário.
 - **Histórico de treinos**: Exibição do último treino realizado e gráficos com a distribuição dos treinos.
 - **Recomendações de profissionais**: Sugestões de fisioterapeutas e personal trainers.
-> Ainda não foi implementado, pretendemos fazer durante a mentoria
 - **Acessibilidade**: Interface responsiva e inclusiva, projetada para atender diferentes necessidades.
 > Seguimos a **WCAG 2.2** por exemplo, buscando um nível de pelo menos AA.\
   Também fizemos o site 100% responsivo e utilizável em mobile (métrica: Galaxy S20 Ultra)
