@@ -291,6 +291,9 @@
       "location": "Localização",
       "all": "Todas especialidades",
       "filter": "Filtrar especialidade",
+      "onlyFavourites": "Mostrar somente Favoritos",
+      "onlyFavouritesOn": "Apenas Favoritos",
+      "onlyFavouritesOff": "Todos",
       "specialty": {
         "amputados": "Amputados",
         "cadeirantes": "Cadeirantes",

@@ -291,6 +291,9 @@
       "location": "Location",
       "filter": "Filter by specialty",
       "all": "All specialties",
+      "onlyFavourites": "Show only Favorites",
+      "onlyFavouritesOn": "Only Favorites",
+      "onlyFavouritesOff": "All",
       "specialty": {
         "amputados": "Amputees",
         "cadeirantes": "Wheelchair users",

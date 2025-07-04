@@ -114,10 +114,10 @@ const Professionals = () => {
               className="rounded-pill shadow-sm d-flex align-items-center gap-2 justify-content-center w-md-75"
               onClick={() => setShowOnlyFavorites(fav => !fav)}
               aria-pressed={showOnlyFavorites}
-              title={t("professionals.onlyFavorites", "Mostrar apenas favoritos")}
+              title={t("professionals.onlyFavorites")}
             >
               <FaHeart />
-              {showOnlyFavorites ? t("professionals.onlyFavoritesOn", "Apenas favoritos") : t("professionals.onlyFavoritesOff", "Todos")}
+              {showOnlyFavorites ? t("professionals.onlyFavoritesOn") : t("professionals.onlyFavoritesOff", "Todos")}
             </Button>
           </div>
         </div>
