@@ -24,12 +24,12 @@ const LastWorkout = () => {
 
   return (
     <>
-      <Row className="m-0 p-0">
+      <Row className="m-0 px-3">
         <Col
           lg={12}
           md={12}
           xl={9}
-          className="d-inline-flex align-items-center justify-content-around py-4 bg-primary w-md-100"
+          className="d-inline-flex align-items-center justify-content-around py-4 px-2 bg-primary w-md-100"
         >
           <motion.div
             initial={{ opacity: 0, y: 40 }}

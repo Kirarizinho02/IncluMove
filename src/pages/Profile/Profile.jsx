@@ -11,7 +11,7 @@ const Profile = () => {
   return (
     <>
       <Container fluid className="d-none d-md-flex flex-column justify-content-center align-items-center p-0 h-100">
-        <Row className="ps-2 pe-4 h-lg-100 w-100">
+        <Row className="ps-2 pe-2 h-lg-100 w-100">
           {usuarioLog ? (
             <>
               <Col xl={4} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary p-2">
@@ -41,7 +41,7 @@ const Profile = () => {
       </Container>
 
       <Container fluid className="d-flex d-md-none flex-column justify-content-center align-items-center p-2 m-0">
-        <Row className="ps-2 pe-4 h-75 w-100">
+        <Row className="ps-2 pe-2 h-75 w-100">
           <Col xl={4} md={12} className="d-flex flex-column justify-content-center align-items-center bg-primary p-2">
             {usuarioLog ? (
               <>
