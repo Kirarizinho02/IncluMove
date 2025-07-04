@@ -45,8 +45,8 @@ const LevelComponent = () => {
 
   return (
     <Container fluid className="h-100 rounded-4 h-100 border border-1 border-body mt-3 p-1">
-      <Container className="shadow-sm p-4 bg-body h-100 rounded-4" >
-      <Row className="bg-body d-flex justify-content-around h-100 flex-column">
+      <Container fluid className="shadow-sm p-4 bg-body h-100 rounded-4 w-100" >
+      <Row className="bg-body d-flex justify-content-around h-100 flex-column w-100">
       <h4 className="fw-bold title mb-4 text-center">
         Seu nível: <span className={`text-${level.color}`}>{level.name}</span>
       </h4>

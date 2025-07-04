@@ -183,7 +183,14 @@ $enable-negative-margins: true;
     100% {
       background-position: 0% 0%;
     }
+  }
 
+  @media (max-width: 768px) {
+  .me-scrollbar{
+    margin-right: 0 !important;
+  }
+
+    
   }
 }
 
@@ -346,6 +353,10 @@ body {
   transition: background 0.2s, border-radius 0.2s;
 }
 
+.flex-md-column {
+  flex-direction: row !important;
+}
+
 @media (max-width: 1200px) {
   .sm-especial {
     width: 15% !important;
@@ -418,8 +429,17 @@ body {
     margin-top: 0.5rem !important;
   }
 
+  .flex-md-column {
+    flex-direction: column !important;
+    width: 45%;
+  }
+
   .vh-md-100 {
     height: auto !important;
+  }
+
+  .me-scrollbar{
+    margin-right: 0 !important;
   }
 
   .mt-md-4 {

@@ -88,14 +88,14 @@ const Professionals = () => {
   return (
     <Container fluid className="m-0 p-0 d-flex align-items-center justify-content-center flex-column">
       <Container className="p-0 m-0 px-md-3">
-        <div className="d-flex justify-content-between align-items-center my-4 p-2 top-0 z-1 h-100 w-100 bg-primary">
-          <div className="lh-1">
+        <div className="d-flex justify-content-between align-items-center my-4 p-2 top-0 z-1 mx-2 h-100 w-100 bg-primary flex-md-column">
+          <div className="lh-1 mx-4">
             <h5 className="title fw-semibold">{t("professionals.title", "Veja o perfil dos nossos profissionais disponíveis na plataforma: ")}</h5>
             <span className="text-body-secondary">{t("professionals.subtitle", "Se gostar de algum, entre em contato!")}</span>
           </div>
-          <div className="d-flex gap-2">
-            <Dropdown>
-              <Dropdown.Toggle className="rounded-pill shadow-sm d-flex align-items-center gap-2 cta-gradient-btn text-body">
+          <div className="d-flex flex-md-column gap-2 me-2 h-100 w-md-100 align-items-center justify-content-center mt-4">
+            <Dropdown className="h-100 w-md-75 d-flex">
+              <Dropdown.Toggle className="rounded-pill shadow-sm d-flex align-items-center gap-2 cta-gradient-btn text-body w-100 justify-content-center">
                 <FaFilter /> {filter ? t(`professionals.specialty.${filter.toLowerCase()}`, filter) : t("professionals.filter")}
               </Dropdown.Toggle>
               <Dropdown.Menu>
@@ -111,7 +111,7 @@ const Professionals = () => {
             </Dropdown>
             <Button
               variant={showOnlyFavorites ? "danger" : "outline-danger"}
-              className="rounded-pill shadow-sm d-flex align-items-center gap-2"
+              className="rounded-pill shadow-sm d-flex align-items-center gap-2 justify-content-center w-md-75"
               onClick={() => setShowOnlyFavorites(fav => !fav)}
               aria-pressed={showOnlyFavorites}
               title={t("professionals.onlyFavorites", "Mostrar apenas favoritos")}
