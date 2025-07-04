@@ -11,7 +11,6 @@ const ButtonEdit = () => {
   const [showModal, setShowModal] = useState(false);
   const [showToast, setShowToast] = useState(false);
   const [nome, setNome] = useState(usuarioLog?.nome || "");
-  const [email, setEmail] = useState(usuarioLog?.email || "");
   const [senha, setSenha] = useState("");
   const [foto, setFoto] = useState(usuarioLog?.foto || null);
   const [loading, setLoading] = useState(false);
@@ -36,7 +35,6 @@ const ButtonEdit = () => {
 
       const atualizacoes = {};
       if (nome && nome !== usuarioLog.nome) atualizacoes.nome = nome;
-      if (email && email !== usuarioLog.email) atualizacoes.email = email;
       if (senha) atualizacoes.senha = senha;
 
       if (Object.keys(atualizacoes).length > 0) {
@@ -86,14 +84,6 @@ const ButtonEdit = () => {
                 type="text"
                 value={nome}
                 onChange={e => setNome(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label className="title">{t("profile.emailModal")}</Form.Label>
-              <Form.Control
-                type="email"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
               />
             </Form.Group>
             <Form.Group className="mb-2">

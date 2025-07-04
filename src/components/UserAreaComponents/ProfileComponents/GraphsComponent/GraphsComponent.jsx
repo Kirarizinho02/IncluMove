@@ -40,7 +40,7 @@ const GraphsComponent = (props) => {
 
   return (
     <Container fluid className="h-100 rounded-4 h-100 border border-1 border-body mt-3 p-1">
-      <Container className="shadow-sm p-4 rounded-4 bg-body h-100 justify-content-between d-flex">
+      <Container fluid className="shadow-sm p-4 rounded-4 bg-body h-100 justify-content-between d-flex w-100">
         <Row className="d-flex flex-column align-items-center justify-content-center w-100 p-0 m-0">
           <h4 className="fw-bold title text-center"> Últimos treinos realizados: </h4>
 

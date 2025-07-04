@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Offcanvas, Nav, Button, Dropdown } from "react-bootstrap";
+import { Offcanvas, Nav, Button, Dropdown, Placeholder } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 
 import { UseAppContext, UseThemeContext } from "../../../../hooks";
 
-import { FaMoon, FaUser } from "react-icons/fa";
+import { FaMoon } from "react-icons/fa";
 import { IoLogOut, IoLogOutOutline, IoSunny } from "react-icons/io5";
 import { logo_inset } from "../../../../assets";
 
@@ -55,7 +55,7 @@ const AsideOffCanvas = ({ show, onHide }) => {
             variant="outline-light"
             className="w-100 d-flex align-items-center justify-content-center gap-2"
             onClick={switchTheme}
-            aria-label="Alternar tema"
+            aria-label={t('nav.lightTheme')}
           >
             {theme === 'dark'
               ? <FaMoon size='1.3rem' />
@@ -73,10 +73,10 @@ const AsideOffCanvas = ({ show, onHide }) => {
               <ProfilePicture size={40} />
               <div className="ms-3 d-flex pb-1 flex-column">
                 <span className="fw-semibold ">
-                  {usuarioLog ? usuarioLog.nome : "Usuário Desconhecido"}
+                  {usuarioLog ? usuarioLog.nome : <Placeholder animation="wave" style={{ width: 90, height: 18, display: "block" }} />}
                 </span>
                 <span className="text-body-secondary d-block" style={{ fontSize: 13 }}>
-                  {usuarioLog ? usuarioLog.email : "Email Desconhecido"}
+                  {usuarioLog ? usuarioLog.email : <Placeholder animation="wave" style={{ width: 120, height: 13, display: "block", marginTop: 4 }} />}
                 </span>
               </div>
             </div>
@@ -104,7 +104,7 @@ const AsideOffCanvas = ({ show, onHide }) => {
                       className='fs-5'
                     >
                       <IoLogOutOutline size='2rem' style={{ marginInlineEnd: "0.5rem" }} className='mb-1' />
-                      Sair
+                      {t('tooltips.logOut')}
                     </motion.span>
                     <motion.span
                       style={{ position: 'absolute', top: 0, left: -20 }}
@@ -113,7 +113,7 @@ const AsideOffCanvas = ({ show, onHide }) => {
                       className='fs-5'
                     >
                       <IoLogOut size='2rem' style={{ marginInlineEnd: "0.5rem" }} className='mb-1' />
-                      Sair
+                      {t('tooltips.logOut')}
                     </motion.span>
                   </span>
                 </Dropdown.Item>

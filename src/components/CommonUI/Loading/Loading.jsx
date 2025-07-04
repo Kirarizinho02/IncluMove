@@ -1,10 +1,13 @@
 import { Container } from "react-bootstrap";
 import { flowers, stars } from "../../../assets";
+import { useTranslation } from "react-i18next";
 
 // eslint-disable-next-line no-unused-vars
 import { AnimatePresence, motion } from "framer-motion";
 
 const Loading = ({ isLogin }) => {
+  const { t } = useTranslation();
+
   return (
     <AnimatePresence>
       <motion.div
@@ -30,14 +33,14 @@ const Loading = ({ isLogin }) => {
             <div className="position-relative mb-4" style={{ width: 70, height: 70 }}>
               <div className="spinner-border text-light position-relative" style={{ width: 70, height: 70, borderWidth: 6 }} role="status" />
             </div>
-            <h4 className="title fw-bold text-light mb-2">Carregando...</h4>
-            <div className="text-light-50">Estamos arrumando tudo para você!</div>
+            <h4 className="title fw-bold text-light mb-2">{t("loading.title", "Carregando...")}</h4>
+            <div className="text-light-50">{t("loading.subtitle", "Estamos arrumando tudo para você!")}</div>
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
               style={{ display: "inline-block", marginLeft: "40rem", marginTop: "-5rem" }}
             >
-              <img src={flowers} className="position-relative pt-5" />
+              <img src={flowers} className="position-relative pt-5" alt="Flowers background" />
             </motion.div>
           </Container>
         </Container>

@@ -8,10 +8,10 @@ const UserToolbar = () => {
 
   return (
     <Row className="w-100 d-flex justify-content-center align-items-center flex-column">
-      <Col className="my-2 w-75 d-flex">
+      <Col className="my-2 w-75 w-md-100 d-flex">
         <ButtonEdit />
       </Col>
-      <Col className="my-2 w-75 d-flex">
+      <Col className="my-2 w-75 w-md-100 d-flex">
         <ButtonNewWorkout onSelectWorkoutType={handleWorkoutTypeSelect}/>
       </Col>
     </Row>

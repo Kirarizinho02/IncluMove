@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Container, Modal, Nav } from "react-bootstrap";
+import { Container, Dropdown, Modal, Nav, Placeholder } from "react-bootstrap";
 import { UseAppContext, UseThemeContext } from "../../../hooks";
 
 import { ProfilePicture, TooltipLink } from "../..";
 
 import { FaMoon } from "react-icons/fa";
 import { FaGlobe } from "react-icons/fa6";
-import { IoSunny } from "react-icons/io5";
+import { IoLogOut, IoLogOutOutline, IoSunny } from "react-icons/io5";
 import { LuChevronFirst, LuChevronLast } from "react-icons/lu";
 import { FiMoreVertical } from "react-icons/fi";
 
@@ -23,15 +23,16 @@ const AsideUser = () => {
   const { t } = useTranslation();
 
   const { theme, switchTheme } = UseThemeContext();
-  const { usuarioLog, handleChangeLanguage, currentLanguage, handleResponsiveExpanded, expanded } = UseAppContext();
+  const { usuarioLog, handleChangeLanguage, currentLanguage, handleResponsiveExpanded, expanded, logOut } = UseAppContext();
 
   const languages = [
     { code: "pt", label: "Português" },
     { code: "en", label: "English" },
     { code: "es", label: "Español" },
-  ];  
+  ];
 
   const [showLangModal, setShowLangModal] = useState(false);
+  const [IsHoverLogOut, setIsHoverLogOut] = useState(false);
 
   return (
     <>
@@ -186,6 +187,8 @@ const AsideUser = () => {
                 </div>
               </div>
 
+
+
               <div className="d-flex border-top p-3 align-items-center" style={{ width: expanded ? "100%" : "63px" }}>
                 <div style={{ marginLeft: expanded ? "0.1rem" : "-0.45rem" }}>
                   <ProfilePicture size={40} />
@@ -200,21 +203,55 @@ const AsideUser = () => {
                   }}
                 >
                   <div>
-                    <span className="fw-semibold">
-                      {usuarioLog ? usuarioLog.nome : "Usuário Desconhecido"}
-                    </span>
-                    <span className="text-body-secondary d-block" style={{ fontSize: 13 }}>
-                      {usuarioLog ? usuarioLog.email : "Email Desconhecido"}
-                    </span>
+                    {usuarioLog ? (
+                      <>
+                        <span className="fw-semibold">{usuarioLog.nome}</span>
+                        <span className="text-body-secondary d-block" style={{ fontSize: 13 }}>
+                          {usuarioLog.email}
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <Placeholder animation="wave" style={{ width: 90, height: 18, display: "block" }} />
+                        <Placeholder animation="wave" style={{ width: 120, height: 13, display: "block", marginTop: 4 }} />
+                      </>
+                    )}
                   </div>
-                  <FiMoreVertical size="1.5rem" className="h-100" />
+                  <TooltipLink title={t('tooltips.logOut')} id='tl2' localizacao='right' >
+                    <div
+                      style={{ cursor: "pointer" }}
+                      onClick={logOut}
+                      onMouseEnter={() => setIsHoverLogOut(true)}
+                      onMouseLeave={() => setIsHoverLogOut(false)}
+                    >
+                      <span style={{ position: 'relative', display: 'inline-block' }}>
+                        <motion.span
+                          style={{ position: 'absolute', top: -20, left: -25, }}
+                          animate={{ opacity: IsHoverLogOut ? 0 : 1 }}
+                          transition={{ duration: 0.1 }}
+                          className='fs-5'
+                        >
+                          <IoLogOutOutline size='1.5rem' style={{ marginInlineEnd: "0.5rem" }} className='mb-1' />
+                          {t('tooltips.logOut')}
+                        </motion.span>
+                        <motion.span
+                          style={{ position: 'absolute', top: -20, left: -25 }}
+                          animate={{ opacity: IsHoverLogOut ? 1 : 0 }}
+                          transition={{ duration: 0.1 }}
+                          className='fs-5'
+                        >
+                          <IoLogOut size='1.5rem' style={{ marginInlineEnd: "0.5rem" }} className='mb-1' />
+                          {t('tooltips.logOut')}
+                        </motion.span>
+                      </span>
+                    </div>
+                  </TooltipLink>
                 </div>
-
               </div>
             </section>
           </Nav>
         </aside>
-      </Container>
+      </Container >
     </>
   );
 }

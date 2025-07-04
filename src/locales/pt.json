@@ -24,7 +24,9 @@
       "experts": "Profissionais",
       "profile": "Conta",
       "home": "Página Inicial",
-      "language": "Idioma"
+      "language": "Idioma",
+      "logOut": "Sair",
+      "comunity": "Comunidade"
     },
     "landing": {
       "hero": {
@@ -169,6 +171,8 @@
           { "value": "other", "label": "Outro" }
         ]
       },
+      "successMessage": "Sua mensagem foi enviada com sucesso! Agradecemos por entrar em contato conosco. Nossa equipe irá analisar sua mensagem e responderemos o mais breve possível.",
+      "errorMessage": "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.",
       "message": {
         "label": "Mensagem",
         "placeholder": "Escreva sua mensagem aqui..."
@@ -275,6 +279,8 @@
       }
     },
     "professionals": {
+      "title": "Veja o perfil dos nossos profissionais disponíveis na plataforma:",
+      "subtitle": "Aqui você pode ver o perfil dos profissionais disponíveis na nossa plataforma. Se gostar de algum, entre em contato!",
       "online": "Atende online",
       "hybrid": "Atende online e presencial",
       "inPerson": "Atende presencialmente",
@@ -310,7 +316,39 @@
       "totalWorkouts": "Total de Treinos",
       "series": "Séries",
       "repetitions": "Repetições",
-      "workoutSaved": "Treino salvo com sucesso!"
+      "workoutSaved": "Treino salvo com sucesso!",
+      "quickWorkout": "Treino Rápido",
+      "moderateWorkout": "Treino Moderado",
+      "heavyWorkout": "Treino Pesado"
+    },
+    "loading": {
+      "title": "Carregando...",
+      "subtitle": "Estamos arrumando tudo para você!"
+    },
+    "level": {
+      "title": "Seu nível:",
+      "beginner": "Iniciante",
+      "adept": "Adepto",
+      "advanced": "Avançado",
+      "master": "Mestre",
+      "workoutsCount": "{{count}} treino realizado",
+      "workoutsCount_plural": "{{count}} treinos realizados",
+      "toNext": "Faltam {{count}} treino para o próximo nível: {{next}}",
+      "toNext_plural": "Faltam {{count}} treinos para o próximo nível: {{next}}",
+      "maxLevel": "Você atingiu o nível máximo!",
+      "noWorkouts": "Você ainda não realizou nenhum treino.",
+      "lastToday": "Parabéns pelo seu último treino hoje! Continue assim!",
+      "lastYesterday": "Seu último treino foi ontem. Que tal treinar hoje?",
+      "lastDays": "Seu último treino foi há {{count}} dias."
+    },
+    "community": {
+      "title": "Comunidade IncluMove",
+      "subtitle": "Aqui você pode interagir com outros usuários do IncluMove, compartilhar suas experiências, seus treinos e muito mais!",
+      "placeholder": "Compartilhe um pensamento, adicione anexos...",
+      "publish": "Publicar",
+      "noPosts": "Nenhuma publicação ainda.",
+      "add": "Adicionar",
+      "message": "Mensagem"
     }
   }
 }

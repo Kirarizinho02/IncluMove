@@ -22,29 +22,29 @@ const LastWorkout = () => {
 
   const totalTreinos = usuarioLog?.treinos?.length || 0;
 
- return (
+  return (
     <>
       <Row className="m-0 p-0">
         <Col
           lg={12}
           md={12}
           xl={9}
-          className="d-inline-flex align-items-center justify-content-around py-4 bg-primary"
+          className="d-inline-flex align-items-center justify-content-around py-4 bg-primary w-md-100"
         >
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ duration: 0.5 }}
-            className="w-100 h-100 d-flex flex-column align-items-center border border-body mx-3 mt-2 py-4 rounded-4 bg-body-tertiary shadow-sm"
+            className="w-100 h-100 d-flex flex-column align-items-center border border-body mt-2 py-4 rounded-4 bg-body-tertiary shadow-sm"
           >
             {ultimoTreino ? (
               <>
-                <span className="fs-3 title">
+                <span className="fs-3 title text-center">
                   <strong>{t("lastWorkout.title")}: </strong>
                   {ultimoTreino?.data || t("lastWorkout.dateUnavailable")}
                 </span>
-                <span className="fs-4 mb-2 title">
+                <span className="fs-4 mb-2 title text-center">
                   <strong>{t("lastWorkout.description")}:</strong> {ultimoTreino?.descricao || t("lastWorkout.descriptionUnavailable")}
                 </span>
                 <span className="fs-5 mb-3">
@@ -113,7 +113,7 @@ const LastWorkout = () => {
           className="d-inline-flex align-items-center justify-content-start gap-5 pb-4 bg-primary flex-column"
           style={{ paddingTop: "0.8rem" }}
         >
-          <div className="m-0 p-0">
+          <div className="m-0 p-0 w-100" >
             <LevelComponent />
           </div>
           <div className="w-100 border border-body mx-3 py-4 rounded-4 bg-body-tertiary shadow-sm">
@@ -152,7 +152,7 @@ const LastWorkout = () => {
         <Toast
           onClose={() => setShowWorkoutToast(false)}
           show={showWorkoutToast}
-          bg="accent"
+          bg="success"
           style={{
             position: "fixed",
             bottom: 30,

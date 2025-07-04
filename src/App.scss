@@ -164,7 +164,7 @@ $enable-negative-margins: true;
     z-index: 3;
     color: $gray-900 !important;
     background-color:#FEF97E !important;
-    border-color: var(--bs-pagination-active-border-color);
+    border-color: $gray-700;
 }
 
   .inverted {
@@ -183,7 +183,14 @@ $enable-negative-margins: true;
     100% {
       background-position: 0% 0%;
     }
+  }
 
+  @media (max-width: 768px) {
+  .me-scrollbar{
+    margin-right: 0 !important;
+  }
+
+    
   }
 }
 
@@ -232,7 +239,7 @@ body {
 }
 
 .cta-gradient-btn {
-  background: linear-gradient(135deg, rgba($info, 0.9) 20%, rgba($tertiary, 0.9) 60%, rgba($tertiary, 1) 100%);
+  background: linear-gradient(135deg, rgba($tertiary, 0.9) 20%, rgba($tertiary, 0.9) 60%, rgba($tertiary, 1) 100%);
   background-size: 200% 100%;
   transition:
     background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1),
@@ -346,6 +353,10 @@ body {
   transition: background 0.2s, border-radius 0.2s;
 }
 
+.flex-md-column {
+  flex-direction: row !important;
+}
+
 @media (max-width: 1200px) {
   .sm-especial {
     width: 15% !important;
@@ -359,6 +370,10 @@ body {
     left: -1.5rem !important;
     top: -1.5rem;
     height: 5rem;
+  }
+
+  .h-lg-100 {
+    height: 100% !important;
   }
 }
 
@@ -374,6 +389,11 @@ body {
   .rounded-lg-4 {
     border-radius: 1.5rem !important;
   }
+
+    .text-big {
+    font-size: 5.6rem;
+  }
+
 }
 
 @media (max-width: 992px) {
@@ -384,15 +404,7 @@ body {
   .text-big {
     font-size: 3.2rem;
   }
-}
 
-@media (min-width: 992px) {
-  .text-big {
-    font-size: 5.6rem;
-  }
-}
-
-@media (max-width: 992px) {
   .mt-exc-3 {
     margin-top: 1.5rem !important;
   }
@@ -418,8 +430,17 @@ body {
     margin-top: 0.5rem !important;
   }
 
+  .flex-md-column {
+    flex-direction: column !important;
+    width: 45%;
+  }
+
   .vh-md-100 {
     height: auto !important;
+  }
+
+  .me-scrollbar {
+    margin-right: 0 !important;
   }
 
   .mt-md-4 {
@@ -494,7 +515,7 @@ body {
     z-index: 3;
     color: $gray-900 !important;
     background-color: $primary;
-    border-color: $primary;
+    border-color: $gray-200;
 }
 
 .pagination {
