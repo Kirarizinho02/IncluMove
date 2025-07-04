@@ -90,8 +90,8 @@ const Professionals = () => {
       <Container className="p-0 m-0 px-md-3">
         <div className="d-flex justify-content-between align-items-center my-4 p-2 top-0 z-1 mx-2 h-100 w-100 bg-primary flex-md-column">
           <div className="lh-1 mx-4">
-            <h5 className="title fw-semibold">{t("professionals.title", "Veja o perfil dos nossos profissionais disponíveis na plataforma: ")}</h5>
-            <span className="text-body-secondary">{t("professionals.subtitle", "Se gostar de algum, entre em contato!")}</span>
+            <h5 className="title fw-semibold">{t("professionals.title")}</h5>
+            <span className="text-body-secondary">{t("professionals.subtitle")}</span>
           </div>
           <div className="d-flex flex-md-column gap-2 me-2 h-100 w-md-100 align-items-center justify-content-center mt-4">
             <Dropdown className="h-100 w-md-75 d-flex">

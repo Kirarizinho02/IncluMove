@@ -1,12 +1,15 @@
 import { Nav } from "react-bootstrap"
 import { TooltipLink } from "../../../CommonUI"
 import { FaDumbbell, FaPeopleGroup, FaUser } from "react-icons/fa6"
+import { MdGroupAdd } from "react-icons/md";
 
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { UseAppContext } from "../../../../hooks";
+
+// ...existing imports...
 
 const AsideItems = () => {
   const professionalsImport = () => import("../../../../pages/Professionals/Professionals");
@@ -34,7 +37,7 @@ const AsideItems = () => {
         key={tooltipKey}
       >
         <Nav.Link
-          className={`py-3 my-1  flex-grow-0 link-body-emphasis aside-link fw-semibold overflow-hidden d-flex align-items-center${!expanded ? " collapsed px-3 ms-1" : " ps-4"}`}
+          className={`py-2 my-1  flex-grow-0 link-body-emphasis aside-link fw-semibold overflow-hidden d-flex align-items-center${!expanded ? " collapsed px-3 ms-1" : " ps-4"}`}
           eventKey="/user-area/workouts"
           href="/user-area/workouts"
         >
@@ -52,7 +55,7 @@ const AsideItems = () => {
               display: expanded ? "inline-block" : "none",
             }}
           >
-            Treinos
+            {t('tooltips.workouts')}
           </motion.div>
         </Nav.Link>
       </TooltipLink>
@@ -66,7 +69,7 @@ const AsideItems = () => {
       >
         <Nav.Link
           onMouseEnter={professionalsImport}
-          className={`py-3 px-3 my-1 link-body-emphasis aside-link fw-semibold d-flex overflow-hidden align-items-center${!expanded ? " collapsed px-3 ms-1" : " ps-4"}`}
+          className={`py-2 px-3 my-1 link-body-emphasis aside-link fw-semibold d-flex overflow-hidden align-items-center${!expanded ? " collapsed px-3 ms-1" : " ps-4"}`}
           eventKey="/user-area/professionals"
           href="/user-area/professionals"
         >
@@ -84,24 +87,24 @@ const AsideItems = () => {
               display: expanded ? "inline-flex" : "none",
             }}
           >
-            Profissionais
+            {t('tooltips.experts')}
           </motion.div>
         </Nav.Link>
       </TooltipLink>
 
       <TooltipLink
-        key={expandedTooltip ? "tooltip-profile-expanded" : "tooltip-profile-collapsed"}
-        title={t('tooltips.profile')}
-        id="t-2"
+        key={expandedTooltip ? "tooltip-comunity-expanded" : "tooltip-comunity-collapsed"}
+        title={t('tooltips.comunity')}
+        id="t-4"
         localizacao="right"
         styles={expandedTooltip ? { width: "100%" } : {}}
       >
         <Nav.Link
-          className={`py-3 px-3 my-1 link-body-emphasis aside-link fw-semibold overflow-hidden d-flex align-items-center${!expanded ? " collapsed px-3 ms-1" : " ps-4"}`}
-          eventKey="/user-area/profile"
-          href="/user-area/profile"
+          className={`py-2 px-3 my-1 link-body-emphasis aside-link fw-semibold d-flex overflow-hidden align-items-center${!expanded ? " collapsed px-3 ms-1" : " ps-4"}`}
+          eventKey="/user-area/community"
+          href="/user-area/community"
         >
-          <FaUser className="aside-icon" size="2rem" color={getIconColor("/user-area/profile")} />
+          <MdGroupAdd className="aside-icon" size="2rem" />
           <motion.div
             className="align-items-center ms-3 overflow-hidden"
             initial={false}
@@ -115,7 +118,39 @@ const AsideItems = () => {
               display: expanded ? "inline-flex" : "none",
             }}
           >
-            Conta
+            {t('tooltips.comunity')}
+          </motion.div>
+        </Nav.Link>
+      </TooltipLink>
+      
+
+      <TooltipLink
+        key={expandedTooltip ? "tooltip-profile-expanded" : "tooltip-profile-collapsed"}
+        title={t('tooltips.profile')}
+        id="t-3"
+        localizacao="right"
+        styles={expandedTooltip ? { width: "100%" } : {}}
+      >
+        <Nav.Link
+          className={`py-2 px-3 my-1 link-body-emphasis aside-link fw-semibold overflow-hidden d-flex align-items-center${!expanded ? " collapsed px-3 ms-1" : " ps-4"}`}
+          eventKey="/user-area/profile"
+          href="/user-area/profile"
+        >
+          <FaUser className="aside-icon" size="1.8rem" color={getIconColor("/user-area/profile")} />
+          <motion.div
+            className="align-items-center ms-3 overflow-hidden"
+            initial={false}
+            animate={{
+              opacity: expanded ? 1 : 0,
+              x: expanded ? 0 : -16,
+              transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] },
+            }}
+            style={{
+              whiteSpace: "nowrap",
+              display: expanded ? "inline-flex" : "none",
+            }}
+          >
+            {t('tooltips.profile')}
           </motion.div>
         </Nav.Link>
       </TooltipLink>

@@ -10,7 +10,7 @@ import { homem_supino } from "../../../assets";
 import { UseAppContext, UseResize } from "../../../hooks";
 
 // eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion";
+import { m, motion } from "framer-motion";
 
 const UserInformationExtraForm = () => {
   const minHeightResize = UseResize();
@@ -26,6 +26,8 @@ const UserInformationExtraForm = () => {
     equipamento_apoio: '',
     foto: 'https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png',
     treinos: [],
+    altura: 0,
+    peso: 0,
   });
 
   const [status, setStatus] = useState(null);

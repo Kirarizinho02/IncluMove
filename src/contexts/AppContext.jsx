@@ -37,6 +37,7 @@ export const AppContextProvider = (props) => {
   const [usuarioLog, setUsuarioLog] = useState(null);
   const [ultimoTreino, setUltimoTreino] = useState(null);
   const [showAside, setShowAside] = useState(false);
+    const [timelinePosts, setTimelinePosts] = useState([]);
 
   const storedLang = localStorage.getItem("language");
   const { i18n: { changeLanguage, language } } = useTranslation();
@@ -363,6 +364,9 @@ export const AppContextProvider = (props) => {
       setExpanded,
 
       getAtendimentoLabel,
+
+      timelinePosts,
+      setTimelinePosts,
     }}>
       {children}
     </appContext.Provider>

@@ -22,7 +22,7 @@ const LastWorkout = () => {
 
   const totalTreinos = usuarioLog?.treinos?.length || 0;
 
- return (
+  return (
     <>
       <Row className="m-0 p-0">
         <Col
@@ -152,7 +152,7 @@ const LastWorkout = () => {
         <Toast
           onClose={() => setShowWorkoutToast(false)}
           show={showWorkoutToast}
-          bg="accent"
+          bg="success"
           style={{
             position: "fixed",
             bottom: 30,

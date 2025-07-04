@@ -24,7 +24,9 @@
       "experts": "Experts",
       "profile": "Profile",
       "home": "Home Page",
-      "language": "Language"
+      "language": "Language",
+      "logOut": "Log Out",
+      "comunity": "Community"
     },
     "landing": {
       "hero": {
@@ -169,6 +171,8 @@
           { "value": "other", "label": "Other..." }
         ]
       },
+      "successMessage": "Your message has been sent successfully! We will get back to you as soon as possible.",
+      "errorMessage": "There was an error sending your message. Please try again later.",
       "message": {
         "label": "Message",
         "placeholder": "Write your message here..."
@@ -275,6 +279,8 @@
       }
     },
     "professionals": {
+      "title": "Meet our professionals",
+      "subtitle": "Here you can view the profiles of our available professionals on the platform. If you like any, feel free to contact them!",
       "online": "Online service",
       "hybrid": "Online and in-person service",
       "inPerson": "In-person service",
@@ -310,7 +316,39 @@
       "totalWorkouts": "Total Workouts",
       "series": "Sets",
       "repetitions": "Repetitions",
-      "workoutSaved": "Workout saved successfully!"
+      "workoutSaved": "Workout saved successfully!",
+      "quickWorkout": "Quick Workout",
+      "moderateWorkout": "Moderate Workout",
+      "heavyWorkout": "Heavy Workout"
+    },
+    "loading": {
+      "title": "Loading...",
+      "subtitle": "We are getting everything ready for you!"
+    },
+    "level": {
+      "title": "Your level:",
+      "beginner": "Beginner",
+      "adept": "Adept",
+      "advanced": "Advanced",
+      "master": "Master",
+      "workoutsCount": "{{count}} workout completed",
+      "workoutsCount_plural": "{{count}} workouts completed",
+      "toNext": "{{count}} workout left to reach the next level: {{next}}",
+      "toNext_plural": "{{count}} workouts left to reach the next level: {{next}}",
+      "maxLevel": "You’ve reached the maximum level!",
+      "noWorkouts": "You haven’t completed any workouts yet.",
+      "lastToday": "Congrats on your last workout today! Keep it up!",
+      "lastYesterday": "Your last workout was yesterday. How about training today?",
+      "lastDays": "Your last workout was {{count}} days ago."
+    },
+    "community": {
+      "title": "IncluMove Community",
+      "subtitle": "Here you can interact with other IncluMove users, share your experiences, workouts, and much more!",
+      "placeholder": "Share a thought, add attachments...",
+      "publish": "Publish",
+      "noPosts": "No posts yet.",
+      "add": "Add",
+      "message": "Message"
     }
   }
 }
