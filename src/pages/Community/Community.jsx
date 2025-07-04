@@ -83,9 +83,9 @@ const Community = () => {
   return (
     <Container fluid className="py-4">
       <Row className="mb-4 w-75 mx-auto w-md-100 w-lg-90">
-        <h2 className="fw-bold title">{t("community.title")}</h2>
-        <span className="text-body-secondary mb-3"> {t("community.subtitle")} </span>
-        <Row className="d-flex">
+        <h2 className="fw-bold title text-center">{t("community.title")}</h2>
+        <span className="text-body-secondary mb-3 text-center w-75 mx-auto"> {t("community.subtitle")} </span>
+        <Row className="d-flex mx-auto">
           <Col className="mb-2">
             <div className="w-100 bg-body-tertiary p-3 rounded-4 border-body border d-flex flex-column align-items-center">
               <Card className="shadow-sm mb-4 rounded-2 w-75 w-md-100">
@@ -120,7 +120,7 @@ const Community = () => {
                     )}
                     <div className="d-flex justify-content-end">
                       <Button type="submit" variant="outline-success rounded-pill shadow-sm" disabled={!postText.trim() && !postAttachment}>
-  {t("community.publish")}
+                        {t("community.publish")}
                       </Button>
                     </div>
                   </Form>
@@ -163,8 +163,8 @@ const Community = () => {
             </div>
           </Col>
         </Row>
-        </Row>
-      </Container>
+      </Row>
+    </Container>
   );
 };
 

@@ -17,7 +17,7 @@ const ButtonNewWorkout = (props) => {
     <Dropdown show={show} onToggle={setShow} className="w-100">
       <Dropdown.Toggle
         id="dropdown-basic"
-        className="cta-gradient-btn d-inline-flex align-items-center justify-content-center fs-5 rounded-pill w-100 text-center py-3 px-4 logout-toggle fw-bold title"
+        className="cta-gradient-btn d-inline-flex align-items-center justify-content-center fs-6 rounded-pill w-100 text-center py-3 px-4 logout-toggle fw-bold title"
         style={{
           letterSpacing: "0.5px"
         }}
