@@ -346,7 +346,7 @@
       "subtitle": "Here you can interact with other IncluMove users, share your experiences, workouts, and much more!",
       "placeholder": "Share a thought, add attachments...",
       "publish": "Publish",
-      "noPosts": "No posts yet.",
+      "noPosts": "Posts are loading...",
       "add": "Add",
       "message": "Message"
     }
